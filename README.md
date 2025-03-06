@@ -12,18 +12,8 @@
 <a href="https://discord.com/invite/NQdM6JGwcs" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
 <a href="https://twitter.com/Fidesinnova" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 
-
----
-description: >-
-  Welcome to Fides Innova, where trust and innovation converge. The name
-  "Fides," derived from the Latin word for ‘trust,’ encapsulates the essence of
-  our ecosystem.
----
-
 #### Revolutionizing Decentralized IoT Systems
-
 Fides Innova is dedicated to transforming the landscape of decentralized and reliable IoT systems. Our platform, underpinned by cutting-edge blockchain technology, focuses on zk-IoT devices to ensure seamless, secure communication, and a network founded on trust and transparency.
-
 <figure><img src=".gitbook/assets/Intro.jpg" alt=""><figcaption></figcaption></figure>
 
 #### Key Features
