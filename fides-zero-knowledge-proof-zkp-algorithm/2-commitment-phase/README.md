@@ -1,1 +1,1 @@
-This folder has five files to explain the commitment generation phase, provides two exmpales, and two architecture reviews.
+This folder has three files to explain the commitment generation phase and provides two exmpales.
