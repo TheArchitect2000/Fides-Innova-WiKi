@@ -36,7 +36,7 @@ Both PFR and AHP will be compiled to a standard interactive protocol using a uni
 
 In the following section, we will review the setup phase of our system. We also provide an example to clarify the method.
 
-## 1-1- PFR and AHP Setup
+## 1-1- PFR and AHP Setup     
 
 $$Setup(1^{\lambda},N)$$:  This function outputs $$pp=PC.Setup(1^{\lambda},d)$$ where $$\lambda$$ is security parameter and the set
 
