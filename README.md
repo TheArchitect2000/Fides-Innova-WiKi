@@ -12,7 +12,6 @@
 <a href="https://discord.com/invite/NQdM6JGwcs" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
 <a href="https://twitter.com/Fidesinnova" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 
-This repository explains the utilized ZKP algorithm in Fides Innova ZKP SDK
-
+This repository explains the utilized ZKP algorithm in Fides Innova ZKP SDK.
 
 Please click on the 'WiKi' tab in this page to see the algorithm.
