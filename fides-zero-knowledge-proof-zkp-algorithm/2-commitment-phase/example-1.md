@@ -23,7 +23,15 @@ To keep the example simple and understandable, we continue with $$n_g=3$$ and $$
 
 The Prover calculates square matrices $$A$$, $$B$$ and $$C$$ of order $$n_g+n_i+1=3+1+1=5$$ based on above construction:
 
-$$A=\begin{bmatrix} 0&0&0&0&0\\ 0&0&0&0&0\\ 0&1&0&0&0\\ 1&0&0&0&0\\ 0&0&0&1&0\\ \end{bmatrix}$$, $$B=\begin{bmatrix}0&0&0&0&0\\0&0&0&0&0\\5&0&0&0&0\\11&0&1&0&0\\26&0&0&0&0\\\end{bmatrix}$$and $$C=\begin{bmatrix}0&0&0&0&0\\0&0&0&0&0\\0&0&1&0&0\\0&0&0&1&0\\0&0&0&0&1\\\end{bmatrix}$$. &#x20;
+$$A
+=\begin{bmatrix} 0&0&0&0&0\\
+0&0&0&0&0\\
+0&1&0&0&0\\
+1&0&0&0&0\\
+0&0&0&1&0\\
+\end{bmatrix}
+$$,
+$$B=\begin{bmatrix}0&0&0&0&0\\0&0&0&0&0\\5&0&0&0&0\\11&0&1&0&0\\26&0&0&0&0\\\end{bmatrix}$$and $$C=\begin{bmatrix}0&0&0&0&0\\0&0&0&0&0\\0&0&1&0&0\\0&0&0&1&0\\0&0&0&0&1\\\end{bmatrix}$$. &#x20;
 
 At we see, the matrices $$A$$ and $$B$$ are $$2-SLT$$ and matrix $$C$$ is $$2-Diag$$. Also $$Az\hspace{1mm}o\hspace{1mm}Bz=Cz$$.
 
