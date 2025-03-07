@@ -10,8 +10,8 @@ The setup phase is crucial for generating the necessary cryptographic parameters
 
 Fields utilized in ZKP:
 
-* (Goldilock-$$\phi$$):  $$p=\phi^2-\phi+1$$ where $$\phi^2 = \phi-1 \hspace{1mm} mod \hspace{1mm} p$$
-* (Sophie Germain-$$\phi$$):  a prime number where both p and (2p+1) are prime.$$\phi^2 = \phi-1 \hspace{1mm} mod \hspace{1mm} p$$
+* (Goldilock- $$\phi$$):  $$p=\phi^2-\phi+1$$ where $$\phi^2 = \phi-1 \hspace{1mm} mod \hspace{1mm} p$$
+* (Sophie Germain- $$\phi$$):  a prime number where both p and (2p+1) are prime. $$\phi^2 = \phi-1 \hspace{1mm} mod \hspace{1mm} p$$
 
 Condition for the field utilized in function-hiding ZKP system:
 
@@ -29,7 +29,7 @@ A proof of function relation, $$PFR$$, shows that a committed relation is a func
 
 ### Major Phase 2 - An algebraic holographic proof (AHP)
 
-An algebraic holographic proof, $$AHP$$, is scheme where the prover without revealing any information about function $$f$$, proves that $$y=f(x)$$ for public $$x$$ and $$y$$.  \
+An algebraic holographic proof, $$AHP$$, is scheme where the prover without revealing any information about function $$f$$, proves that $$y=f(x)$$ for public $$x$$ and $$y$$.  
 
 
 Both PFR and AHP will be compiled to a standard interactive protocol using a univariate polynomial commitment, $$PC$$, scheme. A $$PC$$ is a commitment scheme for $$\mathbb{F}^{\leq d}[X]$$ with maximum degree $$d\in\mathbb{N}$$ and coefficients in the field $$\mathbb{F}$$. It supports an argument of knowledge for proving the correct evaluation of a committed polynomial at a given point. This scheme is a tuple $$PC=(PC.Setup,PC.Commit,PC.Eval,PC.Check)$$.
