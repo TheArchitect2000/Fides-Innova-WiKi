@@ -1,10 +1,6 @@
 # Browsing the Fides Innova ZKP Network
 
-Explore the network here: [https://fidesf1-explorer.fidesinnova.io/](https://fidesf1-explorer.fidesinnova.io/)\
-
-
-Explore the shared devices, service contracts, ZKPs here: [https://explorer.fidesinnova.io/](https://fidesf2-explorer.fidesinnova.io/)\
-
+Explore the network here: [https://explorer.fidesinnova.io/](https://explorer.fidesinnova.io/)
 
 Welcome to our blockchain network exploration tool! Here, you can dive deep into the decentralized world of blockchain technology and explore the intricate transactions and data stored on our network. Whether you're a seasoned blockchain enthusiast or a curious newcomer, there's something here for everyone.
 
