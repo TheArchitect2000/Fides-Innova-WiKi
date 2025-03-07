@@ -28,8 +28,8 @@
 * [Publishing Service Contracts on the Fides Innova Blockchain](publishing-service-contracts-on-the-fides-innova-blockchain.md)
 * [Fides Zero-Knowledge Proof (ZKP) Algorithm](fides-zero-knowledge-proof-zkp-algorithm/README.md)
 
-  * [1- Setup Phase](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/README.md)
-    * [Algorithm](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/1-1-setup.md)
+  * [1- Setup 1]
+    * [Setup Phase](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/1-1-setup.md)
     * [Example 1](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/1-2-example-1.md)
     * [Example 2](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/1-3-example-2.md)
   * [2- Commitment Phase](fides-zero-knowledge-proof-zkp-algorithm/2-commitment-phase/README.md)
