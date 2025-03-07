@@ -28,23 +28,23 @@
 * [Publishing Service Contracts on the Fides Innova Blockchain](publishing-service-contracts-on-the-fides-innova-blockchain.md)
 * [Fides Zero-Knowledge Proof (ZKP) Algorithm](fides-zero-knowledge-proof-zkp-algorithm/README.md)
 
-  * [1- Setup 1]
-    * [Setup Phase](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/1-1-setup.md)
+  * Setup Phase
+    * [Algorithm](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/1-1-setup.md)
     * [Example 1](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/1-2-example-1.md)
     * [Example 2](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/1-3-example-2.md)
-  * [2- Commitment Phase](fides-zero-knowledge-proof-zkp-algorithm/2-commitment-phase/README.md)
+  * Commitment Phase
     * [Algorithm](fides-zero-knowledge-proof-zkp-algorithm/2-commitment-phase/2-1-commitment-generation-algorithm.md)
     * [Example 1](fides-zero-knowledge-proof-zkp-algorithm/2-commitment-phase/2-2-example-1.md)
     * [Example 2](fides-zero-knowledge-proof-zkp-algorithm/2-commitment-phase/2-3-example-2.md)
-  * [3- Proof Generation Phase](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/README.md)
+  * Proof Generation Phase
     * [Algorithm](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-1-proof-generation-algorithm.md)
     * [Example 1](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-2-example-2.md)
     * [Example 2](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-3-example-2.md)
-  * [4- Proof Verification Phase](fides-zero-knowledge-proof-zkp-algorithm/4-proof-verification-phase/README.md)
+  * Proof Verification Phase
     * [Algorithm](fides-zero-knowledge-proof-zkp-algorithm/4-proof-verification-phase/4-1-proof-verification-algorithm.md)
     * [Example 1](fides-zero-knowledge-proof-zkp-algorithm/4-proof-verification-phase/4-2-example-1.md)
     * [Example 2](fides-zero-knowledge-proof-zkp-algorithm/4-proof-verification-phase/4-3-example-2.md)
-  * [5- Target Architecture](fides-zero-knowledge-proof-zkp-algorithm/5-target-architecture/README.md)
+  * Target Architecture
     * [RISC-V RV32IM](fides-zero-knowledge-proof-zkp-algorithm/5-target-architecture/5-1-target-architecture-risc-v-rv32im.md)
     * [ARMv6-M Cortex-M0 32-bit ARM - RaspberryPi Pico](fides-zero-knowledge-proof-zkp-algorithm/5-target-architecture/5-2-target-architecture-armv6-m-cortex-m0-32-bit-arm-raspberrypi-pico.md)
     * [Cortex-A53 - for Siemens SIMATIC IOT2050](fides-zero-knowledge-proof-zkp-algorithm/5-target-architecture/5-3-target-architecture-cortex-a53-for-siemens-simatic-iot2050.md)
