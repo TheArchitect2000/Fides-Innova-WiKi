@@ -39,7 +39,8 @@ In the following section, we will review the setup phase of our system. We also 
 ## 1-1- PFR and AHP Setup     
 
 $$Setup(1^{\lambda},N)$$:  This function outputs $$pp=PC.Setup(1^{\lambda},d)$$ where $$\lambda$$ is security parameter and the set&#x20; 
- $$d= \{d_{AHP}(N,i,j)\}_{i\in [k_{AHP}]\bigcup\{0\},j\in [s_{AHP}(i)]}\bigcup\{d_f(N,i,j)\}_{i\in[k_f],j\in[s_f(i)]}$$ &#x20;
+ $$d=$$ &lcub; $$d_{AHP}(N,i,j)$$ &rcub;  $_{i=0,1,...,k_AHP, j=1,2,..,s_AHP(i)}^{}$  $$bigcup$$ &lcub; $$d_f(N,i,j)$$ &rcub;  $_{i=1,2,...,k_f, j=1,2,..,s_f(i)}^{}$
+ &#x20;
 
 where  $$N$$ is the maximum supported index size. Also, considering $$d_{AHP}:\mathbb{N}^3\to\mathbb{N}$$, $$d_{AHP}(N,i,j)$$ is the degree bound for $$j^{th}$$ polynomial in round $$i$$ of $$AHP$$.  $$k_{AHP}$$ is the number of rounds in $$AHP$$, and $$[k_{AHP}]=\{1,2,...,k_{AHP}\}$$. Moreover, considering $$s_{AHP}:\mathbb{N}\to\mathbb{N}$$, $$s_{AHP}(i)$$ is the number of polynomials that the Prover sends to the Verifier in round $$i$$ of $$AHP$$. Considering $$d_f:\mathbb{N}^3\to\mathbb{N}$$,  $$d_f(N,i,j)$$ is the degree bound for $$j^{th}$$ polynomial that the Prover sends to the Verifier in round $$i$$  of $$PFR$$. $$k_f$$ is the number of rounds in $$PFR$$. Considering $$s_f:\mathbb{N}\to\mathbb{N}$$,  where $$s_f(i)$$ is the number polynomials that the Prover sends to the Verifier in  round $$i$$ of $$PFR$$.
 
