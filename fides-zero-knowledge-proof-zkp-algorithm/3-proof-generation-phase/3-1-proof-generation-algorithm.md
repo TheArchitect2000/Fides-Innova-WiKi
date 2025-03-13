@@ -174,7 +174,7 @@ where $$\hat{w}_i$$ is coefficient of $$x^i$$ in polynomial $$\hat{W}(x)$$,  $$\
 ## 3-4- Proof JSON file format
 
 <pre><code>{
-    "commitment_id": 64-bit,
+    "commitmentId": 64-bit,
     "class": 32-bit Integer,
     "input": 64-bit Integer,
     "output": 64-bit Integer,    

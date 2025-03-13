@@ -178,7 +178,7 @@ $$\pi_{AHP}^{17}=\sum_{i=0}^{deg_{q(x)}}q_i\hspace{1mm}ck(i)=588602$$ where $$q_
 
 ```
 {
-    "commitment_id": 64-bit,
+    "commitmentId": 64-bit,
     "class": 32-bit Integer,
     "input": 4
     "output": 82    

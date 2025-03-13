@@ -262,7 +262,7 @@ Lines = \[200, 350, 4000-4010]
 
 ```
     {
-    "commitment_id": 64-bit,
+    "commitmentId": 64-bit,
     "class": 32-bit Integer,
     "input": 4
     "output": 82    

@@ -167,10 +167,10 @@ A publicly accessible file to be published on a public repository, such as a blo
 }
 ```
 * **`commitmentId`**: Unique identifier for the commitment.
-* **`deviceType`**: Type of the IoT device (e.g., 'Sensor', 'Actuator').
+* **`deviceType`**: Type of the IoT device (e.g., 'Sensor', 'Actuator', Car).
 * **`deviceIdType`**: Type of the device identifier (e.g., 'MAC', 'VIN').
 * **`deviceModel`**: Model of the IoT device.
-* **`manufacturer`**: Manufacturer of the IoT device.
+* **`manufacturer`**: Manufacturer of the IoT device (e.g., 'Siemens', 'Tesla').
 * **`softwareVersion`**: Software or firmware version of the device.
 
 ## Param.json File Format
