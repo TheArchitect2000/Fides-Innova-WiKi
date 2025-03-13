@@ -88,19 +88,19 @@ $$,\hat{col_{AHP_{B_{m-1}}}},\hat{val_{AHP_{B_0}}},...,\hat{val_{AHP_{B_{m-1}}}}
 
 where $$\hat{row_{AHP_{N_i}}}$$, $$\hat{col_{AHP_{N_i}}}$$ and $$\hat{val_{AHP_{N_i}}}$$ are coefficient of $$x^i$$ of polynomials $$\hat{row_{AHP_N}}(x)$$, $$\hat{col_{AHP_N}}(x)$$ and $$\hat{val_{AHP_N}}(x)$$, respectively. The vector $$\overrightarrow{O}_{AHP}$$ is called the **encoded index**.&#x20;
 
-3- The Prover calculates commitment for polynomial  $$T\in\{\hat{row_{AHP_N}},\hat{col_{AHP_N}},\hat{val_{AHP_N}}\hspace{2mm}|\hspace{2mm}N\in\{A,B,C\}\}$$ as $$Com_{AHP_T}=PC.Commit(ck',T,d_{AHP}(N,0,i)=m,s_i)$$.
+3- The Prover calculates commitment for polynomial  $$T\in$$ &lcub; $$\hat{row_{AHP_N}},\hat{col_{AHP_N}},\hat{val_{AHP_N}}\hspace{2mm}|\hspace{2mm}N\in\{A,B,C\}$$ &rcub; as $$Com_{AHP_T}=PC.Commit(ck',T,d_{AHP}(N,0,i)=m,s_i)$$.
 
 For example, if the polynomial commitment scheme $$KZG$$ is used, then\
 $$Com_{AHP_T}=\sum_{i=0}^{deg_T}a_ick'(i)$$  where  $$a_i$$ is coefficient of $$x^i$$ in polynomial $$T(x)$$ are calculated by the Prover as follows: \
-$$Com_{AHP}^0=\sum_{i=0}^{deg_{\hat{row}_{AHP_A}(x)}}\hat{row}_{AHP_{A_i}}\hspace{1.1mm}ck'(i)$$,  \
-&#x20;$$Com_{AHP}^1=\sum_{i=0}^{deg_{\hat{col}_{AHP_A}(x)}}\hat{col}_{AHP_{A_i}}\hspace{1.1mm}ck'(i)$$,  \
-&#x20;$$Com_{AHP}^2=\sum_{i=0}^{deg_{\hat{val}_{AHP_A}(x)}}\hat{val}_{AHP_{A_i}}\hspace{1.1mm}ck'(i)$$,\
-$$Com_{AHP}^3=\sum_{i=0}^{deg_{\hat{row}_{AHP_B}(x)}}\hat{row}_{AHP_{B_i}}\hspace{1.1mm}ck'(i)$$,  \
-$$Com_{AHP}^4=\sum_{i=0}^{deg_{\hat{col}_{AHP_B}(x)}}\hat{col}_{AHP_{B_i}}\hspace{1.1mm}ck'(i)$$,   \
-$$Com_{AHP}^5=\sum_{i=0}^{deg_{\hat{val}_{AHP_B}(x)}}\hat{val}_{AHP_{B_i}}\hspace{1.1mm}ck'(i)$$, \
-$$Com_{AHP}^6=\sum_{i=0}^{deg_{\hat{row}_{AHP_C}(x)}}\hat{row}_{AHP_{C_i}}\hspace{1.1mm}ck'(i)$$,  \
-&#x20;$$Com_{AHP}^7=\sum_{i=0}^{deg_{\hat{col}_{AHP_C}(x)}}\hat{col}_{AHP_{C_i}}\hspace{1.1mm}ck'(i)$$,   \
-$$Com_{AHP}^8=\sum_{i=0}^{deg_{\hat{val}_{AHP_C}(x)}}\hat{val}_{AHP_{C_i}}\hspace{1.1mm}ck'(i)$$.
+$$Com_{AHP}^0=\sum_{i=0}^{deg_{\hat{row_{AHP_A}}(x)}}\hat{row_{AHP_{A_i}}}\hspace{1.1mm}ck'(i)$$,  \
+&#x20;$$Com_{AHP}^1=\sum_{i=0}^{deg_{\hat{col_{AHP_A}}(x)}}\hat{col_{AHP_{A_i}}}\hspace{1.1mm}ck'(i)$$,  \
+&#x20;$$Com_{AHP}^2=\sum_{i=0}^{deg_{\hat{val_{AHP_A}}(x)}}\hat{val_{AHP_{A_i}}}\hspace{1.1mm}ck'(i)$$,\
+$$Com_{AHP}^3=\sum_{i=0}^{deg_{\hat{row_{AHP_B}}(x)}}\hat{row_{AHP_{B_i}}}\hspace{1.1mm}ck'(i)$$,  \
+$$Com_{AHP}^4=\sum_{i=0}^{deg_{\hat{col_{AHP_B}}(x)}}\hat{col_{AHP_{B_i}}}\hspace{1.1mm}ck'(i)$$,   \
+$$Com_{AHP}^5=\sum_{i=0}^{deg_{\hat{val_{AHP_B}}(x)}}\hat{val_{AHP_{B_i}}}\hspace{1.1mm}ck'(i)$$, \
+$$Com_{AHP}^6=\sum_{i=0}^{deg_{\hat{row_{AHP_C}}(x)}}\hat{row_{AHP_{C_i}}}\hspace{1.1mm}ck'(i)$$,  \
+&#x20;$$Com_{AHP}^7=\sum_{i=0}^{deg_{\hat{col_{AHP_C}}(x)}}\hat{col_{AHP_{C_i}}}\hspace{1.1mm}ck'(i)$$,   \
+$$Com_{AHP}^8=\sum_{i=0}^{deg_{\hat{val_{AHP_C}}(x)}}\hat{val_{AHP_{C_i}}}\hspace{1.1mm}ck'(i)$$.
 
 4- The prover send the calculated commitment values to the Verifier.
 
