@@ -102,11 +102,12 @@ $$Com_{AHP}^8=\sum_{i=0}^{deg_{\hat{val}_{AHP_C}(x)}}\hat{val}_{AHP_{C_i}}\hspac
 
 ```
 {
-    "commitment_id": String,
-    "iot_developer_name": String,
-    "iot_device_name": String,
-    "device_hardware_version": String,
-    "firmware_version": String,
+    "commitmentId": String,
+    "deviceType": String,
+    "deviceIdType": String,
+    "deviceModel": String,
+    "manufacturer": String,
+    "softwareVersion": String,
     "class": 32-bit Integer,
     "m": 64-bit Integer,
     "n": 64-bit Integer,
@@ -159,6 +160,12 @@ $$Com_{AHP}^8=\sum_{i=0}^{deg_{\hat{val}_{AHP_C}(x)}}\hat{val}_{AHP_{C_i}}\hspac
     "polynomial_commitment": String
 }
 ```
+* **`commitmentId`**: Unique identifier for the commitment.
+* **`deviceType`**: Type of the IoT device (e.g., 'Sensor', 'Actuator').
+* **`deviceIdType`**: Type of the device identifier (e.g., 'MAC', 'VIN').
+* **`deviceModel`**: Model of the IoT device.
+* **`manufacturer`**: Manufacturer of the IoT device.
+* **`softwareVersion`**: Software or firmware version of the device.
 
 ## Param.json File Format
 

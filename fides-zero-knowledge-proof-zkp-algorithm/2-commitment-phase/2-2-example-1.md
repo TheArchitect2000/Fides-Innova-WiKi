@@ -171,11 +171,12 @@ Lines = \[200, 350, 4000-4010]
 
 ```json
 {
-    "commitment_id": String,
-    "iot_developer_name": String,
-    "iot_device_name": String,
-    "device_hardware_version": String,
-    "firmware_version": String,
+    "commitmentId": String,
+    "deviceType": String,
+    "deviceIdType": String,
+    "deviceModel": String,
+    "manufacturer": String,
+    "softwareVersion": String,
     "class": 32-bit Integer,
     "m": 6,
     "n": 5,
@@ -214,17 +215,17 @@ Lines = \[200, 350, 4000-4010]
     "col_AHP_C":[124,88,169,161,62,162],
     "val_AHP_C":[124,16,53,157,61,65],
     
-    "Com_AHP0":166
-    "Com_AHP1":36 
-    "Com_AHP2":108
-    "Com_AHP3":58
-    "Com_AHP4":73
-    "Com_AHP5":157
-    "Com_AHP6":166
-    "Com_AHP7":166
-    "Com_AHP8":36  
+    "Com_AHP0":166,
+    "Com_AHP1":36,
+    "Com_AHP2":108,
+    "Com_AHP3":58,
+    "Com_AHP4":73,
+    "Com_AHP5":157,
+    "Com_AHP6":166,
+    "Com_AHP7":166,
+    "Com_AHP8":36,
     
-    "Curve": "bn128",
+    "curve": "bn128",
     "PolynomialCommitment": "KZG"
 }
 ```

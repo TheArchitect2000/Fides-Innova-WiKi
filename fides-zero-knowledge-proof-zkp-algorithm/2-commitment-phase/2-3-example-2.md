@@ -101,11 +101,12 @@ $$Com_{AHP}^1=$$, $$Com_{AHP}^2=$$, $$Com_{AHP}^3=$$, $$Com_{AHP}^4=$$, $$Com_{A
 
 ```
 {
-    "commitment_id": String,
-    "iot_developer_name": String,
-    "iot_device_name": String,
-    "device_hardware_version": String,
-    "firmware_version": String,
+    "commitmentId": String,
+    "deviceType": String,
+    "deviceIdType": String,
+    "deviceModel": String,
+    "manufacturer": String,
+    "softwareVersion": String,
     "class":2,
     "m": 8,
     "n": 37,
