@@ -6,7 +6,7 @@ Assume the following sample code:\
 $$add\hspace{2mm} R_1, R_1, 5$$                              => Gate 1\
 $$mul\hspace{2mm} R_2, R_2, R_{10}$$                        => Gate 2\
 $$add\hspace{2mm} R_2,R_2,10$$                            => Gate 3\
-$$mul\hspace{2mm} R_1,R_1,R_{19}$$                         => Gate 4\
+$$mul\hspace{2mm} R_1,R_1,R_{19}$$                         => Gate 4
 
 
 The constraints are as follows considering $$p= 1678321$$:
@@ -15,7 +15,7 @@ The constraints are as follows considering $$p= 1678321$$:
 $$R_1^{(2)}=R_1^{(1)}+5$$                                 \
 $$R_2^{(2)}=R_2^{(1)}\times R_{10}^{(1)}$$ \
 $$R_2^{(3)}=R_2^{(2)}+10$$     \
-$$R_1^{(3)}=R_1^{(2)}\times R_{19}^{(1)}$$                \
+$$R_1^{(3)}=R_1^{(2)}\times R_{19}^{(1)}$$                
 
 
 We continue with $$n_g=4$$ and $$n_i=32$$.
