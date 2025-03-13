@@ -18,7 +18,7 @@ Note that in this polynomial oracle proof, the Prover wants to prove three follo
 
 The proof of these claims is done in the following steps:
 
-1- To prove strictly lower triangularity of  the matrices $$A$$ and $$B$$, the Prover must  prove that &#x20; $$\log^{row_{PFR_M}(\gamma^i)}_{\omega}> \log^{col_{PFR_M}(\gamma^i)}_{\omega}$$ for $$i \in $$ &lcub;$$0,1,..,m-1$$&rcub; and $$M\in\{A,B\}$$. This does by $$Discrete-log comparison protocol$$.
+1- To prove strictly lower triangularity of  the matrices $$A$$ and $$B$$, the Prover must  prove that &#x20; $$\log^{row_{PFR_M}(\gamma^i)}_{\omega}> \log^{col_{PFR_M}(\gamma^i)}_{\omega}$$ for $$i \in $$ &lcub; $$0,1,..,m-1$$ &rcub; and $$M\in\{A,B\}$$. This does by $$Discrete-log comparison protocol$$.
 
 2- To prove the first $$t$$ rows of $$A$$ and $$B$$ are all zeros, the Prover must prove that &#x20; $$row_{PFR_M}(\mathbb{K})\subseteq\{\omega^t,\omega^{t+1},...,\omega^{n-1}\}$$. This does by $$subset\hspace{1mm}over\hspace{1mm} \mathbb{K}\hspace{1mm}protocol$$ .
 
