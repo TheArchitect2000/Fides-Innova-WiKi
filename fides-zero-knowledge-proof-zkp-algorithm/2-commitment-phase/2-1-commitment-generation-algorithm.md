@@ -105,7 +105,7 @@ $$Com_{AHP}^8=\sum_{i=0}^{deg_{\hat{val_{AHP_C}}(x)}}\hat{val_{AHP_{C_i}}}\hspac
 4- The prover send the calculated commitment values to the Verifier.
 
 ## 2-3- PFR and AHP Commitment.json File Format
-
+A publicly accessible file to be published on a public repository, such as a blockchain.
 ```
 {
     "commitmentId": String,
@@ -174,4 +174,4 @@ $$Com_{AHP}^8=\sum_{i=0}^{deg_{\hat{val_{AHP_C}}(x)}}\hat{val_{AHP_{C_i}}}\hspac
 * **`softwareVersion`**: Software or firmware version of the device.
 
 ## Param.json File Format
-
+A privately accessible file created for the manufacturer, placed alongside the code to accelerate the proof-generation process. It includes information about the A, B, and C matrices.
