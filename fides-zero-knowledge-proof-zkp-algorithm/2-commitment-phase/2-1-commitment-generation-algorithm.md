@@ -63,8 +63,11 @@ CommitmentID= Lower4Bytes(SHA256(Manufacturer\_Name, Device\_Type, Device\_Hardw
 
 As mentioned before AHP phase aims, without revealing any information about function $$f$$, to prove that $$y=f(x)$$ for public $$x$$ and $$y$$. Now, we create a commitment for Algebraic Holographic Proof (AHP), $$AHP\hspace{1mm}Com$$ , in this section.&#x20;
 
-$$Commit(ck',m_f=(A,B,C)\in \textit{M}_f,s\in R)$$: This function outputs \
-$$Com_{AHP}=(Com_{AHP}^0,Com_{AHP}^1,Com_{AHP}^2,Com_{AHP}^3,Com_{AHP}^4,Com_{AHP}^5,Com_{AHP}^6,Com_{AHP}^7,Com_{AHP}^8)$$where, here $$ck'(i)=ck(i )\hspace{1mm}r'^i$$ with random $$r'$$. &#x20;
+$$Commit(ck',m_f=(A,B,C)\in \textit{M}_f,s\in R)$$: This function outputs 
+
+$$Com_{AHP}=(Com_{AHP}^0,Com_{AHP}^1,Com_{AHP}^2,Com_{AHP}^3,Com_{AHP}^4,Com_{AHP}^5,Com_{AHP}^6,Com_{AHP}^7,Com_{AHP}^8)$$&#x20;
+, here $$ck'(i)=ck(i )\hspace{1mm}r'^i$$ with random $$r'$$. &#x20;
+
 
 \
 &#x20;1 - The Prover selects random $$s=(s_1,...s_{s_{AHP}(0)})$$ from random space $$R$$. Note that $$s_{AHP}(0)=9$$ as explained in the setup phase.\
@@ -77,12 +80,15 @@ $$Com_{AHP}=(Com_{AHP}^0,Com_{AHP}^1,Com_{AHP}^2,Com_{AHP}^3,Com_{AHP}^4,Com_{AH
 
 Now, we define $$\hat{row_{AHP_N}}$$, $$\hat{col_{AHP_N}}$$ and $$\hat{val_{AHP_N}}$$ as domain-extend of polynomials $$row_{AHP_N}$$, $$col_{AHP_N}$$ and $$val_{AHP_N}$$ where their domains are extended from subgroup $$\mathbb{K}$$ to filed  $$\mathbb{F}$$. Therefore, $$\forall k \in \mathbb{K}$$, $$row_{AHP_N}(k) = \hat{row_{AHP_N}}(k)$$, $$col_{AHP_N}(k) = \hat{col_{AHP_N}}(k)$$, and $$val_{AHP_N}(k) = \hat{val_{AHP_N}}(k)$$.\
 \
-$$\overrightarrow{O}_{AHP}=(\hat{row}_{AHP_{A_0}},....,\hat{row}_{AHP_{A_{m-1}}},\hat{col}_{AHP_{A_0}},...,\hat{col}_{AHP_{A_{m-1}}},\hat{val}_{AHP_{A_0}},...,\hat{val}_{AHP_{A_{m-1}}},$$$$\hat{row}_{AHP_{B_0}},...,\hat{row}_{AHP_{B_{m-1}}},\hat{col}_{AHP_{B_0}},....,\hat{col}_{AHP_{B_{m-1}}},\hat{val}_{AHP_{B_0}},...,\hat{val}_{AHP_{B_{m-1}}},$$ \
-$$\hat{row}_{AHP_{C_0}},...,\hat{row}_{AHP_{C_{m-1}}},\hat{col}_{AHP_{C_0}},...,\hat{col}_{AHP_{C_{m-1}}},\hat{val}_{AHP_{C_0}},....,\hat{val}_{AHP_{C_{m-1}}})$$
+$$\overrightarrow{O}_{AHP}$$=  
 
-where $$\hat{row}_{AHP_{N_i}}$$, $$\hat{col}_{AHP_{N_i}}$$and $$\hat{val}_{AHP_{N_i}}$$ are coefficient of $$x^i$$ of polynomials $$\hat{row}_{AHP_N}(x)$$, $$\hat{col}_{AHP_N}(x)$$ and $$\hat{val}_{AHP_N}(x)$$, respectively. The vector $$\overrightarrow{O}_{AHP}$$ is called the **encoded index**.&#x20;
+$$(\hat{row_{AHP_{A_0}}},...,\hat{row_{AHP_{A_{m-1}}}},\hat{col_{AHP_{A_0}}},...,,\hat{col_{AHP_{A_0}}},...,\hat{col_{AHP_{A_{m-1}}}},\hat{val_{AHP_{A_0}}},...,\hat{val_{AHP_{A_{m-1}}}}\hat{row_{AHP_{B_0}}},...,\hat{row_{AHP_{B_{m-1}}}},\hat{col_{AHP_{B_0}}},....$$ 
 
-3- The Prover calculates commitment for polynomial  $$T\in\{\hat{row}_{AHP_N},\hat{col}_{AHP_N},\hat{val}_{AHP_N}\hspace{2mm}|\hspace{2mm}N\in\{A,B,C\}\}$$ as $$Com_{AHP_T}=PC.Commit(ck',T,d_{AHP}(N,0,i)=m,s_i)$$.
+$$,\hat{col_{AHP_{B_{m-1}}}},\hat{val_{AHP_{B_0}}},...,\hat{val_{AHP_{B_{m-1}}}},\hat{row_{AHP_{C_0}}},...,\hat{row_{AHP_{C_{m-1}}}},\hat{col_{AHP_{C_0}}},...,\hat{col_{AHP_{C_{m-1}}}},\hat{val_{AHP_{C_0}}},....,\hat{val_{AHP_{C_{m-1}}}})$$
+
+where $$\hat{row_{AHP_{N_i}}}$$, $$\hat{col_{AHP_{N_i}}}$$ and $$\hat{val_{AHP_{N_i}}}$$ are coefficient of $$x^i$$ of polynomials $$\hat{row_{AHP_N}}(x)$$, $$\hat{col_{AHP_N}}(x)$$ and $$\hat{val_{AHP_N}}(x)$$, respectively. The vector $$\overrightarrow{O}_{AHP}$$ is called the **encoded index**.&#x20;
+
+3- The Prover calculates commitment for polynomial  $$T\in\{\hat{row_{AHP_N}},\hat{col_{AHP_N}},\hat{val_{AHP_N}}\hspace{2mm}|\hspace{2mm}N\in\{A,B,C\}\}$$ as $$Com_{AHP_T}=PC.Commit(ck',T,d_{AHP}(N,0,i)=m,s_i)$$.
 
 For example, if the polynomial commitment scheme $$KZG$$ is used, then\
 $$Com_{AHP_T}=\sum_{i=0}^{deg_T}a_ick'(i)$$  where  $$a_i$$ is coefficient of $$x^i$$ in polynomial $$T(x)$$ are calculated by the Prover as follows: \
