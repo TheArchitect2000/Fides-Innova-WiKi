@@ -52,9 +52,3 @@ $$Com_p=\eta_{row_{AHP_A}}Com_{AHP}^0+\eta_{col_{AHP_A}}Com_{AHP}^1+\eta_{val_{A
 For example, if polynomial commitment scheme $$KZG$$ is used, then the following equation checks:\
 &#x20;     $$e(Com_p-gy',g)=e(\pi_{AHP}^{17},vk-gx')$$ \
 &#x20;
-
-##
-
-## 4-4- Example 2&#x20;
-
-###
