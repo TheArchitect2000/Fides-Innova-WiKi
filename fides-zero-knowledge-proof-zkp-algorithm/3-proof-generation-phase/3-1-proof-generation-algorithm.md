@@ -180,8 +180,8 @@ where $$\hat{w}_i$$ is coefficient of $$x^i$$ in polynomial $$\hat{W}(x)$$,  $$\
     "output": 64-bit Integer,    
        
     "P_AHP1": 64-bit Integer,
-<strong>    "P_AHP2": 64-bit Array,
-</strong>    "P_AHP3": 64-bit Array,
+    "P_AHP2": 64-bit Array,
+    "P_AHP3": 64-bit Array,
     "P_AHP4": 64-bit Array,
     "P_AHP5": 64-bit Array,
     "P_AHP6": 64-bit Array,
