@@ -20,6 +20,5 @@ We support Cortex-A53 registers:
 
 ## Reference
 
-\[1]. [https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf](https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf)&#x20;
+\[1]. [https://www.ti.com/product/AM6548](https://www.ti.com/product/AM6548)
 
-\[2].[https://www.espressif.com/sites/default/files/documentation/esp32-c6\_technical\_reference\_manual\_en.pdf](https://www.espressif.com/sites/default/files/documentation/esp32-c6_technical_reference_manual_en.pdf)
