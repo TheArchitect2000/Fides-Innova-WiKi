@@ -7,11 +7,13 @@ description: >-
 
 # 2- Commitment Phase
 
-Let $$\textit{M}_f$$ be a functional set which contains triple matrices  $$m_f=(A,B,C)\in (\mathbb{F}^{n\times n})^3$$ such that for each input vector $$X$$, there is a unique output vector $$Y$$ as well as a witness (intermediate)  $$W$$ where   $$Az\hspace{1mm} o\hspace{1mm} Bz=Cz$$ considering $$z=(1,X,W,Y)$$. \
-The triplet  $$(A,B,C)\in (\mathbb{F}^{n\times n})^3$$  is a functional set if and only if $$A$$ and $$B$$ are  $$t-$$ strictly lower triangular matrices $$(t-SLT)$$ and $$C$$ is  $$t-$$ diagonal  matrix $$(t-Diag)$$ \[1]. Here, $$t=|X|+1$$  . \
-The Prover obtains $$t-SLT$$  matrices $$A$$, $$B$$ and  $$t-Diag$$ matrix $$C$$ for the arithmetic circuit that is a directed acyclic graph of gates and wire inputs. Wires carry values from $$\mathbb{F}$$ and gates are add or multiplication. This work is done based on the two steps of the following construction:
+Let $`\textit{M}_f`$ be a functional set which contains triple matrices  $`m_f=(A,B,C)\in (\mathbb{F}^{n\times n})^3`$ such that for each input vector $`X`$, there is a unique output vector $`Y`$ as well as a witness (intermediate) $`W`$ where $`Az\hspace{1mm} o\hspace{1mm} Bz=Cz`$ considering $`z=(1,X,W,Y)`$. 
 
-* &#x20;Initialize three zero square matrices $$A, B, C$$ over $$\mathbb{F}$$ of order $$n=n_g +n_i + 1$$ where $$n_g$$ is the number of gates and $$n_i$$ is the number of inputs. Rows and columns of matrices are indexed on &lcub; $$0,1,...,n_g+n_i$$ &rcub;. Also, Gate $$i$$ with two left L and right R inputs and a selector S. We show the Gate  $$i$$ with a tuple $$(l_i, r_i, s_i)$$ where $$l_i$$ and $$r_i$$ are the left and right inputs' indexes in $$z$$, respectively.  Note that $$z$$ is indexed on &lcub; $$0,1,..,n_g+n_i$$ &rcub;. Hence,   $$l_i$$ and $$r_i$$ are between $$0$$ and $$n_g+n_i$$. Also, $$s_i$$ is either "Addition" or "Multiplication".  Note, if the left input is a value $$v$$, then $$l_i=0$$ or if the right input is a value $$v$$, then $$r_i=0$$.
+The triplet  $`(A,B,C)\in (\mathbb{F}^{n\times n})^3`$  is a functional set if and only if $`A`$ and $`B`$ are $`t-`$ strictly lower triangular matrices $`(t-SLT)`$ and $`C`$ is $`t-`$ diagonal matrix $`(t-Diag)`$ \[1]. Here, $`t=|X|+1`$. 
+
+The Prover obtains $`t-SLT`$  matrices $`A`$, $`B`$ and  $`t-Diag`$ matrix $`C`$ for the arithmetic circuit that is a directed acyclic graph of gates and wire inputs. Wires carry values from $$\mathbb{F}$$ and gates are add or multiplication. This work is done based on the two steps of the following construction:
+
+* &#x20;Initialize three zero square matrices $`A, B, C`$ over $`\mathbb{F}`$ of order $`n=n_g +n_i + 1`$ where $`n_g`$ is the number of gates and $`n_i`$ is the number of inputs. Rows and columns of matrices are indexed on &lcub; $`0,1,...,n_g+n_i`$ &rcub;. Also, Gate $$i$$ with two left L and right R inputs and a selector S. We show the Gate  $$i$$ with a tuple $`(l_i, r_i, s_i)`$ where $`l_i`$ and $`r_i`$ are the left and right inputs' indexes in $`z`$, respectively.  Note that $`z`$ is indexed on &lcub; $`0,1,..,n_g+n_i`$ &rcub;. Hence,   $`l_i`$ and $`r_i`$ are between $`0`$ and $`n_g+n_i`$. Also, $`s_i`$ is either "Addition" or "Multiplication".  Note, if the left input is a value $`v`$, then $`l_i=0`$ or if the right input is a value $`v`$, then $`r_i=0`$.
 * For $`i=0.., n_g-1:`$\
   &#x20;                    $`a)`$ Set $`C_{1+n_i+i, 1+n_i+i}=1`$\
   &#x20;                    $`b)`$ If $`s_i`$ is "Addition" \
@@ -27,21 +29,19 @@ The Prover obtains $$t-SLT$$  matrices $$A$$, $$B$$ and  $$t-Diag$$ matrix $$C$$
   &#x20;                         \
   &#x20;                        \- $`B_{1+n_i+i,\hspace{1mm}r_i}=\begin{cases}\text{right input}\hspace{1cm}r_i=0\\1\hspace{2.2cm}\text{otherwise}\end{cases}`$
 
-If our processing machine has 32 registers, then the size of the input vector $$X$$ will be 32. Therefore, $`n_i=32`$ and $`X=(x_1,x_2,...,x_{32})`$ where $`x_i`$ corresponds to $`i^{th}`$ register, $`R_i`$. Also, $`z=(1,x_1,x_2,..x_{32},w_1,..,w_{n_g-n_r},y_1,..,y_{n_r})`$ where $`n_r`$ is the number of registers that change during a program execution. For example, assume the first gate in a computation is the instruction "add $`R_1`$ , $`R_1`$, 5", which means $`R_1^{(2)}=R_1^{(1)}+5`$ . In the above "for" loop in step $`i=0`$, $`s_0`$="Addition", $`l_0=1`$, and $`r_0=0`$, hence $`C_{1+32,\hspace{1mm}1+32}=1`$ , $`A_{1+32,\hspace{1mm}0}=1`$, , and $`B_{{1+32},\hspace{1mm}0}=5`$.
+If our processing machine has 32 registers, then the size of the input vector $`X`$ will be 32. Therefore, $`n_i=32`$ and $`X=(x_1,x_2,...,x_{32})`$ where $`x_i`$ corresponds to $`i^{th}`$ register, $`R_i`$. Also, $`z=(1,x_1,x_2,..x_{32},w_1,..,w_{n_g-n_r},y_1,..,y_{n_r})`$ where $`n_r`$ is the number of registers that change during a program execution. For example, assume the first gate in a computation is the instruction "add $`R_1`$ , $`R_1`$, 5", which means $`R_1^{(2)}=R_1^{(1)}+5`$ . In the above "for" loop in step $`i=0`$, $`s_0`$="Addition", $`l_0=1`$, and $`r_0=0`$, hence $`C_{1+32,\hspace{1mm}1+32}=1`$ , $`A_{1+32,\hspace{1mm}0}=1`$, , and $`B_{{1+32},\hspace{1mm}0}=5`$.
 
 ## 2-1- PFR Commitment
 
-PFR aims to prove the target program is a function with mentioned characteristics in $$A, B, C$$. PFR function will be edited later.&#x20;
-
-$$Commit(ck,m_f=(A,B,C)\in \textit{M}_f,s\in R)$$:  This function outputs &#x20;
-
-$$Com_{PFR}=(Com_{PFR}^0,Com_{PFR}^1,Com_{PFR}^2,Com_{PFR}^3,Com_{PFR}^4,Com_{PFR}^5,Com_{PFR}^6,Com_{PFR}^7,Com_{PFR}^8)$$&#x20;
+PFR aims to prove the target program is a function with mentioned characteristics in $`A, B, C`$. PFR function will be edited later.&#x20;
+$`Commit(ck,m_f=(A,B,C)\in \textit{M}_f,s\in R)`$:  This function outputs &#x20;
+$`Com_{PFR}=(Com_{PFR}^0,Com_{PFR}^1,Com_{PFR}^2,Com_{PFR}^3,Com_{PFR}^4,Com_{PFR}^5,Com_{PFR}^6,Com_{PFR}^7,Com_{PFR}^8)`$&#x20;
 
 as following:
 
-\
-&#x20;1 - The Prover selects randomness $$s=(s_1,...,s_{s_{AHP}(0)})$$ of randomness space $$R$$ . \
-&#x20; 2- The Prover calculates $$\overrightarrow{O}_{PFR}=Enc(m_f=(A,B,C))$$ as encoded index as following:
+&#x20;1 - The Prover selects randomness $`s=(s_1,...,s_{s_{AHP}(0)})`$ of randomness space $`R`$.
+
+&#x20; 2- The Prover calculates $`\overrightarrow{O}_{PFR}=Enc(m_f=(A,B,C))`$ as encoded index as following:
 
 The Prover encodes each matrix $$A, B$$ and $$C$$ by three polynomials. The matrix $$N$$, $$N\in\{A, B, C\}$$, is encoded by polynomials $$row_{PFR_N}(x)$$, $$col_{PFR_N}(x)$$ and $$val_{PFR_N}(x)$$ so that $$row_{PFR_N}(\gamma^i)=\omega^{r_i}$$, $$col_{PFR_N}(\gamma^i)=\omega^{c_i}$$ and $$val_{PFR_N}(\gamma^i)=v_i$$ for $$i\in\{0,1,2,..,m-1\}$$ where  $$m=2n_g$$ is maximum of the number of nonzero entries in the  matrix $$N$$, The value of  $$n=n_g+n_i+1$$ is the order of the matrix.  Also, $$\gamma$$ is a generator of  multiplicative subgroup $$\mathbb{K}$$ of  $$\mathbb{F}$$ of order $$m$$ ($$\mathbb{K}=<\gamma>$$ and $$|\mathbb{K}|=m$$) and  $$\omega$$ is a generator of multiplicative subgroup $$\mathbb{H}$$ of $$\mathbb{F}$$ of order $$n$$ ($$\mathbb{H}=<\omega>$$ and $$|\mathbb{H}|=n$$).  Also $$r_i,c_i\in \{0,1,...,n-1\}$$ and $$v_i\in \mathbb{F}$$ are row number, column number and value of $$i^{th}$$ nonzero entry, respectively. Then, lets   $$O_{PFR}=(row_{PFR_{A_0}},....,row_{PFR_{A_{m-1}}},col_{PFR_{A_0}},...,col_{PFR_{A_{m-1}}},val_{PFR_{A_0}},...,val_{PFR_{A_{m-1}}},$$ $$row_{PFR_{B_0}},...,row_{PFR_{B_{m-1}}},col_{PFR_{B_0}},...,col_{PFR_{B_{m-1}}},val_{PFR_{B_0}},....,val_{PFR_{C_{m-1}}},$$\
 $$row_{PFR_{C_0}},...,row_{PFR_{C_{m-1}}},col_{PFR_{C_0}},...col_{PFR_{C_{m-1}}},val_{PFR_{C_0}},...,val_{PFR_{C_{m-1}}})$$
