@@ -68,8 +68,7 @@ $$
 At we see, the matrices $$A$$ and $$B$$ are $$33-SLT$$ and matrix $$C$$ is $$33-Diag$$. Also $$Az\hspace{1mm}o\hspace{1mm}Bz=Cz$$.
 
 We consider multiplicative subgroup $$\mathbb{H}$$ of order $$n=n_g+n_i+1=37$$ with generator\
-&#x20;$$\omega=11^{\frac{p-1}{37}}\equiv 1101389 (\textrm{mod}\hspace{1mm}p)$$.  Therefore, $$\mathbb{H}=$$ &lcub; $$1,\omega,\omega^2,\omega^3,\omega^4,...,\omega^{36}$$ &rcub; = &lcub; $$1, 1101389, 876941, 1253722, 373750, 668759, 747302, 1444226, 727349, 1364683, 1298322, 1224122, 644775, 127745, 1610054, 257937,$$
-
+&#x20;$$\omega=11^{\frac{p-1}{37}}\equiv 1101389 (\textrm{mod}\hspace{1mm}p)$$.  Therefore, $$\mathbb{H}=$$ &lcub; $$1,\omega,\omega^2,\omega^3,\omega^4,...,\omega^{36}$$ &rcub; = &lcub; $$1, 1101389, 876941, 1253722, 373750, 668759, 747302, 1444226, 727349, 1364683, 1298322, 1224122, 644775, 127745, 1610054, 257937,$$\
 $$1257144, 1496263, 722913, 1195510, 1536124,1669124, 870923, 784349, 1262357, 1500979, 469942, 1466322, 1364193, 358753, 1173208,$$
 
 $$586481, 1605555, 1190739, 1632256, 159545, 899305$$ &rcub;
