@@ -82,18 +82,15 @@ The output of this code are $$ck$$ and $$vk$$ keys stored in a json file and for
 
 ```
 {
-    "Class":  32-bit Integer,
+    "class":  32-bit Integer,
     "ck": 64-bit Integer Array,
     "vk": 64-bit Integer
 }
 ```
 
-* **`class`**: Represents the classification or category of the configuration. In the context of ZKP, this might indicate the number of gates in the ZKP circuit, defining the complexity or size of the cryptographic proof structure.
-* **`iot_developer_name:`** The name of the company or developer responsible for creating and maintaining the IoT solution. This field identifies the entity behind the development of the IoT system.
-* **`iot_device_name`**: The name or model of the IoT device. This uniquely identifies the device within the ecosystem and provides a user-friendly label for reference.
-* **`device_hardware_version`** Specifies the version of the hardware used in the IoT device. This is useful for tracking compatibility, updates, and troubleshooting hardware-related issues.
-* **`firmware_version`** Denotes the version of the firmware installed on the IoT device. Firmware is the software that directly interfaces with the hardware, and this versioning helps manage updates and ensure proper functionality.
-* **`code_block:`** A two-element array representing the starting and ending line numbers in the `program.s` file. This range defines the specific section of the code for which the ZKP is being generated. This enables granular control over which parts of the program are included in the proof.
+* **`class`**: Represents the configuration's classification. It indicates the number of gates in the ZKP circuit, defining the complexity or size of the cryptographic proof structure.
+* **`ck:`(Commitment Key)** The Commitment Key is used by the prover to create commitments to the witness (private inputs).
+* **`vk`(Verification Key)**: Used by the verifier to validate the proof against the public inputs and commitments. It allows the verifier to efficiently check the proof without accessing the underlying secret data.
 
 ## References
 
