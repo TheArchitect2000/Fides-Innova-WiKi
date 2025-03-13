@@ -12,22 +12,22 @@ The triplet  $$(A,B,C)\in (\mathbb{F}^{n\times n})^3$$  is a functional set if a
 The Prover obtains $$t-SLT$$  matrices $$A$$, $$B$$ and  $$t-Diag$$ matrix $$C$$ for the arithmetic circuit that is a directed acyclic graph of gates and wire inputs. Wires carry values from $$\mathbb{F}$$ and gates are add or multiplication. This work is done based on the two steps of the following construction:
 
 * &#x20;Initialize three zero square matrices $$A, B, C$$ over $$\mathbb{F}$$ of order $$n=n_g +n_i + 1$$ where $$n_g$$ is the number of gates and $$n_i$$ is the number of inputs. Rows and columns of matrices are indexed on &lcub; $$0,1,...,n_g+n_i$$ &rcub;. Also, Gate $$i$$ with two left L and right R inputs and a selector S. We show the Gate  $$i$$ with a tuple $$(l_i, r_i, s_i)$$ where $$l_i$$ and $$r_i$$ are the left and right inputs' indexes in $$z$$, respectively.  Note that $$z$$ is indexed on &lcub; $$0,1,..,n_g+n_i$$ &rcub;. Hence,   $$l_i$$ and $$r_i$$ are between $$0$$ and $$n_g+n_i$$. Also, $$s_i$$ is either "Addition" or "Multiplication".  Note, if the left input is a value $$v$$, then $$l_i=0$$ or if the right input is a value $$v$$, then $$r_i=0$$.
-* For $$i=0.., n_g-1:$$\
-  &#x20;                    $$a)$$ Set $$C_{1+n_i+i, 1+n_i+i}=1$$\
-  &#x20;                    $$b)$$ If $$s_i$$ is "Addition" \
-  &#x20;                         \- $$A_{1+n_i+i,\hspace{1mm}0}=1$$\
-  &#x20;                        \- $$B_{1+n_i+i,\hspace{1mm}l_i}=\begin{cases}\text{left input}\hspace{1cm}l_i=0\\1\hspace{2.2cm}\text{otherwise}\end{cases}$$\
+* For $`i=0.., n_g-1:`$\
+  &#x20;                    $`a)`$ Set $`C_{1+n_i+i, 1+n_i+i}=1`$\
+  &#x20;                    $`b)`$ If $`s_i`$ is "Addition" \
+  &#x20;                         \- $`A_{1+n_i+i,\hspace{1mm}0}=1`$\
+  &#x20;                        \- $`B_{1+n_i+i,\hspace{1mm}l_i}=\begin{cases}\text{left input}\hspace{1cm}l_i=0\\1\hspace{2.2cm}\text{otherwise}\end{cases}`$\
   &#x20;                         \
   &#x20;                         \
-  &#x20;                        \- $$B_{1+n_i+i,\hspace{1mm}r_i}=\begin{cases}\text{right input}\hspace{1cm}r_i=0\\1\hspace{2.2cm}\text{otherwise}\end{cases}$$ \
+  &#x20;                        \- $`B_{1+n_i+i,\hspace{1mm}r_i}=\begin{cases}\text{right input}\hspace{1cm}r_i=0\\1\hspace{2.2cm}\text{otherwise}\end{cases}`$ \
   &#x20;                     \
-  &#x20;                    $$b)$$ If $$s_i$$ is multiplication \
+  &#x20;                    $`b)`$ If $`s_i`$ is multiplication \
   &#x20;                          \
-  &#x20;                        \- $$A_{1+n_i+i,\hspace{1mm}l_i}=\begin{cases}\text{left input}\hspace{1cm}l_i=0\\1\hspace{2.2cm}\text{otherwise}\end{cases}$$\
+  &#x20;                        \- $`A_{1+n_i+i,\hspace{1mm}l_i}=\begin{cases}\text{left input}\hspace{1cm}l_i=0\\1\hspace{2.2cm}\text{otherwise}\end{cases}`$\
   &#x20;                         \
-  &#x20;                        \- $$B_{1+n_i+i,\hspace{1mm}r_i}=\begin{cases}\text{right input}\hspace{1cm}r_i=0\\1\hspace{2.2cm}\text{otherwise}\end{cases}$$
+  &#x20;                        \- $`B_{1+n_i+i,\hspace{1mm}r_i}=\begin{cases}\text{right input}\hspace{1cm}r_i=0\\1\hspace{2.2cm}\text{otherwise}\end{cases}`$
 
-If our processing machine has 32 registers, then the size of the input vector $$X$$ will be 32. Therefore, $$n_i=32$$ and $$X=(x_1,x_2,...,x_{32})$$ where $$x_i$$ corresponds to $$i^{th}$$ register, $$R_i$$. Also, $$z=(1,x_1,x_2,..x_{32},w_1,..,w_{n_g-n_r},y_1,..,y_{n_r})$$ where $$n_r$$ is the number of registers that change during a program execution. For example, assume the first gate in a computation is the instruction "add $$R_1$$ , $$R_1$$, 5", which means $$R_1^{(2)}=R_1^{(1)}+5$$ . In the above "for" loop in step $$i=0$$, $$s_0$$="Addition", $$l_0=1$$, and $$r_0=0$$, hence $$C_{1+32,\hspace{1mm}1+32}=1$$ , $$A_{1+32,\hspace{1mm}0}=1$$, , and $$B_{{1+32},\hspace{1mm}0}=5$$.
+If our processing machine has 32 registers, then the size of the input vector $$X$$ will be 32. Therefore, $`n_i=32`$ and $`X=(x_1,x_2,...,x_{32})`$ where $`x_i`$ corresponds to $`i^{th}`$ register, $`R_i`$. Also, $`z=(1,x_1,x_2,..x_{32},w_1,..,w_{n_g-n_r},y_1,..,y_{n_r})`$ where $`n_r`$ is the number of registers that change during a program execution. For example, assume the first gate in a computation is the instruction "add $`R_1`$ , $`R_1`$, 5", which means $`R_1^{(2)}=R_1^{(1)}+5`$ . In the above "for" loop in step $`i=0`$, $`s_0`$="Addition", $`l_0=1`$, and $`r_0=0`$, hence $`C_{1+32,\hspace{1mm}1+32}=1`$ , $`A_{1+32,\hspace{1mm}0}=1`$, , and $`B_{{1+32},\hspace{1mm}0}=5`$.
 
 ## 2-1- PFR Commitment
 
