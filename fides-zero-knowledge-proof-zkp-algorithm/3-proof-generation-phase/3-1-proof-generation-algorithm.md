@@ -95,7 +95,11 @@ The Prover sends   $$Com_{AHP_X}^{12}=\sum_{i=0}^{deg_{g_3(x)}}g_{3_i}ck(i)$$ an
 
 and
 
-12- The Prover sends $$\pi_{AHP}^1=\sigma_1$$, $$\pi_{AHP}^2=(\hat{w}_0,\hat{w}_1,\hat{w}_3,...,\hat{w}_{|W|+b-1})$$,  $$\pi_{AHP}^3=(\hat{z}_{A_0},\hat{z}_{A_1},...,\hat{z}_{A_{|H|+b-1}})$$, $$\pi_{AHP}^4=(\hat{z}_{B_0},\hat{z}_{B_1},...,\hat{z}_{B_{|H|+b-1}})$$,  $$\pi_{AHP}^5=(\hat{z}_{C_0},\hat{z}_{C_1},...,\hat{z}_{C_{|H|+b-1}})$$,  $$\pi_{AHP}^6=(h_{0_0},h_{0_1},...,h_{0_{|H|+2b-2}})$$ and  $$\pi_{AHP}^7=(s_0,s_1,...,s_{2|H|+b-2})$$ \
+12- The Prover sends $$\pi_{AHP}^1=\sigma_1$$, 
+
+$$\pi_{AHP}^2=(\hat{w_0},\hat{w_1},\hat{w_3},...,\hat{w_{|W|+b-1}})$$,  
+
+$$\pi_{AHP}^3=(\hat{z}_{A_0},\hat{z}_{A_1},...,\hat{z}_{A_{|H|+b-1}})$$, $$\pi_{AHP}^4=(\hat{z}_{B_0},\hat{z}_{B_1},...,\hat{z}_{B_{|H|+b-1}})$$,  $$\pi_{AHP}^5=(\hat{z}_{C_0},\hat{z}_{C_1},...,\hat{z}_{C_{|H|+b-1}})$$,  $$\pi_{AHP}^6=(h_{0_0},h_{0_1},...,h_{0_{|H|+2b-2}})$$ and  $$\pi_{AHP}^7=(s_0,s_1,...,s_{2|H|+b-2})$$ \
 \
 13- The Prover sends $$\pi_{AHP}^8=(g_{1_0},...,g_{1_{|H|-2}})$$ and $$\pi_{AHP}^{9}=(h_{1_0},...,h_{1_{|H|+b-2}})$$ .
 
