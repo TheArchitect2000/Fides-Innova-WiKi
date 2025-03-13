@@ -18,7 +18,7 @@ Note that in this polynomial oracle proof, the Prover wants to prove three follo
 
 The proof of these claims is done in the following steps:
 
-1- To prove strictly lower triangularity of  the matrices $$A$$ and $$B$$, the Prover must  prove that &#x20; $$\log^{row_{PFR_M}(\gamma^i)}_{\omega}> \log^{col_{PFR_M}(\gamma^i)}_{\omega}$$ for $$i \in $$ &lcub; $$0,1,..,m-1$$ &rcub; and $$M\in$$ &lcub; $$A,B$$ &rcub; . This does by $$Discrete-log comparison protocol$$.
+1- To prove strictly lower triangularity of  the matrices $$A$$ and $$B$$, the Prover must  prove that &#x20; $$\log^{row_{PFR_M}(\gamma^i)}_{\omega}> \log^{col_{PFR_M}(\gamma^i)}_{\omega}$$ for $$i \in $$ &lcub; $$0,1,..,m-1$$ &rcub; and $$M\in$$ &lcub; $$A,B$$ &rcub; . This does by $$Discrete-log-comparison-protocol$$.
 
 2- To prove the first $$t$$ rows of $$A$$ and $$B$$ are all zeros, the Prover must prove that &#x20; $$row_{PFR_M}(\mathbb{K})\subseteq\{\omega^t,\omega^{t+1},...,\omega^{n-1}\}$$. This does by $$subset\hspace{1mm}over\hspace{1mm} \mathbb{K}\hspace{1mm}protocol$$ .
 
@@ -38,7 +38,7 @@ where\
 \
 $$Com_{AHP_X}=(Com_{AHP_X}^{1},Com_{AHP_X}^2,Com_{AHP_X}^3,Com_{AHP_X}^4,Com_{AHP_X}^5,Com_{AHP_X}^6,Com_{AHP_X}^7,Com_{AHP_X}^8,Com_{AHP_X}^9,$$ $$Com_{AHP_X}^{10},Com_{AHP_X}^{11},Com_{AHP_X}^{12},Com_{AHP_X}^{13})$$
 
-and $$\pi_{AHP}=(\pi_{AHP}^{1},\pi_{AHP}^2,\pi_{AHP}^3,\pi_{AHP}^4,\pi_{AHP}^5,\pi_{AHP}^6,\pi_{AHP}^7,\pi_{AHP}^8,\pi_{AHP}^9,\pi_{AHP}^{10},\pi_{AHP}^{11},\pi_{AHP}^{12},\pi_{AHP}^{13},\pi_{AHP}^{14},\pi_{AHP}^{15},$$$$\pi_{AHP}^{16},\pi_{AHP}^{17})$$
+and $$\pi_{AHP}=(\pi_{AHP}^{1},\pi_{AHP}^2,\pi_{AHP}^3,\pi_{AHP}^4,\pi_{AHP}^5,\pi_{AHP}^6,\pi_{AHP}^7,\pi_{AHP}^8,\pi_{AHP}^9,\pi_{AHP}^{10},\pi_{AHP}^{11},\pi_{AHP}^{12},\pi_{AHP}^{13},\pi_{AHP}^{14},\pi_{AHP}^{15},\pi_{AHP}^{16},\pi_{AHP}^{17})$$
 
 as following:
 
@@ -58,7 +58,7 @@ Note that $$\mathbb{H}[>|X|+1]$$ includes the members of $$\mathbb{H}$$ except f
 
 4- The Prover samples a fully random $$s(x)\in\mathbb{F}^{<2|\mathbb{H}|+b-1}[x]$$ and computes sum $$\sigma_1=\sum_{k\in \mathbb{H}}s(k)$$
 
-5- The Prover sends  $$Com_{AHP_X}^2=\sum_{i=0}^{deg_{\hat{W}(x)}}\hat{w}_i\hspace{1mm}ck(i)$$,  $$Com_{AHP_X}^{3}=\sum_{i=0}^{deg_{\hat{z}_A(x)}}\hat{z}_{A_i}ck(i)$$,  $$Com_{AHP_X}^{4}=\sum_{i=0}^{deg_{\hat{z}_B(x)}}\hat{z}_{B_i}ck(i)$$,  $$Com_{AHP_X}^{5}=\sum_{i=0}^{deg_{\hat{z}_C(x)}}\hat{z}_{C_i}ck(i)$$,  $$Com_{AHP_X}^{6}=\sum_{i=0}^{deg_{h_0(x)}}h_{0_i}ck(i)$$,   and  $$Com_{AHP_X}^{7}=\sum_{i=0}^{deg_{s(x)}}s_i\hspace{1mm}ck(i)$$, where $$\hat{w}_i$$ is coefficient of $$x^i$$ in polynomial $$\hat{W}(x)$$,  $$\hat{z}_{A_i}$$ is coefficient of $$x^i$$ in polynomial $$\hat{z}_A(x)$$, $$\hat{z}_{B_i}$$ is coefficient of $$x^i$$ in polynomial $$\hat{z}_B(x)$$, $$\hat{z}_{C_i}$$ is coefficient of $$x^i$$ in polynomial $$\hat{z}_C(x)$$, $$h_{0_i}$$ is coefficient of $$x^i$$ in polynomial $$h_0(x)$$, $$s_{i}$$ is coefficient of $$x^i$$ in polynomial $$s(x)$$.
+5- The Prover sends $`Com_{AHP_X}^2=\sum_{i=0}^{deg_{\hat{W}(x)}}\hat{w}_i\hspace{1mm}ck(i)`$ ,  $`Com_{AHP_X}^{3}=\sum_{i=0}^{deg_{\hat{z}_A(x)}}\hat{z}_{A_i}ck(i)`$,  $`Com_{AHP_X}^{4}=\sum_{i=0}^{deg_{\hat{z}_B(x)}}\hat{z}_{B_i}ck(i)`$,  $`Com_{AHP_X}^{5}=\sum_{i=0}^{deg_{\hat{z}_C(x)}}\hat{z}_{C_i}ck(i)`$,  $`Com_{AHP_X}^{6}=\sum_{i=0}^{deg_{h_0(x)}}h_{0_i}ck(i)`$, and  $`Com_{AHP_X}^{7}=\sum_{i=0}^{deg_{s(x)}}s_i\hspace{1mm}ck(i)`$, where $`\hat{w}_i`$ is coefficient of $`x^i`$ in polynomial $`\hat{W}(x)`$, $`\hat{z}_{A_i}`$ is coefficient of $`x^i`$ in polynomial $`\hat{z}_A(x)`$, $`\hat{z}_{B_i}`$ is coefficient of $`x^i`$ in polynomial $`\hat{z}_B(x)`$, $`\hat{z}_{C_i}`$ is coefficient of $`x^i`$ in polynomial $`\hat{z}_C(x)`$, $`h_{0_i}`$ is coefficient of $`x^i`$ in polynomial $`h_0(x)`$, $`s_{i}`$ is coefficient of $`x^i`$ in polynomial $`s(x)`$.
 
 6- The Verifier chooses random numbers  $$\alpha$$, $$\eta_A$$, $$\eta_B$$, $$\eta_C$$ and sends them to the Prover.  ( Note that the Prover can choose $$\alpha=hash(s(0)+s(1)+1)$$, $$\eta_A=hash(s(2)+s(3)+2)$$,  $$\eta_B=hash(s(4)+s(5)+3)$$,  $$\eta_C=hash(s(6)+s(7)+4)$$.&#x20;
 
