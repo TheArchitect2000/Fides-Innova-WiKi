@@ -10,7 +10,7 @@ $`Proof (\mathbb{F}, \mathbb{H}, \mathbb{K}, A, B, C)`$: This function outputs $
 Note that in this polynomial oracle proof, the Prover wants to prove three following claims:\
 1- $`row_{PFR_A}(x)`$, $`col_{PFR_A}(x)`$ and $`val_{PFR_A}(x)`$ is encoding of a $`t-SLT`$ matrix.\
 2- $`row_{PFR_B}(x)`$, $`col_{PFR_B}(x)`$ and $`val_{PFR_B}(x)`$ is encoding of a $`t-SLT`$ matrix.\
-3- $`row_{PFR_C}(x)`$, $`col_{PFR_C}(x)`$ and $`val_{PFR_C}(x)`$ is encoding of a $`t-Diag`$ matrix.\
+3- $`row_{PFR_C}(x)`$, $`col_{PFR_C}(x)`$ and $`val_{PFR_C}(x)`$ is encoding of a $`t-Diag`$ matrix.
 
 The proof of these claims is done in the following steps:\
 1- To prove strictly lower triangularity of the matrices $`A`$ and $`B`$, the Prover must prove that $`\log^{row_{PFR_M}(\gamma^i)}_{\omega}> \log^{col_{PFR_M}(\gamma^i)}_{\omega}`$ for $`i \in `$ &lcub; $`0,1,..,m-1`$ &rcub; and $`M\in`$ &lcub; $`A,B`$ &rcub;. This does by Discrete log comparison protocol.\
