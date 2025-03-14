@@ -110,7 +110,6 @@ $`Com_{AHP_X}^{13}=\sum_{i=0}^{deg_{h_3(x)}}h_{3_i}ck(i)`$;
 
 and $`\pi_{AHP}=(\pi_{AHP}^{1},\pi_{AHP}^2,\pi_{AHP}^3,\pi_{AHP}^4,\pi_{AHP}^5,\pi_{AHP}^6,\pi_{AHP}^7,\pi_{AHP}^8,\pi_{AHP}^9,\pi_{AHP}^{10},\pi_{AHP}^{11},\pi_{AHP}^{12},\pi_{AHP}^{13},\pi_{AHP}^{14},\pi_{AHP}^{15},\pi_{AHP}^{16},\pi_{AHP}^{17})`$
 
-\
 $`\pi_{AHP}^1=\sigma_1`$, \
 $`\pi_{AHP}^2=(\hat{w}_0,\hat{w}_1,\hat{w}_3,...,\hat{w}_{n_g+b-1})`$,  \
 $`\pi_{AHP}^3=(\hat{z}_{A_0},\hat{z}_{A_1},...,\hat{z}_{A_{|H|+b-1}})`$, \
