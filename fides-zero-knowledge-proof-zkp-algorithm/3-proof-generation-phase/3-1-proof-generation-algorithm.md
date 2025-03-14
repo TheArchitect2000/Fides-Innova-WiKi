@@ -84,11 +84,11 @@ $`\eta_{row_{AHP_A}}=hash(s(10))`$, $`\eta_{col_{AHP_A}}=hash(s(11))`$, $`\eta_{
 $`\eta_{\hat{w}}=hash(s(19))`$, $`\eta_{\hat{z}_A}=hash(s(20))`$, $`\eta_{\hat{z}_B}=hash(s(20))`$, $`\eta_{\hat{z}_C}=hash(s(21))`$,  $`\eta_{h_0}=hash(s(22))`$, $`\eta_{s}=hash(s(23))`$, $`\eta_{g_1}=hash(s(24))`$, $`\eta_{h_1}=hash(s(25))`$, $`\eta_{g_2}=hash(s(26))`$, $`\eta_{h_2}=hash(s(27))`$, $`\eta_{g_3}=hash(s(28))`$, $`\eta_{h_3}=hash(s(29))`$.
 
 17- The Prover builds the linear combination
-$`p(x)=\eta_{row_{AHP_A}}\hat{row}_{AHP_A}(x)+\eta_{col_{AHP_A}}\hat{col}_{AHP_A}(x)+\eta_{val_{AHP_A}}\hat{val}_{AHP_A}(x)+`$
-$`\eta_{row_{AHP_B}}\hat{row}_{AHP_B}(x)+\eta_{col_{AHP_B}}\hat{col}_{AHP_B}(x)+\eta_{val_{AHP_B}}\hat{val}_{AHP_B(x)+`$
-$`\eta_{row_{AHP_C}}\hat{row}_{AHP_C}(x)+\eta_{col_{AHP_B}}\hat{col}_{AHP_B}(x)+\eta_{val_{AHP_C}}\hat{val}_{AHP_C(x)+`$
-$`\eta_{\hat{w}}\hat{w(x)+\eta_{\hat{z}_A}\hat{z}_A(x)+\eta_{\hat{z}_B}\hat{z}_B(x)+\eta_{\hat{z}_C}\hat{z}_C(x)+`$
-$`\eta_{h_0}h_0(x)+\eta_ss(x)\eta_{g_1}g_1(x)+\eta_{h_1}h_1(x)+\eta_{g_2}g_2(x)+\eta_{h_2}h_2(x)+\eta_{g_3}g_3(x)+\eta_{h_3}h_3(x)`$
+$`p(x)=\eta_{row_{AHP_A}}\hat{row}_{AHP_A}(x)+\eta_{col_{AHP_A}}\hat{col}_{AHP_A}(x)+\eta_{val_{AHP_A}}\hat{val}_{AHP_A}(x)+
+\eta_{row_{AHP_B}}\hat{row}_{AHP_B}(x)+\eta_{col_{AHP_B}}\hat{col}_{AHP_B}(x)+\eta_{val_{AHP_B}}\hat{val}_{AHP_B(x)+
+\eta_{row_{AHP_C}}\hat{row}_{AHP_C}(x)+\eta_{col_{AHP_B}}\hat{col}_{AHP_B}(x)+\eta_{val_{AHP_C}}\hat{val}_{AHP_C(x)+
+\eta_{\hat{w}}\hat{w(x)+\eta_{\hat{z}_A}\hat{z}_A(x)+\eta_{\hat{z}_B}\hat{z}_B(x)+\eta_{\hat{z}_C}\hat{z}_C(x)+
+\eta_{h_0}h_0(x)+\eta_ss(x)\eta_{g_1}g_1(x)+\eta_{h_1}h_1(x)+\eta_{g_2}g_2(x)+\eta_{h_2}h_2(x)+\eta_{g_3}g_3(x)+\eta_{h_3}h_3(x)`$
 
 18- The Prover calculates $`p(x)`$ in $`x=x'`$ (value of $`x'`$ is received from the Verifier. Also, can select as $`x'=hash(s(22)))`$, then puts it in $`\pi_{AHP}^{16}`$. Therefore, $`\pi_{AHP}^{16}=p(x')=y'`$.
 
