@@ -45,10 +45,8 @@ as following:
 
 2- The Prover calculates polynomial $`z_A(x)`$ using indexing $`z_A`$ by elements of $`\mathbb{H}`$. Then, calculates polynomial $`\hat{z}_A(x)`$ using the polynomial $`z_A(x)`$such that $`\hat{z}_A(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]`$ that agree with $`z_A(x)`$ on $`\mathbb{H}`$. Note that values of up to $`b`$ locations in this polynomial reveals no information about the witness $`w`$ provided the locations are in $`\mathbb{F}-\mathbb{H}`$. Similarly, calculates polynomial  $`\hat{z}_B(x)`$ so that $`\hat{z}_B(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]`$ that agree with $`z_B(x)`$ on $`\mathbb{H}`$. Also, calculates polynomial  $`\hat{z}_C(x)`$ so that $`\hat{z}_C(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]`$ that agree with $`z_C(x)`$ on $`\mathbb{H}`$.
 
-Then, calculates polynomial $$\hat{W}(x)\in \mathbb{F}^{<n_g+b}[x]$$ that agree with $$\bar{W}(x)$$ on $$\mathbb{H}[>|X|+1]$$ where&#x20;
-
-                                           $`\bar{W}:\mathbb{H}[>|X|+1]\to \mathbb{F}`$
-                                               $`\bar{W}(h)=\frac{W(h)-\hat{X}(h)}{v_{\mathbb{H}[\leq |X|+1]}(h)}`$
+Then, calculates polynomial $`\hat{W}(x)\in \mathbb{F}^{<n_g+b}[x]`$ that agree with $`\bar{W}(x)`$ on $`\mathbb{H}[>|X|+1]`$ wher $`\bar{W}:\mathbb{H}[>|X|+1]\to \mathbb{F}`$\
+$`\bar{W}(h)=\frac{W(h)-\hat{X}(h)}{v_{\mathbb{H}[\leq |X|+1]}(h)}`$
 
 Note that $$\mathbb{H}[>|X|+1]$$ includes the members of $$\mathbb{H}$$ except for the first $$|X|+1$$ members. Also, $$v_{\mathbb{H}[\leq |X|+1]}(h)$$ is vanishing polynomial on $$\mathbb{H}[\leq |X|+1]$$ and $$\hat{X}(h)$$ is the polynomial obtained using indexing $$x$$ by elements of $`\mathbb{H}[\leq |X|+1]`$.
 3- The Prover finds polynomial  $`h_0(x)`$ so that $`\hat{z}_A(x)\hat{z}_B(x)-\hat{z}_C(x)=h_0(x)v_{\mathbb{H}}(x)`$.
