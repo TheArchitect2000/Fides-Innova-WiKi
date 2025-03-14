@@ -43,64 +43,60 @@ as following:
 
 &#x20; 2- The Prover calculates $`\overrightarrow{O}_{PFR}=Enc(m_f=(A,B,C))`$ as encoded index as following:
 
-The Prover encodes each matrix $$A, B$$ and $$C$$ by three polynomials. The matrix $$N$$, $$N\in\{A, B, C\}$$, is encoded by polynomials $$row_{PFR_N}(x)$$, $$col_{PFR_N}(x)$$ and $$val_{PFR_N}(x)$$ so that $$row_{PFR_N}(\gamma^i)=\omega^{r_i}$$, $$col_{PFR_N}(\gamma^i)=\omega^{c_i}$$ and $$val_{PFR_N}(\gamma^i)=v_i$$ for $$i\in\{0,1,2,..,m-1\}$$ where  $$m=2n_g$$ is maximum of the number of nonzero entries in the  matrix $$N$$, The value of  $$n=n_g+n_i+1$$ is the order of the matrix.  Also, $$\gamma$$ is a generator of  multiplicative subgroup $$\mathbb{K}$$ of  $$\mathbb{F}$$ of order $$m$$ ($$\mathbb{K}=<\gamma>$$ and $$|\mathbb{K}|=m$$) and  $$\omega$$ is a generator of multiplicative subgroup $$\mathbb{H}$$ of $$\mathbb{F}$$ of order $$n$$ ($$\mathbb{H}=<\omega>$$ and $$|\mathbb{H}|=n$$).  Also $$r_i,c_i\in \{0,1,...,n-1\}$$ and $$v_i\in \mathbb{F}$$ are row number, column number and value of $$i^{th}$$ nonzero entry, respectively. Then, lets   $$O_{PFR}=(row_{PFR_{A_0}},....,row_{PFR_{A_{m-1}}},col_{PFR_{A_0}},...,col_{PFR_{A_{m-1}}},val_{PFR_{A_0}},...,val_{PFR_{A_{m-1}}},$$ $$row_{PFR_{B_0}},...,row_{PFR_{B_{m-1}}},col_{PFR_{B_0}},...,col_{PFR_{B_{m-1}}},val_{PFR_{B_0}},....,val_{PFR_{C_{m-1}}},$$\
-$$row_{PFR_{C_0}},...,row_{PFR_{C_{m-1}}},col_{PFR_{C_0}},...col_{PFR_{C_{m-1}}},val_{PFR_{C_0}},...,val_{PFR_{C_{m-1}}})$$
+The Prover encodes each matrix $`A, B`$ and $`C`$ by three polynomials. The matrix $`N`$, $`N\in\{A, B, C\}`$, is encoded by polynomials $`row_{PFR_N}(x)`$, $`col_{PFR_N}(x)`$ and $`val_{PFR_N}(x)`$ so that $`row_{PFR_N}(\gamma^i)=\omega^{r_i}`$, $`col_{PFR_N}(\gamma^i)=\omega^{c_i}`$ and $`val_{PFR_N}(\gamma^i)=v_i`$ for $`i\in\{0,1,2,..,m-1\}`$ where  $`m=2n_g`$ is maximum of the number of nonzero entries in the  matrix $`N`$, The value of  $`n=n_g+n_i+1`$ is the order of the matrix.  Also, $`\gamma`$ is a generator of  multiplicative subgroup $`\mathbb{K}`$ of  $`\mathbb{F}`$ of order $`m`$ ($`\mathbb{K}=<\gamma>`$ and $`|\mathbb{K}|=m`$) and  $`\omega`$ is a generator of multiplicative subgroup $`\mathbb{H}`$ of $`\mathbb{F}`$ of order $`n`$ ($`\mathbb{H}=<\omega>`$ and $`|\mathbb{H}|=n`$).  Also $`r_i,c_i\in \{0,1,...,n-1\}`$ and $`v_i\in \mathbb{F}`$ are row number, column number and value of $`i^{th}`$ nonzero entry, respectively. Then, lets   $`O_{PFR}=(row_{PFR_{A_0}},....,row_{PFR_{A_{m-1}}},col_{PFR_{A_0}},...,col_{PFR_{A_{m-1}}},val_{PFR_{A_0}},...,val_{PFR_{A_{m-1}}},`$ $`row_{PFR_{B_0}},...,row_{PFR_{B_{m-1}}},col_{PFR_{B_0}},...,col_{PFR_{B_{m-1}}},val_{PFR_{B_0}},....,val_{PFR_{C_{m-1}}},`$ 
+$`row_{PFR_{C_0}},...,row_{PFR_{C_{m-1}}},col_{PFR_{C_0}},...col_{PFR_{C_{m-1}}},val_{PFR_{C_0}},...,val_{PFR_{C_{m-1}}})`$
 
-where $$row_{PFR_{N_i}}$$, $$col_{PFR_{N_i}}$$ and  $$val_{PFR_{N_i}}$$ are coefficient of $$x^i$$ of polynomials $$row_{PFR_N}(x)$$, $$col_{PFR_N}(x)$$ and $$val_{PFR_N}(x)$$ , respectively. The vector $$O_{PFR}$$ is called as  encoded index.
+where $`row_{PFR_{N_i}}`$, $`col_{PFR_{N_i}}`$ and  $`val_{PFR_{N_i}}`$ are coefficient of $`x^i`$ of polynomials $`row_{PFR_N}(x)`$, $`col_{PFR_N}(x)`$ and $`val_{PFR_N}(x)`$ , respectively. The vector $`O_{PFR}`$ is called as  encoded index.
 
-3- The Prover calculates $$Com_{PFR_T}=PC.Commit(ck,T,d_{AHP}(N,0,i)=m,r_{T})$$ for each polynomial $$T(x)$$. Note that $$T\in$$ &lcub; $$row_{PFR_N},col_{PFR_N},val_{PFR_N}\hspace{2mm}|\hspace{2mm}N\in$$ &lcub; $$A,B,C$$&rcub; &rcub;.
+3- The Prover calculates $`Com_{PFR_T}=PC.Commit(ck,T,d_{AHP}(N,0,i)=m,r_{T})`$ for each polynomial $`T(x)`$. Note that $`T\in`$ &lcub; $`row_{PFR_N},col_{PFR_N},val_{PFR_N}\hspace{2mm}|\hspace{2mm}N\in`$ &lcub; $`A,B,C`$&rcub; &rcub;.
 
-For example, if the polynomial commitment scheme $$KZG$$ is used, then \
-$$Com_{T}=\sum_{i=0}^{deg_T}a_ig\tau^i=\sum_{i=0}^{deg_T}a_ick(i)$$  where  $$a_i$$ is coefficient of $$x^i$$ in polynomial $$T(x)$$.&#x20;
+For example, if the polynomial commitment scheme $`KZG`$ is used, then \
+$`Com_{T}=\sum_{i=0}^{deg_T}a_ig\tau^i=\sum_{i=0}^{deg_T}a_ick(i)`$  where  $`a_i`$ is coefficient of $`x^i`$ in polynomial $`T(x)`$.&#x20;
 
-Size of Commitment: $$|Com_{PFR}|=9$$.
+Size of Commitment: $`|Com_{PFR}|=9`$.
 
-4- The Prover sends $$Com_{PFR}$$ to the Verifier.
+4- The Prover sends $`Com_{PFR}`$ to the Verifier.
 
 CommitmentID= Lower4Bytes(SHA256(Manufacturer\_Name, Device\_Type, Device\_Hardware\_Version, Firmware\_Version, Lines Vec\<u64>))
 
 ## 2-2- AHP Commitment &#x20;
 
-As mentioned before AHP phase aims, without revealing any information about function $$f$$, to prove that $$y=f(x)$$ for public $$x$$ and $$y$$. Now, we create a commitment for Algebraic Holographic Proof (AHP), $$AHP\hspace{1mm}Com$$ , in this section.&#x20;
+As mentioned before AHP phase aims, without revealing any information about function $`f`$, to prove that $`y=f(x)`$ for public $`x`$ and $`y`$. Now, we create a commitment for Algebraic Holographic Proof (AHP), $`AHP\hspace{1mm}Com`$ , in this section.&#x20;
 
-$$Commit(ck',m_f=(A,B,C)\in \textit{M}_f,s\in R)$$: This function outputs 
+$`Commit(ck',m_f=(A,B,C)\in \textit{M}_f,s\in R)`$: This function outputs 
 
-$$Com_{AHP}=(Com_{AHP}^0,Com_{AHP}^1,Com_{AHP}^2,Com_{AHP}^3,Com_{AHP}^4,Com_{AHP}^5,Com_{AHP}^6,Com_{AHP}^7,Com_{AHP}^8)$$&#x20;
-, here $$ck'(i)=ck(i )\hspace{1mm}r'^i$$ with random $$r'$$. &#x20;
+$`Com_{AHP}=(Com_{AHP}^0,Com_{AHP}^1,Com_{AHP}^2,Com_{AHP}^3,Com_{AHP}^4,Com_{AHP}^5,Com_{AHP}^6,Com_{AHP}^7,Com_{AHP}^8)`$&#x20;
+, here $`ck'(i)=ck(i )\hspace{1mm}r'^i`$ with random $`r'`$. &#x20;
 
+&#x20;1 - The Prover selects random $`s=(s_1,...s_{s_{AHP}(0)})`$ from random space $`R`$. Note that $`s_{AHP}(0)=9`$ as explained in the setup phase. &#x20;2- The Prover calculates $`\overrightarrow{O}_{AHP}=Enc(m_f=(A,B,C))`$ as encoded index as following:
 
-\
-&#x20;1 - The Prover selects random $$s=(s_1,...s_{s_{AHP}(0)})$$ from random space $$R$$. Note that $$s_{AHP}(0)=9$$ as explained in the setup phase.\
-&#x20;2- The Prover calculates $$\overrightarrow{O}_{AHP}=Enc(m_f=(A,B,C))$$ as encoded index as following:
+* Considering $`\gamma`$ as a generator of  multiplicative subgroup $`\mathbb{K}`$ of $`\mathbb{F}`$ of order $`m`$ (i.e., $`\mathbb{K}=<\gamma>`$ and $`|\mathbb{K}|=m`$), $`\omega`$ as a generator of multiplicative subgroup $`\mathbb{H}`$ of $`\mathbb{F}`$ of order $`n`$ (i.e., $`\mathbb{H}=<\omega>`$ and $`|\mathbb{H}|=n`$), for each matrix $`N\in \{A,B,C\}`$, we generate 3 polynomials $`row_{AHP_N}(x)`$,  $`col_{AHP_N}(x)`$, and  $`val_{AHP_N}(x)`$ as described in the following steps:
+* The polynomial $`row_{AHP_N}:\mathbb{K}\to\mathbb{H}`$ is constructed by $`row_{AHP_N}(k=\gamma^i)=\omega^{r_i}`$ for $`0\leq i\leq ||N||-1`$ where $`||N||`$ is the number of nonzero entries in $`N`$, and $`r_i\in \{0,1,...,n-1\}`$ is the row number of  $`i^{th}`$ nonzero entry and otherwise, $`row_{AHP_N}(k)`$ is an arbitrary element in $`\mathbb{H}`$. Note that $`i`$ starts from zero. This step generate 3 polynomials; $`row_{AHP_A}(x)`$, $`row_{AHP_B}(x)`$, $`row_{AHP_C}(x)`$.
+* The polynomial $`col_{AHP_N}:\mathbb{K}\to\mathbb{H}`$ is constructed by $`col_{AHP_N}(k=\gamma^i)=\omega^{c_i}`$ for $`0\leq i\leq ||N||-1`$ and $`c_i\in \{0,1,...,n-1\}`$ is column number of  $`i^{th}`$ nonzero entry and otherwise $`col_{AHP_N}(k)`$ returns an arbitrary element in $`\mathbb{H}`$.  This step generate 3 polynomials; $`col_{AHP_A}(x)`$, $`col_{AHP_B}(x)`$, $`col_{AHP_C}(x)`$.
+* The polynomial $`val_{AHP_N}:\mathbb{K}\to\mathbb{H}`$ is constructed by $`val_{AHP_N}(k=\gamma^i)=\frac{v_i}{u_{\mathbb{H}}(row_{AHP_N}(k),row_{AHP_N}(k))u_{\mathbb{H}}(col_{AHP_N}(k),col_{AHP_N}(k))}`$ for $`0\leq i\leq ||N||-1`$ where $`v_i`$ is value of  $`i^{th}`$ nonzero entry and otherwise $`val_{AHP_N}(k)`$ returns zero where for each $`x \in \mathbb{H}`$, $`u_{\mathbb{H}}(x,x)=|\mathbb{H}|x^{|\mathbb{H}|-1}`$.
 
-* Considering $$\gamma$$ as a generator of  multiplicative subgroup $$\mathbb{K}$$ of $$\mathbb{F}$$ of order $$m$$ (i.e., $$\mathbb{K}=<\gamma>$$ and $$|\mathbb{K}|=m$$), $$\omega$$ as a generator of multiplicative subgroup $$\mathbb{H}$$ of $$\mathbb{F}$$ of order $$n$$ (i.e., $$\mathbb{H}=<\omega>$$ and $$|\mathbb{H}|=n$$), for each matrix $$N\in \{A,B,C\}$$, we generate 3 polynomials $$row_{AHP_N}(x)$$,  $$col_{AHP_N}(x)$$, and  $$val_{AHP_N}(x)$$ as described in the following steps:
-* The polynomial $$row_{AHP_N}:\mathbb{K}\to\mathbb{H}$$ is constructed by $$row_{AHP_N}(k=\gamma^i)=\omega^{r_i}$$ for  $$0\leq i\leq ||N||-1$$ where $$||N||$$ is the number of nonzero entries in $$N$$, and $$r_i\in \{0,1,...,n-1\}$$ is the row number of  $$i^{th}$$ nonzero entry and otherwise, $$row_{AHP_N}(k)$$ is an arbitrary element in $$\mathbb{H}$$. Note that $$i$$ starts from zero. This step generate 3 polynomials; $$row_{AHP_A}(x)$$, $$row_{AHP_B}(x)$$, $$row_{AHP_C}(x)$$.
-* The polynomial $$col_{AHP_N}:\mathbb{K}\to\mathbb{H}$$ is constructed by $$col_{AHP_N}(k=\gamma^i)=\omega^{c_i}$$ for $$0\leq i\leq ||N||-1$$ and $$c_i\in \{0,1,...,n-1\}$$ is column number of  $$i^{th}$$ nonzero entry and otherwise $$col_{AHP_N}(k)$$ returns an arbitrary element in $$\mathbb{H}$$.  This step generate 3 polynomials; $$col_{AHP_A}(x)$$, $$col_{AHP_B}(x)$$, $$col_{AHP_C}(x)$$.
-* The polynomial $$val_{AHP_N}:\mathbb{K}\to\mathbb{H}$$ is constructed by $$val_{AHP_N}(k=\gamma^i)=\frac{v_i}{u_{\mathbb{H}}(row_{AHP_N}(k),row_{AHP_N}(k))u_{\mathbb{H}}(col_{AHP_N}(k),col_{AHP_N}(k))}$$ for $$0\leq i\leq ||N||-1$$ where $$v_i$$ is value of  $$i^{th}$$ nonzero entry and otherwise $$val_{AHP_N}(k)$$ returns zero where for each $$x \in \mathbb{H}$$, $$u_{\mathbb{H}}(x,x)=|\mathbb{H}|x^{|\mathbb{H}|-1}$$.
+Now, we define $`\hat{row_{AHP_N}}`$, $`\hat{col_{AHP_N}}`$ and $`\hat{val_{AHP_N}}`$ as domain-extend of polynomials $`row_{AHP_N}`$, $`col_{AHP_N}`$ and $`val_{AHP_N}`$ where their domains are extended from subgroup $`\mathbb{K}`$ to filed  $`\mathbb{F}`$. Therefore, $`\forall k \in \mathbb{K}`$, $`row_{AHP_N}(k) = \hat{row_{AHP_N}}(k)`$, $`col_{AHP_N}(k) = \hat{col_{AHP_N}}(k)`$, and $`val_{AHP_N}(k) = \hat{val_{AHP_N}}(k)`$.
 
-Now, we define $$\hat{row_{AHP_N}}$$, $$\hat{col_{AHP_N}}$$ and $$\hat{val_{AHP_N}}$$ as domain-extend of polynomials $$row_{AHP_N}$$, $$col_{AHP_N}$$ and $$val_{AHP_N}$$ where their domains are extended from subgroup $$\mathbb{K}$$ to filed  $$\mathbb{F}$$. Therefore, $$\forall k \in \mathbb{K}$$, $$row_{AHP_N}(k) = \hat{row_{AHP_N}}(k)$$, $$col_{AHP_N}(k) = \hat{col_{AHP_N}}(k)$$, and $$val_{AHP_N}(k) = \hat{val_{AHP_N}}(k)$$.\
-\
-$$\overrightarrow{O}_{AHP}$$=  
+$`\overrightarrow{O}_{AHP}`$=  
+$`(\hat{row_{AHP_{A_0}}},...,\hat{row_{AHP_{A_{m-1}}}},\hat{col_{AHP_{A_0}}},...,,\hat{col_{AHP_{A_0}}},...,\hat{col_{AHP_{A_{m-1}}}},\hat{val_{AHP_{A_0}}},...,\hat{val_{AHP_{A_{m-1}}}}\hat{row_{AHP_{B_0}}},...,\hat{row_{AHP_{B_{m-1}}}},\hat{col_{AHP_{B_0}}},....`$ 
 
-$$(\hat{row_{AHP_{A_0}}},...,\hat{row_{AHP_{A_{m-1}}}},\hat{col_{AHP_{A_0}}},...,,\hat{col_{AHP_{A_0}}},...,\hat{col_{AHP_{A_{m-1}}}},\hat{val_{AHP_{A_0}}},...,\hat{val_{AHP_{A_{m-1}}}}\hat{row_{AHP_{B_0}}},...,\hat{row_{AHP_{B_{m-1}}}},\hat{col_{AHP_{B_0}}},....$$ 
+$`,\hat{col_{AHP_{B_{m-1}}}},\hat{val_{AHP_{B_0}}},...,\hat{val_{AHP_{B_{m-1}}}},\hat{row_{AHP_{C_0}}},...,\hat{row_{AHP_{C_{m-1}}}},\hat{col_{AHP_{C_0}}},...,\hat{col_{AHP_{C_{m-1}}}},\hat{val_{AHP_{C_0}}},....,\hat{val_{AHP_{C_{m-1}}}})`$
 
-$$,\hat{col_{AHP_{B_{m-1}}}},\hat{val_{AHP_{B_0}}},...,\hat{val_{AHP_{B_{m-1}}}},\hat{row_{AHP_{C_0}}},...,\hat{row_{AHP_{C_{m-1}}}},\hat{col_{AHP_{C_0}}},...,\hat{col_{AHP_{C_{m-1}}}},\hat{val_{AHP_{C_0}}},....,\hat{val_{AHP_{C_{m-1}}}})$$
+where $`\hat{row_{AHP_{N_i}}}`$, $`\hat{col_{AHP_{N_i}}}`$ and $`\hat{val_{AHP_{N_i}}}`$ are coefficient of $`x^i`$ of polynomials $`\hat{row_{AHP_N}}(x)`$, $`\hat{col_{AHP_N}}(x)`$ and $`\hat{val_{AHP_N}}(x)`$, respectively. The vector $`\overrightarrow{O}_{AHP}`$ is called the **encoded index**.&#x20;
 
-where $$\hat{row_{AHP_{N_i}}}$$, $$\hat{col_{AHP_{N_i}}}$$ and $$\hat{val_{AHP_{N_i}}}$$ are coefficient of $$x^i$$ of polynomials $$\hat{row_{AHP_N}}(x)$$, $$\hat{col_{AHP_N}}(x)$$ and $$\hat{val_{AHP_N}}(x)$$, respectively. The vector $$\overrightarrow{O}_{AHP}$$ is called the **encoded index**.&#x20;
+3- The Prover calculates commitment for polynomial $`T\in`$ &lcub; $`\hat{row_{AHP_N}},\hat{col_{AHP_N}},\hat{val_{AHP_N}}\hspace{2mm}|\hspace{2mm}N\in\{A,B,C\}`$ &rcub; as $`Com_{AHP_T}=PC.Commit(ck',T,d_{AHP}(N,0,i)=m,s_i)`$.
 
-3- The Prover calculates commitment for polynomial  $$T\in$$ &lcub; $$\hat{row_{AHP_N}},\hat{col_{AHP_N}},\hat{val_{AHP_N}}\hspace{2mm}|\hspace{2mm}N\in\{A,B,C\}$$ &rcub; as $$Com_{AHP_T}=PC.Commit(ck',T,d_{AHP}(N,0,i)=m,s_i)$$.
-
-For example, if the polynomial commitment scheme $$KZG$$ is used, then\
-$$Com_{AHP_T}=\sum_{i=0}^{deg_T}a_ick'(i)$$  where  $$a_i$$ is coefficient of $$x^i$$ in polynomial $$T(x)$$ are calculated by the Prover as follows: \
-$$Com_{AHP}^0=\sum_{i=0}^{deg_{\hat{row_{AHP_A}}(x)}}\hat{row_{AHP_{A_i}}}\hspace{1.1mm}ck'(i)$$,  \
-&#x20;$$Com_{AHP}^1=\sum_{i=0}^{deg_{\hat{col_{AHP_A}}(x)}}\hat{col_{AHP_{A_i}}}\hspace{1.1mm}ck'(i)$$,  \
-&#x20;$$Com_{AHP}^2=\sum_{i=0}^{deg_{\hat{val_{AHP_A}}(x)}}\hat{val_{AHP_{A_i}}}\hspace{1.1mm}ck'(i)$$,\
-$$Com_{AHP}^3=\sum_{i=0}^{deg_{\hat{row_{AHP_B}}(x)}}\hat{row_{AHP_{B_i}}}\hspace{1.1mm}ck'(i)$$,  \
-$$Com_{AHP}^4=\sum_{i=0}^{deg_{\hat{col_{AHP_B}}(x)}}\hat{col_{AHP_{B_i}}}\hspace{1.1mm}ck'(i)$$,   \
-$$Com_{AHP}^5=\sum_{i=0}^{deg_{\hat{val_{AHP_B}}(x)}}\hat{val_{AHP_{B_i}}}\hspace{1.1mm}ck'(i)$$, \
-$$Com_{AHP}^6=\sum_{i=0}^{deg_{\hat{row_{AHP_C}}(x)}}\hat{row_{AHP_{C_i}}}\hspace{1.1mm}ck'(i)$$,  \
-&#x20;$$Com_{AHP}^7=\sum_{i=0}^{deg_{\hat{col_{AHP_C}}(x)}}\hat{col_{AHP_{C_i}}}\hspace{1.1mm}ck'(i)$$,   \
-$$Com_{AHP}^8=\sum_{i=0}^{deg_{\hat{val_{AHP_C}}(x)}}\hat{val_{AHP_{C_i}}}\hspace{1.1mm}ck'(i)$$.
+For example, if the polynomial commitment scheme $`KZG`$ is used, then\
+$`Com_{AHP_T}=\sum_{i=0}^{deg_T}a_ick'(i)`$ where $`a_i`$ is coefficient of $`x^i`$ in polynomial $`T(x)`$ are calculated by the Prover as follows: \
+$`Com_{AHP}^0=\sum_{i=0}^{deg_{\hat{row_{AHP_A}}(x)}}\hat{row_{AHP_{A_i}}}\hspace{1.1mm}ck'(i)`$,  \
+&#x20;$`Com_{AHP}^1=\sum_{i=0}^{deg_{\hat{col_{AHP_A}}(x)}}\hat{col_{AHP_{A_i}}}\hspace{1.1mm}ck'(i)`$,  \
+&#x20;$`Com_{AHP}^2=\sum_{i=0}^{deg_{\hat{val_{AHP_A}}(x)}}\hat{val_{AHP_{A_i}}}\hspace{1.1mm}ck'(i)`$,\
+$`Com_{AHP}^3=\sum_{i=0}^{deg_{\hat{row_{AHP_B}}(x)}}\hat{row_{AHP_{B_i}}}\hspace{1.1mm}ck'(i)`$,  \
+$`Com_{AHP}^4=\sum_{i=0}^{deg_{\hat{col_{AHP_B}}(x)}}\hat{col_{AHP_{B_i}}}\hspace{1.1mm}ck'(i)`$,   \
+$`Com_{AHP}^5=\sum_{i=0}^{deg_{\hat{val_{AHP_B}}(x)}}\hat{val_{AHP_{B_i}}}\hspace{1.1mm}ck'(i)`$, \
+$`Com_{AHP}^6=\sum_{i=0}^{deg_{\hat{row_{AHP_C}}(x)}}\hat{row_{AHP_{C_i}}}\hspace{1.1mm}ck'(i)`$,  \
+&#x20;$`Com_{AHP}^7=\sum_{i=0}^{deg_{\hat{col_{AHP_C}}(x)}}\hat{col_{AHP_{C_i}}}\hspace{1.1mm}ck'(i)`$,   \
+$`Com_{AHP}^8=\sum_{i=0}^{deg_{\hat{val_{AHP_C}}(x)}}\hat{val_{AHP_{C_i}}}\hspace{1.1mm}ck'(i)`$.
 
 4- The prover send the calculated commitment values to the Verifier.
 
