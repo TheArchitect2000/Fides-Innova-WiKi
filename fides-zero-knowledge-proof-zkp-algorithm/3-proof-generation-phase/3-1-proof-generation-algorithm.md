@@ -19,21 +19,14 @@ The proof of these claims is done in the following steps:\
 4- To prove the first $`t`$ rows of $`C`$ are all zeros, the Prover must prove that there is a vector $`v\in(\mathbb{F^*})^{n-t}`$ so that $`seq_{\mathbb{K}}(val_{PFR_C)}=\vec{v}||\vec{0}`$. This does by $`Geometric\hspace{1mm} sequence`$ and $`zero\hspace{1mm}over\hspace{1mm}\mathbb{K}\hspace{1mm}protocols`$.\
 The steps 3 and 4 result that all the non-zero entries of the matrix $`C`$ are in the positions  $`(\omega^t,\omega^t),(\omega^{t+1},\omega^{t+1}),...,(\omega^n,\omega^n)`$.
 ## 3-2- AHP Proof
-
-$`Proof (\mathbb{F}, \mathbb{H}, \mathbb{K}, A, B, C, X,W,Y)`$: This function outputs
-
+$`Proof (\mathbb{F}, \mathbb{H}, \mathbb{K}, A, B, C, X,W,Y)`$: This function outputs\
 $`\Pi_{AHP}=(Com_{AHP_X},\pi_{AHP})`$
-
 where\
-
 $`Com_{AHP_X}=(Com_{AHP_X}^{1},Com_{AHP_X}^2,Com_{AHP_X}^3,Com_{AHP_X}^4,Com_{AHP_X}^5,Com_{AHP_X}^6,Com_{AHP_X}^7,Com_{AHP_X}^8,Com_{AHP_X}^9,`$ $`Com_{AHP_X}^{10},Com_{AHP_X}^{11},Com_{AHP_X}^{12},Com_{AHP_X}^{13})`$
-
 and $`\pi_{AHP}=(\pi_{AHP}^{1},\pi_{AHP}^2,\pi_{AHP}^3,\pi_{AHP}^4,\pi_{AHP}^5,\pi_{AHP}^6,\pi_{AHP}^7,\pi_{AHP}^8,\pi_{AHP}^9,\pi_{AHP}^{10},\pi_{AHP}^{11},\pi_{AHP}^{12},\pi_{AHP}^{13},\pi_{AHP}^{14},\pi_{AHP}^{15},\pi_{AHP}^{16},\pi_{AHP}^{17})`$
 
-as following:
-
-1- The Prover calculates $`z_A=Az`$, $`z_B=Bz`$, $`z_C=Cz`$ where  $`z=(1,X,W,Y)`$, for input $`X`$ that puts in $`Com_{AHP_X}^1`$.
-
+as following:\
+1- The Prover calculates $`z_A=Az`$, $`z_B=Bz`$, $`z_C=Cz`$ where  $`z=(1,X,W,Y)`$, for input $`X`$ that puts in $`Com_{AHP_X}^1`$.\
 2- The Prover calculates polynomial $`z_A(x)`$ using indexing $`z_A`$ by elements of $`\mathbb{H}`$. Then, calculates polynomial $`\hat{z}_A(x)`$ using the polynomial $`z_A(x)`$such that $`\hat{z}_A(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]`$ that agree with $`z_A(x)`$ on $`\mathbb{H}`$. Note that values of up to $`b`$ locations in this polynomial reveals no information about the witness $`w`$ provided the locations are in $`\mathbb{F}-\mathbb{H}`$. Similarly, calculates polynomial  $`\hat{z}_B(x)`$ so that $`\hat{z}_B(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]`$ that agree with $`z_B(x)`$ on $`\mathbb{H}`$. Also, calculates polynomial  $`\hat{z}_C(x)`$ so that $`\hat{z}_C(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]`$ that agree with $`z_C(x)`$ on $`\mathbb{H}`$.
 
 Then, calculates polynomial $`\hat{W}(x)\in \mathbb{F}^{<n_g+b}[x]`$ that agree with $`\bar{W}(x)`$ on $`\mathbb{H}[>|X|+1]`$ where  $`\bar{W}:\mathbb{H}[>|X|+1]\to \mathbb{F}`$\
