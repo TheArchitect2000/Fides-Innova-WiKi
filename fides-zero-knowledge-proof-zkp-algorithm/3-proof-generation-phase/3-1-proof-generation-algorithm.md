@@ -92,27 +92,24 @@ $`p(x)=\eta_{row_{AHP_A}}\hat{row}_{AHP_A}(x)+\eta_{col_{AHP_A}}\hat{col}_{AHP_A
 
 ## 3-3- Proof Structure
 
-Proof set is&#x20;
+Proof set is
+$`\Pi_{AHP}=(Com_{AHP_X},\pi_{AHP})`$
+where
+$`Com_{AHP_X}=(Com_{AHP_X}^{1},Com_{AHP_X}^2,Com_{AHP_X}^3,Com_{AHP_X}^4,Com_{AHP_X}^5,Com_{AHP_X}^6,Com_{AHP_X}^7,Com_{AHP_X}^8,Com_{AHP_X}^9,`$ $`Com_{AHP_X}^{10},Com_{AHP_X}^{11},Com_{AHP_X}^{12},Com_{AHP_X}^{13})`$
 
-$$\Pi_{AHP}=(Com_{AHP_X},\pi_{AHP})$$&#x20;
-
-where\
-\
-$$Com_{AHP_X}=(Com_{AHP_X}^{1},Com_{AHP_X}^2,Com_{AHP_X}^3,Com_{AHP_X}^4,Com_{AHP_X}^5,Com_{AHP_X}^6,Com_{AHP_X}^7,Com_{AHP_X}^8,Com_{AHP_X}^9,$$ $$Com_{AHP_X}^{10},Com_{AHP_X}^{11},Com_{AHP_X}^{12},Com_{AHP_X}^{13})$$
-
-$$Com_{AHP_X}^1=X$$,\
-$$Com_{AHP_X}^2=\sum_{i=0}^{deg_{\hat{W}(x)}}\hat{w}_i\hspace{1mm}ck(i)$$, \
-$$Com_{AHP_X}^{3}=\sum_{i=0}^{deg_{\hat{z}_A(x)}}\hat{z}_{A_i}ck(i)$$, \
-$$Com_{AHP_X}^{4}=\sum_{i=0}^{deg_{\hat{z}_B(x)}}\hat{z}_{B_i}ck(i)$$,  \
-$$Com_{AHP_X}^{5}=\sum_{i=0}^{deg_{\hat{z}_C(x)}}\hat{z}_{C_i}ck(i)$$,  \
-$$Com_{AHP_X}^{6}=\sum_{i=0}^{deg_{h_0(x)}}h_{0_i}ck(i)$$,    \
-$$Com_{AHP_X}^{7}=\sum_{i=0}^{deg_{s(x)}}s_i\hspace{1mm}ck(i)$$, \
-$$Com_{AHP_X}^{8}=\sum_{i=0}^{deg_{g_1(x)}}g_{1_i}ck(i)$$,  \
-$$Com_{AHP_X}^{9}=\sum_{i=0}^{deg_{h_1(x)}}h_{1_i}ck(i)$$,  \
-$$Com_{AHP_X}^{10}=\sum_{i=0}^{deg_{g_2(x)}}g_{2_i}ck(i)$$,  \
-$$Com_{AHP_X}^{11}=\sum_{i=0}^{deg_{h_2(x)}}h_{2_i}ck(i)$$, \
-$$Com_{AHP_X}^{12}=\sum_{i=0}^{deg_{g_3(x)}}g_{3_i}ck(i)$$,\
-$$Com_{AHP_X}^{13}=\sum_{i=0}^{deg_{h_3(x)}}h_{3_i}ck(i)$$&#x20;
+$`Com_{AHP_X}^1=X`$,\
+$`Com_{AHP_X}^2=\sum_{i=0}^{deg_{\hat{W}(x)}}\hat{w}_i\hspace{1mm}ck(i)`$, \
+$`Com_{AHP_X}^{3}=\sum_{i=0}^{deg_{\hat{z}_A(x)}}\hat{z}_{A_i}ck(i)`$, \
+$`Com_{AHP_X}^{4}=\sum_{i=0}^{deg_{\hat{z}_B(x)}}\hat{z}_{B_i}ck(i)`$,  \
+$`Com_{AHP_X}^{5}=\sum_{i=0}^{deg_{\hat{z}_C(x)}}\hat{z}_{C_i}ck(i)`$,  \
+$`Com_{AHP_X}^{6}=\sum_{i=0}^{deg_{h_0(x)}}h_{0_i}ck(i)`$,    \
+$`Com_{AHP_X}^{7}=\sum_{i=0}^{deg_{s(x)}}s_i\hspace{1mm}ck(i)`$, \
+$`Com_{AHP_X}^{8}=\sum_{i=0}^{deg_{g_1(x)}}g_{1_i}ck(i)`$,  \
+$`Com_{AHP_X}^{9}=\sum_{i=0}^{deg_{h_1(x)}}h_{1_i}ck(i)`$,  \
+$`Com_{AHP_X}^{10}=\sum_{i=0}^{deg_{g_2(x)}}g_{2_i}ck(i)`$,  \
+$`Com_{AHP_X}^{11}=\sum_{i=0}^{deg_{h_2(x)}}h_{2_i}ck(i)`$, \
+$`Com_{AHP_X}^{12}=\sum_{i=0}^{deg_{g_3(x)}}g_{3_i}ck(i)`$,\
+$`Com_{AHP_X}^{13}=\sum_{i=0}^{deg_{h_3(x)}}h_{3_i}ck(i)`$;
 
 and $$\pi_{AHP}=(\pi_{AHP}^{1},\pi_{AHP}^2,\pi_{AHP}^3,\pi_{AHP}^4,\pi_{AHP}^5,\pi_{AHP}^6,\pi_{AHP}^7,\pi_{AHP}^8,\pi_{AHP}^9,\pi_{AHP}^{10},\pi_{AHP}^{11},\pi_{AHP}^{12},\pi_{AHP}^{13},\pi_{AHP}^{14},\pi_{AHP}^{15},$$$$\pi_{AHP}^{16},\pi_{AHP}^{17})$$
 
