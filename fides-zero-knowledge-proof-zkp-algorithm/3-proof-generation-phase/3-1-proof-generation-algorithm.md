@@ -19,9 +19,10 @@ Note that in this polynomial oracle proof, the Prover wants to prove three follo
 The proof of these claims is done in the following steps:
 
 1- To prove strictly lower triangularity of  the matrices $`A`$ and $`B`$, the Prover must prove that &#x20; $`\log^{row_{PFR_M}(\gamma^i)}_{\omega}> \log^{col_{PFR_M}(\gamma^i)}_{\omega}`$ for $`i \in `$ &lcub; $`0,1,..,m-1`$ &rcub; and $`M\in`$ &lcub; $`A,B`$ &rcub;. This does by $`Discrete-log-comparison-protocol`$.
-2- To prove the first $`t`$ rows of $`A`$ and $`B`$ are all zeros, the Prover must prove that &#x20; $`row_{PFR_M}(\mathbb{K})\subseteq\{\omega^t,\omega^{t+1},...,\omega^{n-1}\}`$. This does by $`subset\hspace{1mm}over\hspace{1mm} \mathbb{K}\hspace{1mm}protocol`$.
-3- To prove the diagonality of the matrix $`C`$, the Prover must prove that $`seq_{\mathbb{K}}(row_{PFR_C})=seq_{\mathbb{K}}(col_{PFR_C})`$ where $`seq_{\mathbb{K}}(h)=(h(k):k\in\mathbb{K})`$. This does by $`Geometric\hspace{1mm} sequence`$ and $`zero\hspace{1mm}over\hspace{1mm}\mathbb{K}\hspace{1mm}protocols`$.
 
+2- To prove the first $`t`$ rows of $`A`$ and $`B`$ are all zeros, the Prover must prove that &#x20; $`row_{PFR_M}(\mathbb{K})\subseteq\{\omega^t,\omega^{t+1},...,\omega^{n-1}\}`$. This does by $`subset\hspace{1mm}over\hspace{1mm} \mathbb{K}\hspace{1mm}protocol`$.
+
+3- To prove the diagonality of the matrix $`C`$, the Prover must prove that $`seq_{\mathbb{K}}(row_{PFR_C})=seq_{\mathbb{K}}(col_{PFR_C})`$ where $`seq_{\mathbb{K}}(h)=(h(k):k\in\mathbb{K})`$. This does by $`Geometric\hspace{1mm} sequence`$ and $`zero\hspace{1mm}over\hspace{1mm}\mathbb{K}\hspace{1mm}protocols`$.
 4- To prove the first $`t`$ rows of $`C`$ are all zeros, the Prover must prove that there is a vector $`v\in(\mathbb{F^*})^{n-t}`$ so  that $$seq_{\mathbb{K}}(val_{PFR_C)}=\vec{v}||\vec{0}$$ . This does by $$Geometric\hspace{1mm} sequence$$ and $$zero\hspace{1mm}over\hspace{1mm}\mathbb{K}\hspace{1mm}protocols$$.&#x20;
 
 &#x20; The steps  3 and 4 result that all the non-zero entries of the matrix $$C$$ are in the positions  $$(\omega^t,\omega^t),(\omega^{t+1},\omega^{t+1}),...,(\omega^n,\omega^n)$$.
