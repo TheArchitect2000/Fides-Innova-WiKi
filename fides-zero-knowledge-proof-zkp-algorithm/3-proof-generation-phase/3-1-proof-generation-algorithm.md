@@ -124,7 +124,7 @@ $`\pi_{AHP}^7=(s_0,s_1,...,s_{2|H|+b-2})`$,\
 $`\pi_{AHP}^8=(g_{1_0},...,g_{1_{|H|-2}})`$,\
 $`\pi_{AHP}^{9}=(h_{1_0},...,h_{1_{|H|+b-2}})`$,\
 $`\pi_{AHP}^{10}=\sigma_2`$,\
-$v\pi_{AHP}^{11}=(g_{2_0},...,g_{2_{|H|-2}})`$,\
+$`\pi_{AHP}^{11}=(g_{2_0},...,g_{2_{|H|-2}})`$,\
 $`\pi_{AHP}^{12}=(h_{2_0},...,h_{2_{|H|-2}})`$, \
 $`\pi_{AHP}^{13}=\sigma_3`$, \
 $`\pi_{AHP}^{14}=(g_{3_0},...,g_{3_{|K|-2}})`$, \
@@ -132,7 +132,7 @@ $`\pi_{AHP}^{15}=(h_{3_0},...,h_{3_{6|K|-6}})`$,\
 $`\pi_{AHP}^{16}=y'`$,\
 $`\pi_{AHP}^{17}=\sum_{i=0}^{deg_{q(x)}}q_i\hspace{1mm}ck(i)`$.
 
-where $$\hat{w}_i$$ is coefficient of $$x^i$$ in polynomial $$\hat{W}(x)$$,  $$\hat{z}_{A_i}$$ is coefficient of $$x^i$$ in polynomial $$\hat{z}_A(x)$$, $$\hat{z}_{B_i}$$ is coefficient of $$x^i$$ in polynomial $$\hat{z}_B(x)$$, $$\hat{z}_{C_i}$$ is coefficient of $$x^i$$ in polynomial $$\hat{z}_C(x)$$,  $$h_{0_i}$$ is coefficient of $$x^i$$ in polynomial $$h_0(x)$$, $$s_{i}$$ is coefficient of $$x^i$$ in polynomial $$s(x)$$, $$g_{1_i}$$ is coefficient of $$x^i$$ of polynomial $$g_1(x)$$ and  $$h_{1_i}$$ is coefficient of $$x^i$$ of polynomial $$h_1(x)$$, $$g_{2_i}$$ is coefficient of $$x^i$$ of polynomial $$g_2(x)$$ and $$h_{2_i}$$ is coefficient of $$x^i$$ of polynomial $$h_2(x)$$,  $$g_{3_i}$$ is coefficient of $$x^i$$ of polynomial $$g_3(x)$$ and $$h_{3_i}$$ is coefficient of $$x^i$$ of polynomial $$h_3(x)$$.
+where $`\hat{w}_i`$ is coefficient of $`x^i`$ in polynomial $`\hat{W}(x)`$, $`\hat{z}_{A_i}`$ is coefficient of $$x^i$$ in polynomial $`\hat{z}_A(x)`$, $`\hat{z}_{B_i}`$ is coefficient of $$x^i$$ in polynomial $`\hat{z}_B(x)`$, $`\hat{z}_{C_i}`$ is coefficient of $`x^i`$ in polynomial $`\hat{z}_C(x)v$, $`h_{0_i}`$ is coefficient of $`x^i`$ in polynomial $`h_0(x)`$, $`s_{i}`$ is coefficient of $`x^i`$ in polynomial $`s(x)`$, $`g_{1_i}`$ is coefficient of $`x^i`$ of polynomial $`g_1(x)`$ and $`h_{1_i}`$ is coefficient of $`x^i`$ of polynomial $`h_1(x)`$, $`g_{2_i}v$ is coefficient of $`x^i`$ of polynomial $`g_2(x)`$ and $`h_{2_i}`$ is coefficient of $`x^i`$ of polynomial $vh_2(x)v$, $vg_{3_i}`$ is coefficient of $`x^i`$ of polynomial $`g_3(x)`$ and $`h_{3_i}`$ is coefficient of $`x^i`$ of polynomial $`h_3(x)`$.
 
 * Size of AHP proof: $$|\Pi_{AHP}|=10|\mathbb{H}|+7|\mathbb{K}|+|W|+8b+6$$.
 * CommitmentID is explained on the Commitment Phase page.
