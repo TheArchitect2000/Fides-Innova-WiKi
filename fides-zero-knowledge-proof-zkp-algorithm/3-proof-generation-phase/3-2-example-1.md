@@ -2,7 +2,7 @@
 
 ### PFR Proof
 
-The Prover interpolates polynomial $$h$$ such that $$seq_{\mathbb{K}}(h)=\omega^t,\omega^{t+1},..,\omega^{n-1},0,..,0$$. Here $$t=2$$ and $$n=5$$, therefore $$seq_{\mathbb{K}}(h)=\omega^2,\omega^3,\omega^4,0,..,0$$. This means that $$\{h(k):\hspace{1mm}k\in\mathbb{K}=\{1,43,39,48,73,62,132,65,80\}\}=\{\omega^2,\omega^3,\omega^4,0,..,0\}=\{42,125,135,0,0,0,0,0,0\}$$Therefore $$h(1)=42$$, $$h(43)=125$$ , $$h(39)=135$$, $$h(48)=h(73)=h(62)=h(132)=h(65)=h(80)=0$$. So $$h(x)=42L_1(x)+125L_2(x)+135L_3(x)$$ where $$L_1(x)=\frac{(x-43)(x-39)(x-48)(x-73)(x-62)(x-132)(x-65)(x-80)}{(-42)(-38)(-47)(-72)(-61)(-131)(-64)(-79)}=161x^8+161x^7+161x^6+161x^5+161x^4+161x^3+161x^2+161x+161$$,
+The Prover interpolates polynomial $$h$$ such that $$seq_{\mathbb{K}}(h)=\omega^t,\omega^{t+1},..,\omega^{n-1},0,..,0$$. Here $$t=2$$ and $$n=5$$, therefore $$seq_{\mathbb{K}}(h)=\omega^2,\omega^3,\omega^4,0,..,0$$. This means that $`\{h(k):\hspace{1mm}k\in\mathbb{K}=\{1,43,39,48,73,62,132,65,80\}\}=\{\omega^2,\omega^3,\omega^4,0,..,0\}=\{42,125,135,0,0,0,0,0,0\}`$ . Therefore $$h(1)=42$$, $$h(43)=125$$ , $$h(39)=135$$, $$h(48)=h(73)=h(62)=h(132)=h(65)=h(80)=0$$. So $$h(x)=42L_1(x)+125L_2(x)+135L_3(x)$$ where $$L_1(x)=\frac{(x-43)(x-39)(x-48)(x-73)(x-62)(x-132)(x-65)(x-80)}{(-42)(-38)(-47)(-72)(-61)(-131)(-64)(-79)}=161x^8+161x^7+161x^6+161x^5+161x^4+161x^3+161x^2+161x+161$$,
 
 $$L_2(x)=45x^8+125x^7+126x^6+169x^5+27x^4+75x^3+148x^2+29x+161$$,
 
@@ -12,41 +12,40 @@ Therefore $$h(x)=121x^8+133x^7+57x^6+127x^5+103x^4+24x^3+128x^2+140x+114$$. The 
 
 #### 3-5-1-2- Step 2
 
-The Prover and the Verifier do $$Geometric\hspace{1mm}Sequence\hspace{1mm}Test$$ on $$h$$ (to verify correct construction of polynomial $$h$$). In $$Geometric\hspace{1mm} Sequence\hspace{1mm} Test$$ want to prove that $$Seq_{\mathbb{K}}(h)=a_1,a_1r,..,a_1r^{c_1-1},a_2, a_2r,..., a_2r^{c_2-1},...,a_v,a_vr,...,a_vr^{c_v-1}$$.
+The Prover and the Verifier do $$Geometric\hspace{1mm}Sequence\hspace{1mm}Test$$ on $$h$$ (to verify correct construction of polynomial $$h$$). In $$Geometric\hspace{1mm} Sequence\hspace{1mm} Test$$ want to prove that $`Seq_{\mathbb{K}}(h)=a_1,a_1r,..,a_1r^{c_1-1},a_2, a_2r,..., a_2r^{c_2-1},...,a_v,a_vr,...,a_vr^{c_v-1}`$.
 
 #### 3-5-1-2- Step 2-A- Geometric Sequence Test
 
-Since $$h(\gamma^0)=\omega^2$$, $$h(\gamma^1)=\omega^3$$ ,$$h(\gamma^2)=\omega^4$$ and $$h(\gamma^3)=...=h(\gamma^8)=0$$, then Geometric Sequence Test with $$a_1=\omega^2$$, $$a_2=0$$, $$r=\omega$$, $$c_1=n-t=3$$ and $$c_2=m-(n-t)=9-3=6$$ run. Let $$p_i=\sum_{j<i}c_j$$ for $$i\in \{1,2,..,v\}$$. Here $$v$$ is the number of $$c_i$$ that are non-zero. Therefore $$v=2$$ ,  $$p_1=0$$ and $$p_2=c_1=3$$.&#x20;
+Since $$h(\gamma^0)=\omega^2$$, $$h(\gamma^1)=\omega^3$$ ,$`h(\gamma^2)=\omega^4`$ and $$h(\gamma^3)=...=h(\gamma^8)=0$$, then Geometric Sequence Test with $$a_1=\omega^2$$, $$a_2=0$$, $$r=\omega$$, $$c_1=n-t=3$$ and $$c_2=m-(n-t)=9-3=6$$ run. Let $$p_i=\sum_{j<i}c_j$$ for $$i\in \{1,2,..,v\}$$. Here $$v$$ is the number of $$c_i$$ that are non-zero. Therefore $$v=2$$ ,  $$p_1=0$$ and $$p_2=c_1=3$$.&#x20;
 
 The Prover and the Verifier run  $$Zero\hspace{1mm}Over\hspace{1mm}\mathbb{K}$$ (see the next section) to check that for all $$k\in\mathbb{K}$$, have $$(h(\gamma k)-rh(k))\prod_{i=1}^{v}(k-\gamma^{p_i+c_i-1})=0$$. Here, $$Zero\hspace{1mm}Over\hspace{1mm}\mathbb{K}$$ run to check that for all $$k\in\mathbb{K}=\{1,\gamma,\gamma^2,..,\gamma^8\}$$, have $$(h(\gamma k)-\omega h(k))(k-\gamma^2)(k-\omega^8)=0$$. \
 $$Note$$: It is clear that if the construction of $$h$$ is correct, it applies this equality, because if $$k=1$$, $$h(\gamma k)=h(\gamma)=\omega h(1)$$ then $$h(\gamma k)-\omega h(k)=0$$. If $$k=\gamma$$, $$h(\gamma k)=h(\gamma^2)=\omega h(\gamma)$$, then $$h(\gamma k)-\omega h(k)=0$$. If $$k=\gamma^2$$, then $$k-\gamma^2=0$$. If $$k=\omega^3,...,\omega^7$$, then $$h(\gamma k)=\omega h(k)=0$$ and if $$k=\gamma^8$$, then $$k-\gamma^8=0$$.
 
 #### 3-5-1-2-Step 2-B- Zero over K
 
-In  $$Zero\hspace{1mm}Over\hspace{1mm}\mathbb{K}$$, want to prove that for all $$k\in\mathbb{K}$$, $$F(k)=0$$ where $$F(x)=G(x,f_{j_1}(\alpha_1x),f_{j_2}(\alpha_2x),...,f_{j_{t}}(\alpha_{t}x))$$. Here  $$F(x)=(h(\gamma x)-\omega h(x))(x-\gamma^2)(x-\gamma^8)$$, therefore since $$t=2$$, $$F(x)=G(x,f_{j_1}(\alpha_1x),f_{j_2}(\alpha_2x))=(h(\gamma x)-\omega h(x))(x-\gamma^2)(x-\gamma^8)$$, so $$h_1=f_{j_1}=h$$, $$h_2=f_{j_2}=h$$, $$\alpha_1=\gamma$$ and $$\alpha_2=1$$.&#x20;
+In  $`Zero\hspace{1mm}Over\hspace{1mm}\mathbb{K}`$, want to prove that for all $`k\in\mathbb{K}`$, $$F(k)=0$$ where $`F(x)=G(x,f_{j_1}(\alpha_1x),f_{j_2}(\alpha_2x),...,f_{j_{t}}(\alpha_{t}x))`$. Here  $`F(x)=(h(\gamma x)-\omega h(x))(x-\gamma^2)(x-\gamma^8)`$, therefore since $$t=2$$, $`F(x)=G(x,f_{j_1}(\alpha_1x),f_{j_2}(\alpha_2x))=(h(\gamma x)-\omega h(x))(x-\gamma^2)(x-\gamma^8)`$, so $`h_1=f_{j_1}=h`$, $$h_2=f_{j_2}=h$$, $`\alpha_1=\gamma`$ and $$\alpha_2=1$$.&#x20;
 
-2-2-1 The Prover selects polynomials $$r_i\in \mathbb{F}^{<2}[x]$$, $$i\in \{1,2,..,t\}$$. Then computes masks $$m_i(x)=r_i(\alpha_i^{-1}x)Z_{\mathbb{K}}(\alpha_i^{-1}x)$$ and computes $$h'_i(x)=h_i(x)+m_i(x)$$ for $$i\in\{1,2,..,t\}$$.&#x20;
+2-2-1 The Prover selects polynomials $`r_i\in \mathbb{F}^{<2}[x]`$, $`i\in \{1,2,..,t\}`$. Then computes masks $`m_i(x)=r_i(\alpha_i^{-1}x)Z_{\mathbb{K}}(\alpha_i^{-1}x)`$ and computes $`h'_i(x)=h_i(x)+m_i(x)`$ for $`i\in\{1,2,..,t\}`$.&#x20;
 
-Here, the Prover selects $$r_1,r_2$$. For example, let $$r_1(x)=2+x$$ and $$r_2(x)=2x$$. Therefore $$m_1(x)=r_1(\alpha_1^{-1}x)Z_{\mathbb{K}}(\alpha_1^{-1}x)$$ where $$\alpha_1=\gamma=48$$ and $$Z_{\mathbb{K}}(x)=\prod_{x\in\mathbb{K}}(x-k)=(x-1)(x-43)(x-39)(x-48)(x-73)(x-62)(x-132)(x-65) (x-80)=x^9+180$$. Therefore $$m_1(x)=r_1(80x)Z_{\mathbb{K}}(80x)=80x^{10}+2x^9+101x+179$$\
-$$m_2(x)=r_2(\alpha_2^{-1}x)Z_{\mathbb{K}}(\alpha_2^{-1}x)=r_2(x)Z_{\mathbb{K}}(x)=2x(x^9+180)=2x^{10}+179x$$.  Then computes $$h'_1(x)=h_1(x)+m_1(x)=h(x)+m_1(x)=80x^{10}+2x^9+121x^8+133x^7+57x^6+127x^5+103x^4+$$\
-$$24x^3+128x^2+60x+112$$  and $$h'_2(x)=h_2(x)+m_2(x)=h(x)+m_2(x)=2x^{10}+121x^8+133x^7+$$\
+Here, the Prover selects $$r_1,r_2$$. For example, let $$r_1(x)=2+x$$ and $$r_2(x)=2x$$. Therefore $`m_1(x)=r_1(\alpha_1^{-1}x)Z_{\mathbb{K}}(\alpha_1^{-1}x)`$ where $$\alpha_1=\gamma=48$$ and $`Z_{\mathbb{K}}(x)=\prod_{x\in\mathbb{K}}(x-k)=(x-1)(x-43)(x-39)(x-48)(x-73)(x-62)(x-132)(x-65) (x-80)=x^9+180`$. Therefore $`m_1(x)=r_1(80x)Z_{\mathbb{K}}(80x)=80x^{10}+2x^9+101x+179`$\
+$`m_2(x)=r_2(\alpha_2^{-1}x)Z_{\mathbb{K}}(\alpha_2^{-1}x)=r_2(x)Z_{\mathbb{K}}(x)=2x(x^9+180)=2x^{10}+179x`$.  Then computes $`h'_1(x)=h_1(x)+m_1(x)=h(x)+m_1(x)=80x^{10}+2x^9+121x^8+133x^7+57x^6+127x^5+103x^4+`$\
+$`24x^3+128x^2+60x+112`$  and $`h'_2(x)=h_2(x)+m_2(x)=h(x)+m_2(x)=2x^{10}+121x^8+133x^7+`$\
 $$57x^6+127x^5+103x^4+24x^3+128x^2+138x+114$$.
 
-2-2-2- The Prover computes $$F'(x)=G(x,h'_1(\alpha_1x),h'_2(\alpha_2x),...,h'_t(\alpha_tx))$$ and $$q_1(x)=\frac{F'(x)}{Z_{\mathbb{K}}(x)}$$ then the Prover sends $$\pi_{PFR_{1+i}}=(m_{i1},...,m_{ideg(m_i)})$$ where $$m_{ij}$$s are coefficients of polynomial  $$m_i(x)$$,  $$\pi_{PFR_{1+t+i}}=(r_{i1},...,r_{ideg(r_i)})$$ where $$r_{ij}$$s are coefficients of polynomial $$r_i(x)$$ and $$\pi_{PFR_{2t+2}}=(q_{11},...,q_{1deg(q_1)})$$ where $$q_{1j}$$s are coefficients of polynomial $$q_1(x)$$
+2-2-2- The Prover computes $`F'(x)=G(x,h'_1(\alpha_1x),h'_2(\alpha_2x),...,h'_t(\alpha_tx))`$ and $`q_1(x)=\frac{F'(x)}{Z_{\mathbb{K}}(x)}`$ then the Prover sends $`\pi_{PFR_{1+i}}=(m_{i1},...,m_{ideg(m_i)})`$ where $`m_{ij}`$s are coefficients of polynomial  $$m_i(x)$$,  $$\pi_{PFR_{1+t+i}}=(r_{i1},...,r_{ideg(r_i)})$$ where $`r_{ij}`$s are coefficients of polynomial $$r_i(x)$$ and $`\pi_{PFR_{2t+2}}=(q_{11},...,q_{1deg(q_1)})`$ where $`q_{1j}`$s are coefficients of polynomial $$q_1(x)$$
 
-Here $$F'(x)=G(x,h'_1(43x),h'_2(x))=(h'_1(43x)-\omega h'_2(x))(x-\gamma^2)(x-\gamma^8)=64x^{12}+169x^{11}+168x^{10}$$\
-$$+51x^9+117x^3+12x^2+13x+130$$\
-and then $$q_1(x)=\frac{F'(x)}{Z_{\mathbb{K}}(x)}=64x^3+169x^2+168x+51$$.
+Here $`F'(x)=G(x,h'_1(43x),h'_2(x))=(h'_1(43x)-\omega h'_2(x))(x-\gamma^2)(x-\gamma^8)=64x^{12}+169x^{11}+168x^{10}+51x^9+117x^3+12x^2+13x+130`$\
+and then $`q_1(x)=\frac{F'(x)}{Z_{\mathbb{K}}(x)}=64x^3+169x^2+168x+51`$.
 
-The Prover sends  $$\pi_{PFR_{2}}=(179,101,0,0,0,0,0,0,0,2,80)$$,  $$\pi_{PFR_{3}}=(0,179,0,0,0,0,0,0,0,0,2)$$ , $$\pi_{PFR_4}=(2,1)$$,   $$\pi_{PFR_5}=(0,2)$$  and $$\pi_{PFR_6}=(51,168,169,64)$$ to the Verifier.
+The Prover sends  $`\pi_{PFR_{2}}=(179,101,0,0,0,0,0,0,0,2,80)`$,  $`\pi_{PFR_{3}}=(0,179,0,0,0,0,0,0,0,0,2)`$ , $$\pi_{PFR_4}=(2,1)$$,   $$\pi_{PFR_5}=(0,2)$$  and $`\pi_{PFR_6}=(51,168,169,64)`$ to the Verifier.
 
-2-2-3- The Verifier derives  $$h'_i=h_i+m_i$$ through additive homomorphism. Then samples $$\beta_1$$, $$\beta_2$$ and $$c$$ of $$\mathbb{F}^{*}-\mathbb{K}$$ and sends $$c$$ to the Prover. Suppose $$\beta_1=65$$, $$\beta_2=21$$ and $$c=171$$. The Verifier sends $$c=171$$ to the Prover.
+2-2-3- The Verifier derives  $`h'_i=h_i+m_i`$ through additive homomorphism. Then samples $$\beta_1$$, $$\beta_2$$ and $$c$$ of $`\mathbb{F}^{*}-\mathbb{K}`$ and sends $$c$$ to the Prover. Suppose $$\beta_1=65$$, $$\beta_2=21$$ and $$c=171$$. The Verifier sends $$c=171$$ to the Prover.
 
-2-2-4- The Prover computes $$q_2=r_1+cr_2+...+c^{t-1}r_t$$ and the Verifier derives concrete oracle $$q_2$$ through additive homomorphism. Here, the Prover computes $$q_2(x)=r_1(x)+cr_2(x)=2+x+171(2x)=162x+2$$.
+2-2-4- The Prover computes $`q_2=r_1+cr_2+...+c^{t-1}r_t`$ and the Verifier derives concrete oracle $$q_2$$ through additive homomorphism. Here, the Prover computes $`q_2(x)=r_1(x)+cr_2(x)=2+x+171(2x)=162x+2`$.
 
-2-2-5- Let $$M(x)=m_1(\alpha_1 x)+cm_2(\alpha_2 x)+...+c^{t-1}m_t(\alpha_t x)$$. The Verifier computes $$Z_{\mathbb{K}}(\beta_1)$$, $$Z_{\mathbb{K}}(\beta_2)$$, queries $$q_1(\beta_1)$$and $$q_2(\beta_2)$$ and for $$i\in \{1,2,..,t\}$$, queries $$h'_i(\alpha_i\beta_1)$$ and $$m_i(\alpha_i\beta_2)$$to compute $$F'(\beta_1)$$ and $$M(\beta_2)$$. The Verifier asserts two identities $$M(\beta_2)-q_2(\beta_2)Z_{\mathbb{K}}(\beta_2)=0$$ and $$F'(\beta_1)-q_1(\beta_1)Z_{\mathbb{K}}(\beta_1)=0$$.
+2-2-5- Let $$M(x)=m_1(\alpha_1 x)+cm_2(\alpha_2 x)+...+c^{t-1}m_t(\alpha_t x)$$. The Verifier computes $$Z_{\mathbb{K}}(\beta_1)$$, $$Z_{\mathbb{K}}(\beta_2)$$, queries $`q_1(\beta_1)`$and $`q_2(\beta_2)`$ and for $`i\in \{1,2,..,t\}`$, queries $`h'_i(\alpha_i\beta_1)`$ and $`m_i(\alpha_i\beta_2)`$to compute $`F'(\beta_1)`$ and $$M(\beta_2)$$. The Verifier asserts two identities $`M(\beta_2)-q_2(\beta_2)Z_{\mathbb{K}}(\beta_2)=0`$ and $$F'(\beta_1)-q_1(\beta_1)Z_{\mathbb{K}}(\beta_1)=0$$.
 
-Here, $$M(x)=m_1(\alpha_1 x)+cm_2(\alpha_2 x)=m_1(\gamma x)+171m_2(x)=162x^{10}+2x^9+19x+179$$. The Verifier computes $$Z_{\mathbb{K}}(\beta_1)=Z_{\mathbb{K}}(65)=65^9+180=0$$ and $$Z_{\mathbb{K}}(\beta_2)=Z_{\mathbb{K}}(21)=21^9+180=30$$ and queries $$q_1(\beta_1)=86$$ and $$q_2(\beta_2)=146$$. Also queries  values $$h'_1(\alpha_1\beta_1)=h'_1(\gamma\times 65)=h'_1(80)=0$$ ,  $$h'_2(\alpha_2\beta_1)=h'_2(65)=0$$, $$m_1(\alpha_1\beta_2)=m_1(\gamma\times 21)=m_1(179)=147$$ and $$m_2(\alpha_2\beta_2)=m_2(21)=174$$. Then checks$$M(\beta_2)-q_2(\beta_2)Z_{\mathbb{K}}(\beta_2)=0$$ , that means $$36-30\times 146=36-36\equiv 0\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, and $$F'(\beta_1)-q_1(\beta_1)Z_{\mathbb{K}}(\beta_1)=0$$, that means $$0-86\times 0\equiv 0\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$.
+Here, $$M(x)=m_1(\alpha_1 x)+cm_2(\alpha_2 x)=m_1(\gamma x)+171m_2(x)=162x^{10}+2x^9+19x+179$$. The Verifier computes $$Z_{\mathbb{K}}(\beta_1)=Z_{\mathbb{K}}(65)=65^9+180=0$$ and $$Z_{\mathbb{K}}(\beta_2)=Z_{\mathbb{K}}(21)=21^9+180=30$$ and queries $$q_1(\beta_1)=86$$ and $$q_2(\beta_2)=146$$. Also queries  values $$h'_1(\alpha_1\beta_1)=h'_1(\gamma\times 65)=h'_1(80)=0$$ ,  $`h'_2(\alpha_2\beta_1)=h'_2(65)=0`$, $`m_1(\alpha_1\beta_2)=m_1(\gamma\times 21)=m_1(179)=147`$ and $$m_2(\alpha_2\beta_2)=m_2(21)=174$$. Then checks $`M(\beta_2)-q_2(\beta_2)Z_{\mathbb{K}}(\beta_2)=0`$ , that means $`36-30\times 146=36-36\equiv 0\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$, and $`F'(\beta_1)-q_1(\beta_1)Z_{\mathbb{K}}(\beta_1)=0`$, that means $`0-86\times 0\equiv 0\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$.
 
 3- The Prover and the Verifier run $$Subset\hspace{1mm}over\hspace{1mm}\mathbb{K}$$ between $$row_A$$ and $$h$$ to prove that $$row_A(\mathbb{K})\subset h(\mathbb{K})$$ where $$row_A(\mathbb{K})=\{row_A(k):\hspace{1mm}k\in\mathbb{K}\}$$and  $$h(\mathbb{K})=\{h(k)\hspace{1mm}:\hspace{1mm}k\in\mathbb{K}\}$$.&#x20;
 
@@ -61,12 +60,12 @@ Here, $$M(x)=m_1(\alpha_1 x)+cm_2(\alpha_2 x)=m_1(\gamma x)+171m_2(x)=162x^{10}+
 Let parameters $$(\Delta \in \mathbb{F}, n = |\mathbb{H}|)$$ such that $$ord(\Delta) = 2n$$ and $$\Delta^2=\omega$$.\
 &#x20;    Here, $$\omega=59$$, $$\Delta=56$$ and $$ord(\Delta)=2n=10$$.
 
-3-5-1-2- Step 4-Substep A- The Prover interpolates polynomial $$s$$ so that agrees with $$\frac{row_A}{col_A}$$ on $$\mathbb{K}$$. Then send them to the Verifier.
+3-5-1-2- Step 4-Substep A- The Prover interpolates polynomial $$s$$ so that agrees with $`\frac{row_A}{col_A}1$ on $$\mathbb{K}$$. Then send them to the Verifier.
 
-Here, $$s(1)=\frac{row_A(1)}{col_A(1)}=\frac{42}{59}\equiv 59\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$s(43)=\frac{row_A(43)}{col_A(43)}\equiv125\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$s(39)=\frac{row_A(39)}{col_A(39)}=\frac{135}{125}\equiv59\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$s(48)=\frac{row_A(48)}{col_A(48)}=\frac{48}{45}\equiv 170\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, \
-$$s(73)=\frac{row_A(73)}{col_A(73)}=\frac{36}{22}\equiv 51\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$s(62)=\frac{row_A(62)}{col_A(62)}=\frac{151}{166}\equiv 2\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$,\
-$$s(132)=\frac{row_A(132)}{col_A(132)}=\frac{21}{46}\equiv 28\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$s(65)=\frac{row_A(65)}{col_A(65)}=\frac{131}{127}\equiv 135\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$ and\
-$$s(80)=\frac{row_A(80)}{col_A(80)}=\frac{6}{40}\equiv 154\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$. Therefore, $$s(x)=59L_1(x)+125L_2(x)+59L_3(x)+170L_4(x)+51L_5(x)+2L_6(x)+28L_7(x)+135L_8(x)+$$\
+Here, $`s(1)=\frac{row_A(1)}{col_A(1)}=\frac{42}{59}\equiv 59\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$s(43)=\frac{row_A(43)}{col_A(43)}\equiv125\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$, $`s(39)=\frac{row_A(39)}{col_A(39)}=\frac{135}{125}\equiv59\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$s(48)=\frac{row_A(48)}{col_A(48)}=\frac{48}{45}\equiv 170\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$, \
+$`s(73)=\frac{row_A(73)}{col_A(73)}=\frac{36}{22}\equiv 51\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$s(62)=\frac{row_A(62)}{col_A(62)}=\frac{151}{166}\equiv 2\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$,\
+$`s(132)=\frac{row_A(132)}{col_A(132)}=\frac{21}{46}\equiv 28\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$s(65)=\frac{row_A(65)}{col_A(65)}=\frac{131}{127}\equiv 135\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$ and\
+$`s(80)=\frac{row_A(80)}{col_A(80)}=\frac{6}{40}\equiv 154\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$. Therefore, $$s(x)=59L_1(x)+125L_2(x)+59L_3(x)+170L_4(x)+51L_5(x)+2L_6(x)+28L_7(x)+135L_8(x)+$$\
 $$154L_9(x)$$.&#x20;
 
 where $$L_1(x)$$, $$L_2(x)$$ and $$L_3(x)$$ are computed in step $$1$$ and the rest of $$L_i(x)s$$ are\
@@ -74,29 +73,29 @@ $$L_4(x)=126x^8+75x^7+161x^6+126x^5+75x^4+161x^3+126x^2+75x+161$$,\
 $$L_5(x)=169x^8+29x^7+126x^6+148x^5+125x^4+75x^3+45x^2+27x+161$$,\
 $$L_6(x)=27x^8+45x^7+75x^6+125x^5+148x^4+126x^3+29x^2+169x+161$$,\
 $$L_7(x)=75x^8+126x^7+161x^6+75x^5+126x^4+161x^3+75x^2+126x+161$$,\
-$$L_8(x)=148x^8+27x^7+126x^6+45x^5+29x^4+75x^3+169x^2+125x+161$$and\
+$$L_8(x)=148x^8+27x^7+126x^6+45x^5+29x^4+75x^3+169x^2+125x+161$$ and\
 $$L_9(x)=29x^8+148x^7+75x^6+27x^5+169x^4+126x^3+125x^2+45x+161$$.
 
 Therefore $$s(x)=41x^8+101x^7+34x^6+38x^5+x^4+25x^3+152x^2+123x+87$$. The Prover sends $$s(x)$$ to the Verifier.
 
 3-5-1-2- Step 4-Substep B-  For $$b\in\{row_A, col_A, s\}$$, the Prover interpolates polynomial $$b'$$ so that for all $$k\in \mathbb{K}$$, $$b'(k)=\Delta^{\log_{\omega}^{b(k)}}$$.
 
-Here, if $$b=row_A$$, $$row'_A(k)=\Delta^{\log_{\omega}^{row_A(k)}}=56^{\log_{59}^{row_A(k)}}$$that means $$row'_A(1)=56^{\log_{59}^{42}}=56^2\equiv 59\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$row'_A(43)=56^{\log_{59}^{125}}=56^3\equiv 46\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$,\
-$$row'_A(39)=56^{\log_{59}^{135}}=56^4\equiv 42\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$row'_A(48)=56^{\log_{59}^{48}} \equiv 49\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$,\
-$$row'_A(73)=56^{\log_{59}^{36}} \equiv 114\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$row'_A(62)=56^{\log_{59}^{151}} \equiv  \hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$.\
+Here, if $$b=row_A$$, $`row'_A(k)=\Delta^{\log_{\omega}^{row_A(k)}}=56^{\log_{59}^{row_A(k)}}`$ that means $`row'_A(1)=56^{\log_{59}^{42}}=56^2\equiv 59\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$, $`row'_A(43)=56^{\log_{59}^{125}}=56^3\equiv 46\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$,\
+$`row'_A(39)=56^{\log_{59}^{135}}=56^4\equiv 42\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$, $`row'_A(48)=56^{\log_{59}^{48}} \equiv 49\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$,\
+$`row'_A(73)=56^{\log_{59}^{36}} \equiv 114\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$, $`row'_A(62)=56^{\log_{59}^{151}} \equiv  \hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$.\
 
 
-Therefore $$row'_A(x)=59L_1(x)+46L_2(x)+42L_3(x)+49L_4(x)+114L_5(x)+...$$.
+Therefore $`row'_A(x)=59L_1(x)+46L_2(x)+42L_3(x)+49L_4(x)+114L_5(x)+...`$.
 
-if $$b=col_A$$,  $$col'_A(k)=\Delta^{\log_{\omega}^{col_A(k)}}=56^{\log_{59}^{col_A(k)}}$$that means $$col'_A(1)=56^{\log_{59}^{59}}=56^1\equiv 56\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$col'_A(48)=56^{\log_{59}^{1}}=56^5\equiv 180\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$ and $$col'_A(132)=56^{\log_{59}^{125}}=56^3\equiv 46\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$. Therefore $$col'_A(x)=56L_1(x)+180L_2(x)+46L_3(x)=96x^2+47x+94$$.
+if $$b=col_A$$,  $`col'_A(k)=\Delta^{\log_{\omega}^{col_A(k)}}=56^{\log_{59}^{col_A(k)}}`$ that means $`col'_A(1)=56^{\log_{59}^{59}}=56^1\equiv 56\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$, $`col'_A(48)=56^{\log_{59}^{1}}=56^5\equiv 180\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$ and $`col'_A(132)=56^{\log_{59}^{125}}=56^3\equiv 46\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$. Therefore $`col'_A(x)=56L_1(x)+180L_2(x)+46L_3(x)=96x^2+47x+94`$.
 
-if $$b=s$$,  $$s'(k)=\Delta^{\log_{\omega}^{s(k)}}=56^{\log_{59}^{s(k)}}$$that means $$s'(1)=56^{\log_{59}^{59}}=56^1\equiv 56\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$,  $$s'(48)=56^{\log_{59}^{125}}=56^3\equiv 46\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$ and $$s'(132)=56^{\log_{59}^{59}}=56^1\equiv 56\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$. Therefore $$s'(x)=56L_1(x)+46L_2(x)+56L_3(x)=21x^2+103x+113$$.
+if $$b=s$$,  $`s'(k)=\Delta^{\log_{\omega}^{s(k)}}=56^{\log_{59}^{s(k)}}`$ that means $$s'(1)=56^{\log_{59}^{59}}=56^1\equiv 56\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$,  $`s'(48)=56^{\log_{59}^{125}}=56^3\equiv 46\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$ and $`s'(132)=56^{\log_{59}^{59}}=56^1\equiv 56\hspace{1mm}(\textrm{mod}\hspace{1mm}181)`$. Therefore $$s'(x)=56L_1(x)+46L_2(x)+56L_3(x)=21x^2+103x+113$$.
 
 Then the Prover sends $$row'_A$$, $$col'_A$$ and $$s'$$ to the Verifier.
 
-3-5-1-2- Step 4-Substep C-  The Prover interpolates polynomial $$h$$ so that $$seq_{\mathbf{K}}(h)=1,\Delta,\Delta^2,..,\Delta^{n-1},0,0,..,0$$.
+3-5-1-2- Step 4-Substep C-  The Prover interpolates polynomial $$h$$ so that $`seq_{\mathbf{K}}(h)=1,\Delta,\Delta^2,..,\Delta^{n-1},0,0,..,0`$.
 
-Here $$seq_{\mathbf{K}}(h)=1, 56, 59, 46, 42$$.
+Here $`seq_{\mathbf{K}}(h)=1, 56, 59, 46, 42`$.
 
 ### &#x20;AHP Proof
 
