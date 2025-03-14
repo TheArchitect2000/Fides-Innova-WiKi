@@ -86,7 +86,8 @@ $`p(x)=\eta_{row_{AHP_A}}\hat{row}_{AHP_A}(x)+\eta_{col_{AHP_A}}\hat{col}_{AHP_A
 
 18- The Prover calculates $`p(x)`$ in $`x=x'`$ (value of $`x'`$ is received from the Verifier. Also, can select as $`x'=hash(s(22)))`$, then puts it in $`\pi_{AHP}^{16}`$. Therefore, $`\pi_{AHP}^{16}=p(x')=y'`$.
 
-19- The Prover computes $`\pi_{AHP}^{17}=PC.Eval(ck,p(x),d_p,r_p,x')`$ where $`d_p`$ is degree bound of $`p(x)`$ and $`r_p`$ is a random value. For example, if the polynomial commitment scheme $`KZG`$ is used, then the Prover calculates polynomial $`q(x)=\frac{p(x)-y'}{x-x'}`$ and $`\pi_{AHP}^{17}=g\hspace{1mm}q(\tau)`$ by using $`ck`$ as following: $`\pi_{AHP}^{17}=\sum_{i=0}^{deg_{q(x)}}q_i\hspace{1mm}ck(i)`$, where $`q_i`$ is the coefficient of $`x^i`$ of $`q(x)`$.
+19- The Prover computes $`\pi_{AHP}^{17}=PC.Eval(ck,p(x),d_p,r_p,x')`$ where $`d_p`$ is degree bound of $`p(x)`$ and $`r_p`$ is a random value. For example, if the polynomial commitment scheme $`KZG`$ is used, then the Prover calculates polynomial 
+$`q(x)=\frac{p(x)-y'}{x-x'}`$ and $`\pi_{AHP}^{17}=g\hspace{1mm}q(\tau)`$ by using $`ck`$ as following: $`\pi_{AHP}^{17}=\sum_{i=0}^{deg_{q(x)}}q_i\hspace{1mm}ck(i)`$, where $`q_i`$ is the coefficient of $`x^i`$ of $`q(x)`$.
 
 ## 3-3- Proof Structure
 
@@ -109,7 +110,7 @@ $`Com_{AHP_X}^{11}=\sum_{i=0}^{deg_{h_2(x)}}h_{2_i}ck(i)`$, \
 $`Com_{AHP_X}^{12}=\sum_{i=0}^{deg_{g_3(x)}}g_{3_i}ck(i)`$,\
 $`Com_{AHP_X}^{13}=\sum_{i=0}^{deg_{h_3(x)}}h_{3_i}ck(i)`$;
 
-and $$\pi_{AHP}=(\pi_{AHP}^{1},\pi_{AHP}^2,\pi_{AHP}^3,\pi_{AHP}^4,\pi_{AHP}^5,\pi_{AHP}^6,\pi_{AHP}^7,\pi_{AHP}^8,\pi_{AHP}^9,\pi_{AHP}^{10},\pi_{AHP}^{11},\pi_{AHP}^{12},\pi_{AHP}^{13},\pi_{AHP}^{14},\pi_{AHP}^{15},\pi_{AHP}^{16},\pi_{AHP}^{17})`$
+and $`$\pi_{AHP}=(\pi_{AHP}^{1},\pi_{AHP}^2,\pi_{AHP}^3,\pi_{AHP}^4,\pi_{AHP}^5,\pi_{AHP}^6,\pi_{AHP}^7,\pi_{AHP}^8,\pi_{AHP}^9,\pi_{AHP}^{10},\pi_{AHP}^{11},\pi_{AHP}^{12},\pi_{AHP}^{13},\pi_{AHP}^{14},\pi_{AHP}^{15},\pi_{AHP}^{16},\pi_{AHP}^{17})`$
 
 \
 $`\pi_{AHP}^1=\sigma_1`$, \
