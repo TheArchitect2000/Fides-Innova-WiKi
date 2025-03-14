@@ -40,9 +40,9 @@ and $$\pi_{AHP}=(\pi_{AHP}^{1},\pi_{AHP}^2,\pi_{AHP}^3,\pi_{AHP}^4,\pi_{AHP}^5,\
 
 as following:
 
-1- The Prover calculates $$z_A=Az$$, $$z_B=Bz$$, $$z_C=Cz$$ where  $$z=(1,X,W,Y)$$, for input $$X$$ that puts in $$Com_{AHP_X}^1$$.
+1- The Prover calculates $`z_A=Az`$, $`z_B=Bz`$, $`z_C=Cz`$ where  $`z=(1,X,W,Y)`$, for input $$X$$ that puts in $`Com_{AHP_X}^1`$.
 
-2- The Prover calculates polynomial $$z_A(x)$$using indexing $$z_A$$ by elements of $$\mathbb{H}$$.  Then, calculates polynomial $$\hat{z}_A(x)$$ using the polynomial $$z_A(x)$$such that $$\hat{z}_A(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]$$ that agree with $$z_A(x)$$ on $$\mathbb{H}$$. Note that values of up to $$b$$ locations in this polynomial reveals no information about the witness $$w$$ provided the locations are in $$\mathbb{F}-\mathbb{H}$$. Similarly, calculates polynomial  $$\hat{z}_B(x)$$ so that $$\hat{z}_B(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]$$ that agree with $$z_B(x)$$ on $$\mathbb{H}$$. Also, calculates polynomial  $$\hat{z}_C(x)$$ so that $$\hat{z}_C(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]$$ that agree with $$z_C(x)$$ on $$\mathbb{H}$$.
+2- The Prover calculates polynomial $`z_A(x)`$ using indexing $`z_A`$ by elements of $`\mathbb{H}`$. Then, calculates polynomial $`\hat{z}_A(x)`$ using the polynomial $`z_A(x)`$such that $`\hat{z}_A(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]`$ that agree with $`z_A(x)`$ on $`\mathbb{H}`$. Note that values of up to $`b`$ locations in this polynomial reveals no information about the witness $`w`$ provided the locations are in $`\mathbb{F}-\mathbb{H}`$. Similarly, calculates polynomial  $`\hat{z}_B(x)`$ so that $`\hat{z}_B(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]`$ that agree with $`z_B(x)`$ on $`\mathbb{H}`$. Also, calculates polynomial  $`\hat{z}_C(x)`$ so that $`\hat{z}_C(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]`$ that agree with $`z_C(x)`$ on $`\mathbb{H}`$.
 
 Then, calculates polynomial $$\hat{W}(x)\in \mathbb{F}^{<n_g+b}[x]$$ that agree with $$\bar{W}(x)$$ on $$\mathbb{H}[>|X|+1]$$ where&#x20;
 
