@@ -46,9 +46,8 @@ as following:
 
 Then, calculates polynomial $$\hat{W}(x)\in \mathbb{F}^{<n_g+b}[x]$$ that agree with $$\bar{W}(x)$$ on $$\mathbb{H}[>|X|+1]$$ where&#x20;
 
-&#x20;                                           $$\bar{W}:\mathbb{H}[>|X|+1]\to \mathbb{F}$$
-
-&#x20;                                               $$\bar{W}(h)=\frac{W(h)-\hat{X}(h)}{v_{\mathbb{H}[\leq |X|+1]}(h)}$$
+                                           $`\bar{W}:\mathbb{H}[>|X|+1]\to \mathbb{F}`$
+                                               $`\bar{W}(h)=\frac{W(h)-\hat{X}(h)}{v_{\mathbb{H}[\leq |X|+1]}(h)}`$
 
 Note that $$\mathbb{H}[>|X|+1]$$ includes the members of $$\mathbb{H}$$ except for the first $$|X|+1$$ members. Also, $$v_{\mathbb{H}[\leq |X|+1]}(h)$$ is vanishing polynomial on $$\mathbb{H}[\leq |X|+1]$$ and $$\hat{X}(h)$$ is the polynomial obtained using indexing $$x$$ by elements of $`\mathbb{H}[\leq |X|+1]`$.
 3- The Prover finds polynomial  $`h_0(x)`$ so that $`\hat{z}_A(x)\hat{z}_B(x)-\hat{z}_C(x)=h_0(x)v_{\mathbb{H}}(x)`$.
@@ -89,9 +88,7 @@ $`p(x)=\eta_{row_{AHP_A}}\hat{row}_{AHP_A}(x)+\eta_{col_{AHP_A}}\hat{col}_{AHP_A
 
 18- The Prover calculates $`p(x)`$ in $`x=x'`$ (value of $`x'`$ is received from the Verifier. Also, can select as $`x'=hash(s(22)))`$, then puts it in $`\pi_{AHP}^{16}`$. Therefore, $`\pi_{AHP}^{16}=p(x')=y'`$.
 
-19- The Prover computes $$\pi_{AHP}^{17}=PC.Eval(ck,p(x),d_p,r_p,x')$$ where $$d_p$$ is degree bound of $$p(x)$$ and $$r_p$$ is a random value.\
-For example, if the polynomial commitment scheme $$KZG$$ is used, then the Prover calculates polynomial $$q(x)=\frac{p(x)-y'}{x-x'}$$ and  $$\pi_{AHP}^{17}=g\hspace{1mm}q(\tau)$$ by using $$ck$$ as following:\
-$$\pi_{AHP}^{17}=\sum_{i=0}^{deg_{q(x)}}q_i\hspace{1mm}ck(i)$$, where $$q_i$$ is the coefficient of $$x^i$$ of $$q(x)$$.
+19- The Prover computes $`\pi_{AHP}^{17}=PC.Eval(ck,p(x),d_p,r_p,x')`$ where $`d_p`$ is degree bound of $`p(x)`$ and $`r_p`$ is a random value. For example, if the polynomial commitment scheme $`KZG`$ is used, then the Prover calculates polynomial $`q(x)=\frac{p(x)-y'}{x-x'}`$ and $`\pi_{AHP}^{17}=g\hspace{1mm}q(\tau)`$ by using $`ck`$ as following: $`\pi_{AHP}^{17}=\sum_{i=0}^{deg_{q(x)}}q_i\hspace{1mm}ck(i)`$, where $`q_iv$ is the coefficient of $`x^i`$ of $$q(x)$$.
 
 ## 3-3- Proof Structure
 
