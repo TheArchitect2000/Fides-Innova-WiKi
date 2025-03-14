@@ -8,12 +8,11 @@ description: >-
 # 4- Proof Verification Phase
 
 ## 4-1- PFR Verify
+$$Verify(\mathbb{F}, \mathbb{H}, \mathbb{K}, com_{PFR},\pi_{PFR})$$: This function outputs $$1$$, if the following equations satisfies.
 
-$$Verify(\mathbb{F}, \mathbb{H}, \mathbb{K}, com_{PFR},\pi_{PFR})$$: This function outputs $$1$$, if the following equations satisfies.&#x20;
+&#x20;$$1)$$ $$h(\gamma^{p_i})=a_i$$ for $$i\in \{1,2,...,v\}$$ where $$\pi_{PFR_1}=h(x)$$.
 
-&#x20;$$1)$$ $$h(\gamma^{p_i})=a_i$$ for $$i\in \{1,2,...,v\}$$ where $$\pi_{PFR_1}=h(x)$$.&#x20;
-
-$$2)$$ $$M(\beta_2)-q_2(\beta_2)Z_{\mathbb{K}}(\beta_2)=0$$&#x20;
+$$2)$$ $$M(\beta_2)-q_2(\beta_2)Z_{\mathbb{K}}(\beta_2)=0$$
 
 ## 4-2- AHP Verify
 
@@ -39,9 +38,7 @@ where $$a(x)=\sum_{M\in \{A,B,C\}} \eta_M v_{\mathbb{H}}(\beta_2)v_{\mathbb{H}}(
 $$\eta_{\hat{w}}=hash(s(19))$$, $$\eta_{\hat{z}_A}=hash(s(20))$$, $$\eta_{\hat{z}_B}=hash(s(20))$$, $$\eta_{\hat{z}_C}=hash(s(21))$$,  $$\eta_{h_0}=hash(s(22))$$, $$\eta_{s}=hash(s(23))$$, $$\eta_{g_1}=hash(s(24))$$, $$\eta_{h_1}=hash(s(25))$$,  $$\eta_{g_2}=hash(s(26))$$, $$\eta_{h_2}=hash(s(27))$$, $$\eta_{g_3}=hash(s(28))$$, $$\eta_{h_3}=hash(s(29))$$.&#x20;
 
 2-2- The Verifier derives commitment of $$p(x)$$, $$Com_p$$, by using polynomial commitment scheme homomorphism.
-
-&#x20;For example, if polynomial commitment scheme $$KZG$$  is used, then&#x20;
-
+For example, if polynomial commitment scheme $$KZG$$  is used, then
 $$Com_p=\eta_{row_{AHP_A}}Com_{AHP}^0+\eta_{col_{AHP_A}}Com_{AHP}^1+\eta_{val_{AHP_A}}Com_{AHP}^2+\eta_{row_{AHP_B}}Com_{AHP}^3+\eta_{col_{AHP_B}}Com_{AHP}^4+\eta_{val_{AHP_B}}Com_{AHP}^5+\eta_{row_{AHP_C}}Com_{AHP}^6+\eta_{col_{AHP_B}}Com_{AHP}^7+\eta_{val_{AHP_C}}Com_{AHP}^8+\eta_{\hat{w}}Com_{AHP_X}^2+\eta_{\hat{z}_A}Com_{AHP_X}^3+\eta_{\hat{z}_B}Com_{AHP_X}^4+\eta_{\hat{z}_C}Com_{AHP_X}^5+\eta_{h_0}Com_{AHP_X}^6+\eta_sCom_{AHP_X}^7+\eta_{g_1}Com_{AHP_X}^8+\eta_{h_1}Com_{AHP_X}^9+\eta_{g_2}Com_{AHP_X}^{10}+\eta_{h_2}Com_{AHP_X}^{11}+\eta_{g_3}Com_{AHP_X}^{12}+\eta_{h_3}Com_{AHP_X}^{13}$$   \
 
 
