@@ -52,58 +52,33 @@ Then, calculates polynomial $$\hat{W}(x)\in \mathbb{F}^{<n_g+b}[x]$$ that agree 
 
 &#x20;                                               $$\bar{W}(h)=\frac{W(h)-\hat{X}(h)}{v_{\mathbb{H}[\leq |X|+1]}(h)}$$
 
-Note that $$\mathbb{H}[>|X|+1]$$ includes the members of $$\mathbb{H}$$ except for the first $$|X|+1$$ members. Also, $$v_{\mathbb{H}[\leq |X|+1]}(h)$$ is vanishing polynomial on $$\mathbb{H}[\leq |X|+1]$$ and $$\hat{X}(h)$$ is the polynomial obtained using indexing $$x$$ by elements of  $$\mathbb{H}[\leq |X|+1]$$.
-
-3- The Prover finds polynomial  $$h_0(x)$$ so that $$\hat{z}_A(x)\hat{z}_B(x)-\hat{z}_C(x)=h_0(x)v_{\mathbb{H}}(x)$$.
-
-4- The Prover samples a fully random $$s(x)\in\mathbb{F}^{<2|\mathbb{H}|+b-1}[x]$$ and computes sum $$\sigma_1=\sum_{k\in \mathbb{H}}s(k)$$
-
+Note that $$\mathbb{H}[>|X|+1]$$ includes the members of $$\mathbb{H}$$ except for the first $$|X|+1$$ members. Also, $$v_{\mathbb{H}[\leq |X|+1]}(h)$$ is vanishing polynomial on $$\mathbb{H}[\leq |X|+1]$$ and $$\hat{X}(h)$$ is the polynomial obtained using indexing $$x$$ by elements of $`\mathbb{H}[\leq |X|+1]`$.
+3- The Prover finds polynomial  $`h_0(x)`$ so that $`\hat{z}_A(x)\hat{z}_B(x)-\hat{z}_C(x)=h_0(x)v_{\mathbb{H}}(x)`$.
+4- The Prover samples a fully random $`s(x)\in\mathbb{F}^{<2|\mathbb{H}|+b-1}[x]`$ and computes sum $`\sigma_1=\sum_{k\in \mathbb{H}}s(k)`$
 5- The Prover sends $`Com_{AHP_X}^2=\sum_{i=0}^{deg_{\hat{W}(x)}}\hat{w}_i\hspace{1mm}ck(i)`$ ,  $`Com_{AHP_X}^{3}=\sum_{i=0}^{deg_{\hat{z}_A(x)}}\hat{z}_{A_i}ck(i)`$,  $`Com_{AHP_X}^{4}=\sum_{i=0}^{deg_{\hat{z}_B(x)}}\hat{z}_{B_i}ck(i)`$,  $`Com_{AHP_X}^{5}=\sum_{i=0}^{deg_{\hat{z}_C(x)}}\hat{z}_{C_i}ck(i)`$,  $`Com_{AHP_X}^{6}=\sum_{i=0}^{deg_{h_0(x)}}h_{0_i}ck(i)`$, and  $`Com_{AHP_X}^{7}=\sum_{i=0}^{deg_{s(x)}}s_i\hspace{1mm}ck(i)`$, where $`\hat{w}_i`$ is coefficient of $`x^i`$ in polynomial $`\hat{W}(x)`$, $`\hat{z}_{A_i}`$ is coefficient of $`x^i`$ in polynomial $`\hat{z}_A(x)`$, $`\hat{z}_{B_i}`$ is coefficient of $`x^i`$ in polynomial $`\hat{z}_B(x)`$, $`\hat{z}_{C_i}`$ is coefficient of $`x^i`$ in polynomial $`\hat{z}_C(x)`$, $`h_{0_i}`$ is coefficient of $`x^i`$ in polynomial $`h_0(x)`$, $`s_{i}`$ is coefficient of $`x^i`$ in polynomial $`s(x)`$.
+6- The Verifier chooses random numbers  $`\alpha`$, $`\eta_A`$, $`\eta_B`$, $`\eta_C`$ and sends them to the Prover. ( Note that the Prover can choose $`\alpha=hash(s(0)+s(1)+1)`$, $`\eta_A=hash(s(2)+s(3)+2)`$, $`\eta_B=hash(s(4)+s(5)+3)`$, $`\eta_C=hash(s(6)+s(7)+4)`$.&#x20;
+7- The Prover finds polynomials $`g_1(x)`$ and $`h_1(x)`$ so that&#x20;
+&#x20; $`s(x)+r(\alpha,x)\sum_{M}\eta_M\hat{z}_M(x)-(\sum_{M}\eta_Mr_M(\alpha,x))\hat{z}(x)=h_1(x)v_{\mathbb{H}}(x)+xg_1(x)+\frac{\sigma_1}{|\mathbb{H}|}`$ $`(1)`$
+where $`\hat{z}(x)=\hat{W}(x)v_{\mathbb{H}[\leq |X|+1]}(x)+\hat{X}(x)`$ that agree with $`z`$ on $`\mathbb{H}`$ and $`r(x,y)=u_{\mathbb{H}}(x,y)=\frac{v_{\mathbb{H}}(x)-v_{\mathbb{H}}(y)}{x-y}`$, $`v_{\mathbb{H}}(x)=\prod_{h\in \mathbb{H}}(x-h)=x^{|\mathbb{H}|}-1`$. Therefore\
+$`r(x,y)=\frac{x^{|\mathbb{H}|}-y^{|\mathbb{H}|}}{x-y}`$. (Note that $$r(x,y)$$satisfies two useful algebraic properties. First, the univariate polynomials $`(r(x,a))_{a\in \mathbb{H}}`$ are linearly independent and $`r(x,y)`$ is their (unique) low-degree extension. Second, $`r(x,y)`$ vanishes on the square $`\mathbb{H}\times \mathbb{H}`$ except for on the diagonal, where it takes on the (non-zero) values $`(r(a,a))_{a\in \mathbb{H}}`$.). Also $`r_M(x,y)=\sum_{k\in \mathbb{H}}r(x,k)\hat{M}(k,y)`$ for $`M\in \{A,B,C\}`$ where $`\hat{A}(x,y)`$ is a bivariate polynomial that passes from  25 points where theses points are obtained using indexing rows and columns of $$A$$ by elements of $`\mathbb{H}`$. This polynomial can obtain as following:\
+$`\hat{A}(x,y)=\sum_{k\in \mathbb{K}}u_{\mathbb{H}}(x,\hat{row}_{AHP_A}(k))u_{\mathbb{H}}(y,\hat{col}_{AHP_A}(k))\hat{val}_{AHP_A}(k)`$
+&#x20;, $$\hat{B}(x,y)$$ similarly as following:
+$`\hat{B}(x,y)=\sum_{k\in \mathbb{K}}u_{\mathbb{H}}(x,\hat{row}_{AHP_B}(k))u_{\mathbb{H}}(y,\hat{col}_{AHP_B}(k))\hat{val}_{AHP_B}(k)`$
+and $`\hat{C}(x,y)`$ similarly as following:
+$`\hat{C}(x,y)=\sum_{k\in \mathbb{K}}u_{\mathbb{H}}(x,\hat{row}_{AHP_C}(k))u_{\mathbb{H}}(y,\hat{col}_{AHP_C}(k))\hat{val}_{AHP_C}(k)`$
+The Prover sends $`Com_{AHP_X}^{8}=\sum_{i=0}^{deg_{g_1(x)}}g_{1_i}ck(i)`$ and $`Com_{AHP_X}^{9}=\sum_{i=0}^{deg_{h_1(x)}}h_{1_i}ck(i)`$ to the Verifier where $`g_{1_i}`$ is coefficient of $`x^i`$ of polynomial $`g_1(x)`$ and $`h_{1_i}`$ is coefficient of $`x^i`$ of polynomial $`h_1(x)`$.
+8- The Verifier selects $`\beta_1\in \mathbb{F}-\mathbb{H}`$ and sends it to the Prover. (The Prover can selects $`\beta_1=hash(s(8))\in \mathbb{F}-\mathbb{H}`$).&#x20;
+9- The Prover calculates $`\sigma_2=\sum_{k\in\mathbb{H}}r(\alpha,k)\sum_{M}\eta_M\hat{M}(k,\beta_1)`$. Then, the Prover finds $`g_2(x)`$ and $`h_2(x)`$ so that $`r(\alpha,x)\sum_M \eta_M\hat{M}(x,\beta_1)=h_2(x)v_{\mathbb{H}}(x)+xg_2(x)+\frac{\sigma_2}{|\mathbb{H}|}`$
+The Prover sends $`Com_{AHP_X}^{10}=\sum_{i=0}^{deg_{g_2(x)}}g_{2_i}ck(i)`$ and $`Com_{AHP_X}^{11}=\sum_{i=0}^{deg_{h_2(x)}}h_{2_i}ck(i)`$ where $`g_{2_i}`$ is coefficient of $`x^i`$ of polynomial $`g_2(x)`$ and $`h_{2_i}`$ is coefficient of $`x^i`$ of polynomial $`h_2(x)`$.
+10- The Verifier selects $`\beta_2\in \mathbb{F}-\mathbb{H}`$ and sends it to the Prover.  (The Prover can select $`\beta_2=hash(s(9))\in \mathbb{F}-\mathbb{H}`$).&#x20;
+11- The Prover calculates $`\sigma_3=\sum_{k\in\mathbb{K}}(\sum_M \eta_M\frac{v_{\mathbb{H}}(\beta_2)v_{\mathbb{H}}(\beta_1)\hat{val_{AHP_M}}(k)}{(\beta_2-\hat{row_{AHP_M}}(k))(\beta_1-\hat{col_{AHP_M}}(k))})`$. Then, the Prover finds polynomials $`g_3(x)$$ and $$h_3(x)`$ so that $`h_3(x)v_{\mathbb{K}}(x)=a(x)-b(x)(xg_3(x)+\frac{\sigma_3}{|\mathbb{K}|})`$ where $`a(x)=\sum_{M\in \{A,B,C\}} \eta_M v_{\mathbb{H}}(\beta_2)v_{\mathbb{H}}(\beta_1)\hat{val}_{AHP_M}(x)\prod_{N\in\{A,B,C\}-\{M\}}(\beta_2-\hat{row}_{AHP_N}(x))(\beta_1-\hat{col}_{AHP_N}(x))`$and $`b(x)=\prod_{M\in\{A,B,C\}}(\beta_2-\hat{row}_{AHP_M}(x))(\beta_1-\hat{col}_{AHP_M}(x))`$.&#x20;
 
-6- The Verifier chooses random numbers  $$\alpha$$, $$\eta_A$$, $$\eta_B$$, $$\eta_C$$ and sends them to the Prover.  ( Note that the Prover can choose $$\alpha=hash(s(0)+s(1)+1)$$, $$\eta_A=hash(s(2)+s(3)+2)$$,  $$\eta_B=hash(s(4)+s(5)+3)$$,  $$\eta_C=hash(s(6)+s(7)+4)$$.&#x20;
-
-7- The Prover finds polynomials $$g_1(x)$$ and $$h_1(x)$$ so that&#x20;
-
-&#x20; $$s(x)+r(\alpha,x)\sum_{M}\eta_M\hat{z}_M(x)-(\sum_{M}\eta_Mr_M(\alpha,x))\hat{z}(x)=h_1(x)v_{\mathbb{H}}(x)+xg_1(x)+\frac{\sigma_1}{|\mathbb{H}|}$$   $$(1)$$
-
-where $$\hat{z}(x)=\hat{W}(x)v_{\mathbb{H}[\leq |X|+1]}(x)+\hat{X}(x)$$ that agree with $$z$$ on $$\mathbb{H}$$ and  $$r(x,y)=u_{\mathbb{H}}(x,y)=\frac{v_{\mathbb{H}}(x)-v_{\mathbb{H}}(y)}{x-y}$$ ,  $$v_{\mathbb{H}}(x)=\prod_{h\in \mathbb{H}}(x-h)=x^{|\mathbb{H}|}-1$$. Therefore\
-$$r(x,y)=\frac{x^{|\mathbb{H}|}-y^{|\mathbb{H}|}}{x-y}$$. (Note that $$r(x,y)$$satisfies two useful algebraic properties. First, the univariate polynomials $$(r(x,a))_{a\in \mathbb{H}}$$  are linearly independent and $$r(x,y)$$ is their (unique) low-degree extension. Second, $$r(x,y)$$ vanishes on the square $$\mathbb{H}\times \mathbb{H}$$ except for on the diagonal, where it takes on the (non-zero) values $$(r(a,a))_{a\in \mathbb{H}}$$.)  . Also $$r_M(x,y)=\sum_{k\in \mathbb{H}}r(x,k)\hat{M}(k,y)$$ for $$M\in \{A,B,C\}$$ where $$\hat{A}(x,y)$$ is a bivariate polynomial that passes from  25 points where theses points are obtained using indexing rows and columns of $$A$$ by elements of $$\mathbb{H}$$.   This polynomial can obtain as following:\
-$$\hat{A}(x,y)=\sum_{k\in \mathbb{K}}u_{\mathbb{H}}(x,\hat{row}_{AHP_A}(k))u_{\mathbb{H}}(y,\hat{col}_{AHP_A}(k))\hat{val}_{AHP_A}(k)$$
-
-&#x20;, $$\hat{B}(x,y)$$ similarly as following:\
-\
-$$\hat{B}(x,y)=\sum_{k\in \mathbb{K}}u_{\mathbb{H}}(x,\hat{row}_{AHP_B}(k))u_{\mathbb{H}}(y,\hat{col}_{AHP_B}(k))\hat{val}_{AHP_B}(k)$$
-
-and $$\hat{C}(x,y)$$ similarly as following:\
-\
-$$\hat{C}(x,y)=\sum_{k\in \mathbb{K}}u_{\mathbb{H}}(x,\hat{row}_{AHP_C}(k))u_{\mathbb{H}}(y,\hat{col}_{AHP_C}(k))\hat{val}_{AHP_C}(k)$$
-
-\
-The Prover sends   $$Com_{AHP_X}^{8}=\sum_{i=0}^{deg_{g_1(x)}}g_{1_i}ck(i)$$ and   $$Com_{AHP_X}^{9}=\sum_{i=0}^{deg_{h_1(x)}}h_{1_i}ck(i)$$ to the Verifier where $$g_{1_i}$$ is coefficient of $$x^i$$ of polynomial $$g_1(x)$$ and  $$h_{1_i}$$ is coefficient of $$x^i$$ of polynomial $$h_1(x)$$.
-
-8- The Verifier selects $$\beta_1\in \mathbb{F}-\mathbb{H}$$ and sends it to the Prover. (The Prover can selects $$\beta_1=hash(s(8))\in \mathbb{F}-\mathbb{H}$$ ).&#x20;
-
-9- The Prover calculates $$\sigma_2=\sum_{k\in\mathbb{H}}r(\alpha,k)\sum_{M}\eta_M\hat{M}(k,\beta_1)$$. Then, the Prover finds $$g_2(x)$$ and $$h_2(x)$$ so that $$r(\alpha,x)\sum_M \eta_M\hat{M}(x,\beta_1)=h_2(x)v_{\mathbb{H}}(x)+xg_2(x)+\frac{\sigma_2}{|\mathbb{H}|}$$
-
-The Prover sends  $$Com_{AHP_X}^{10}=\sum_{i=0}^{deg_{g_2(x)}}g_{2_i}ck(i)$$ and  $$Com_{AHP_X}^{11}=\sum_{i=0}^{deg_{h_2(x)}}h_{2_i}ck(i)$$ where $$g_{2_i}$$ is coefficient of $$x^i$$ of polynomial $$g_2(x)$$ and $$h_{2_i}$$ is coefficient of $$x^i$$ of polynomial $$h_2(x)$$.
-
-10- The Verifier selects $$\beta_2\in \mathbb{F}-\mathbb{H}$$ and sends it to the Prover.  ( The Prover can select $$\beta_2=hash(s(9))\in \mathbb{F}-\mathbb{H}$$ ).&#x20;
-
-11- The Prover calculates  $$\sigma_3=\sum_{k\in\mathbb{K}}(\sum_M \eta_M\frac{v_{\mathbb{H}}(\beta_2)v_{\mathbb{H}}(\beta_1)\hat{val_{AHP_M}}(k)}{(\beta_2-\hat{row_{AHP_M}}(k))(\beta_1-\hat{col_{AHP_M}}(k))})$$. Then, the Prover finds polynomials $$g_3(x)$$ and $$h_3(x)$$ so that $$h_3(x)v_{\mathbb{K}}(x)=a(x)-b(x)(xg_3(x)+\frac{\sigma_3}{|\mathbb{K}|})$$ where $$a(x)=\sum_{M\in \{A,B,C\}} \eta_M v_{\mathbb{H}}(\beta_2)v_{\mathbb{H}}(\beta_1)\hat{val}_{AHP_M}(x)\prod_{N\in\{A,B,C\}-\{M\}}(\beta_2-\hat{row}_{AHP_N}(x))(\beta_1-\hat{col}_{AHP_N}(x))$$and $$b(x)=\prod_{M\in\{A,B,C\}}(\beta_2-\hat{row}_{AHP_M}(x))(\beta_1-\hat{col}_{AHP_M}(x))$$.&#x20;
-
-The Prover sends   $$Com_{AHP_X}^{12}=\sum_{i=0}^{deg_{g_3(x)}}g_{3_i}ck(i)$$ and  $$Com_{AHP_X}^{13}=\sum_{i=0}^{deg_{h_3(x)}}h_{3_i}ck(i)$$ where $$g_{3_i}$$ is coefficient of $$x^i$$ of polynomial $$g_3(x)$$ and $$h_{3_i}$$ is coefficient of $$x^i$$ of polynomial $$h_3(x)$$.
-
+The Prover sends $`Com_{AHP_X}^{12}=\sum_{i=0}^{deg_{g_3(x)}}g_{3_i}ck(i)`$ and $`Com_{AHP_X}^{13}=\sum_{i=0}^{deg_{h_3(x)}}h_{3_i}ck(i)`$ where $`g_{3_i}`$ is coefficient of $`x^i`$ of polynomial $`g_3(x)`$ and $`h_{3_i}`$ is coefficient of $`x^i`$ of polynomial $`h_3(x)`$.
 and
-
-12- The Prover sends $$\pi_{AHP}^1=\sigma_1$$, 
-
-$$\pi_{AHP}^2=(\hat{w_0},\hat{w_1},\hat{w_3},...,\hat{w_{|W|+b-1}})$$,  
-
-$$\pi_{AHP}^3=(\hat{z}_{A_0},\hat{z}_{A_1},...,\hat{z}_{A_{|H|+b-1}})$$, $$\pi_{AHP}^4=(\hat{z}_{B_0},\hat{z}_{B_1},...,\hat{z}_{B_{|H|+b-1}})$$,  $$\pi_{AHP}^5=(\hat{z}_{C_0},\hat{z}_{C_1},...,\hat{z}_{C_{|H|+b-1}})$$,  $$\pi_{AHP}^6=(h_{0_0},h_{0_1},...,h_{0_{|H|+2b-2}})$$ and  $$\pi_{AHP}^7=(s_0,s_1,...,s_{2|H|+b-2})$$ \
-\
-13- The Prover sends $$\pi_{AHP}^8=(g_{1_0},...,g_{1_{|H|-2}})$$ and $$\pi_{AHP}^{9}=(h_{1_0},...,h_{1_{|H|+b-2}})$$ .
-
-14-The Prover sends $$\pi_{AHP}^{10}=\sigma_2$$, $$\pi_{AHP}^{11}=(g_{2_0},...,g_{2_{|H|-2}})$$ and $$\pi_{AHP}^{12}=(h_{2_0},...,h_{2_{|H|-2}})$$.&#x20;
+12- The Prover sends $`\pi_{AHP}^1=\sigma_1`$, $`\pi_{AHP}^2=(\hat{w_0},\hat{w_1},\hat{w_3},...,\hat{w_{|W|+b-1}})`$,  
+$`\pi_{AHP}^3=(\hat{z}_{A_0},\hat{z}_{A_1},...,\hat{z}_{A_{|H|+b-1}})`$, $`\pi_{AHP}^4=(\hat{z}_{B_0},\hat{z}_{B_1},...,\hat{z}_{B_{|H|+b-1}})`$, $`\pi_{AHP}^5=(\hat{z}_{C_0},\hat{z}_{C_1},...,\hat{z}_{C_{|H|+b-1}})`$, $`\pi_{AHP}^6=(h_{0_0},h_{0_1},...,h_{0_{|H|+2b-2}})`$ and  $`\pi_{AHP}^7=(s_0,s_1,...,s_{2|H|+b-2})`$ 
+13- The Prover sends $`\pi_{AHP}^8=(g_{1_0},...,g_{1_{|H|-2}})`$ and $`\pi_{AHP}^{9}=(h_{1_0},...,h_{1_{|H|+b-2}})`$.
+14-The Prover sends $`\pi_{AHP}^{10}=\sigma_2`$, $`\pi_{AHP}^{11}=(g_{2_0},...,g_{2_{|H|-2}})`$ and $`\pi_{AHP}^{12}=(h_{2_0},...,h_{2_{|H|-2}})`$.&#x20;
 
 15- The Prover sends $$\pi_{AHP}^{13}=\sigma_3$$, $$\pi_{AHP}^{14}=(g_{3_0},...,g_{3_{|K|-2}})$$ and $$\pi_{AHP}^{15}=(h_{3_0},...,h_{3_{6|K|-6}})$$ .
 
