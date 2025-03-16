@@ -169,7 +169,7 @@ Firmware\_Version = "1.0"\
 Device Picture= <>\
 Lines = \[200, 350, 4000-4010]
 
-```json
+```
 {
     "commitmentId": String,
     "deviceType": String,
@@ -226,7 +226,7 @@ Lines = \[200, 350, 4000-4010]
     "Com_AHP8":36,
     
     "curve": "bn128",
-    "PolynomialCommitment": "KZG"
+    "polynomialCommitment": "KZG"
 }
 ```
 
