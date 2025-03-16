@@ -9,7 +9,7 @@ $$Setup(1^{\lambda},N)$$:  This function outputs $$pp=PC.Setup(1^{\lambda},d)$$.
 We consider an input $$x$$ with size of 1. Hence,  $$n_i=1$$. Considering a program which requires three gates for its arithmatization, we have $$n_g=3$$.  In this example, the maximum number of registers which are changed during the execution is $$n_r=1$$. If the computation is done in $$\mathbb{F}$$ of order $$p=181$$, $$|\mathbb{F}|=181$$.  Also, $$|\mathbb{H}|=n=n_g+n_i+1=5$$. Also, $$b$$ is a random number in &lcub; $$1,...,\mid\mathbb{F}\mid-\mid\mathbb{H}\mid$$&rcub;
 =&lcub; $$1,...,176$$ &rcub; such as $$b=2$$. Also, $$m=2n_g=6$$, $$|w|=n_g-n_r=2$$, $$|\mathbb{K}|=m=6$$. Hence:&#x20;
 
-$$d=$$ &lcub; $$d_{AHP}(N,i,j)$$ &rcub; $_{i=0,1,...,k_AHP, j=1,2,..,s_AHP(i)}^{}$ = &lcub; 6,6,6,6,6,6,6,6,6,4,7,7,7,8,11,4,6,4,4,5,30 &rcub;
+$`d=\{d_{AHP}(N,i,j)\}_{i=0,1,...,k_{AHP}, j=1,2,..,s_{AHP}(i)}=\{ 6,6,6,6,6,6,6,6,6,4,7,7,7,8,11,4,6,4,4,5,30\}`$
 
 Now, we run $$KZG.\hspace{1mm}Setup(1^{\lambda},d)$$, considering a generator of $$\mathbb{F}$$, $$g=2$$, for each element in $$d$$:
 
