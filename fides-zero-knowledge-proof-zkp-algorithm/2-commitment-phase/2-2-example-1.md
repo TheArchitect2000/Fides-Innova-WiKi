@@ -141,7 +141,7 @@ Also,  $$col_{AHP_C}:\mathbb{K}=$$ &lcub; $$1,49,48,180,132,133$$ &rcub; $$\to\m
 
 and ,  $$val_{AHP_C}:\mathbb{K}=$$ &lcub; $$1,49,48,180,132,133$$ &rcub; $$\to\mathbb{H}=$$ &lcub; $$1,59,42,125,135$$ &rcub; so that  $$val_{AHP_C}(1)=\frac{1}{(5row_{AHP_C}^4(1))(5col_{AHP_C}^4(1))}=\frac{1}{5\times 42^4\times5\times42^4}=\frac{1}{27}\equiv 114\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$, $$val_{AHP_C}(49)=\frac{1}{(5row_{AHP_C}^4(49))(5col_{AHP_C}^4(49))}=\frac{1}{5\times 125^4\times5\times125^4}=\frac{1}{117}\equiv 82\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$ , $$val_{AHP_C}(48)=\frac{1}{(5row_{AHP_C}^4(48))(5col_{AHP_C}^4(48))}=\frac{1}{5\times 135^4\times5\times135 ^4}=\frac{1}{145}\equiv 5\hspace{1mm}(\textrm{mod}\hspace{1mm}181)$$ and $$val_{AHP_C}(k)=0$$ for $$k\in \mathbb{K}-\{1,49,48\}$$. Therefore $$val_{AHP_C}(x)=\sum_{i=1}^{6}y_iL_i(x)=65x^5+61x^4+157x^3+53x^2+16x+124$$.
 
-Now, $$\hat{row_{AHP_C}}$$, $$\hat{col_{AHP_C}}$$ and $$\hat{val_{AHP_C}}$$ are extensions of $$row_{AHP_C}$$, $$col_{AHP_C}$$ and $$val_{AHP_C}$$ so that are agree on $$\mathbb{K}$$.&#x20;
+Now, $`\hat{row}_{AHP_C}`$, $`\hat{col}_{AHP_C}`$ and $`\hat{val}_{AHP_C}`$ are extensions of $$row_{AHP_C}$$, $$col_{AHP_C}$$ and $$val_{AHP_C}$$ so that are agree on $$\mathbb{K}$$.&#x20;
 
 Therefore, $$\overrightarrow{O}_{AHP}=(124,88,169,161,62,162,14,169,109,32,150,128,84,180,111,22,79,$$\
 $$72,124,168,151,37,85,20,0,164,18,180,164,18,75,176,55,34,53,86,124,88,169,$$\
@@ -154,7 +154,7 @@ $$Com_{T}=\sum_{i=0}^{deg_T}a_ig\tau^i=\sum_{i=0}^{deg_T}a_ick(i)$$  where  $$a_
 4- The Prover sends
 
 
-$$Com_{AHP}^0=\sum_{i=0}^{5}\hat{row_{AHP_{A_i}}}\hspace{1.1mm}ck(i)=124ck(0)+88ck(1)+169ck(2)+161ck(3)+62ck(4)+162ck(5) \equiv 166\hspace{1mm}(\textrm{mod}\hspace{1mm} 181)$$
+$`Com_{AHP}^0=\sum_{i=0}^{5}\hat{row}_{AHP_{A_i}}\hspace{1.1mm}ck(i)=124ck(0)+88ck(1)+169ck(2)+161ck(3)+62ck(4)+162ck(5) \equiv 166\hspace{1mm}(\textrm{mod}\hspace{1mm} 181)`$
 
 and similarly
 
