@@ -13,7 +13,7 @@ The triplet  $`(A,B,C)\in (\mathbb{F}^{n\times n})^3`$  is a functional set if a
 
 The Prover obtains $`t-SLT`$  matrices $`A`$, $`B`$ and  $`t-Diag`$ matrix $`C`$ for the arithmetic circuit that is a directed acyclic graph of gates and wire inputs. Wires carry values from $`\mathbb{F}`$ and gates are add or multiplication. This work is done based on the two steps of the following construction:
 
-* &#x20;Initialize three zero square matrices $`A, B, C`$ over $`\mathbb{F}`$ of order $`n=n_g +n_i + 1`$ where $`n_g`$ is the number of gates and $`n_i`$ is the number of inputs. Rows and columns of matrices are indexed on &lcub; $`0,1,...,n_g+n_i`$ &rcub;. Also, Gate $`i`$ with two left L and right R inputs and a selector S. We show the Gate  $`i`$ with a tuple $`(l_i, r_i, s_i)`$ where $`l_i`$ and $`r_i`$ are the left and right inputs' indexes in $`z`$, respectively.  Note that $`z`$ is indexed on &lcub; $`0,1,..,n_g+n_i`$ &rcub;. Hence,   $`l_i`$ and $`r_i`$ are between $`0`$ and $`n_g+n_i`$. Also, $`s_i`$ is either "Addition" or "Multiplication".  Note, if the left input is a value $`v`$, then $`l_i=0`$ or if the right input is a value $`v`$, then $`r_i=0`$.
+* &#x20;Initialize three zero square matrices $`A, B, C`$ over $`\mathbb{F}`$ of order $`n=n_g +n_i + 1`$ where $`n_g`$ is the number of gates and $`n_i`$ is the number of inputs. Rows and columns of matrices are indexed on &lcub; $`0,1,...,n_g+n_i`$ &rcub;. Also, Gate $`i`$ with two left L and right R inputs and a selector S. We show the Gate  $`i`$ with a tuple $`(l_i, r_i, s_i)`$ where $`l_i`$ and $`r_i`$ are the left and right inputs' indexes in $`z`$, respectively.  Note that $`z`$ is indexed on  $`\{0,1,..,n_g+n_i\}`$. Hence,   $`l_i`$ and $`r_i`$ are between $`0`$ and $`n_g+n_i`$. Also, $`s_i`$ is either "Addition" or "Multiplication".  Note, if the left input is a value $`v`$, then $`l_i=0`$ or if the right input is a value $`v`$, then $`r_i=0`$.
 * For $`i=0.., n_g-1:`$\
   &#x20;                    $`a)`$ Set $`C_{1+n_i+i, 1+n_i+i}=1`$\
   &#x20;                    $`b)`$ If $`s_i`$ is "Addition" \
@@ -48,7 +48,7 @@ $`row_{PFR_{C_0}},...,row_{PFR_{C_{m-1}}},col_{PFR_{C_0}},...col_{PFR_{C_{m-1}}}
 
 where $`row_{PFR_{N_i}}`$, $`col_{PFR_{N_i}}`$ and  $`val_{PFR_{N_i}}`$ are coefficient of $`x^i`$ of polynomials $`row_{PFR_N}(x)`$, $`col_{PFR_N}(x)`$ and $`val_{PFR_N}(x)`$ , respectively. The vector $`O_{PFR}`$ is called as  encoded index.
 
-3- The Prover calculates $`Com_{PFR_T}=PC.Commit(ck,T,d_{AHP}(N,0,i)=m,r_{T})`$ for each polynomial $`T(x)`$. Note that $`T\in`$ &lcub; $`row_{PFR_N},col_{PFR_N},val_{PFR_N}\hspace{2mm}|\hspace{2mm}N\in`$ &lcub; $`A,B,C`$&rcub; &rcub;.
+3- The Prover calculates $`Com_{PFR_T}=PC.Commit(ck,T,d_{AHP}(N,0,i)=m,r_{T})`$ for each polynomial $`T(x)`$. Note that $`T\in\{row_{PFR_N},col_{PFR_N},val_{PFR_N}\hspace{2mm}|\hspace{2mm}N\in \{A,B,C\}\}`$.
 
 For example, if the polynomial commitment scheme $`KZG`$ is used, then \
 $`Com_{T}=\sum_{i=0}^{deg_T}a_ig\tau^i=\sum_{i=0}^{deg_T}a_ick(i)`$  where  $`a_i`$ is coefficient of $`x^i`$ in polynomial $`T(x)`$.&#x20;
@@ -75,28 +75,28 @@ $`Com_{AHP}=(Com_{AHP}^0,Com_{AHP}^1,Com_{AHP}^2,Com_{AHP}^3,Com_{AHP}^4,Com_{AH
 * The polynomial $`col_{AHP_N}:\mathbb{K}\to\mathbb{H}`$ is constructed by $`col_{AHP_N}(k=\gamma^i)=\omega^{c_i}`$ for $`0\leq i\leq ||N||-1`$ and $`c_i\in \{0,1,...,n-1\}`$ is column number of  $`i^{th}`$ nonzero entry and otherwise $`col_{AHP_N}(k)`$ returns an arbitrary element in $`\mathbb{H}`$.  This step generate 3 polynomials; $`col_{AHP_A}(x)`$, $`col_{AHP_B}(x)`$, $`col_{AHP_C}(x)`$.
 * The polynomial $`val_{AHP_N}:\mathbb{K}\to\mathbb{H}`$ is constructed by $`val_{AHP_N}(k=\gamma^i)=\frac{v_i}{u_{\mathbb{H}}(row_{AHP_N}(k),row_{AHP_N}(k))u_{\mathbb{H}}(col_{AHP_N}(k),col_{AHP_N}(k))}`$ for $`0\leq i\leq ||N||-1`$ where $`v_i`$ is value of  $`i^{th}`$ nonzero entry and otherwise $`val_{AHP_N}(k)`$ returns zero where for each $`x \in \mathbb{H}`$, $`u_{\mathbb{H}}(x,x)=|\mathbb{H}|x^{|\mathbb{H}|-1}`$.
 
-Now, we define $`\hat{row_{AHP_N}}`$, $`\hat{col_{AHP_N}}`$ and $`\hat{val_{AHP_N}}`$ as domain-extend of polynomials $`row_{AHP_N}`$, $`col_{AHP_N}`$ and $`val_{AHP_N}`$ where their domains are extended from subgroup $`\mathbb{K}`$ to filed  $`\mathbb{F}`$. Therefore, $`\forall k \in \mathbb{K}`$, $`row_{AHP_N}(k) = \hat{row_{AHP_N}}(k)`$, $`col_{AHP_N}(k) = \hat{col_{AHP_N}}(k)`$, and $`val_{AHP_N}(k) = \hat{val_{AHP_N}}(k)`$.
+Now, we define $`\hat{row}_{AHP_N}`$, $`\hat{col}_{AHP_N}`$ and $`\hat{val}_{AHP_N}`$ as domain-extend of polynomials $`row_{AHP_N}`$, $`col_{AHP_N}`$ and $`val_{AHP_N}`$ where their domains are extended from subgroup $`\mathbb{K}`$ to filed  $`\mathbb{F}`$. Therefore, $`\forall k \in \mathbb{K}`$, $`row_{AHP_N}(k) = \hat{row}_{AHP_N}(k)`$, $`col_{AHP_N}(k) = \hat{col}_{AHP_N}(k)`$, and $`val_{AHP_N}(k) = \hat{val}_{AHP_N}(k)`$.
 
 $`\overrightarrow{O}_{AHP}`$=  
-$`(\hat{row_{AHP_{A_0}}},...,\hat{row_{AHP_{A_{m-1}}}},\hat{col_{AHP_{A_0}}},...,,\hat{col_{AHP_{A_0}}},...,\hat{col_{AHP_{A_{m-1}}}},\hat{val_{AHP_{A_0}}},...,\hat{val_{AHP_{A_{m-1}}}}\hat{row_{AHP_{B_0}}},...,\hat{row_{AHP_{B_{m-1}}}},\hat{col_{AHP_{B_0}}},....`$ 
+$`(\hat{row}_{AHP_{A_0}},...,\hat{row}_{AHP_{A_{m-1}}},\hat{col}_{AHP_{A_0}},...,\hat{col}_{AHP_{A_{m-1}}},\hat{val}_{AHP_{A_0}},...,\hat{val}_{AHP_{A_{m-1}}},\hat{row}_{AHP_{B_0}},...,\hat{row}_{AHP_{B_{m-1}}},\hat{col}_{AHP_{B_0}},....`$ 
 
-$`,\hat{col_{AHP_{B_{m-1}}}},\hat{val_{AHP_{B_0}}},...,\hat{val_{AHP_{B_{m-1}}}},\hat{row_{AHP_{C_0}}},...,\hat{row_{AHP_{C_{m-1}}}},\hat{col_{AHP_{C_0}}},...,\hat{col_{AHP_{C_{m-1}}}},\hat{val_{AHP_{C_0}}},....,\hat{val_{AHP_{C_{m-1}}}})`$
+$`,\hat{col}_{AHP_{B_{m-1}}},\hat{val}_{AHP_{B_0}},...,\hat{val}_{AHP_{B_{m-1}}},\hat{row}_{AHP_{C_0}},...,\hat{row}_{AHP_{C_{m-1}}},\hat{col}_{AHP_{C_0}},...,\hat{col}_{AHP_{C_{m-1}}},\hat{val}_{AHP_{C_0}},....,\hat{val}_{AHP_{C_{m-1}}})`$
 
-where $`\hat{row_{AHP_{N_i}}}`$, $`\hat{col_{AHP_{N_i}}}`$ and $`\hat{val_{AHP_{N_i}}}`$ are coefficient of $`x^i`$ of polynomials $`\hat{row_{AHP_N}}(x)`$, $`\hat{col_{AHP_N}}(x)`$ and $`\hat{val_{AHP_N}}(x)`$, respectively. The vector $`\overrightarrow{O}_{AHP}`$ is called the **encoded index**.&#x20;
+where $`\hat{row}_{AHP_{N_i}}`$, $`\hat{col}_{AHP_{N_i}}`$ and $`\hat{val}_{AHP_{N_i}}`$ are coefficient of $`x^i`$ of polynomials $`\hat{row}_{AHP_N}(x)`$, $`\hat{col}_{AHP_N}(x)`$ and $`\hat{val}_{AHP_N}(x)`$, respectively. The vector $`\overrightarrow{O}_{AHP}`$ is called the **encoded index**.&#x20;
 
-3- The Prover calculates commitment for polynomial $`T\in`$ &lcub; $`\hat{row_{AHP_N}},\hat{col_{AHP_N}},\hat{val_{AHP_N}}\hspace{2mm}|\hspace{2mm}N\in\{A,B,C\}`$ &rcub; as $`Com_{AHP_T}=PC.Commit(ck',T,d_{AHP}(N,0,i)=m,s_i)`$.
+3- The Prover calculates commitment for polynomial $`T\in`$ &lcub; $`\hat{row}_{AHP_N},\hat{col}_{AHP_N},\hat{val}_{AHP_N}\hspace{2mm}|\hspace{2mm}N\in\{A,B,C\}`$ &rcub; as $`Com_{AHP_T}=PC.Commit(ck',T,d_{AHP}(N,0,i)=m,s_i)`$.
 
 For example, if the polynomial commitment scheme $`KZG`$ is used, then\
 $`Com_{AHP_T}=\sum_{i=0}^{deg_T}a_ick'(i)`$ where $`a_i`$ is coefficient of $`x^i`$ in polynomial $`T(x)`$ are calculated by the Prover as follows: \
-$`Com_{AHP}^0=\sum_{i=0}^{deg_{\hat{row_{AHP_A}}(x)}}\hat{row_{AHP_{A_i}}}\hspace{1.1mm}ck'(i)`$,  \
-&#x20;$`Com_{AHP}^1=\sum_{i=0}^{deg_{\hat{col_{AHP_A}}(x)}}\hat{col_{AHP_{A_i}}}\hspace{1.1mm}ck'(i)`$,  \
-&#x20;$`Com_{AHP}^2=\sum_{i=0}^{deg_{\hat{val_{AHP_A}}(x)}}\hat{val_{AHP_{A_i}}}\hspace{1.1mm}ck'(i)`$,\
-$`Com_{AHP}^3=\sum_{i=0}^{deg_{\hat{row_{AHP_B}}(x)}}\hat{row_{AHP_{B_i}}}\hspace{1.1mm}ck'(i)`$,  \
-$`Com_{AHP}^4=\sum_{i=0}^{deg_{\hat{col_{AHP_B}}(x)}}\hat{col_{AHP_{B_i}}}\hspace{1.1mm}ck'(i)`$,   \
-$`Com_{AHP}^5=\sum_{i=0}^{deg_{\hat{val_{AHP_B}}(x)}}\hat{val_{AHP_{B_i}}}\hspace{1.1mm}ck'(i)`$, \
-$`Com_{AHP}^6=\sum_{i=0}^{deg_{\hat{row_{AHP_C}}(x)}}\hat{row_{AHP_{C_i}}}\hspace{1.1mm}ck'(i)`$,  \
-&#x20;$`Com_{AHP}^7=\sum_{i=0}^{deg_{\hat{col_{AHP_C}}(x)}}\hat{col_{AHP_{C_i}}}\hspace{1.1mm}ck'(i)`$,   \
-$`Com_{AHP}^8=\sum_{i=0}^{deg_{\hat{val_{AHP_C}}(x)}}\hat{val_{AHP_{C_i}}}\hspace{1.1mm}ck'(i)`$.
+$`Com_{AHP}^0=\sum_{i=0}^{deg_{\hat{row}_{AHP_A}(x)}}\hat{row}_{AHP_{A_i}}\hspace{1.1mm}ck'(i)`$,  \
+&#x20;$`Com_{AHP}^1=\sum_{i=0}^{deg_{\hat{col}0_{AHP_A}(x)}}\hat{col}_{AHP_{A_i}}\hspace{1.1mm}ck'(i)`$,  \
+&#x20;$`Com_{AHP}^2=\sum_{i=0}^{deg_{\hat{val}_{AHP_A}(x)}}\hat{val}_{AHP_{A_i}}\hspace{1.1mm}ck'(i)`$,\
+$`Com_{AHP}^3=\sum_{i=0}^{deg_{\hat{row}_{AHP_B}(x)}}\hat{row}_{AHP_{B_i}}\hspace{1.1mm}ck'(i)`$,  \
+$`Com_{AHP}^4=\sum_{i=0}^{deg_{\hat{col}_{AHP_B}}(x)}\hat{col}_{AHP_{B_i}}\hspace{1.1mm}ck'(i)`$,   \
+$`Com_{AHP}^5=\sum_{i=0}^{deg_{\hat{val}_{AHP_B}(x)}}\hat{val}_{AHP_{B_i}}\hspace{1.1mm}ck'(i)`$, \
+$`Com_{AHP}^6=\sum_{i=0}^{deg_{\hat{row}_{AHP_C}(x)}}\hat{row}_{AHP_{C_i}}\hspace{1.1mm}ck'(i)`$,  \
+&#x20;$`Com_{AHP}^7=\sum_{i=0}^{deg_{\hat{col}_{AHP_C}(x)}}\hat{col}_{AHP_{C_i}}\hspace{1.1mm}ck'(i)`$,   \
+$`Com_{AHP}^8=\sum_{i=0}^{deg_{\hat{val}_{AHP_C}(x)}}\hat{val}_{AHP_{C_i}}\hspace{1.1mm}ck'(i)`$.
 
 4- The prover send the calculated commitment values to the Verifier.
 
