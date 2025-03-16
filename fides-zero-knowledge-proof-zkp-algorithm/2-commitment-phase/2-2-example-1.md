@@ -89,7 +89,7 @@ Now, calculates polynomial $$row_{PFR_C}(x)$$.  In a similar way, Since  matrix 
 
 Now, since $$C$$ is a diagonal matrix, polynomials $$row_{PFR_C}(x)$$ and $$col_{PFR_C}(x)$$ are equal. Also, since the matrix $$C$$ has  three non-zero entries such that the value of all of them is one, therefore $$v_0=v_1=v_2=1$$. So, $$val_{PFR_C}(x)=L_1(x)+L_2(x)+L_3(x)=1$$.
 
-Therefore, the matrix $$C$$ is encoded by  $$row_{PFR_C}(x)=77x^2+109x+37$$, $$col_{PFR_C}(x)=77x^2+109x+37$$ and $$val_{PFR_C}(x)=1$$. Therefore, encoding of $$m_f=(A,B,C)$$ calculates as following: $$\overrightarrow{O}_{PFR}=(37,109,77,0,0,0,0,0,0,50,81,109,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,119,174,35,76,0,0,$$  $$0,0,0,9,106,20,47,0,0,0,0,0,42,0,148,177,0,0,0,0,0,37,109,77,0,0,0,0,0,0,37,109,$$$$77,0,0,0,0,0,0,37,109,77,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0)$$
+Therefore, the matrix $$C$$ is encoded by  $$row_{PFR_C}(x)=77x^2+109x+37$$, $$col_{PFR_C}(x)=77x^2+109x+37$$ and $$val_{PFR_C}(x)=1$$. Therefore, encoding of $$m_f=(A,B,C)$$ calculates as following: $$\overrightarrow{O}_{PFR}=(37,109,77,0,0,0,0,0,0,50,81,109,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,119,174,35,76,0,0,0,0,0,9,106,20,47,0,0,0,0,0,42,0,148,177,0,0,0,0,0,37,109,77,0,0,0,0,0,0,37,109,77,0,0,0,0,0,0,37,109,77,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0)$$
 
 3- The Prover calculates commitment by using of KZG commitment scheme  as following:
 
