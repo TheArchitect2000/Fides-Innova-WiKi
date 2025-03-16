@@ -197,6 +197,6 @@ $$Com_{AHP}^1=$$, $$Com_{AHP}^2=$$, $$Com_{AHP}^3=$$, $$Com_{AHP}^4=$$, $$Com_{A
     "Com_AHP8": 64-bit Integer,    
     
     "curve": String,
-    "polynomial_commitment": String
+    "polynomialCommitment": String
 }
 ```
