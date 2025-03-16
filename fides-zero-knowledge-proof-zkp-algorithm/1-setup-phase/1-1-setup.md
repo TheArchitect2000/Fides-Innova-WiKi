@@ -40,12 +40,7 @@ In the following section, we will review the setup phase of our system. We also 
 
 $$Setup(1^{\lambda},N)$$:  This function outputs $$pp=PC.Setup(1^{\lambda},d)$$ where $$\lambda$$ is security parameter and the set&#x20;
 
- $$d=$$ &lcub; $$d_{AHP}(N,i,j)$$ &rcub;  $_{i=0,1,...,k_AHP, j=1,2,..,s_AHP(i)}^{}$
- 
- $$\bigcup$$ &lcub; $$d_f(N,i,j)$$ &rcub;  $_{i=1,2,...,k_f, j=1,2,..,s_f(i)}^{}$
- &#x20;
-
- $` d=\{d_{AHP}(N,i,j)\}-{i\in \{0,1,...,k_{AHP}\}, j\in \{1,2,...,s_{AHP}\}}\bigcup \{d_f(N,i,j)\}_{i\in \{1,2,...,k_f\}, j\in \{1,2,...,s_f(j)\}}`$
+ $` d=\{d_{AHP}(N,i,j)\}_{i\in \{0,1,...,k_{AHP}\}, j\in \{1,2,...,s_{AHP}\}}\bigcup \{d_f(N,i,j)\}_{i\in \{1,2,...,k_f\}, j\in \{1,2,...,s_f(j)\}}`$
 
 where  $$N$$ is the maximum supported index size. Also, considering $$d_{AHP}:\mathbb{N}^3\to\mathbb{N}$$, $$d_{AHP}(N,i,j)$$ is the degree bound for $$j^{th}$$ polynomial in round $$i$$ of $$AHP$$.  $$k_{AHP}$$ is the number of rounds in $$AHP$$. Moreover, considering $$s_{AHP}:\mathbb{N}\to\mathbb{N}$$, $$s_{AHP}(i)$$ is the number of polynomials that the Prover sends to the Verifier in round $$i$$ of $$AHP$$. Considering $$d_f:\mathbb{N}^3\to\mathbb{N}$$,  $$d_f(N,i,j)$$ is the degree bound for $$j^{th}$$ polynomial that the Prover sends to the Verifier in round $$i$$  of $$PFR$$. $$k_f$$ is the number of rounds in $$PFR$$. Considering $$s_f:\mathbb{N}\to\mathbb{N}$$,  where $$s_f(i)$$ is the number polynomials that the Prover sends to the Verifier in  round $$i$$ of $$PFR$$.
 
@@ -66,11 +61,12 @@ $$s_{AHP}(3)=2$$, $$d_{AHP}(N,3,1)=|\mathbb{H}|-1$$,  $$d_{AHP}(N,3,2)=|\mathbb{
 Round 4: \
 $$s_{AHP}(4)=2$$, $$d_{AHP}(N,4,1)=|\mathbb{K}|-1$$ and  $$d_{AHP}(N,4,2)=6|\mathbb{K}|-6$$. &#x20;
 
-Therefore,  &lcub; $$d_{AHP}(N,i,j)$$ &rcub; $_{i=0,1,...,k_AHP, j=1,2,...,s_AHP(i)}^{}$=
+Therefore, 
 
-&lcub; $$m,m,m,m,m,m,m,m,m,|w|+b,|\mathbb{H}|+b,|\mathbb{H}|+b,|\mathbb{H}|+b,|\mathbb{H}|+2b-1,2|\mathbb{H}|+b-1,|\mathbb{H}|-1,|\mathbb{H}|+b-1,|\mathbb{H}|-1,$$
+$`\{d_{AHP}(N,i,j)\}_{i=0,1,...,k_{AHP}, j=1,2,...,s_{AHP}(i)}=\{m,m,m,m,m,m,m,m,m,|w|+b,|\mathbb{H}|+b,|\mathbb{H}|+b,|\mathbb{H}|+b,|\mathbb{H}|+2b-1,`$\
+$`2|\mathbb{H}|+b-1,|\mathbb{H}|-1,|\mathbb{H}|+b-1,|\mathbb{H}|-1,|\mathbb{H}|-1,|\mathbb{K}|-1,6|\mathbb{K}|-6\}`$ 
 
-$$|\mathbb{H}|-1,|\mathbb{K}|-1,6|\mathbb{K}|-6$$ &rcub; where $$m=2n_g$$ is maximum of number of non-zero entries of matrices $$A$$, $$B$$ and $$C$$ corresponding with arithmetic circuit of function $$f$$ with $$n_g$$ gates. Also, $$\mathbb{H}$$ and $$\mathbb{K}$$ are multiplicative subgroups of field $$\mathbb{F}$$ with order $$m$$ and $$n$$, where  $$n=n_g+n_i+1$$ and $$n_i$$ is the the size of input $$x$$. Note that all the computations are in filed $$\mathbb{F}$$ with order prime number $$p$$.  $$b$$ is a random number in 
+where $$m=2n_g$$ is maximum of number of non-zero entries of matrices $$A$$, $$B$$ and $$C$$ corresponding with arithmetic circuit of function $$f$$ with $$n_g$$ gates. Also, $$\mathbb{H}$$ and $$\mathbb{K}$$ are multiplicative subgroups of field $$\mathbb{F}$$ with order $$m$$ and $$n$$, where  $$n=n_g+n_i+1$$ and $$n_i$$ is the the size of input $$x$$. Note that all the computations are in filed $$\mathbb{F}$$ with order prime number $$p$$.  $$b$$ is a random number in 
 &lcub; $$1,2,..,|\mathbb{F}|-|\mathbb{H}|$$ &rcub;. Also, $$w$$ are the intermediate values (witness) which are created when executing a program. $$|w|=n_g-n_r$$ where $$n_r$$ is the number of components in input $$x$$ which are changed during the program execution.&#x20;
 
 For example, if polynomial commitment scheme $$KZG$$ is used in our scheme, $$pp=KZG.Setup(1^{\lambda},d)=(ck,vk)=$$ (&lcub; $$g\tau^i$$ &rcub; $_{i=0}^{d-1}$, $$g \tau$$) where $$ck$$ and $$vk$$ are commitment key and verifying key, respectively. Here $$\tau$$ is a secret element and must be discarded after the $$Setup$$. Also, $$g$$ is a generator of field $$\mathbb{F}$$ with large prime order $$p$$ such that $$p > 2^\lambda > d$$. Also, $$d$$ is maximum degree of polynomials that wants to be committed.
