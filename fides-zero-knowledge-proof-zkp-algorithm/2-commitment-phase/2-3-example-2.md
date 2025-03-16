@@ -94,7 +94,7 @@ So, $$col_{AHP_A(}k)$$ on $$\mathbb{K}$$ is a polynomial so that $$col_{AHP_A}(1
 and ,  $$val_{AHP_A}:\mathbb{K}\to\mathbb{H}$$ with $$val_{AHP_A}(k=\gamma^i)=\frac{v_i}{u_{\mathbb{H}}(row_{AHP_A}(k),row_{AHP_A}(k))u_{\mathbb{H}}(col_{AHP_A}(k),col_{AHP_A}(k))}$$ for $$1\leq i\leq ||A||=4$$ where $$v_i$$ is value of  $$i^{th}$$ nonzero entry and otherwise $$val_{AHP_A}(k)$$ returns zero. Note that based on definition of $$u_{\mathbb{H}}(x,y)$$, for each $$x \in \mathbb{H}$$, $$u_{\mathbb{H}}(x,x)=|\mathbb{H}|x^{|\mathbb{H}|-1}=37x^{36}$$. So $$val_{AHP_A}(1)=\frac{1}{(37row_{AHP_A}^{36}(1))(37col_{AHP_A}^{36}(1))}=\frac{1}{37\times (\omega^{33})^{36}\times37\times1}$$, $$val_{AHP_A}(\gamma)=\frac{2}{(37row_{AHP_A}^{36}(\gamma))(37col_{AHP_A}^{36}(\gamma))}=\frac{2}{37\times (\omega^{34})^{36}\times37\times(\omega^2)^{36}}$$ , $$val_{AHP_A}(\gamma^2)=\frac{1}{(37row_{AHP_A}^{36}(\gamma^2))(37col_{AHP_A}^{36}(\gamma^2))}=\frac{1}{37\times (\omega^{35})^{36}\times37\times1}$$, $$val_{AHP_A}(\gamma^3)=\frac{7}{(37row_{AHP_A}^{36}(\gamma^3))(37col_{AHP_A}^{36}(\gamma^3))}=\frac{7}{37\times (\omega^{36})^{36}\times37\times(\omega^{33})^{36}}$$ ,\
 &#x20;and $$val_{AHP_A}(k)=0$$ for $$k\in \mathbb{K}-\{1,\gamma,\gamma^2,\gamma^3\}$$. Therefore $$val_{AHP_A}(x)=\sum_{i=1}^{8}y_iL_i(x)=1349736x^7 + 870027x^6 + 189189x^5 + 1024786x^4 + 201373x^3 + 194896x^2 + 1568354x + 1218943$$
 
-Now, $$\hat{row}_{AHP_A}$$, $$\hat{col}_{AHP_A}$$ and $$\hat{val}_{AHP_A}$$ are extensions of $$row_{AHP_A}$$, $$col_{AHP_A}$$ and $$val_{AHP_A}$$ so that are agree on $$\mathbb{K}$$.&#x20;
+Now, $`\hat{row}_{AHP_A}`$, $`\hat{col}_{AHP_A}`$ and $`\hat{val}_{AHP_A}`$ are extensions of $`row_{AHP_A}`$, $`col_{AHP_A}`$ and $`val_{AHP_A}`$ so that are agree on $`\mathbb{K}`$.&#x20;
 
 Similarly, $$row_{AHP_B}:\mathbb{K}\to\mathbb{H}$$ so that  $$row_{AHP_B}(1)=\omega^{33}$$, $$row_{AHP_B}(\gamma)=\omega^{33}$$,  $$row_{AHP_B}(\gamma^2)=\omega^{34}$$ ,   $$row_{AHP_B}(\gamma^3)=\omega^{35}$$, $$row_{AHP_B}(\gamma^4)=\omega^{35}$$,  $$row_{AHP_B}(\gamma^5)=\omega^{36}$$ and for the rest values of $$\mathbb{K}$$,  $$row_{AHP_B}(k)$$ returns arbitrary elements of $$\mathbb{H}$$, for example  $$row_{AHP_B}(\gamma^i)=\omega^i$$ for $$6\leq i\leq 7$$.  Therefore $$row_{AHP_B}(x)=\sum_{i=1}^{8}y_iL_i(x)=745068x^7 + 1550888x^6 + 311204x^5 + 1053454x^4 + 781197x^3 + 709275x^2 + 356449x + 718167$$
 
@@ -104,17 +104,18 @@ and ,  $$val_{AHP_B}:\mathbb{K}\to\mathbb{H}$$ so that  $$val_{AHP_B}(1)=\frac{5
 $$val_{AHP_B}(\gamma^2)=\frac{1}{(37row_{AHP_B}^{36}(\gamma^2))(37col_{AHP_B}^{36}(\gamma^2))}=\frac{1}{37\times (\omega^{34})^{36}\times37\times1}$$ , $$val_{AHP_B}(\gamma^3)=\frac{10}{(37row_{AHP_B}^{36}(\gamma^3))(37col_{AHP_B}^{36}(\gamma^3))}=\frac{10}{37\times (\omega^{35})^{36}\times37\times1}$$, $$val_{AHP_B}(\gamma^4)=\frac{1}{(37row_{AHP_B}^{36}(\gamma^4))(37col_{AHP_B}^{36}(\gamma^4))}=\frac{1}{37\times (\omega^{35})^{36}\times37\times(\omega^{34})^{36}}$$ , $$val_{AHP_B}(\gamma^5)=\frac{1}{(37row_{AHP_B}^{36}(\gamma^5))(37col_{AHP_B}^{36}(\gamma^5))}=\frac{1}{37\times (\omega^{36})^{36}\times37\times1}$$ , \
 and $$val_{AHP_B}(k)=0$$ for $$k\in \mathbb{K}-\{1,\gamma,\gamma^2,\gamma^3,\gamma^4,\gamma^5\}$$. Therefore $$val_{AHP_B}(x)=\sum_{i=1}^{8}y_iL_i(x)=1592245x^7 + 169676x^6 + 1573426x^5 + 1612428x^4 + 256156x^3 + 1249861x^2 + 995621x + 462292$$
 
-Now, $$\hat{row}_{AHP_B}$$, $$\hat{col}_{AHP_B}$$ and $$\hat{val}_{AHP_B}$$ are extensions of $$row_{AHP_B}$$, $$col_{AHP_B}$$ and $$val_{AHP_B}$$ so that are agree on $$\mathbb{K}$$.&#x20;
+Now, $`\hat{row}_{AHP_B}`$, $`\hat{col}_{AHP_B}`$ and $`\hat{val}_{AHP_B}`$ are extensions of $`row_{AHP_B}`$, $`col_{AHP_B}`$ and $`val_{AHP_B}`$ so that are agree on $`\mathbb{K}`$.&#x20;
 
 Similarly, $$row_{AHP_C}:\mathbb{K}\to\mathbb{H}$$ so that  $$row_{AHP_C}(1)=\omega^{33}$$, $$row_{AHP_C}(\gamma)=\omega^{34}$$,  $$row_{AHP_C}(\gamma^2)=\omega^{35}$$, $$row_{AHP_C}(\gamma^3)=\omega^{36}$$ and for the rest values of $$\mathbb{K}$$,  $$row_{AHP_C}(k)$$ returns arbitrary elements of $$\mathbb{H}$$, for example  $$row_{AHP_C}(\gamma^i)=\omega^{i}$$ for $$4\leq i\leq 7$$. Therefore $$row_{AHP_C}(x)=\sum_{i=1}^{8}y_iL_i(x)=739930x^7 + 100821x^6 + 664621x^5 + 147929x^4 + 1066695x^3 + 902750x^2 + 454730x + 469905$$
 
 Also,  $$col_{AHP_C}:\mathbb{K}\to\mathbb{H}$$ so that $$col_{AHP_C}(1)=\omega^{33}$$ , $$col_{AHP_C}(\gamma)=\omega^{34}$$,  $$col_{AHP_C}(\gamma^2)=\omega^{35}$$, $$col_{AHP_C}(\gamma^3)=\omega^{36}$$  and for the rest values of $$\mathbb{K}$$ , $$col_{AHP_C}(k)$$ returns arbitrary elements of $$\mathbb{H}$$, for example  $$col_{AHP_C}(\gamma^i)=\omega^i$$ for $$4\leq i\leq 7$$. Therefore $$col_{AHP_C}(x)=\sum_{i=1}^{8}y_iL_i(x)=739930x^7 + 100821x^6 + 664621x^5 + 147929x^4 + 1066695x^3 + 902750x^2 + 454730x + 469905$$
 
-and ,  $$val_{AHP_C}:\mathbb{K}\to\mathbb{H}$$ so that \
-&#x20;$$val_{AHP_C}(1)=\frac{1}{(37row_{AHP_C}^{36}(1))(37col_{AHP_C}^{36}(1))}=\frac{1}{37\times (\omega^{33})^{36}\times37\times(\omega^{33})^{36}}$$, $$val_{AHP_C}(\gamma)=\frac{1}{(37row_{AHP_C}^{36}(\gamma))(37col_{AHP_C}^{36}(\gamma))}=\frac{1}{37\times (\omega^{34})^{36}\times37\times(\omega^{34})^{36}}$$ , $$val_{AHP_C}(\gamma^2)=\frac{1}{(37row_{AHP_C}^{36}(\gamma^2))(37col_{AHP_C}^{36}(\gamma^2))}=\frac{1}{37\times (\omega^{35})^{36}\times37\times(\omega^{35})^{36}}$$ ,$$val_{AHP_C}(\gamma^3)=\frac{1}{(37row_{AHP_C}^{36}(\gamma^3))(37col_{AHP_C}^{36}(\gamma^3))}=\frac{1}{37\times (\omega^{36})^{36}\times37\times(\omega^{36})^{36}}$$ \
-&#x20;and $$val_{AHP_C}(k)=0$$ for $$k\in \mathbb{K}-\{1,\gamma,\gamma^2,\gamma^3\}$$. Therefore $$val_{AHP_C}(x)=\sum_{i=1}^{8}y_iL_i(x)=435354x^7 + 1188860x^6 + 1158417x^5 + 525698x^4 + 1126753x^3 + 467855x^2 + 544916x + 1083027$$
+and ,  $`val_{AHP_C}:\mathbb{K}\to\mathbb{H}`$ so that \
+&#x20;$`val_{AHP_C}(1)=\frac{1}{(37row_{AHP_C}^{36}(1))(37col_{AHP_C}^{36}(1))}=\frac{1}{37\times (\omega^{33})^{36}\times37\times(\omega^{33})^{36}}`$, $`val_{AHP_C}(\gamma)=\frac{1}{(37row_{AHP_C}^{36}(\gamma))(37col_{AHP_C}^{36}(\gamma))}=\frac{1}{37\times (\omega^{34})^{36}\times37\times(\omega^{34})^{36}}`$, $`val_{AHP_C}(\gamma^2)=\frac{1}{(37row_{AHP_C}^{36}(\gamma^2))(37col_{AHP_C}^{36}(\gamma^2))}=\frac{1}{37\times (\omega^{35})^{36}\times37\times(\omega^{35})^{36}}`$, $`val_{AHP_C}(\gamma^3)=\frac{1}{(37row_{AHP_C}^{36}(\gamma^3))(37col_{AHP_C}^{36}(\gamma^3))}=\frac{1}{37\times (\omega^{36})^{36}\times37\times(\omega^{36})^{36}}`$ 
 
-Now, $$\hat{row}_{AHP_C}$$, $$\hat{col}_{AHP_C}$$ and $$\hat{val}_{AHP_C}$$ are extensions of $$row_{AHP_C}$$, $$col_{AHP_C}$$ and $$val_{AHP_C}$$ so that are agree on $$\mathbb{K}$$.&#x20;
+&#x20;and $`val_{AHP_C}(k)=0`$ for $`k`$ in $`\mathbb{K}-\{1,\gamma,\gamma^2,\gamma^3\}`$. Therefore $`val_{AHP_C}(x)=\sum_{i=1}^{8}y_iL_i(x)=435354x^7 + 1188860x^6 + 1158417x^5 + 525698x^4 + 1126753x^3 + 467855x^2 + 544916x + 1083027`$
+
+Now, $`\hat{row}_{AHP_C}`$, $`\hat{col}_{AHP_C}`$ and $`\hat{val}_{AHP_C}`$ are extensions of $`row_{AHP_C}`$, $`col_{AHP_C}`$ and $`val_{AHP_C}`$ so that are agree on $`\mathbb{K}`$.&#x20;
 
 Therefore,&#x20;
 
@@ -131,8 +132,8 @@ $$1158417,1188860,435354)$$
 
 $$Com_{T}=\sum_{i=0}^{deg_T}a_ig\tau^i=\sum_{i=0}^{deg_T}a_ick(i)$$  where  $$a_i$$ is coefficient of $$x^i$$ in polynomial  $$T(x)$$.
 
-4- The Prover sends\
-$$Com_{AHP}^0=\sum_{i=0}^{5}\hat{row}_{AHP_{A_i}}\hspace{1.1mm}ck(i)=$$\
+4- The Prover sends
+$`Com_{AHP}^0=\sum_{i=0}^{5}\hat{row}_{AHP_{A_i}}\hspace{1.1mm}ck(i)=`$
 
 
 and similarly
