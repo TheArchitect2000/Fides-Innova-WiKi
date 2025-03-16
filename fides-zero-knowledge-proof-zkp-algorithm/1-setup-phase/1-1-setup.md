@@ -45,6 +45,8 @@ $$Setup(1^{\lambda},N)$$:  This function outputs $$pp=PC.Setup(1^{\lambda},d)$$ 
  $$\bigcup$$ &lcub; $$d_f(N,i,j)$$ &rcub;  $_{i=1,2,...,k_f, j=1,2,..,s_f(i)}^{}$
  &#x20;
 
+ $` d=\{d_{AHP}(N,i,j)\}-{i\in \{0,1,...,k_{AHP}\}, j\in \{1,2,...,s_{AHP}\}}\bigcup \{d_f(N,i,j)\}_{i\in \{1,2,...,k_f\}, j\in \{1,2,...,s_f(j)\}}`$
+
 where  $$N$$ is the maximum supported index size. Also, considering $$d_{AHP}:\mathbb{N}^3\to\mathbb{N}$$, $$d_{AHP}(N,i,j)$$ is the degree bound for $$j^{th}$$ polynomial in round $$i$$ of $$AHP$$.  $$k_{AHP}$$ is the number of rounds in $$AHP$$. Moreover, considering $$s_{AHP}:\mathbb{N}\to\mathbb{N}$$, $$s_{AHP}(i)$$ is the number of polynomials that the Prover sends to the Verifier in round $$i$$ of $$AHP$$. Considering $$d_f:\mathbb{N}^3\to\mathbb{N}$$,  $$d_f(N,i,j)$$ is the degree bound for $$j^{th}$$ polynomial that the Prover sends to the Verifier in round $$i$$  of $$PFR$$. $$k_f$$ is the number of rounds in $$PFR$$. Considering $$s_f:\mathbb{N}\to\mathbb{N}$$,  where $$s_f(i)$$ is the number polynomials that the Prover sends to the Verifier in  round $$i$$ of $$PFR$$.
 
 Note that $$s_{AHP}(0)=s_{f}(0)$$ and for all $$i\in$$ &lcub; $$1,2,...,s_{AHP}(0)$$ &rcub;, $$d_{AHP}(N,0,i)=d_{f}(N,0,i)$$. Also,  there are  $$k_{AHP}=4$$ rounds in $$AHP$$ where in
