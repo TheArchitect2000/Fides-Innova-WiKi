@@ -159,7 +159,7 @@ A publicly accessible file to be published on a public repository, such as a blo
     "Com_AHP8": 64-bit Integer,    
     
     "curve": String,
-    "polynomial_commitment": String
+    "polynomialCommitment": String
 }
 ```
 * **`commitmentId`**: Unique identifier for the commitment.
