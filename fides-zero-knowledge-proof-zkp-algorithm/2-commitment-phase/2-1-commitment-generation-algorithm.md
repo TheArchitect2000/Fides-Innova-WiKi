@@ -57,7 +57,7 @@ Size of Commitment: $`|Com_{PFR}|=9`$.
 
 4- The Prover sends $`Com_{PFR}`$ to the Verifier.
 
-CommitmentID= Lower4Bytes(SHA256(Manufacturer\_Name, Device\_Type, Device\_Hardware\_Version, Firmware\_Version, Lines Vec\<u64>))
+CommitmentId= (SHA256(deviceType + deviceIdType + deviceModel + manufacturer + softwareVersion + creationTime))
 
 ## 2-2- AHP Commitment &#x20;
 
