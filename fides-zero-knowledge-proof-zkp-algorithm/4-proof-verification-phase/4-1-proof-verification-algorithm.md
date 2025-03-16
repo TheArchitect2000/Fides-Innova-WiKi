@@ -10,9 +10,8 @@ description: >-
 ## 4-1- PFR Verify
 $$Verify(\mathbb{F}, \mathbb{H}, \mathbb{K}, com_{PFR},\pi_{PFR})$$: This function outputs $$1$$, if the following equations satisfies.
 
-&#x20;$$1)$$ $$h(\gamma^{p_i})=a_i$$ for $$i\in \{1,2,...,v\}$$ where $$\pi_{PFR_1}=h(x)$$.
-
-$$2)$$ $$M(\beta_2)-q_2(\beta_2)Z_{\mathbb{K}}(\beta_2)=0$$
+$`1) h(\gamma^{p_i})=a_i`$ for $`i\in \{1,2,...,v\}`$ where $`\pi_{PFR_1}=h(x)`$\
+$`2) M(\beta_2)-q_2(\beta_2)Z_{\mathbb{K}}(\beta_2)=0`$
 
 ## 4-2- AHP Verify
 
@@ -20,9 +19,9 @@ $$Verify(\mathbb{F}, \mathbb{H}, \mathbb{K}, Com_{AHP},\Pi_{AHP},X,Y)$$: This fu
 
 1- The following four equations satisfies for random value  $$\beta_3\in\mathbb{F}$$ chosen by the Verifier.
 
-$$h_3(\beta_3)v_{\mathbb{K}}(\beta_3)=a(\beta_3)-b(\beta_3)(\beta_3g_3(\beta_3)+\frac{\sigma_3}{|\mathbb{K}|})\hspace{1cm}(1)$$
+$`h_3(\beta_3)v_{\mathbb{K}}(\beta_3)=a(\beta_3)-b(\beta_3)(\beta_3g_3(\beta_3)+\frac{\sigma_3}{|\mathbb{K}|})\hspace{1cm}(1)`$
 
-$$r(\alpha,\beta_2)\sigma_3=h_2(\beta_2)v_{\mathbb{H}}(\beta_2)+\beta_2g_2(\beta_2)+\frac{\sigma_2}{|\mathbb{H}|}\hspace{1.3cm}(2)$$
+$`r(\alpha,\beta_2)\sigma_3=h_2(\beta_2)v_{\mathbb{H}}(\beta_2)+\beta_2g_2(\beta_2)+\frac{\sigma_2}{|\mathbb{H}|}\hspace{1.3cm}(2)`$
 
 $`s(\beta_1)+r(\alpha,\beta_1)(\sum_{M\in\{A,B,C\}}\eta_M\hat{z}_M(\beta_1))-\sigma_2\hat{z}(\beta_1)=h_1(\beta_1)v_{\mathbb{H}}(\beta_1)+\beta_1g_1(\beta_1)+\frac{\sigma_1}{|\mathbb{H}|}\hspace{2mm}(3)`$
 
