@@ -58,11 +58,10 @@ and $`\hat{C}(x,y)`$ similarly as following:
 The Prover sends $`Com_{AHP_X}^{10}=\sum_{i=0}^{deg_{g_2(x)}}g_{2_i}ck(i)`$ and $`Com_{AHP_X}^{11}=\sum_{i=0}^{deg_{h_2(x)}}h_{2_i}ck(i)`$ where $`g_{2_i}`$ is coefficient of $`x^i`$ of polynomial $`g_2(x)`$ and $`h_{2_i}`$ is coefficient of $`x^i`$ of polynomial $`h_2(x)`$.
 
 10- The Verifier selects $`\beta_2\in \mathbb{F}-\mathbb{H}`$ and sends it to the Prover.  (The Prover can select $`\beta_2=hash(s(9))\in \mathbb{F}-\mathbb{H}`$).&#x20;
-11- The Prover calculates $`\sigma_3=\sum_{k\in\mathbb{K}}(\sum_M \eta_M\frac{v_{\mathbb{H}}(\beta_2)v_{\mathbb{H}}(\beta_1)\hat{val_{AHP_M}}(k)}{(\beta_2-\hat{row_{AHP_M}}(k))(\beta_1-\hat{col_{AHP_M}}(k))})`$. Then, the Prover finds polynomials $`g_3(x)`$ and $`h_3(x)`$ so that $`h_3(x)v_{\mathbb{K}}(x)=a(x)-b(x)(xg_3(x)+\frac{\sigma_3}{|\mathbb{K}|})`$ where $`a(x)=\sum_{M\in \{A,B,C\}} \eta_M v_{\mathbb{H}}(\beta_2)v_{\mathbb{H}}(\beta_1)\hat{val}_{AHP_M}(x)\prod_{N\in\{A,B,C\}-\{M\}}(\beta_2-\hat{row}_{AHP_N}(x))(\beta_1-\hat{col}_{AHP_N}(x))`$and $`b(x)=\prod_{M\in\{A,B,C\}}(\beta_2-\hat{row}_{AHP_M}(x))(\beta_1-\hat{col}_{AHP_M}(x))`$;
+
+11- The Prover calculates $`\sigma_3=\sum_{k\in\mathbb{K}}(\sum_M \eta_M\frac{v_{\mathbb{H}}(\beta_2)v_{\mathbb{H}}(\beta_1)\hat{val_{AHP_M}}(k)}{(\beta_2-\hat{row_{AHP_M}}(k))(\beta_1-\hat{col_{AHP_M}}(k))})`$. Then, the Prover finds polynomials $`g_3(x)`$ and $`h_3(x)`$ so that $`h_3(x)v_{\mathbb{K}}(x)=a(x)-b(x)(xg_3(x)+\frac{\sigma_3}{|\mathbb{K}|})`$ where $`a(x)=\sum_{M\in \{A,B,C\}} \eta_M v_{\mathbb{H}}(\beta_2)v_{\mathbb{H}}(\beta_1)\hat{val}_{AHP_M}(x)\prod_{N\in\{A,B,C\}-\{M\}}(\beta_2-\hat{row}_{AHP_N}(x))(\beta_1-\hat{col}_{AHP_N}(x))`$ and $`b(x)=\prod_{M\in\{A,B,C\}}(\beta_2-\hat{row}_{AHP_M}(x))(\beta_1-\hat{col}_{AHP_M}(x))`$;
 
 The Prover sends $`Com_{AHP_X}^{12}=\sum_{i=0}^{deg_{g_3(x)}}g_{3_i}ck(i)`$ and $`Com_{AHP_X}^{13}=\sum_{i=0}^{deg_{h_3(x)}}h_{3_i}ck(i)`$ where $`g_{3_i}`$ is coefficient of $`x^i`$ of polynomial $`g_3(x)`$ and $`h_{3_i}`$ is coefficient of $`x^i`$ of polynomial $`h_3(x)`$.
-
-and
 
 12- The Prover sends $`\pi_{AHP}^1=\sigma_1`$, $`\pi_{AHP}^2=(\hat{w_0},\hat{w_1},\hat{w_3},...,\hat{w_{|W|+b-1}})`$,  
 $`\pi_{AHP}^3=(\hat{z}_{A_0},\hat{z}_{A_1},...,\hat{z}_{A_{|H|+b-1}})`$, $`\pi_{AHP}^4=(\hat{z}_{B_0},\hat{z}_{B_1},...,\hat{z}_{B_{|H|+b-1}})`$, $`\pi_{AHP}^5=(\hat{z}_{C_0},\hat{z}_{C_1},...,\hat{z}_{C_{|H|+b-1}})`$, $`\pi_{AHP}^6=(h_{0_0},h_{0_1},...,h_{0_{|H|+2b-2}})`$ and  $`\pi_{AHP}^7=(s_0,s_1,...,s_{2|H|+b-2})`$ 
