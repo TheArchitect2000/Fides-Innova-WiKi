@@ -106,7 +106,7 @@ $$Proof (\mathbb{F}_{181}, \mathbb{H}=\{1,59,42,125,135\}, \mathbb{K}=\{1,49,48,
 
 2- The Prover calculates the polynomial $`z_A(x)`$using indexing $$z_A$$ by elements of $$\mathbb{H}$$ that mean $$z_A(x)$$ is the polynomial where $$z_A(1)=0$$, $$z_A(59)=0$$, $$z_A(42)=4$$, $$z_A(125)=1$$ and $$z_A(135)=31$$.&#x20;
 
-Then calculates polynomial $$\hat{z}_A(x)$$ using the polynomial $$z_A(x)$$ such that $$\hat{z}_A(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]$$ that agree with $$z_A(x)$$ on $$\mathbb{H}$$ . Note that values of up to $$b$$ locations in this polynomial reveals no information about the witness $$w$$provided the locations are in $$\mathbb{F}-\mathbb{H}$$.\
+Then calculates polynomial $$\hat{z}_A(x)$$ using the polynomial $$z_A(x)$$ such that $$\hat{z}_A(x)\in \mathbb{F}^{<|\mathbb{H}|+b}[x]$$ that agree with $$z_A(x)$$ on $$\mathbb{H}$$ . Note that values of up to $$b$$ locations in this polynomial reveals no information about the witness $`w`$ provided the locations are in $$\mathbb{F}-\mathbb{H}$$.\
 Here, for simplicity, let $$b=2$$. The Prover calculates $$\hat{z}_A(x)$$  such that agree with $$z_A(x)$$ on $$\mathbb{H}$$ and also $$\hat{z}_A(150)=5$$, $$\hat{z}_A(80)=47$$.&#x20;
 
 Therefore, we have $$\hat{z}_A(x)=4L_3(x)+L_4(x)+31L_5(x)+5L_6(x)+47L_7(x)$$ where $$L_3(x)=133x^6+155x^5+117x^4+27x^3+48x^2+73x+171$$, $$L_4(x)=4x^6+123x^5+25x^4+48x^3+27x^2+113x+22$$, $$L_5(x)=75x^6+115x^5+27x^4+25x^3+117x^2+154x+30$$, $$L_6(x)=132x^6+119x^5+49x+62$$ and $$L_7(x)=97x^6+111x^5+84x+70$$. \
@@ -221,7 +221,7 @@ $` 11x^{11} + 69x^{10} + 43x^9 + 10x^8 + 75x^7 + 21x^6 + 109x^5 + 31x^4 + 90x^3 
 
 and&#x20;
 
-$$b(x)=(80-\hat{row}_{AHP_A}(x))(22-\hat{col}_{AHP_A}(x))(80-\hat{row}_{AHP_B}(x))(22-\hat{col}_{AHP_B}(x))(80-\hat{row}_{AHP_C}(x))(22-\hat{col}_{AHP_C}(x))=23x^{30} + 176x^{29} + 75x^{28} + 63x^{27} + 174x^{26} + 13x^{25} + 43x^{24} + 169x^{23} + 35x^{22 }+ 66x^{21} + 160x^{20} + 99x^{19} + 150x^{18} + 31x^{17} + 69x^{16} + 83x^{15} + 93x^{14} + 179x^{13} + 30x^{12} + 111x^{11} + 58x^{10} + 131x^9 + 18x^8 + 36x^7 + 56x^6 + 59x^5 + 15x^4 + 171x^3 + 47x^2 + 110x + 142$$
+$`b(x)=(80-\hat{row}_{AHP_A}(x))(22-\hat{col}_{AHP_A}(x))(80-\hat{row}_{AHP_B}(x))(22-\hat{col}_{AHP_B}(x))(80-\hat{row}_{AHP_C}(x))(22-\hat{col}_{AHP_C}(x))=23x^{30} + 176x^{29} + 75x^{28} + 63x^{27} + 174x^{26} + 13x^{25} + 43x^{24} + 169x^{23} + 35x^{22 }+ 66x^{21} + 160x^{20} + 99x^{19} + 150x^{18} + 31x^{17} + 69x^{16} + 83x^{15} + 93x^{14} + 179x^{13} + 30x^{12} + 111x^{11} + 58x^{10} + 131x^9 + 18x^8 + 36x^7 + 56x^6 + 59x^5 + 15x^4 + 171x^3 + 47x^2 + 110x + 142`$
 
 Therefore,
 
@@ -235,21 +235,21 @@ $$h_3(x)=4x^{29} + 74x^{28} + 65x^{27} + 16x^{26} + 139x^{25} + 135x^{24} + 92x^
 The Prover sends ,  $$Com_{AHP_X}^{12}=\sum_{i=0}^{deg_{g_3(x)}}g_{3_i}ck(i)=169$$ and $$Com_{AHP_X}^{13}=\sum_{i=0}^{deg_{h_3(x)}}h_{3_i}ck(i)=166$$  \
 where $$g_{3_i}$$ is coefficient of $$x^i$$ of polynomial $$g_3(x)$$ and $$h_{3_i}$$ is coefficient of $$x^i$$ of polynomial $$h_3(x)$$.
 
-12- The Prover sends $$\pi_{AHP}^1=62$$,  $$\pi_{AHP}^2=(166,121,161,97,149)$$, $$\pi_{AHP}^3=(168,141,45,26,63,165,116)$$,  $$\pi_{AHP}^4=(124,81,137,101,71,178,32)$$,  $$\pi_{AHP}^5=(49,157,169,96,80,50,123)$$, $$\pi_{AHP}^6=(32,16,153,20,1,164,45,92)$$ and $$\pi_{AHP}^7=(115,3,0,0,20,1,0,17,101,0,5)$$\
-&#x20;to the Verifier that are  value of $$\sigma_1$$, coefficients of polynomials $$\hat{W}(x)$$, $$\hat{z}_A(x)$$, $$\hat{z}_B(x)$$, $$\hat{z}_C(x)$$,$$h_0(x)$$ and $$s(x)$$, respectively.
+12- The Prover sends $`\pi_{AHP}^1=62`$,  $`\pi_{AHP}^2=(166,121,161,97,149)`$, $`\pi_{AHP}^3=(168,141,45,26,63,165,116)`$,  $`\pi_{AHP}^4=(124,81,137,101,71,178,32)`$,  $`\pi_{AHP}^5=(49,157,169,96,80,50,123)`$, $`\pi_{AHP}^6=(32,16,153,20,1,164,45,92)`$ and $`\pi_{AHP}^7=(115,3,0,0,20,1,0,17,101,0,5)`$\
+&#x20;to the Verifier that are  value of $`\sigma_1`$, coefficients of polynomials $`\hat{W}(x)`$, $`\hat{z}_A(x)`$, $`\hat{z}_B(x)`$, $`\hat{z}_C(x)`$, $`h_0(x)`$ and $`s(x)`$, respectively.
 
 13- The Prover sends $$\pi_{AHP}^8=(100,90,92,134)$$ and $$\pi_{AHP}^{9}=(31,127,66,180,143,115)$$ to the Verifier that are coefficients of polynomials $$g_1(x)$$ and $$h_1(x)$$, respectively.
 
 14-The Prover sends $$\pi_{AHP}^{10}=70$$, $$\pi_{AHP}^{11}=(105,173,30,40)$$ and $$\pi_{AHP}^{12}=(162,82,96,127)$$ that are value of $$\sigma_2$$ and coefficients of polynomials $$g_2(x)$$ and $$h_2(x)$$, respectively.&#x20;
 
-15- The Prover sends $$\pi_{AHP}^{13}=84$$, $$\pi_{AHP}^{14}=(134,111,161,123,110)$$ and \
-$$\pi_{AHP}^{15}=(99,177,50,53,136,143,97,18,37,111,147,18,128,138,53,15,71,98,99,75,75,60,139,92 ,$$$$135,139,16,65,74,4)$$\
-&#x20;that are value of $$\sigma_3$$ and coefficients of polynomials $$g_3(x)$$ and $$h_3(x)$$, respectively.
+15- The Prover sends $`\pi_{AHP}^{13}=84`$, $`\pi_{AHP}^{14}=(134,111,161,123,110)`$ and 
+$`\pi_{AHP}^{15}=(99,177,50,53,136,143,97,18,37,111,147,18,128,138,53,15,71,98,99,75,75,60,139,92,135,139,16,65,74,4)`$
+&#x20;that are value of $`\sigma_3`$ and coefficients of polynomials $`g_3(x)`$ and $`h_3(x)`$, respectively.
 
-16-  The Prover chooses random values $$\eta_{\hat{w}}$$, $$\eta_{\hat{z}_A}$$, $$\eta_{\hat{z}_B}$$, $$\eta_{\hat{z}_C}$$,  $$\eta_{h_0}$$, $$\eta_s$$, $$\eta_{g_1}$$, $$\eta_{h_1}$$, $$\eta_{g_2}$$, $$\eta_{h_2}$$, $$\eta_{g_3}$$ and $$\eta_{h_3}$$ of $$\mathbb{F}$$. For example,  $$\eta_{\hat{w}}=1$$, $$\eta_{\hat{z}_A}=4$$, $$\eta_{\hat{z}_B}=10$$, $$\eta_{\hat{z}_C}=8$$,  $$\eta_{h_0}=32$$, $$\eta_s=45$$, $$\eta_{g_1}=92$$, $$\eta_{h_1}=11$$, $$\eta_{g_2}=1$$, $$\eta_{h_2}=5$$, $$\eta_{g_3}=25$$ and $$\eta_{h_3}=63$$.
+16-  The Prover chooses random values $`\eta_{\hat{w}}`$, $`\eta_{\hat{z}_A}`$, $`\eta_{\hat{z}_B}`$, $`\eta_{\hat{z}_C}`$,  $`\eta_{h_0}`$, $`\eta_s`$, $`\eta_{g_1}`$, $`\eta_{h_1}`$, $`\eta_{g_2}`$, $`\eta_{h_2}`$, $`\eta_{g_3}`$ and $`\eta_{h_3}`$ of $`\mathbb{F}`$. For example,  $`\eta_{\hat{w}}=1`$, $`\eta_{\hat{z}_A}=4`$, $`\eta_{\hat{z}_B}=10`$, $`\eta_{\hat{z}_C}=8`$, $`\eta_{h_0}=32`$, $`\eta_s=45`$, $`\eta_{g_1}=92`$, $`\eta_{h_1}=11`$, $`\eta_{g_2}=1`$, $`\eta_{h_2}=5`$, $`\eta_{g_3}=25`$ and $`\eta_{h_3}=63`$.
 
-17- The Prover calculates the linear combination$$p(x)=\eta_{\hat{w}}\hat{w}(x)+\eta_{\hat{z}_A}\hat{z}_A(x)+\eta_{\hat{z}_B}\hat{z}_B(x)+\eta_{\hat{z}_C}\hat{z}_C(x)+\eta_{h_0}h_0(x)+\eta_ss(x)+\eta_{g_1}g_1(x)$$\
-&#x20;             $$+\eta_{h_1}h_1(x)+\eta_{g_2}g_2(x)+\eta_{h_2}h_2(x)+\eta_{g_3}g_3(x)+\eta_{h_3}h_3(x)$$.
+17- The Prover calculates the linear combination $`p(x)=\eta_{\hat{w}}\hat{w}(x)+\eta_{\hat{z}_A}\hat{z}_A(x)+\eta_{\hat{z}_B}\hat{z}_B(x)+\eta_{\hat{z}_C}\hat{z}_C(x)+\eta_{h_0}h_0(x)+\eta_ss(x)+\eta_{g_1}g_1(x)`$\
+&#x20;             $`+\eta_{h_1}h_1(x)+\eta_{g_2}g_2(x)+\eta_{h_2}h_2(x)+\eta_{g_3}g_3(x)+\eta_{h_3}h_3(x)`$.
 
 The Prover obtains&#x20;
 
