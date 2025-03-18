@@ -38,7 +38,7 @@
     * [Example 2](fides-zero-knowledge-proof-zkp-algorithm/2-commitment-phase/2-3-example-2.md)
   * Proof Generation Phase
     * [Algorithm](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-1-proof-generation-algorithm.md)
-    * [Example 1](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-2-example-2.md)
+    * [Example 1](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-2-example-1.md)
     * [Example 2](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-3-example-2.md)
   * Proof Verification Phase
     * [Algorithm](fides-zero-knowledge-proof-zkp-algorithm/4-proof-verification-phase/4-1-proof-verification-algorithm.md)
