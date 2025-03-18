@@ -12,7 +12,9 @@ $$2)$$ $$M(\beta_2)-q_2(\beta_2)Z_{\mathbb{K}}(\beta_2)=0$$ , that means $$36-30
 
 $`Verify(\mathbb{F}_{181}, \mathbb{H}, \mathbb{K}, Com_{AHP},\Pi_{AHP},x=4,y=82)`$ :
 
-1- The Verifier checks $`\hat{z}_C(\omega^{j})=Y(i)`$ for indices $`j`$ corresponding to $`Y`$ and $`i=1,...,n_r`$.  
+1- The Verifier checks $`\hat{z}_C(\omega^{j})=Y(i)`$ for indices $`j`$ corresponding to $`Y`$ and $`i=1,...,n_r`$.
+
+2- The following four equations satisfies for random value  $$\beta_3\in\mathbb{F}$$ chosen by the Verifier.
 
 Since $$h_3(\beta_3)=h_3(5)=$$ and $$v_{\mathbb{K}}(\beta_3)=v_{\mathbb{K}}(5)=134$$, therefore, the left of equation $$(1)$$ is $$h_3(\beta_3)v_{\mathbb{K}}(\beta_3)=160$$ . Also, since $$a(\beta_3)=a(5)=$$, $$b(\beta_3)=b(5)=$$ and $$\beta_3g_3(\beta_3)+\frac{\sigma_3}{|\mathbb{K}|}=$$, therefore, the right of the equation $$(1)$$ is $$a(\beta_3)-b(\beta_3)(\sigma_3g_3(\beta_3)+\frac{\sigma_3}{|\mathbb{K}|})=160$$. So, the equation $$(1)$$ is established.
 
