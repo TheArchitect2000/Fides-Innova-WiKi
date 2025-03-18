@@ -12,6 +12,8 @@ $$2)$$ $$M(\beta_2)-q_2(\beta_2)Z_{\mathbb{K}}(\beta_2)=0$$ , that means $$36-30
 
 $`Verify(\mathbb{F}_{181}, \mathbb{H}, \mathbb{K}, Com_{AHP},\Pi_{AHP},x=4,y=82)`$ :
 
+1- The Verifier checks $`\hat{z}_C(\omega^{j})=Y(i)`$ for indices $`j`$ corresponding to $`Y`$ and $`i=1,...,n_r`$.  
+
 Since $$h_3(\beta_3)=h_3(5)=$$ and $$v_{\mathbb{K}}(\beta_3)=v_{\mathbb{K}}(5)=134$$, therefore, the left of equation $$(1)$$ is $$h_3(\beta_3)v_{\mathbb{K}}(\beta_3)=160$$ . Also, since $$a(\beta_3)=a(5)=$$, $$b(\beta_3)=b(5)=$$ and $$\beta_3g_3(\beta_3)+\frac{\sigma_3}{|\mathbb{K}|}=$$, therefore, the right of the equation $$(1)$$ is $$a(\beta_3)-b(\beta_3)(\sigma_3g_3(\beta_3)+\frac{\sigma_3}{|\mathbb{K}|})=160$$. So, the equation $$(1)$$ is established.
 
 Since $$r(\alpha,\beta_2)=\frac{\alpha^5-\beta_2^5}{\alpha-\beta_2}=\frac{10^5-80^5}{10-80}=142$$, $$\sigma_3=84$$, therefore, the left of equation $$(2)$$  is $$r(\alpha,\beta_2)\sigma_3=163$$ and since $$h_2(\beta_2)=h_2(80)=42$$, $$v_{\mathbb{H}}(\beta_2)=v_{\mathbb{H}}(80)=72$$, $$\beta_2g_2(\beta_2)+\frac{\sigma_2}{|\mathbb{H}|}=35$$, therefore, the right of equation $$(2)$$ is $$h_2(\beta_2)v_{\mathbb{H}}+\beta_2g_2(\beta_2)+\frac{\sigma_2}{|\mathbb{H}|}=163$$. So, equation $$(2)$$ is established.
