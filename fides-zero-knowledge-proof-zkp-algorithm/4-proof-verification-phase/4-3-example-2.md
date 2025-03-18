@@ -2,7 +2,7 @@
 
 ### AHP Verify
 
-$`Verify(\mathbb{F}_{1678321}, \mathbb{H}, \mathbb{K}, Com_{AHP},\Pi_{AHP},X=(7,11,0,1,0,1,0,0,...,0),Y=(12,84))`$ :
+$`Verify(\mathbb{F}_{1678321}, \mathbb{H}, \mathbb{K}, Com_{AHP},\Pi_{AHP},X=(7,11,0,1,0,1,0,0,...,0),Y=(32,84))`$ :
 
 1- The Verifier checks $`\hat{z}_C(\omega^{j})=Y(i)`$ for indices $`j`$ corresponding to $`Y`$ and $`i=1,...,n_r`$. Here, $`n_r=2`$, the Verifier checks $`\hat{z}_C(\omega^{35})=32`$ and $`\hat{z}_C(\omega^{36})=84`$.
 
