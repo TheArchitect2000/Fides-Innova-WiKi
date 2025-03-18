@@ -12,7 +12,8 @@ $$2)$$ $$M(\beta_2)-q_2(\beta_2)Z_{\mathbb{K}}(\beta_2)=0$$ , that means $$36-30
 
 $`Verify(\mathbb{F}_{181}, \mathbb{H}, \mathbb{K}, Com_{AHP},\Pi_{AHP},x=4,y=82)`$ :
 
-1- The Verifier checks $`\hat{z}_C(\omega^{j})=Y(i)`$ for indices $`j`$ corresponding to $`Y`$ and $`i=1,...,n_r`$.
+1- The Verifier checks $`\hat{z}_C(\omega^{j})=Y(i)`$ for indices $`j`$ corresponding to $`Y`$ and $`i=1,...,n_r`$. 
+Here, $`n_r=1`$ and the Verifier checks $$\hat{z}_C(135)=82$$.
 
 2- The following four equations satisfies for random value  $$\beta_3\in\mathbb{F}$$ chosen by the Verifier.
 
