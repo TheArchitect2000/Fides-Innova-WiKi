@@ -773,4 +773,13 @@ curl -X POST https://your-domain.com/app/v1/user/verify-change-email-with-token 
   -d '{"token": "email-change-token"}'
 ```
 
+---
+
+## Security
+
+These endpoints typically require a bearer token.
+
+---
+
+Next Section: [Devices API Documentation](devices.md)
 
