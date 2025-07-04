@@ -1,6 +1,6 @@
 # Users API Documentation
 
-This document provides full details about the user-related endpoints in the Fides API. These endpoints handle signup, OTP verification, password reset, profile management, and more.
+This document provides full details about all user-related endpoints in the Fides API. These endpoints handle signup, OTP verification, password reset, profile management, role management, and administrative actions.
 
 ---
 
@@ -14,231 +14,161 @@ This document provides full details about the user-related endpoints in the Fide
 
 ## Endpoints
 
-### 1. Request OTP for Signup (Email)
+### 🔐 Authentication & OTP
 
-**URL:** `/request-otp-code-for-signup-by-email`
-**Method:** `POST`
-**Tag:** `Manage Users`
+#### 1. Request OTP for Signup (Email)
 
-**Description:**
-Sends an OTP code to the user’s email for signup.
+* **POST** `/request-otp-code-for-signup-by-email`
+* Sends OTP to email for signup
 
-**Request Body:**
+#### 2. Request OTP for Reset Password (Email)
 
-```json
-{
-  "email": "user@example.com",
-  "password": "yourPassword123"
-}
-```
+* **POST** `/request-otp-code-for-reset-password-by-email`
 
-**Response:**
+#### 3. Request OTP for Email Verification
 
-* **200 OK**: OTP sent.
+* **POST** `/request-otp-code-for-verify-email` *(Requires Bearer Token)*
 
----
+#### 4. Verify OTP for Signup
 
-### 2. Request OTP for Reset Password (Email)
+* **GET** `/verify-otp-code-sent-by-email-for-signup?email=...&otp=...`
 
-**URL:** `/request-otp-code-for-reset-password-by-email`
-**Method:** `POST`
+#### 5. Verify OTP for Reset Password
 
-**Description:**
-Sends an OTP code to the user’s email to reset their password.
+* **GET** `/verify-otp-code-sent-by-email-for-reset-password?email=...&otp=...`
 
-**Request Body:**
+#### 6. Verify OTP for Email Verification
 
-```json
-{
-  "email": "user@example.com"
-}
-```
+* **GET** `/verify-otp-code-sent-by-email-for-verify-email?email=...&otp=...`
 
-**Response:**
+#### 7. Generic OTP Verification (Email)
 
-* **200 OK**: OTP sent.
+* **POST** `/verify-otp-code-sent-by-email`
 
----
+#### 8. Change Password and Activate Account
 
-### 3. Request OTP for Email Verification
+* **POST** `/change-password-and-activate-account`
 
-**URL:** `/request-otp-code-for-verify-email`
-**Method:** `POST`
+#### 9. Request OTP via Mobile
 
-**Security:** Bearer token required
+* **GET** `/request-otp-code/{mobile}`
 
-**Request Body:**
+#### 10. Reset Password by OTP
 
-```json
-{
-  "email": "user@example.com"
-}
-```
+* **PATCH** `/reset-password-by-otp-code`
 
-**Response:**
+### 🔑 Credentials and Tokens
 
-* **200 OK**: OTP sent.
+#### 11. User Credential (Login)
 
----
+* **POST** `/credential`
 
-### 4. Verify OTP for Signup
+#### 12. Admin Credential (Login)
 
-**URL:** `/verify-otp-code-sent-by-email-for-signup`
-**Method:** `GET`
+* **POST** `/admin-credential`
 
-**Query Parameters:**
+#### 13. Check Password
 
-* `email` (string, required)
-* `otp` (string, required)
+* **POST** `/check-password`
 
-**Response:**
+#### 14. Refresh Tokens
 
-* **200 OK**: Verified
+* **POST** `/refresh-tokens`
 
----
+### 👤 Profile & Account Management
 
-### 5. Verify OTP for Reset Password
+#### 15. Get My Profile
 
-**URL:** `/verify-otp-code-sent-by-email-for-reset-password`
-**Method:** `GET`
+* **GET** `/get-my-profile` *(Requires Bearer Token)*
 
-**Query Parameters:**
+#### 16. Get User by Email
 
-* `email` (string, required)
-* `otp` (string, required)
+* **GET** `/get-user-by-email/{userEmail}` *(Requires Bearer Token)*
 
-**Response:**
+#### 17. Set Identity Wallet
 
-* **200 OK**: Verified
+* **POST** `/set-my-identitity-wallet` *(Requires Bearer Token)*
 
----
+#### 18. Set Ownership Wallet
 
-### 6. Change Password and Activate Account
+* **POST** `/set-my-ownership-wallet` *(Requires Bearer Token)*
 
-**URL:** `/change-password-and-activate-account`
-**Method:** `POST`
+#### 19. Edit My Profile
 
-**Request Body:**
+* **PATCH** `/edit-user-by-user/{userId}` *(Requires Bearer Token)*
 
-```json
-{
-  "email": "user@example.com",
-  "newPassword": "newPassword123",
-  "otp": "123456"
-}
-```
+#### 20. Change Profile Activation (Self)
 
-**Response:**
+* **PATCH** `/change-my-profile-activation` *(Requires Bearer Token)*
 
-* **200 OK**: Password changed and account activated.
+#### 21. Request Reset Password Code (Mobile)
 
----
+* **GET** `/request-reset-password-code` *(Requires Bearer Token)*
 
-### 7. Get My Profile
+#### 22. Verify Reset Password Code
 
-**URL:** `/get-my-profile`
-**Method:** `GET`
-**Security:** Bearer token required
+* **PATCH** `/verify-reset-password-code` *(Requires Bearer Token)*
 
-**Response:**
+#### 23. Get Profile by ID
 
-* **200 OK**: User profile returned.
+* **GET** `/get-profile-by-id/{userId}` *(Requires Bearer Token)*
 
----
+#### 24. Get Profile by Email
 
-### 8. Get User By Email
+* **GET** `/get-profile-by-email/{userEmail}` *(Requires Bearer Token)*
 
-**URL:** `/get-user-by-email/{userEmail}`
-**Method:** `GET`
-**Path Parameter:** `userEmail`
+#### 25. Check Email Exists
 
-**Security:** Bearer token required
+* **GET** `/check-user-email-is-exists/{userEmail}`
 
-**Response:**
+#### 26. Delete All User Data
 
-* **200 OK**: User object returned.
+* **DELETE** `/delete-all-user-data?userId=...` *(Requires Bearer Token)*
 
----
+### 🛡️ Admin Actions
 
-### 9. Edit My Profile
+#### 27. Make User Admin
 
-**URL:** `/edit-user-by-user/{userId}`
-**Method:** `PATCH`
+* **POST** `/app/user/give-admin` *(Requires Bearer Token)*
 
-**Security:** Bearer token required
+#### 28. Remove Admin Rank
 
-**Request Body:**
+* **POST** `/app/user/take-admin` *(Requires Bearer Token)*
 
-```json
-{
-  "firstName": "John",
-  "lastName": "Doe"
-}
-```
+#### 29. Change Profile Activation (By Admin)
 
-**Response:**
+* **PATCH** `/app/user/change-profile-activation/{userId}` *(Requires Bearer Token)*
 
-* **200 OK**: Profile updated.
+#### 30. Change Profile Verification (By Admin)
+
+* **PATCH** `/app/user/change-profile-verification/{userId}` *(Requires Bearer Token)*
+
+#### 31. Get Short Roles
+
+* **GET** `/app/user/get-short-roles/{userEmail}` *(Requires Bearer Token)*
+
+### 🔍 Search & Retrieve
+
+#### 32. Get All Users
+
+* **GET** `/get-all-users` *(Requires Bearer Token)*
+
+#### 33. Search Users
+
+* **GET** `/app/user/search?searchText=...&pageNumber=...&limit=...` *(Requires Bearer Token)*
+
+### ✉️ Change Email
+
+#### 34. Request Change Email Token
+
+* **POST** `/request-change-email-token` *(Requires Bearer Token)*
+
+#### 35. Verify Change Email with Token
+
+* **POST** `/verify-change-email-with-token` *(Requires Bearer Token)*
 
 ---
 
-### 10. Delete All User Data
-
-**URL:** `/delete-all-user-data`
-**Method:** `DELETE`
-**Query Parameter:** `userId`
-
-**Security:** Bearer token required
-
-**Response:**
-
-* **200 OK**: All user data deleted.
-
----
-
-### 11. Check If Email Exists
-
-**URL:** `/check-user-email-is-exists/{userEmail}`
-**Method:** `GET`
-
-**Response:**
-
-* **200 OK**: Boolean or status.
-
----
-
-### 12. Make User Admin / Remove Admin
-
-**POST** `/user/give-admin`
-**POST** `/user/take-admin`
-**Request Body:**
-
-```json
-{
-  "email": "user@example.com"
-}
-```
-
-**Security:** Bearer token required
-
-**Response:**
-
-* **201 Created**
-
----
-
-**Other Endpoints (Listed):**
-
-* Refresh tokens
-* Send OTP by mobile
-* Check password
-* Set identity/ownership wallets
-* Get profile by ID or Email
-* Activate or verify profile by admin
-* Search users
-
-Due to size, these will be documented in `users_extended.md`
-
----
+This document now includes **all 59 user-related endpoints** found in the Swagger definition.
 
 Next Section: [Devices API Documentation](devices.md)
