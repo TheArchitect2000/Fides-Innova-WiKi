@@ -132,4 +132,4 @@ curl -X DELETE https://your-domain.com/app/smart-contract/delete-commitment/abc1
 
 ---
 
-**➡️ For MQTT logs and device logs, see `mqtt-logs.md` and `device-logs.md`.**
+Next Section: [Services API Documentation](services.md)
