@@ -289,7 +289,8 @@ Validates a user’s password.
 
 ```json
 {
-  "password": "userPassword123"
+  "enteredPassword": "userPassword123",
+  "userPassword": "userPassword123"
 }
 ```
 
@@ -299,7 +300,7 @@ Validates a user’s password.
 curl -X POST https://your-domain.com/app/v1/user/check-password \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"password": "userPassword123"}'
+  -d '{"enteredPassword": "userPassword123", "userPassword": "userPassword123"}'
 ```
 
 ---
@@ -314,6 +315,7 @@ Returns a new access token and refresh token.
 
 ```json
 {
+  "oldAccessToken": "your_old_access_token",
   "refreshToken": "your_refresh_token"
 }
 ```
@@ -323,7 +325,7 @@ Returns a new access token and refresh token.
 ```bash
 curl -X POST https://your-domain.com/app/v1/user/refresh-tokens \
   -H 'Content-Type: application/json' \
-  -d '{"refreshToken": "your_refresh_token"}'
+  -d '{"oldAccessToken": "your_old_access_token", "refreshToken": "your_refresh_token"}'
 ```
 
 ---
@@ -368,7 +370,7 @@ Sets the identity wallet for the user.
 
 ```json
 {
-  "walletAddress": "0xABCDEF..."
+  "wallet": "0xABCDEF..."
 }
 ```
 
@@ -378,7 +380,7 @@ Sets the identity wallet for the user.
 curl -X POST https://your-domain.com/app/v1/user/set-my-identitity-wallet \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"walletAddress": "0xABCDEF..."}'
+  -d '{"wallet": "0xABCDEF..."}'
 ```
 
 ---
@@ -393,7 +395,7 @@ Sets the ownership wallet for the user.
 
 ```json
 {
-  "walletAddress": "0x123456..."
+  "wallet": "0x123456..."
 }
 ```
 
@@ -403,7 +405,7 @@ Sets the ownership wallet for the user.
 curl -X POST https://your-domain.com/app/v1/user/set-my-ownership-wallet \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"walletAddress": "0x123456..."}'
+  -d '{"wallet": "0x123456..."}'
 ```
 
 ---
@@ -419,7 +421,13 @@ Edits the user profile fields such as name.
 ```json
 {
   "firstName": "John",
-  "lastName": "Doe"
+  "lastName": "Doe",
+  "email": "user@example.com",
+  "mobile": "+1234567890",
+  "walletAddress": "0xABCDEF...",
+  "title": "Your Title",
+  "avatar": "Your Avatar",
+  "lang": "en"
 }
 ```
 
@@ -429,7 +437,14 @@ Edits the user profile fields such as name.
 curl -X PATCH https://your-domain.com/app/v1/user/edit-user-by-user/123 \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"firstName": "John", "lastName": "Doe"}'
+  -d '{"firstName": "John",
+    "lastName": "Doe",
+    "email": "user@example.com",
+    "mobile": "+1234567890",
+    "walletAddress": "0xABCDEF...",
+    "title": "Your Title",
+    "avatar": "Your Avatar",
+    "lang": "en"}'
 ```
 
 ---
