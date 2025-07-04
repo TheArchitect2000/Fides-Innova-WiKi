@@ -489,6 +489,7 @@ Verifies OTP for resetting the password via mobile.
 
 ```json
 {
+  "email": "user@example.com",
   "otp": "123456",
   "newPassword": "NewPass@2024"
 }
@@ -500,7 +501,7 @@ Verifies OTP for resetting the password via mobile.
 curl -X PATCH https://your-domain.com/app/v1/user/verify-reset-password-code \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"otp": "123456", "newPassword": "NewPass@2024"}'
+  -d '{"email": "user@example.com", "otp": "123456", "newPassword": "NewPass@2024"}'
 ```
 
 ---
@@ -549,30 +550,7 @@ curl -X GET https://your-domain.com/app/v1/user/check-user-email-is-exists/user@
 
 ---
 
-### 26. Delete All User Data
-
-**DELETE** `/delete-all-user-data?userId=...`
-
-Deletes all data related to the specified user ID.
-
-**Example Curl:**
-
-```bash
-curl -X DELETE "https://your-domain.com/app/v1/user/delete-all-user-data?userId=123" \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-## Base URL (Admin Endpoints)
-
-```
-/app/user
-```
-
----
-
-### 27. Make User Admin
+### 26. Make User Admin
 
 **POST** `/give-admin`
 
@@ -582,7 +560,10 @@ Grants admin privileges to a user.
 
 ```json
 {
-  "email": "user@example.com"
+  "userEmail": "user@example.com",
+  "roleNames": [
+    "role1"
+  ]
 }
 ```
 
@@ -592,67 +573,16 @@ Grants admin privileges to a user.
 curl -X POST https://your-domain.com/app/user/give-admin \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"email": "user@example.com"}'
+  -d '{"userEmail": "user@example.com",
+    "roleNames": [
+    "role1"
+  ]
+}'
 ```
 
 ---
 
-### 28. Remove Admin Role
-
-**POST** `/take-admin`
-
-Removes admin privileges from a user.
-
-**Request Body:**
-
-```json
-{
-  "email": "user@example.com"
-}
-```
-
-**Example Curl:**
-
-```bash
-curl -X POST https://your-domain.com/app/user/take-admin \
-  -H 'Authorization: Bearer <token>' \
-  -H 'Content-Type: application/json' \
-  -d '{"email": "user@example.com"}'
-```
-
----
-
-### 29. Change Profile Activation (By Admin)
-
-**PATCH** `/change-profile-activation/{userId}`
-
-Toggles the activation status of a user's profile.
-
-**Example Curl:**
-
-```bash
-curl -X PATCH https://your-domain.com/app/user/change-profile-activation/123 \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 30. Change Profile Verification (By Admin)
-
-**PATCH** `/change-profile-verification/{userId}`
-
-Toggles the verification status of a user's profile.
-
-**Example Curl:**
-
-```bash
-curl -X PATCH https://your-domain.com/app/user/change-profile-verification/123 \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 31. Get Short Roles by Email
+### 27. Get Short Roles by Email
 
 **GET** `/get-short-roles/{userEmail}`
 
@@ -667,11 +597,73 @@ curl -X GET https://your-domain.com/app/user/get-short-roles/user@example.com \
 
 ---
 
-### 32. Get All Users
+### 28. Take an User Admin Ranks
+
+**POST** `/take-admin`
+
+This api will take user admin ranks.
+
+**Request Body:**
+
+```json
+{
+  "userEmail": "user@example.com",
+  "roleNames": [
+    "role1"
+  ]
+}
+```
+
+**Example Curl:**
+
+```bash
+curl -X POST https://your-domain.com/app/user/take-admin \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"userEmail": "user@example.com",
+      "roleNames": [
+        "role1"
+        ]
+      }'
+```
+
+---
+
+### 29. Change Profile Activation 
+
+**PATCH** `/change-profile-activation/{userId}`
+
+Toggles the activation status of a user's profile.
+
+**Example Curl:**
+
+```bash
+curl -X PATCH https://your-domain.com/app/user/change-profile-activation/123 \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+### 30. Change Profile Verification 
+
+**PATCH** `/change-profile-verification/{userId}`
+
+Toggles the verification status of a user's profile.
+
+**Example Curl:**
+
+```bash
+curl -X PATCH https://your-domain.com/app/user/change-profile-verification/123 \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+### 31. Get All Users
 
 **GET** `/get-all-users`
 
-Retrieves all users in the system (admin-only).
+Retrieves all users in the system .
 
 **Example Curl:**
 
@@ -680,18 +672,53 @@ curl -X GET https://your-domain.com/app/v1/user/get-all-users \
   -H 'Authorization: Bearer <token>'
 ```
 
+
 ---
 
-### 33. Search Users
+### 32. Search Users
 
 **GET** `/search?searchText=...&pageNumber=...&limit=...`
 
 Search users by keyword with pagination.
 
+**Query Parameters:**
+
+* `pageNumber`: Number of Page (number)
+* `limit`: Limit item in each page (number)
+* `sortMode`: sortMode of all advertising (string)
+* `searchText`: Each text you want to search (string)
+* `fromDate`: From Date (string)
+* `toDate`: To Date (string)
+* `activation`: Activation status of users Available values : active, inactive, banned, blocked (string)
+* `verification`: Verification status of users Available values : unverified, pending, verified (string)
+ 
+
+
 **Example Curl:**
 
 ```bash
-curl -X GET "https://your-domain.com/app/user/search?searchText=admin&pageNumber=1&limit=10" \
+curl -X GET "https://your-domain.com/app/user/search?searchText=admin&pageNumber=1&limit=10&...." \
+  -H 'Authorization: Bearer <token>'
+```
+
+
+---
+
+### 33. Delete All User Data
+
+**DELETE** `/delete-all-user-data?userId=...`
+
+Deletes all data related to the specified user ID.
+
+**Query Parameters:**
+
+* `userId`: user ID (string)
+
+
+**Example Curl:**
+
+```bash
+curl -X DELETE "https://your-domain.com/app/v1/user/delete-all-user-data?userId=123" \
   -H 'Authorization: Bearer <token>'
 ```
 
