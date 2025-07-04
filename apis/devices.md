@@ -1,204 +1,407 @@
 # Devices API Documentation
 
-This document includes all endpoints related to device registration, management, and control in the Fides API.
+This document includes the device-related API methods from the Fides API.
 
 ---
 
 ## Base URL
 
 ```
-/app/device
+/app/v1/device
 ```
 
 ---
 
-### 1. Register Device
+### 1. Check Device Existence by MAC Address
 
-**POST** `/register-device`
+**GET** `/check-device-is-exists/{deviceMac}`
 
-Registers a new device.
+Checks whether a device with the given MAC address exists.
+
+**Path Parameter:**
+
+* `deviceMac`: Device MAC address (string, required)
+
+**Response:**
+
+* 200 OK: Device existence status
+
+**Example Curl:**
+
+```bash
+curl -X GET https://your-domain.com/app/v1/device/check-device-is-exists/00:1A:2B:3C:4D:5E \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+### 2. Insert Device
+
+**POST** `/insert`
+
+Inserts a new user device.
 
 **Request Body:**
 
 ```json
 {
-  "name": "Thermostat X",
-  "macAddress": "AA:BB:CC:DD:EE:FF",
-  "type": "temperature-sensor",
-  "description": "Living room thermostat"
+  "deviceName": "Device Name",
+  "deviceType": "Type",
+  "mac": "00:1A:2B:3C:4D:5E",
+  "hardwareVersion": 1,
+  "firmwareVersion": 1,
+  "parameters": ["{\"a1\":\"v1\"}", "{\"a2\":\"v2\"}"],
+  "isShared": false,
+  "location": {},
+  "geometry": {}
 }
 ```
 
+**Response:**
+
+* 201 Created: Device inserted
+
 **Example Curl:**
 
 ```bash
-curl -X POST https://your-domain.com/app/device/register-device \
+curl -X POST https://your-domain.com/app/v1/device/insert \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{
-    "name": "Thermostat X",
-    "macAddress": "AA:BB:CC:DD:EE:FF",
-    "type": "temperature-sensor",
-    "description": "Living room thermostat"
-  }'
+  -d '{"deviceName": "Device Name", "deviceType": "Type", "mac": "00:1A:2B:3C:4D:5E", "hardwareVersion": 1, "firmwareVersion": 1, "parameters": ["{\"a1\":\"v1\"}", "{\"a2\":\"v2\"}"], "isShared": false, "location": {}, "geometry": {}}'
 ```
 
 ---
 
-### 2. Get All Devices (Admin)
+### 3. Edit Device
 
-**GET** `/get-all`
+**PATCH** `/edit`
 
-Returns a list of all registered devices (admin access).
-
-**Example Curl:**
-
-```bash
-curl -X GET https://your-domain.com/app/device/get-all \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 3. Get My Devices
-
-**GET** `/get-my-devices`
-
-Returns a list of devices owned by the authenticated user.
-
-**Example Curl:**
-
-```bash
-curl -X GET https://your-domain.com/app/device/get-my-devices \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 4. Get Device by ID
-
-**GET** `/get-by-id/{deviceId}`
-
-Returns device information by ID.
-
-**Example Curl:**
-
-```bash
-curl -X GET https://your-domain.com/app/device/get-by-id/abc123 \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 5. Edit Device by Owner
-
-**PATCH** `/edit-my-device/{deviceId}`
-
-Updates a device owned by the user.
+Edits an existing device by device ID and other fields.
 
 **Request Body:**
 
 ```json
 {
-  "name": "Updated Device Name",
-  "description": "Updated description"
+  "deviceId": "123",
+  "deviceName": "Updated Device Name",
+  "deviceType": "Type",
+  "mac": "00:1A:2B:3C:4D:5E",
+  "hardwareVersion": 1,
+  "firmwareVersion": 1,
+  "parameters": ["{\"a1\":\"v1\"}", "{\"a2\":\"v2\"}"],
+  "isShared": false,
+  "costOfUse": 10,
+  "location": {},
+  "geometry": {}
 }
 ```
+
+**Response:**
+
+* 200 OK: Device updated
 
 **Example Curl:**
 
 ```bash
-curl -X PATCH https://your-domain.com/app/device/edit-my-device/abc123 \
+curl -X PATCH https://your-domain.com/app/v1/device/edit \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"name": "Updated Device Name", "description": "Updated description"}'
+  -d '{"deviceId": "123", "deviceName": "Updated Device Name", "deviceType": "Type", "mac": "00:1A:2B:3C:4D:5E", "hardwareVersion": 1, "firmwareVersion": 1, "parameters": ["{\"a1\":\"v1\"}", "{\"a2\":\"v2\"}"], "isShared": false, "costOfUse": 10, "location": {}, "geometry": {}}'
 ```
 
 ---
 
-### 6. Edit Device by Admin
+### 4. Get Devices by User ID
 
-**PATCH** `/edit-device-by-admin/{deviceId}`
+**GET** `/get-devices-by-user-id/{userId}`
 
-Admin endpoint to edit any device.
+Retrieves all devices associated with a specific user ID.
+
+**Path Parameter:**
+
+* `userId`: User ID (string, required)
+
+**Response:**
+
+* 200 OK: List of user devices
+
+**Example Curl:**
+
+```bash
+curl -X GET https://your-domain.com/app/v1/device/get-devices-by-user-id/123 \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+### 5. Get Devices with Encrypted Device ID by User ID
+
+**GET** `/get-devices-with-encrypted-deviceid-by-user-id/{userId}`
+
+Retrieves devices with encrypted device IDs for a specific user.
+
+**Path Parameter:**
+
+* `userId`: User ID (string, required)
+
+**Response:**
+
+* 200 OK: List of devices with encrypted IDs
+
+**Example Curl:**
+
+```bash
+curl -X GET https://your-domain.com/app/v1/device/get-devices-with-encrypted-deviceid-by-user-id/123 \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+### 6. Rename Device
+
+**PATCH** `/rename-device`
+
+Renames a device by its ID.
 
 **Request Body:**
 
 ```json
 {
-  "status": "active"
+  "deviceId": "123",
+  "deviceName": "New Device Name"
 }
 ```
 
+**Response:**
+
+* 200 OK: Device renamed
+
 **Example Curl:**
 
 ```bash
-curl -X PATCH https://your-domain.com/app/device/edit-device-by-admin/abc123 \
+curl -X PATCH https://your-domain.com/app/v1/device/rename-device \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"status": "active"}'
+  -d '{"deviceId": "123", "deviceName": "New Device Name"}'
 ```
 
 ---
 
-### 7. Delete Device (User)
+### 7. Get Installed Devices by Date
 
-**DELETE** `/delete-my-device/{deviceId}`
+**GET** `/get-installed-devices-by-date`
 
-Deletes a device owned by the current user.
+Retrieves devices installed on a specific date.
+
+**Query Parameters:**
+
+* `installationYear`: Installation year (number, required)
+* `installationMonth`: Installation month (number, required)
+* `installationDay`: Installation day (number, required)
+
+**Response:**
+
+* 200 OK: List of devices installed on the specified date
 
 **Example Curl:**
 
 ```bash
-curl -X DELETE https://your-domain.com/app/device/delete-my-device/abc123 \
+curl -X GET "https://your-domain.com/app/v1/device/get-installed-devices-by-date?installationYear=2025&installationMonth=7&installationDay=4" \
   -H 'Authorization: Bearer <token>'
 ```
 
 ---
 
-### 8. Delete Device (Admin)
+### 8. Get All Shared Devices
 
-**DELETE** `/delete-device-by-admin/{deviceId}`
+**GET** `/get-all-shared-devices`
 
-Deletes any device by ID (admin only).
+Retrieves all shared devices.
+
+**Response:**
+
+* 200 OK: List of shared devices
 
 **Example Curl:**
 
 ```bash
-curl -X DELETE https://your-domain.com/app/device/delete-device-by-admin/abc123 \
+curl -X GET https://your-domain.com/app/v1/device/get-all-shared-devices \
   -H 'Authorization: Bearer <token>'
 ```
 
 ---
 
-### 9. Get All Device Types
+### 9. Get All Devices
 
-**GET** `/get-all-device-types`
+**GET** `/get-all-devices`
 
-Returns a list of supported device types.
+Retrieves all installed devices.
+
+**Response:**
+
+* 200 OK: List of all devices
 
 **Example Curl:**
 
 ```bash
-curl -X GET https://your-domain.com/app/device/get-all-device-types \
+curl -X GET https://your-domain.com/app/v1/device/get-all-devices \
   -H 'Authorization: Bearer <token>'
 ```
 
 ---
 
-### 10. Filter Devices by Status
+### 10. Get Device Info by Encrypted ID
 
-**GET** `/get-devices-by-status?status=active`
+**GET** `/get-device-info-by-device-encrypted-id/{encryptedId}`
 
-Filters devices by given status.
+Retrieves device information by its encrypted ID.
+
+**Path Parameter:**
+
+* `encryptedId`: Encrypted device ID (string, required)
+
+**Response:**
+
+* 200 OK: Device information
 
 **Example Curl:**
 
 ```bash
-curl -X GET "https://your-domain.com/app/device/get-devices-by-status?status=active" \
+curl -X GET https://your-domain.com/app/v1/device/get-device-info-by-device-encrypted-id/abc123 \
   -H 'Authorization: Bearer <token>'
 ```
 
 ---
 
-**➡️ For installed services and service-device interactions, see `services.md`.**
+### 11. Delete Device by Device ID
+
+**DELETE** `/delete-device-by-device-id/{deviceId}`
+
+Deletes a device by its ID.
+
+**Path Parameter:**
+
+* `deviceId`: Device ID (string, required)
+
+**Response:**
+
+* 200 OK: Device deleted
+
+**Example Curl:**
+
+```bash
+curl -X DELETE https://your-domain.com/app/v1/device/delete-device-by-device-id/123 \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+### 12. Local Share Device
+
+**PATCH** `/local-share`
+
+Locally shares a device with a user.
+
+**Request Body:**
+
+```json
+{
+  "deviceId": "123",
+  "userEmail": "user@example.com"
+}
+```
+
+**Response:**
+
+* 200 OK: Device shared
+
+**Example Curl:**
+
+```bash
+curl -X PATCH https://your-domain.com/app/v1/device/local-share \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"deviceId": "123", "userEmail": "user@example.com"}'
+```
+
+---
+
+### 13. Local Unshare Device
+
+**PATCH** `/local-unshare`
+
+Removes local sharing of a device with a user.
+
+**Request Body:**
+
+```json
+{
+  "deviceId": "123",
+  "userEmail": "user@example.com"
+}
+```
+
+**Response:**
+
+* 200 OK: Device unshared
+
+**Example Curl:**
+
+```bash
+curl -X PATCH https://your-domain.com/app/v1/device/local-unshare \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"deviceId": "123", "userEmail": "user@example.com"}'
+```
+
+---
+
+### 14. Get Users Device Sharing With
+
+**GET** `/{deviceId}/local-share/users`
+
+Returns all users that a given device is shared with.
+
+**Path Parameter:**
+
+* `deviceId`: Device ID (string, required)
+
+**Response:**
+
+* 200 OK: List of users
+
+**Example Curl:**
+
+```bash
+curl -X GET https://your-domain.com/app/v1/device/123/local-share/users \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+### 15. Get My Local Shared Devices
+
+**GET** `/get-my-local-shared-devices`
+
+Returns all devices shared with the authenticated user.
+
+**Response:**
+
+* 200 OK: List of shared devices
+
+**Example Curl:**
+
+```bash
+curl -X GET https://your-domain.com/app/v1/device/get-my-local-shared-devices \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+## Security
+
+These endpoints require a bearer token.
+
+---
+
+[Next Section: Device Types API Documentation](device-types.md)
