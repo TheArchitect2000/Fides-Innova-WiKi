@@ -52,8 +52,8 @@ Inserts a new user device.
   "firmwareVersion": 1,
   "parameters": ["{\"a1\":\"v1\"}", "{\"a2\":\"v2\"}"],
   "isShared": false,
-  "location": {},
-  "geometry": {}
+  "location": "",
+  "geometry": ""
 }
 ```
 
@@ -67,7 +67,7 @@ Inserts a new user device.
 curl -X POST https://your-domain.com/app/v1/device/insert \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"deviceName": "Device Name", "deviceType": "Type", "mac": "00:1A:2B:3C:4D:5E", "hardwareVersion": 1, "firmwareVersion": 1, "parameters": ["{\"a1\":\"v1\"}", "{\"a2\":\"v2\"}"], "isShared": false, "location": {}, "geometry": {}}'
+  -d '{"deviceName": "Device Name", "deviceType": "Type", "mac": "00:1A:2B:3C:4D:5E", "hardwareVersion": 1, "firmwareVersion": 1, "parameters": ["{\"a1\":\"v1\"}", "{\"a2\":\"v2\"}"], "isShared": false, "location": "", "geometry": ""}'
 ```
 
 ---
@@ -91,8 +91,8 @@ Edits an existing device by device ID and other fields.
   "parameters": ["{\"a1\":\"v1\"}", "{\"a2\":\"v2\"}"],
   "isShared": false,
   "costOfUse": 10,
-  "location": {},
-  "geometry": {}
+  "location": "",
+  "geometry": ""
 }
 ```
 
@@ -106,7 +106,7 @@ Edits an existing device by device ID and other fields.
 curl -X PATCH https://your-domain.com/app/v1/device/edit \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"deviceId": "123", "deviceName": "Updated Device Name", "deviceType": "Type", "mac": "00:1A:2B:3C:4D:5E", "hardwareVersion": 1, "firmwareVersion": 1, "parameters": ["{\"a1\":\"v1\"}", "{\"a2\":\"v2\"}"], "isShared": false, "costOfUse": 10, "location": {}, "geometry": {}}'
+  -d '{"deviceId": "123", "deviceName": "Updated Device Name", "deviceType": "Type", "mac": "00:1A:2B:3C:4D:5E", "hardwareVersion": 1, "firmwareVersion": 1, "parameters": ["{\"a1\":\"v1\"}", "{\"a2\":\"v2\"}"], "isShared": false, "costOfUse": 10, "location": "", "geometry": ""}'
 ```
 
 ---
@@ -404,4 +404,4 @@ These endpoints require a bearer token.
 
 ---
 
-[Next Section: Device Types API Documentation](device-types.md)
+Next Section: [Device Types API Documentation](device-types.md)
