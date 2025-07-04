@@ -46,11 +46,12 @@ The Fides API is organized into the following sections:
 6. **[Services API](services.md)**: Create and manage user services, including publishing and editing.
 7. **[Smart Contract API](smart-contract.md)**: Handle smart contract operations, such as creation, publishing, and deletion.
 8. **[MQTT Logs API](mqtt-logs.md)**: Retrieve MQTT logs for devices by device ID or user ID.
-9. **[Theme API](theme.md)**: Manage user-specific themes and their settings.
+9. **[Media API Documentation](media.md)**: This document includes the media-related API methods from the Fides API.
 10. **[Installed Services API](installed-services.md)**: Handle installation and management of services for users.
 11. **[Notifications API](notifications.md)**: Manage user notifications, including retrieval, marking as read, and deletion.
 12. **[Device Types API](device-types.md)**: Manage device types, including creation, editing, and deletion.
 13. **[Subscriptions API](subscriptions.md)**: Manage user subscriptions, including creation, updates, and cancellations.
+14. **[Other API Documentation](other.md)**: This document includes miscellaneous API methods from the Fides API that do not fall under other specific categories.
 
 ---
 
