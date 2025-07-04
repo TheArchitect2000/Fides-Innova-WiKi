@@ -12,86 +12,40 @@ This document includes the notification-related API methods from the Fides API.
 
 ---
 
-### 1. Get Notifications by User ID
+### 1. Send Firebase Token
 
-**GET** `/get-notifications-by-user-id/{userId}`
+**POST** `/sendToken`
 
-Retrieves all notifications for a specific user ID.
-
-**Path Parameter:**
-
-* `userId`: User ID (string, required)
-
-**Response:**
-
-* 200 OK: List of notifications for the user
-
-**Example Curl:**
-
-```bash
-curl -X GET https://your-domain.com/app/v1/notification/get-notifications-by-user-id/123 \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 2. Mark Notification as Read
-
-**PATCH** `/mark-as-read`
-
-Marks a notification as read by its ID.
+Saves a Firebase token for a user to enable push notifications.
 
 **Request Body:**
 
 ```json
 {
-  "notificationId": "123"
+  "token": "firebase_token_string"
 }
 ```
 
 **Response:**
 
-* 200 OK: Notification marked as read
+* 201 Created: Firebase token saved
 
 **Example Curl:**
 
 ```bash
-curl -X PATCH https://your-domain.com/app/v1/notification/mark-as-read \
+curl -X POST https://your-domain.com/app/v1/notification/sendToken \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"notificationId": "123"}'
+  -d '{"token": "firebase_token_string"}'
 ```
 
 ---
 
-### 3. Delete Notification by Notification ID
+### 2. Add Notification by User ID
 
-**DELETE** `/delete-notification-by-notification-id/{notificationId}`
+**POST** `/add-notification-by-user-id`
 
-Deletes a notification by its ID.
-
-**Path Parameter:**
-
-* `notificationId`: Notification ID (string, required)
-
-**Response:**
-
-* 200 OK: Notification deleted
-
-**Example Curl:**
-
-```bash
-curl -X DELETE https://your-domain.com/app/v1/notification/delete-notification-by-notification-id/123 \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 4. Create Notification
-
-**POST** `/create`
-
-Creates a new notification for a user.
+Adds a notification for a specific user when opening the app or site.
 
 **Request Body:**
 
@@ -99,23 +53,95 @@ Creates a new notification for a user.
 {
   "userId": "123",
   "title": "New Notification",
-  "message": "This is a notification message",
-  "type": "info",
-  "priority": "normal"
+  "message": "This is a notification message"
 }
 ```
 
 **Response:**
 
-* 201 Created: Notification created
+* 201 Created: Notification added
 
 **Example Curl:**
 
 ```bash
-curl -X POST https://your-domain.com/app/v1/notification/create \
+curl -X POST https://your-domain.com/app/v1/notification/add-notification-by-user-id \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"userId": "123", "title": "New Notification", "message": "This is a notification message", "type": "info", "priority": "normal"}'
+  -d '{
+      "userId": "123",
+      "title": "New Notification",
+      "message": "This is a notification message"
+      }'
+```
+
+---
+
+### 3. Add Notification by User Email
+
+**POST** `/add-notification-by-user-email`
+
+Adds a notification for a user identified by their email when opening the app or site.
+
+**Request Body:**
+
+```json
+{
+  "userEmail": "user@example.com",
+  "title": "New Notification",
+  "message": "This is a notification message"
+}
+```
+
+**Response:**
+
+* 201 Created: Notification added
+
+**Example Curl:**
+
+```bash
+curl -X POST https://your-domain.com/app/v1/notification/add-notification-by-user-email \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "userEmail": "user@example.com",
+      "title": "New Notification",
+      "message": "This is a notification message"
+      }'
+```
+
+---
+
+### 4. Add Public Notification
+
+**POST** `/add-public-notification`
+
+Adds a public notification for all users when opening the app or site.
+
+**Request Body:**
+
+```json
+{
+  "title": "Public Notification",
+  "message": "This is a public notification for all users",
+  "expiryDate": 0
+}
+```
+
+**Response:**
+
+* 201 Created: Public notification added
+
+**Example Curl:**
+
+```bash
+curl -X POST https://your-domain.com/app/v1/notification/add-public-notification \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "title": "Public Notification",
+      "message": "This is a public notification for all users",
+      "expiryDate": 0
+      }'
 ```
 
 ---
@@ -124,7 +150,7 @@ curl -X POST https://your-domain.com/app/v1/notification/create \
 
 **GET** `/get-unread-notifications-by-user-id/{userId}`
 
-Retrieves all unread notifications for a specific user ID.
+Retrieves all unread notifications for a specific user when opening the app or site.
 
 **Path Parameter:**
 
@@ -143,11 +169,11 @@ curl -X GET https://your-domain.com/app/v1/notification/get-unread-notifications
 
 ---
 
-### 6. Mark All Notifications as Read
+### 6. Get All Notifications by User ID
 
-**PATCH** `/mark-all-as-read/{userId}`
+**GET** `/get-all-notifications-by-user-id/{userId}`
 
-Marks all notifications for a specific user as read.
+Retrieves all notifications (read and unread) for a specific user when opening the app or site.
 
 **Path Parameter:**
 
@@ -155,26 +181,45 @@ Marks all notifications for a specific user as read.
 
 **Response:**
 
-* 200 OK: All notifications marked as read
+* 200 OK: List of all notifications
 
 **Example Curl:**
 
 ```bash
-curl -X PATCH https://your-domain.com/app/v1/notification/mark-all-as-read/123 \
+curl -X GET https://your-domain.com/app/v1/notification/get-all-notifications-by-user-id/123 \
   -H 'Authorization: Bearer <token>'
 ```
 
 ---
 
-### 7. Get Notification by Notification ID
+### 7. Get Public Notifications
 
-**GET** `/get-notification-by-notification-id/{notificationId}`
+**GET** `/get-public-notifications`
 
-Retrieves details of a specific notification by its ID.
+Retrieves all public notifications for all users when opening the app or site.
+
+**Response:**
+
+* 200 OK: List of public notifications
+
+**Example Curl:**
+
+```bash
+curl -X GET https://your-domain.com/app/v1/notification/get-public-notifications \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+### 8. Get Notification by ID
+
+**GET** `/get-notification-by-id/{notifId}`
+
+Retrieves a specific notification by its ID when opening the app or site.
 
 **Path Parameter:**
 
-* `notificationId`: Notification ID (string, required)
+* `notifId`: Notification ID (string, required)
 
 **Response:**
 
@@ -183,27 +228,55 @@ Retrieves details of a specific notification by its ID.
 **Example Curl:**
 
 ```bash
-curl -X GET https://your-domain.com/app/v1/notification/get-notification-by-notification-id/123 \
+curl -X GET https://your-domain.com/app/v1/notification/get-notification-by-id/123 \
   -H 'Authorization: Bearer <token>'
 ```
 
 ---
 
-### 8. Update Notification
+### 9. Read Notification by Notification ID List
 
-**PATCH** `/update`
+**PATCH** `/read-notification-by-notif-id-list`
 
-Updates an existing notification by its ID.
+Marks one or more notifications as read by their IDs.
 
 **Request Body:**
 
 ```json
 {
-  "notificationId": "123",
+  "notificationIds": ["notif_123", "notif_456"]
+}
+```
+
+**Response:**
+
+* 200 OK: Notifications marked as read
+
+**Example Curl:**
+
+```bash
+curl -X PATCH https://your-domain.com/app/v1/notification/read-notification-by-notif-id-list \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"notificationIds": ["notif_123", "notif_456"]}'
+```
+
+---
+
+### 10. Edit Notification by ID
+
+**PATCH** `/edit-notification-by-id`
+
+Edits a notification by its ID.
+
+**Request Body:**
+
+```json
+{
+  "notifId": "notif_123",
   "title": "Updated Notification",
   "message": "Updated notification message",
-  "type": "warning",
-  "priority": "high"
+  "notifId": "string"
 }
 ```
 
@@ -214,60 +287,15 @@ Updates an existing notification by its ID.
 **Example Curl:**
 
 ```bash
-curl -X PATCH https://your-domain.com/app/v1/notification/update \
+curl -X PATCH https://your-domain.com/app/v1/notification/edit-notification-by-id \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"notificationId": "123", "title": "Updated Notification", "message": "Updated notification message", "type": "warning", "priority": "high"}'
-```
-
----
-
-### 9. Get Notifications by Type
-
-**GET** `/get-notifications-by-type/{userId}`
-
-Retrieves notifications for a specific user by notification type.
-
-**Path Parameter:**
-
-* `userId`: User ID (string, required)
-
-**Query Parameters:**
-
-* `type`: Notification type (string, required, e.g., "info", "warning", "error")
-
-**Response:**
-
-* 200 OK: List of notifications of the specified type
-
-**Example Curl:**
-
-```bash
-curl -X GET "https://your-domain.com/app/v1/notification/get-notifications-by-type/123?type=info" \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 10. Delete All Notifications by User ID
-
-**DELETE** `/delete-all-notifications-by-user-id/{userId}`
-
-Deletes all notifications for a specific user.
-
-**Path Parameter:**
-
-* `userId`: User ID (string, required)
-
-**Response:**
-
-* 200 OK: All notifications deleted
-
-**Example Curl:**
-
-```bash
-curl -X DELETE https://your-domain.com/app/v1/notification/delete-all-notifications-by-user-id/123 \
-  -H 'Authorization: Bearer <token>'
+  -d '{
+      "notifId": "notif_123",
+      "title": "Updated Notification",
+      "message": "Updated notification message",
+      "notifId": "string"
+      }'
 ```
 
 ---
@@ -278,4 +306,4 @@ These endpoints require a bearer token.
 
 ---
 
-[Next Section: Device Types API Documentation](device-types.md)
+Next Section: [Subscriptions API Documentation](subscriptions.md)
