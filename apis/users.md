@@ -152,7 +152,8 @@ Verifies the OTP sent to a user’s email.
 ```json
 {
   "email": "user@example.com",
-  "otp": "123456"
+  "otp": "123456",
+  "otpType": "Type1"
 }
 ```
 
@@ -161,7 +162,7 @@ Verifies the OTP sent to a user’s email.
 ```bash
 curl -X POST https://your-domain.com/app/v1/user/verify-otp-code-sent-by-email \
   -H 'Content-Type: application/json' \
-  -d '{"email": "user@example.com", "otp": "123456"}'
+  -d '{"email": "user@example.com", "otp": "123456", "otpType": "Type1"}'
 ```
 
 ---
@@ -175,8 +176,6 @@ curl -X POST https://your-domain.com/app/v1/user/verify-otp-code-sent-by-email \
 ```json
 {
   "email": "user@example.com",
-  "newPassword": "NewPass!234",
-  "otp": "123456"
 }
 ```
 
@@ -185,7 +184,7 @@ curl -X POST https://your-domain.com/app/v1/user/verify-otp-code-sent-by-email \
 ```bash
 curl -X POST https://your-domain.com/app/v1/user/change-password-and-activate-account \
   -H 'Content-Type: application/json' \
-  -d '{"email": "user@example.com", "newPassword": "NewPass!234", "otp": "123456"}'
+  -d '{"email": "user@example.com"}'
 ```
 
 ---
@@ -214,9 +213,9 @@ curl -X GET https://your-domain.com/app/v1/user/request-otp-code/+1234567890
 
 ```json
 {
-  "mobile": "+1234567890",
+  "email": "user@example.com",
   "otp": "123456",
-  "newPassword": "StrongPassword!2024"
+  "password": "StrongPassword!2024"
 }
 ```
 
@@ -225,7 +224,7 @@ curl -X GET https://your-domain.com/app/v1/user/request-otp-code/+1234567890
 ```bash
 curl -X PATCH https://your-domain.com/app/v1/user/reset-password-by-otp-code \
   -H 'Content-Type: application/json' \
-  -d '{"mobile": "+1234567890", "otp": "123456", "newPassword": "StrongPassword!2024"}'
+  -d '{"email": "user@example.com", "otp": "123456", "password": "StrongPassword!2024"}'
 ```
 
 ---
