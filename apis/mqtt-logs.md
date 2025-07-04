@@ -7,99 +7,74 @@ This document provides details on the endpoints related to MQTT communication lo
 ## Base URL
 
 ```
-/app/mqtt-log
+/app/v1/broker-mqtt-log
 ```
+
 
 ---
 
-### 1. Get All MQTT Logs
+### 1. Logs Device Events
 
-**GET** `/get-all`
+**POST** `/log-device-event`
 
-Retrieves a list of all MQTT logs (admin access).
+This api requires a user encrypted device id and event.
+
+**Request Body:**
+
+```json
+{
+  "deviceEncryptedId": "string",
+  "event": "string"
+}
+```
+
+**Response:**
+
+* 200 OK
 
 **Example Curl:**
 
 ```bash
-curl -X GET https://your-domain.com/app/mqtt-log/get-all \
-  -H 'Authorization: Bearer <token>'
+curl -X POST https://your-domain.com//app/v1/broker-mqtt-log/log-device-event \
+  -H 'Content-Type: application/json' \
+  -d '{"deviceEncryptedId": "string", "event": "string"}'
 ```
 
 ---
 
-### 2. Get MQTT Logs by Device ID
+### 2. Logs Device Data
 
-**GET** `/get-by-device-id/{deviceId}`
+**POST** `/log-device-data`
 
-Fetches logs related to a specific device.
+This api requires a user encrypted device id and data and sender device id.
+
+**Request Body:**
+
+```json
+{
+  "deviceEncryptedId": "string",
+  "event": "string",
+  "data": "string",
+  "senderDeviceEncryptedId": "string"
+}
+```
+
+**Response:**
+
+* 200 OK
 
 **Example Curl:**
 
 ```bash
-curl -X GET https://your-domain.com/app/mqtt-log/get-by-device-id/device123 \
-  -H 'Authorization: Bearer <token>'
+curl -X POST https://your-domain.com//app/v1/broker-mqtt-log/log-device-data \
+  -H 'Content-Type: application/json' \
+  -d '{"deviceEncryptedId": "string",
+  "event": "string",
+  "data": "string",
+  "senderDeviceEncryptedId": "string"}'
 ```
+
 
 ---
 
-### 3. Get MQTT Log by ID
-
-**GET** `/get-by-id/{logId}`
-
-Retrieves details for a single MQTT log entry by its ID.
-
-**Example Curl:**
-
-```bash
-curl -X GET https://your-domain.com/app/mqtt-log/get-by-id/log789 \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 4. Delete MQTT Log by ID
-
-**DELETE** `/delete-by-id/{logId}`
-
-Deletes a specific MQTT log entry.
-
-**Example Curl:**
-
-```bash
-curl -X DELETE https://your-domain.com/app/mqtt-log/delete-by-id/log789 \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 5. Filter Logs by Topic
-
-**GET** `/filter-by-topic?topic=device/temperature`
-
-Filters logs based on MQTT topic string.
-
-**Example Curl:**
-
-```bash
-curl -X GET "https://your-domain.com/app/mqtt-log/filter-by-topic?topic=device/temperature" \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 6. Search Logs by Keyword
-
-**GET** `/search?query=error&page=1&limit=20`
-
-Searches MQTT logs for a given keyword.
-
-**Example Curl:**
-
-```bash
-curl -X GET "https://your-domain.com/app/mqtt-log/search?query=error&page=1&limit=20" \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-**➡️ For general device logs, see `device-logs.md`.**
+Next Section: [Smart Contract & ZKP API Documentation](smart-contract.md)
