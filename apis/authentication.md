@@ -27,7 +27,7 @@ Verifies the Google ID token sent by the client and performs the login/registrat
 
 ```json
 {
-  "idToken": "your_google_id_token"
+
 }
 ```
 
