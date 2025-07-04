@@ -30,7 +30,7 @@ This api requires a user encrypted device id and event.
 
 **Response:**
 
-* 200 OK
+* 201 OK
 
 **Example Curl:**
 
@@ -61,7 +61,7 @@ This api requires a user encrypted device id and data and sender device id.
 
 **Response:**
 
-* 200 OK
+* 201 OK
 
 **Example Curl:**
 
