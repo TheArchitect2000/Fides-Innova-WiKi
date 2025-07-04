@@ -76,4 +76,17 @@ Retrieves the last logs for devices shared with the user by field name (default:
 
 **Example Curl:**
 
- Sit tight, I'm still working on the rest of the response. 5 files down, 5 to go. I'll have the complete set ready soon!
+```bash
+curl -X GET "https://your-domain.com/app/v1/device-log/get-last-my-local-devices-log-by-field-name?fieldName=data" \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+## Security
+
+These endpoints require a bearer token.
+
+---
+
+[Next Section: Device Types API Documentation](device-types.md)
