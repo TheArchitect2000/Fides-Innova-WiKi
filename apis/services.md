@@ -1,156 +1,335 @@
 # Services API Documentation
 
-This document describes all service-related endpoints in the Fides API, including managing available services and those installed on user devices.
+This document includes the service-related API methods from the Fides API.
 
 ---
 
 ## Base URL
 
 ```
-/app/service
+/app/v1/service
 ```
 
 ---
 
-### 1. Get All Services
+### 1. Insert Service
 
-**GET** `/get-all`
+**POST** `/insert`
 
-Returns a list of all available services.
-
-**Example Curl:**
-
-```bash
-curl -X GET https://your-domain.com/app/service/get-all \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 2. Get Service by ID
-
-**GET** `/get-by-id/{serviceId}`
-
-Returns detailed information about a specific service.
-
-**Example Curl:**
-
-```bash
-curl -X GET https://your-domain.com/app/service/get-by-id/abc123 \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 3. Get All Installed Services by Device ID
-
-**GET** `/get-all-installed-services-by-device-id/{deviceId}`
-
-Returns a list of services currently installed on a specific device.
-
-**Example Curl:**
-
-```bash
-curl -X GET https://your-domain.com/app/service/get-all-installed-services-by-device-id/device001 \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 4. Install Service to Device
-
-**POST** `/install`
-
-Installs a service to a device.
+Inserts a new user service.
 
 **Request Body:**
 
 ```json
 {
-  "deviceId": "device001",
-  "serviceId": "service001"
+  "serviceName": "Service Name",
+  "description": "Service Description",
+  "serviceType": "Type",
+  "status": "Active",
+  "blocklyJson": "{}",
+  "code": "service code",
+  "devices": ["deviceId1", "deviceId2"]
 }
 ```
 
+**Response:**
+
+* 201 Created: Service inserted
+
 **Example Curl:**
 
 ```bash
-curl -X POST https://your-domain.com/app/service/install \
+curl -X POST https://your-domain.com/app/v1/service/insert \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"deviceId": "device001", "serviceId": "service001"}'
+  -d '{"serviceName": "Service Name", "description": "Service Description", "serviceType": "Type", "status": "Active", "blocklyJson": "{}", "code": "service code", "devices": ["deviceId1", "deviceId2"]}'
 ```
 
 ---
 
-### 5. Uninstall Service from Device
+### 2. Request Service Publish
 
-**DELETE** `/uninstall-service/{installedServiceId}`
+**PATCH** `/request-service-publish`
 
-Uninstalls a service from a device.
-
-**Example Curl:**
-
-```bash
-curl -X DELETE https://your-domain.com/app/service/uninstall-service/installed123 \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 6. Update Installed Service
-
-**PATCH** `/edit-installed-service/{installedServiceId}`
-
-Updates the installed service information.
+Requests to publish a user service.
 
 **Request Body:**
 
 ```json
 {
-  "status": "active"
+  "serviceId": "123"
 }
 ```
 
+**Response:**
+
+* 201 Created: Publish request submitted
+
 **Example Curl:**
 
 ```bash
-curl -X PATCH https://your-domain.com/app/service/edit-installed-service/installed123 \
+curl -X PATCH https://your-domain.com/app/v1/service/request-service-publish \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"status": "active"}'
+  -d '{"serviceId": "123"}'
 ```
 
 ---
 
-### 7. Get All Installed Services (Admin)
+### 3. Publish Service
 
-**GET** `/get-all-installed-services`
+**PATCH** `/publish-service`
 
-Returns all installed services across all users and devices.
+Publishes a user service that has been requested for publishing.
+
+**Request Body:**
+
+```json
+{
+  "serviceId": "123"
+}
+```
+
+**Response:**
+
+* 201 Created: Service published
 
 **Example Curl:**
 
 ```bash
-curl -X GET https://your-domain.com/app/service/get-all-installed-services \
+curl -X PATCH https://your-domain.com/app/v1/service/publish-service \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"serviceId": "123"}'
+```
+
+---
+
+### 4. Reject Service
+
+**PATCH** `/reject-service`
+
+Rejects a user service that has been requested for publishing.
+
+**Request Body:**
+
+```json
+{
+  "serviceId": "123"
+}
+```
+
+**Response:**
+
+* 201 Created: Service rejected
+
+**Example Curl:**
+
+```bash
+curl -X PATCH https://your-domain.com/app/v1/service/reject-service \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"serviceId": "123"}'
+```
+
+---
+
+### 5. Cancel Service Request
+
+**PATCH** `/cancel-service-request`
+
+Cancels a service publish request.
+
+**Request Body:**
+
+```json
+{
+  "serviceId": "123"
+}
+```
+
+**Response:**
+
+* 201 Created: Service request canceled
+
+**Example Curl:**
+
+```bash
+curl -X PATCH https://your-domain.com/app/v1/service/cancel-service-request \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"serviceId": "123"}'
+```
+
+---
+
+### 6. Edit Service
+
+**PATCH** `/edit`
+
+Edits a service by service ID and other fields.
+
+**Request Body:**
+
+```json
+{
+  "serviceId": "123",
+  "serviceName": "Updated Service Name",
+  "description": "Updated Description",
+  "serviceType": "Type",
+  "status": "Active",
+  "devices": ["deviceId1", "deviceId2"],
+  "serviceImage": "image_url",
+  "blocklyJson": "{}",
+  "code": "updated service code"
+}
+```
+
+**Response:**
+
+* 200 OK: Service updated
+
+**Example Curl:**
+
+```bash
+curl -X PATCH https://your-domain.com/app/v1/service/edit \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"serviceId": "123", "serviceName": "Updated Service Name", "description": "Updated Description", "serviceType": "Type", "status": "Active", "devices": ["deviceId1", "deviceId2"], "serviceImage": "image_url", "blocklyJson": "{}", "code": "updated service code"}'
+```
+
+---
+
+### 7. Get Services by User ID
+
+**GET** `/get-services-by-user-id/{userId}`
+
+Retrieves all services associated with a specific user ID.
+
+**Path Parameter:**
+
+* `userId`: User ID (string, required)
+
+**Response:**
+
+* 200 OK: List of user services
+
+**Example Curl:**
+
+```bash
+curl -X GET https://your-domain.com/app/v1/service/get-services-by-user-id/123 \
   -H 'Authorization: Bearer <token>'
 ```
 
 ---
 
-### 8. Get Installed Service by ID
+### 8. Get Service by Service ID
 
-**GET** `/get-installed-service-by-id/{installedServiceId}`
+**GET** `/get-service-by-service-id/{serviceId}`
 
-Returns details about a specific installed service.
+Retrieves a service by its ID.
+
+**Path Parameter:**
+
+* `serviceId`: Service ID (string, required)
+
+**Response:**
+
+* 200 OK: Service details
 
 **Example Curl:**
 
 ```bash
-curl -X GET https://your-domain.com/app/service/get-installed-service-by-id/installed123 \
+curl -X GET https://your-domain.com/app/v1/service/get-service-by-service-id/123 \
   -H 'Authorization: Bearer <token>'
 ```
 
 ---
 
-**➡️ For Smart Contract and ZKP management, see `smart-contract.md`.**
+### 9. Get All Published Services
+
+**GET** `/get-all-published-services`
+
+Retrieves all services that are published.
+
+**Response:**
+
+* 200 OK: List of published services
+
+**Example Curl:**
+
+```bash
+curl -X GET https://your-domain.com/app/v1/service/get-all-published-services \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+### 10. Get All Publish Requested Services
+
+**GET** `/get-all-publish-requested-services`
+
+Retrieves all services that have requested to be published.
+
+**Response:**
+
+* 200 OK: List of publish-requested services
+
+**Example Curl:**
+
+```bash
+curl -X GET https://your-domain.com/app/v1/service/get-all-publish-requested-services \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+### 11. Get All Services
+
+**GET** `/get-all-services`
+
+Retrieves all services in the system.
+
+**Response:**
+
+* 200 OK: List of all services
+
+**Example Curl:**
+
+```bash
+curl -X GET https://your-domain.com/app/v1/service/get-all-services \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+### 12. Delete Service by Service ID
+
+**DELETE** `/delete-service-by-service-id/{serviceId}`
+
+Deletes a service by its ID.
+
+**Path Parameter:**
+
+* `serviceId`: Service ID (string, required)
+
+**Response:**
+
+* 200 OK: Service deleted
+
+**Example Curl:**
+
+```bash
+curl -X DELETE https://your-domain.com/app/v1/service/delete-service-by-service-id/123 \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+## Security
+
+These endpoints require a bearer token.
+
+---
+
+[Next Section: Installed Services API Documentation](installed-services.md)
