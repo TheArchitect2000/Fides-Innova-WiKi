@@ -1,105 +1,79 @@
 # Device Logs API Documentation
 
-This document includes all endpoints related to device operation logs in the Fides API.
+This document includes the device log-related API methods from the Fides API.
 
 ---
 
 ## Base URL
 
 ```
-/app/device-log
+/app/v1/device-log
 ```
 
 ---
 
-### 1. Get All Device Logs
+### 1. Get Last Device Log by Encrypted Device ID and Field Name
 
-**GET** `/get-all`
+**GET** `/get-last-device-log-by-encrypted-deviceid-and-field-name`
 
-Returns a list of all device logs (admin access).
+Retrieves the last device log by encrypted device ID and field name (default: 'data').
+
+**Query Parameters:**
+
+* `deviceEncryptedId`: Device encrypted ID (string, required)
+* `fieldName`: Field name (string, required)
+
+**Response:**
+
+* 200 OK: Device log retrieved
 
 **Example Curl:**
 
 ```bash
-curl -X GET https://your-domain.com/app/device-log/get-all \
+curl -X GET "https://your-domain.com/app/v1/device-log/get-last-device-log-by-encrypted-deviceid-and-field-name?deviceEncryptedId=abc123&fieldName=data" \
   -H 'Authorization: Bearer <token>'
 ```
 
 ---
 
-### 2. Get Logs by Device ID
+### 2. Get Last Devices Log by User ID and Field Name
 
-**GET** `/get-by-device-id/{deviceId}`
+**GET** `/get-last-devices-log-by-userid-and-field-name`
 
-Fetches logs for a specific device.
+Retrieves the last device logs for a user by user ID and field name (default: 'data').
+
+**Query Parameters:**
+
+* `userId`: User ID (string, required)
+* `fieldName`: Field name (string, required)
+
+**Response:**
+
+* 200 OK: Device logs retrieved
 
 **Example Curl:**
 
 ```bash
-curl -X GET https://your-domain.com/app/device-log/get-by-device-id/device123 \
+curl -X GET "https://your-domain.com/app/v1/device-log/get-last-devices-log-by-userid-and-field-name?userId=123&fieldName=data" \
   -H 'Authorization: Bearer <token>'
 ```
 
 ---
 
-### 3. Get Device Log by ID
+### 3. Get Last Local Devices Log by Field Name
 
-**GET** `/get-by-id/{logId}`
+**GET** `/get-last-my-local-devices-log-by-field-name`
 
-Returns a specific log entry by its unique ID.
+Retrieves the last logs for devices shared with the user by field name (default: 'data').
 
-**Example Curl:**
+**Query Parameters:**
 
-```bash
-curl -X GET https://your-domain.com/app/device-log/get-by-id/log456 \
-  -H 'Authorization: Bearer <token>'
-```
+* `fieldName`: Field name (string, required)
 
----
+**Response:**
 
-### 4. Delete Log by ID
-
-**DELETE** `/delete-by-id/{logId}`
-
-Deletes a specific log record.
+* 200 OK: Device logs retrieved
 
 **Example Curl:**
 
-```bash
-curl -X DELETE https://your-domain.com/app/device-log/delete-by-id/log456 \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 5. Filter Logs by Type
-
-**GET** `/filter-by-type?type=error`
-
-Filters device logs by the log type (e.g., error, info).
-
-**Example Curl:**
-
-```bash
-curl -X GET "https://your-domain.com/app/device-log/filter-by-type?type=error" \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 6. Search Device Logs
-
-**GET** `/search?query=overheat&page=1&limit=10`
-
-Search logs by keyword with pagination.
-
-**Example Curl:**
-
-```bash
-curl -X GET "https://your-domain.com/app/device-log/search?query=overheat&page=1&limit=10" \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-**➡️ For device management and services, see `devices.md` and `services.md`.**
+ Sit tight, I'm still working on the rest of the response. 5 files down, 5 to go. I'll have the complete set ready soon!
