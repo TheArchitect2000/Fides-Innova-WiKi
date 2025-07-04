@@ -16,6 +16,7 @@
 
 
 * [Introduction](introduction.md)
+* [َAPIs](APIs.md)
 * [Tech Stack](tech-stack/README.md)
   * [Service Contract](tech-stack/service-contract.md)
   * [ZKP-enabled JavaScript Execution](tech-stack/zkp-enabled-javascript-execution.md)
