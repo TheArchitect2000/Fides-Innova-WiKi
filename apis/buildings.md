@@ -1,111 +1,169 @@
-Buildings API Documentation
+# Buildings API Documentation
+
 This document includes the building-related API methods from the Fides API.
 
-Base URL
+---
+
+## Base URL
+
+```
 /app/v1/building
+```
 
+---
 
-1. Create New Building
-POST /create
+### 1. Create New Building
+
+**POST** `/create`
+
 Adds a new building that includes floors and units with devices.
-Request Body:
+
+**Request Body:**
+
+```json
 {
   "name": "Building Name",
   "details": {}
 }
+```
 
-Response:
+**Response:**
 
-201 Created: Building created
+* 201 Created: Building created
 
-Example Curl:
+**Example Curl:**
+
+```bash
 curl -X POST https://your-domain.com/app/v1/building/create \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
   -d '{"name": "Building Name", "details": {}}'
+```
 
+---
 
-2. Edit Building by Build ID
-PATCH /edit-by-build-id
+### 2. Edit Building by Build ID
+
+**PATCH** `/edit-by-build-id`
+
 Edits an existing building, including floors and units with devices.
-Request Body:
+
+**Request Body:**
+
+```json
 {
   "buildId": "123",
   "data": {}
 }
+```
 
-Response:
+**Response:**
 
-200 OK: Building updated
+* 200 OK: Building updated
 
-Example Curl:
+**Example Curl:**
+
+```bash
 curl -X PATCH https://your-domain.com/app/v1/building/edit-by-build-id \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
   -d '{"buildId": "123", "data": {}}'
+```
 
+---
 
-3. Get All Buildings
-GET /get-all-buildings
+### 3. Get All Buildings
+
+**GET** `/get-all-buildings`
+
 Returns all created buildings with details.
-Response:
 
-200 OK: List of buildings
+**Response:**
 
-Example Curl:
+* 200 OK: List of buildings
+
+**Example Curl:**
+
+```bash
 curl -X GET https://your-domain.com/app/v1/building/get-all-buildings \
   -H 'Authorization: Bearer <token>'
+```
 
+---
 
-4. Get Buildings by User ID
-GET /get-buildings-by-user-id/{userId}
+### 4. Get Buildings by User ID
+
+**GET** `/get-buildings-by-user-id/{userId}`
+
 Returns all buildings created by a specific user.
-Path Parameter:
 
-userId: User ID (string)
+**Path Parameter:**
 
-Response:
+* `userId`: User ID (string)
 
-200 OK: List of user buildings
+**Response:**
 
-Example Curl:
+* 200 OK: List of user buildings
+
+**Example Curl:**
+
+```bash
 curl -X GET https://your-domain.com/app/v1/building/get-buildings-by-user-id/123 \
   -H 'Authorization: Bearer <token>'
+```
 
+---
 
-5. Get Building by Build ID
-GET /get-building-by-build-id/{buildId}
+### 5. Get Building by Build ID
+
+**GET** `/get-building-by-build-id/{buildId}`
+
 Returns details of a specific building by its ID.
-Path Parameter:
 
-buildId: Building ID (string)
+**Path Parameter:**
 
-Response:
+* `buildId`: Building ID (string)
 
-200 OK: Building details
+**Response:**
 
-Example Curl:
+* 200 OK: Building details
+
+**Example Curl:**
+
+```bash
 curl -X GET https://your-domain.com/app/v1/building/get-building-by-build-id/123 \
   -H 'Authorization: Bearer <token>'
+```
 
+---
 
-6. Delete Building by Build ID
-DELETE /delete-by-build-id/{buildId}
+### 6. Delete Building by Build ID
+
+**DELETE** `/delete-by-build-id/{buildId}`
+
 Deletes a building by its ID.
-Path Parameter:
 
-buildId: Building ID (string)
+**Path Parameter:**
 
-Response:
+* `buildId`: Building ID (string)
 
-200 OK: Building deleted
+**Response:**
 
-Example Curl:
+* 200 OK: Building deleted
+
+**Example Curl:**
+
+```bash
 curl -X DELETE https://your-domain.com/app/v1/building/delete-by-build-id/123 \
   -H 'Authorization: Bearer <token>'
+```
 
+---
 
-Security
+## Security
+
 These endpoints require a bearer token.
 
-Next Section: Authentication API Documentation
+---
+
+[Next Section: Authentication API Documentation](authentication.md)
