@@ -781,5 +781,5 @@ These endpoints typically require a bearer token.
 
 ---
 
-Next Section: [Devices API Documentation](devices.md)
+Next Section: MQTT Logs API Documentation](mqtt-logs.md)
 
