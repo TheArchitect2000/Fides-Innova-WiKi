@@ -76,4 +76,4 @@ These endpoints typically do not require a bearer token as they are part of the 
 
 ---
 
-Next Section: [Users API Documentation](users_api.md)
+Next Section: [Users API Documentation](users.md)
