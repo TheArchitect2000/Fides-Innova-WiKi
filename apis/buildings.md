@@ -166,4 +166,4 @@ These endpoints require a bearer token.
 
 ---
 
-[Next Section: Authentication API Documentation](authentication.md)
+Next Section: [Notifications API Documentation](notifications.md)
