@@ -1,132 +1,111 @@
-# Buildings API Documentation
+Buildings API Documentation
+This document includes the building-related API methods from the Fides API.
 
-This document outlines the endpoints used to manage buildings, locations, and spaces in the Fides API.
+Base URL
+/app/v1/building
 
----
 
-## Base URL
-
-```
-/app/building
-```
-
----
-
-### 1. Create Building
-
-**POST** `/create`
-
-Creates a new building record.
-
-**Request Body:**
-
-```json
+1. Create New Building
+POST /create
+Adds a new building that includes floors and units with devices.
+Request Body:
 {
-  "name": "Headquarters",
-  "location": "Amsterdam, Netherlands",
-  "description": "Main office building"
+  "name": "Building Name",
+  "details": {}
 }
-```
 
-**Example Curl:**
+Response:
 
-```bash
-curl -X POST https://your-domain.com/app/building/create \
+201 Created: Building created
+
+Example Curl:
+curl -X POST https://your-domain.com/app/v1/building/create \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{
-    "name": "Headquarters",
-    "location": "Amsterdam, Netherlands",
-    "description": "Main office building"
-  }'
-```
+  -d '{"name": "Building Name", "details": {}}'
 
----
 
-### 2. Get All Buildings
-
-**GET** `/get-all`
-
-Retrieves all buildings available in the system.
-
-**Example Curl:**
-
-```bash
-curl -X GET https://your-domain.com/app/building/get-all \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 3. Get Building by ID
-
-**GET** `/get-by-id/{buildingId}`
-
-Retrieves detailed info for a specific building.
-
-**Example Curl:**
-
-```bash
-curl -X GET https://your-domain.com/app/building/get-by-id/abc123 \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 4. Edit Building
-
-**PATCH** `/edit/{buildingId}`
-
-Updates details of an existing building.
-
-**Request Body:**
-
-```json
+2. Edit Building by Build ID
+PATCH /edit-by-build-id
+Edits an existing building, including floors and units with devices.
+Request Body:
 {
-  "name": "Updated HQ",
-  "description": "Renovated main office"
+  "buildId": "123",
+  "data": {}
 }
-```
 
-**Example Curl:**
+Response:
 
-```bash
-curl -X PATCH https://your-domain.com/app/building/edit/abc123 \
+200 OK: Building updated
+
+Example Curl:
+curl -X PATCH https://your-domain.com/app/v1/building/edit-by-build-id \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"name": "Updated HQ", "description": "Renovated main office"}'
-```
+  -d '{"buildId": "123", "data": {}}'
 
----
 
-### 5. Delete Building
+3. Get All Buildings
+GET /get-all-buildings
+Returns all created buildings with details.
+Response:
 
-**DELETE** `/delete/{buildingId}`
+200 OK: List of buildings
 
-Deletes a building from the system.
-
-**Example Curl:**
-
-```bash
-curl -X DELETE https://your-domain.com/app/building/delete/abc123 \
+Example Curl:
+curl -X GET https://your-domain.com/app/v1/building/get-all-buildings \
   -H 'Authorization: Bearer <token>'
-```
 
----
 
-### 6. Search Buildings
+4. Get Buildings by User ID
+GET /get-buildings-by-user-id/{userId}
+Returns all buildings created by a specific user.
+Path Parameter:
 
-**GET** `/search?query=office`
+userId: User ID (string)
 
-Searches for buildings by keyword.
+Response:
 
-**Example Curl:**
+200 OK: List of user buildings
 
-```bash
-curl -X GET "https://your-domain.com/app/building/search?query=office" \
+Example Curl:
+curl -X GET https://your-domain.com/app/v1/building/get-buildings-by-user-id/123 \
   -H 'Authorization: Bearer <token>'
-```
 
----
 
-**➡️ For devices inside buildings, see `devices.md`.**
+5. Get Building by Build ID
+GET /get-building-by-build-id/{buildId}
+Returns details of a specific building by its ID.
+Path Parameter:
+
+buildId: Building ID (string)
+
+Response:
+
+200 OK: Building details
+
+Example Curl:
+curl -X GET https://your-domain.com/app/v1/building/get-building-by-build-id/123 \
+  -H 'Authorization: Bearer <token>'
+
+
+6. Delete Building by Build ID
+DELETE /delete-by-build-id/{buildId}
+Deletes a building by its ID.
+Path Parameter:
+
+buildId: Building ID (string)
+
+Response:
+
+200 OK: Building deleted
+
+Example Curl:
+curl -X DELETE https://your-domain.com/app/v1/building/delete-by-build-id/123 \
+  -H 'Authorization: Bearer <token>'
+
+
+Security
+These endpoints require a bearer token.
+
+Next Section: Authentication API Documentation
