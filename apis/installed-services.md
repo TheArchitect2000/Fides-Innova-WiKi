@@ -14,16 +14,20 @@ This document includes the installed services-related API methods from the Fides
 
 ### 1. Install Service
 
-**POST** `/install`
+**POST** `/insert`
 
-Installs a service for a user.
+Inserts a installed service for a user.
 
 **Request Body:**
 
 ```json
 {
   "serviceId": "123",
-  "devices": ["deviceId1", "deviceId2"]
+  "installedServiceName": "string",
+  "installedServiceImage": "string",
+  "description": "string",
+  "code": "string",
+  "deviceMap": {}
 }
 ```
 
@@ -37,30 +41,49 @@ Installs a service for a user.
 curl -X POST https://your-domain.com/app/v1/installed-service/install \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"serviceId": "123", "devices": ["deviceId1", "deviceId2"]}'
+  -d '{
+      "serviceId": "123",
+      "installedServiceName": "string",
+      "installedServiceImage": "string",
+      "description": "string",
+      "code": "string",
+      "deviceMap": {}
+      }'
 ```
 
 ---
 
-### 2. Uninstall Service
 
-**DELETE** `/uninstall/{installedServiceId}`
+### 2. Edit Installed Service
 
-Uninstalls a service by its installed service ID.
+**PATCH** `/edit`
 
-**Path Parameter:**
+Edits an installed service by its ID and other fields.
 
-* `installedServiceId`: Installed Service ID (string, required)
+**Request Body:**
+
+```json
+{
+  "installedServiceId": "123",
+  "installedServiceName": "Service1"
+  
+}
+```
 
 **Response:**
 
-* 200 OK: Service uninstalled
+* 200 OK: Installed service updated
 
 **Example Curl:**
 
 ```bash
-curl -X DELETE https://your-domain.com/app/v1/installed-service/uninstall/123 \
-  -H 'Authorization: Bearer <token>'
+curl -X PATCH https://your-domain.com/app/v1/installed-service/edit \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "installedServiceId": "123",
+      "installedServiceName": "Service1"
+      }'
 ```
 
 ---
@@ -88,24 +111,24 @@ curl -X GET https://your-domain.com/app/v1/installed-service/get-installed-servi
 
 ---
 
-### 4. Get Installed Service by Installed Service ID
+### 4. Get Installed Services by Device Encrypted ID
 
-**GET** `/get-installed-service-by-installed-service-id/{installedServiceId}`
+**GET** `/get-installed-services-by-device-encrypted-id/{deviceEncryptedId}`
 
-Retrieves details of a specific installed service by its ID.
+Retrieves all installed services associated with a specific device by its encrypted ID.
 
 **Path Parameter:**
 
-* `installedServiceId`: Installed Service ID (string, required)
+* `deviceEncryptedId`: Device Encrypted ID (string, required)
 
 **Response:**
 
-* 200 OK: Installed service details
+* 200 OK: List of installed services for the device
 
 **Example Curl:**
 
 ```bash
-curl -X GET https://your-domain.com/app/v1/installed-service/get-installed-service-by-installed-service-id/123 \
+curl -X GET https://your-domain.com/app/v1/installed-service/get-installed-services-by-device-encrypted-id/abc123 \
   -H 'Authorization: Bearer <token>'
 ```
 
@@ -130,10 +153,33 @@ curl -X GET https://your-domain.com/app/v1/installed-service/get-all-installed-s
 
 ---
 
+### 6. Delete Installed Service by Installed Service ID
+
+**DELETE** `/delete-installed-service-by-installed-service-id/{installedServiceId}`
+
+Deletes an installed service by its ID.
+
+**Path Parameter:**
+
+* `installedServiceId`: Installed Service ID (string, required)
+
+**Response:**
+
+* 200 OK: Installed service deleted
+
+**Example Curl:**
+
+```bash
+curl -X DELETE https://your-domain.com/app/v1/installed-service/delete-installed-service-by-installed-service-id/123 \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
 ## Security
 
 These endpoints require a bearer token.
 
 ---
 
-[Next Section: Device Types API Documentation](device-types.md)
+[Next Section: [Device API Documentation](devices.md)
