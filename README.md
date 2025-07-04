@@ -16,7 +16,7 @@
 
 
 * [Introduction](introduction.md)
-* [API Documentation](main.md)
+* [API Documentation](apis/main.md)
   * [Authentication API Documentation](apis/authentication.md)
   * [Users API Documentation](apis/users.md)
   * [MQTT Logs API Documentation](apis/mqtt-logs.md)
