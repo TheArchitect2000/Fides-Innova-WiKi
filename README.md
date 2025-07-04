@@ -16,9 +16,21 @@
 
 
 * [Introduction](introduction.md)
-* API Documents
+* [API Documentation](main.md)
   * [Authentication API Documentation](apis/authentication.md)
   * [Users API Documentation](apis/users.md)
+  * [MQTT Logs API Documentation](apis/mqtt-logs.md)
+  * [Smart Contract API Documentation](apis/smart-contract.md)
+  * [Services API Documentation](apis/services.md)
+  * [Installed Services API Documentation](apis/installed-services.md)
+  * [Devices API Documentation](apis/devices.md)
+  * [Device Types API Documentation](apis/device-types.md)
+  * [Device Logs API Documentation](apis/device-logs.md)
+  * [Buildings API Documentation](apis/buildings.md)
+  * [Notifications API Documentation](apis/notifications.md)
+  * [Subscriptions API Documentation](apis/subscriptions.md)
+  * [Media API Documentation](apis/media.md)
+  * [Other API Documentation](apis/other.md)
 * [Tech Stack](tech-stack/README.md)
   * [Service Contract](tech-stack/service-contract.md)
   * [ZKP-enabled JavaScript Execution](tech-stack/zkp-enabled-javascript-execution.md)
