@@ -7,29 +7,23 @@ This document includes the smart contract-related API methods from the Fides API
 ## Base URL
 
 ```
-/app/v1/smart-contract
+/app/v1/contract
 ```
 
 ---
 
-### 1. Insert Smart Contract
+### 1. Verify ZKP
 
-**POST** `/insert`
+**POST** `/verify-zkp`
 
-Inserts a new smart contract.
+Verifying the proof.
+This api verifies then user proof code.
 
 **Request Body:**
 
 ```json
 {
-  "contractName": "Contract Name",
-  "description": "Contract Description",
-  "contractType": "Type",
-  "status": "Active",
-  "blocklyJson": "{}",
-  "code": "contract code",
-  "devices": ["deviceId1", "deviceId2"],
-  "services": ["serviceId1", "serviceId2"]
+  "proof":"string"
 }
 ```
 
@@ -40,290 +34,253 @@ Inserts a new smart contract.
 **Example Curl:**
 
 ```bash
-curl -X POST https://your-domain.com/app/v1/smart-contract/insert \
+curl -X POST https://your-domain.com/app/v1/contract/verify-zkp \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"contractName": "Contract Name", "description": "Contract Description", "contractType": "Type", "status": "Active", "blocklyJson": "{}", "code": "contract code", "devices": ["deviceId1", "deviceId2"], "services": ["serviceId1", "serviceId2"]}'
+  -d '{"proof":"string"}'
 ```
 
 ---
 
-### 2. Request Smart Contract Publish
+### 2. Store Commitment
 
-**PATCH** `/request-smart-contract-publish`
+**POST** `/store-commitment`
 
-Requests to publish a smart contract.
+Storing the Commitment.
+This api will store the user commitment file in smart contract.
 
 **Request Body:**
 
 ```json
 {
-  "smartContractId": "123"
+  "transactionId": "string",
+  "frontPublish": bool,
+  "commitmentID": "string",
+  "deviceType": "string",
+  "deviceIdType": "string",
+  "deviceModel": "string",
+  "manufacturer": "string",
+  "softwareVersion": "string",
+  "commitmentData": "string"
 }
 ```
 
 **Response:**
 
-* 201 Created: Publish request submitted
+* 201 Created: Smart contract inserted
 
 **Example Curl:**
 
 ```bash
-curl -X PATCH https://your-domain.com/app/v1/smart-contract/request-smart-contract-publish \
+curl -X POST https://your-domain.com/app/v1/contract/store-commitment \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"smartContractId": "123"}'
+  -d '{"transactionId": "string",
+      "frontPublish": true,
+      "commitmentID": "string",
+      "deviceType": "string",
+      "deviceIdType": "string",
+      "deviceModel": "string",
+      "manufacturer": "string",
+      "softwareVersion": "string",
+      "commitmentData": "string"
+      }'
 ```
 
 ---
 
-### 3. Publish Smart Contract
+### 3. Remove Commitment
 
-**PATCH** `/publish-smart-contract`
+**POST** `/remove-commitment`
 
-Publishes a smart contract that has been requested for publishing.
+removing the Commitment.
+This api will remove the user commitment file in smart contract.
 
 **Request Body:**
 
 ```json
 {
-  "smartContractId": "123"
+  "commitmentId": "string",
+  "dbId": "string",
+  "nodeId": "string"
 }
 ```
 
 **Response:**
 
-* 201 Created: Smart contract published
+* 201 Created: Smart contract inserted
 
 **Example Curl:**
 
 ```bash
-curl -X PATCH https://your-domain.com/app/v1/smart-contract/publish-smart-contract \
+curl -X POST https://your-domain.com/app/v1/contract/remove-commitment \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
-  -d '{"smartContractId": "123"}'
+  -d '{"commitmentId": "string",
+      "dbId": "string",
+      "nodeId": "string"
+      }'
 ```
-
 ---
 
-### 4. Reject Smart Contract
+### 4. Get Balance of Wallet 
 
-**PATCH** `/reject-smart-contract`
+**GET** `/get-wallet-balance`
 
-Rejects a smart contract that has been requested for publishing.
-
-**Request Body:**
-
-```json
-{
-  "smartContractId": "123"
-}
-```
-
-**Response:**
-
-* 201 Created: Smart contract rejected
-
-**Example Curl:**
-
-```bash
-curl -X PATCH https://your-domain.com/app/v1/smart-contract/reject-smart-contract \
-  -H 'Authorization: Bearer <token>' \
-  -H 'Content-Type: application/json' \
-  -d '{"smartContractId": "123"}'
-```
-
----
-
-### 5. Cancel Smart Contract Request
-
-**PATCH** `/cancel-smart-contract-request`
-
-Cancels a smart contract publish request.
-
-**Request Body:**
-
-```json
-{
-  "smartContractId": "123"
-}
-```
-
-**Response:**
-
-* 201 Created: Smart contract request canceled
-
-**Example Curl:**
-
-```bash
-curl -X PATCH https://your-domain.com/app/v1/smart-contract/cancel-smart-contract-request \
-  -H 'Authorization: Bearer <token>' \
-  -H 'Content-Type: application/json' \
-  -d '{"smartContractId": "123"}'
-```
-
----
-
-### 6. Edit Smart Contract
-
-**PATCH** `/edit`
-
-Edits a smart contract by its ID and other fields.
-
-**Request Body:**
-
-```json
-{
-  "smartContractId": "123",
-  "contractName": "Updated Contract Name",
-  "description": "Updated Description",
-  "contractType": "Type",
-  "status": "Active",
-  "devices": ["deviceId1", "deviceId2"],
-  "services": ["serviceId1", "serviceId2"],
-  "contractImage": "image_url",
-  "blocklyJson": "{}",
-  "code": "updated contract code"
-}
-```
-
-**Response:**
-
-* 200 OK: Smart contract updated
-
-**Example Curl:**
-
-```bash
-curl -X PATCH https://your-domain.com/app/v1/smart-contract/edit \
-  -H 'Authorization: Bearer <token>' \
-  -H 'Content-Type: application/json' \
-  -d '{"smartContractId": "123", "contractName": "Updated Contract Name", "description": "Updated Description", "contractType": "Type", "status": "Active", "devices": ["deviceId1", "deviceId2"], "services": ["serviceId1", "serviceId2"], "contractImage": "image_url", "blocklyJson": "{}", "code": "updated contract code"}'
-```
-
----
-
-### 7. Get Smart Contracts by User ID
-
-**GET** `/get-smart-contracts-by-user-id/{userId}`
-
-Retrieves all smart contracts associated with a specific user ID.
+This api returns balance of entered wallet.
 
 **Path Parameter:**
 
-* `userId`: User ID (string, required)
+* `None`
 
 **Response:**
 
-* 200 OK: List of user smart contracts
+* 200 OK: balance of entered wallet
 
 **Example Curl:**
 
 ```bash
-curl -X GET https://your-domain.com/app/v1/smart-contract/get-smart-contracts-by-user-id/123 \
+curl -X GET https://your-domain.com/app/v1/contract/get-wallet-balance \
   -H 'Authorization: Bearer <token>'
 ```
 
 ---
 
-### 8. Get Smart Contract by Smart Contract ID
+### 5. User Commitment Saved in Database 
 
-**GET** `/get-smart-contract-by-smart-contract-id/{smartContractId}`
+**GET** `/my-commitments`
 
-Retrieves a smart contract by its ID.
+This api returns commitment of a user that are saved in database.
 
 **Path Parameter:**
 
-* `smartContractId`: Smart Contract ID (string, required)
+* `None`
 
 **Response:**
 
-* 200 OK: Smart contract details
+* 200 OK: commitments of a user that are saved in database.
 
 **Example Curl:**
 
 ```bash
-curl -X GET https://your-domain.com/app/v1/smart-contract/get-smart-contract-by-smart-contract-id/123 \
+curl -X GET https://your-domain.com/app/v1/contract/my-commitments \
   -H 'Authorization: Bearer <token>'
 ```
 
 ---
 
-### 9. Get All Published Smart Contracts
+### 6. Admin Wallet Address 
 
-**GET** `/get-all-published-smart-contracts`
+**GET** `/admin-wallet`
 
-Retrieves all smart contracts that are published.
-
-**Response:**
-
-* 200 OK: List of published smart contracts
-
-**Example Curl:**
-
-```bash
-curl -X GET https://your-domain.com/app/v1/smart-contract/get-all-published-smart-contracts \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 10. Get All Publish Requested Smart Contracts
-
-**GET** `/get-all-publish-requested-smart-contracts`
-
-Retrieves all smart contracts that have requested to be published.
-
-**Response:**
-
-* 200 OK: List of publish-requested smart contracts
-
-**Example Curl:**
-
-```bash
-curl -X GET https://your-domain.com/app/v1/smart-contract/get-all-publish-requested-smart-contracts \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 11. Get All Smart Contracts
-
-**GET** `/get-all-smart-contracts`
-
-Retrieves all smart contracts in the system.
-
-**Response:**
-
-* 200 OK: List of all smart contracts
-
-**Example Curl:**
-
-```bash
-curl -X GET https://your-domain.com/app/v1/smart-contract/get-all-smart-contracts \
-  -H 'Authorization: Bearer <token>'
-```
-
----
-
-### 12. Delete Smart Contract by Smart Contract ID
-
-**DELETE** `/delete-smart-contract-by-smart-contract-id/{smartContractId}`
-
-Deletes a smart contract by its ID.
+This api returns wallet address of admin.
 
 **Path Parameter:**
 
-* `smartContractId`: Smart Contract ID (string, required)
+* `None`
 
 **Response:**
 
-* 200 OK: Smart contract deleted
+* 200 OK: Wallet address of admin.
 
 **Example Curl:**
 
 ```bash
-curl -X DELETE https://your-domain.com/app/v1/smart-contract/delete-smart-contract-by-smart-contract-id/123 \
+curl -X GET https://your-domain.com/app/v1/contract/admin-wallet \
   -H 'Authorization: Bearer <token>'
+```
+
+---
+
+### 7. Faucet Wallet Address 
+
+**GET** `/faucet-wallet`
+
+This api returns wallet address of faucet account.
+
+**Path Parameter:**
+
+* `None`
+
+**Response:**
+
+* 200 OK: wallet address of faucet account.
+
+**Example Curl:**
+
+```bash
+curl -X GET https://your-domain.com/app/v1/contract/faucet-wallet \
+  -H 'Authorization: Bearer <token>'
+```
+
+---
+
+### 8. Requesting Faucet
+
+**POST** `/request-faucet`
+
+This api give some faucet to user wallet address entered in website.
+
+**Request Body:**
+
+```json
+{
+  "type": "string",
+  "ownerShipWalletAddress": "string"
+}
+```
+
+**Response:**
+
+* 201 Created: Give some faucet to user wallet address entered in website.
+
+**Example Curl:**
+
+```bash
+curl -X POST https://your-domain.com/app/v1/contract/request-faucet \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "type": "string",
+      "ownerShipWalletAddress": "string"
+      }'
+```
+
+---
+
+### 9. Publish Proof
+
+**POST** `/publish-proof`
+
+This api will publish proof.
+
+**Request Body:**
+
+```json
+{
+  "frontPublish": true,
+  "deviceType": "string",
+  "proof": "string",
+  "data": {}
+}
+```
+
+**Response:**
+
+* 201 Created: Publish proof.
+
+**Example Curl:**
+
+```bash
+curl -X POST https://your-domain.com/app/v1/contract//publish-proof \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "frontPublish": true,
+      "deviceType": "string",
+      "proof": "string",
+      "data": {}
+      }'
 ```
 
 ---
@@ -334,4 +291,4 @@ These endpoints require a bearer token.
 
 ---
 
-[Next Section: Device Types API Documentation](device-types.md)
+[Next Section: [Services API Documentation](services.md)
