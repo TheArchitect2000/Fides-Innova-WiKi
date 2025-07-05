@@ -43,7 +43,7 @@ The Fides API is organized into the following sections:
 3. **[Authentication API](authentication.md)**: Manage authentication processes, including Google token verification and login callbacks.
 4. **[Device Logs API](device-logs.md)**: Retrieve logs for devices based on encrypted IDs, user IDs, or shared devices.
 5. **[Devices Management API](devices_management.md)**: Manage devices, including insertion, editing, sharing, and deletion.
-6. **[Device List API Documentation](apis/device_list.md)**: Get device list.
+6. **[Device List API Documentation](device_list.md)**: Get device list.
 7. **[Services API](services.md)**: Create and manage user services, including publishing and editing.
 8. **[Smart Contract API](smart-contract.md)**: Handle smart contract operations, such as creation, publishing, and deletion.
 9. **[MQTT Logs API](mqtt-logs.md)**: Retrieve MQTT logs for devices by device ID or user ID.
