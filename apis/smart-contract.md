@@ -54,7 +54,7 @@ This api will store the user commitment file in smart contract.
 ```json
 {
   "transactionId": "string",
-  "frontPublish": bool ,
+  "frontPublish":  bool,
   "commitmentID": "string",
   "deviceType": "string",
   "deviceIdType": "string",
