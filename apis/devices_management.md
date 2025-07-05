@@ -1,4 +1,4 @@
-# Device API Documentation
+# Device Management API Documentation
 
 This document includes the device-related API methods from the Fides API.
 
