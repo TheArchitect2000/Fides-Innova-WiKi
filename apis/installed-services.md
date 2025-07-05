@@ -182,4 +182,4 @@ These endpoints require a bearer token.
 
 ---
 
-Next Section: [Device API Documentation](devices.md)
+Next Section: [Device Mangement API Documentation](devices_management.md)
