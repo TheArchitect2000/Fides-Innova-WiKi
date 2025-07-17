@@ -26,7 +26,6 @@
   * [Device Management API Documentation](apis/devices_management.md)
   * [Device Types API Documentation](apis/device-types.md)
   * [Device Logs API Documentation](apis/device-logs.md)
-  * [Device List API Documentation](apis/device_list.md)
   * [Buildings API Documentation](apis/buildings.md)
   * [Notifications API Documentation](apis/notifications.md)
   * [Subscriptions API Documentation](apis/subscriptions.md)
