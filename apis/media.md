@@ -279,4 +279,4 @@ These endpoints require a bearer token.
 
 ---
 
-[Next Section: Device Types API Documentation](device-types.md)
+Next Section: [Device Mangement API Documentation](devices_management.md)
