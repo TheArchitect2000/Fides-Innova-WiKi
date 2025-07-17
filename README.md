@@ -26,6 +26,7 @@
   * [Device Management API Documentation](apis/devices_management.md)
   * [Device Types API Documentation](apis/device-types.md)
   * [Device Logs API Documentation](apis/device-logs.md)
+  * [Device List API Documentation](apis/device_list.md)
   * [Buildings API Documentation](apis/buildings.md)
   * [Notifications API Documentation](apis/notifications.md)
   * [Subscriptions API Documentation](apis/subscriptions.md)
@@ -70,4 +71,3 @@
     * [Installation](zkp-and-iot-device-firmware-integration-zk-device-design/e-card-a-sample-zk-device/installation.md)
     * [Reset](zkp-and-iot-device-firmware-integration-zk-device-design/e-card-a-sample-zk-device/reset.md)
     * [Mesh IoT Network](zkp-and-iot-device-firmware-integration-zk-device-design/e-card-a-sample-zk-device/mesh-iot-network.md)
-
