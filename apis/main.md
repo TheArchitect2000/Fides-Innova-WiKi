@@ -50,9 +50,8 @@ The Fides API is organized into the following sections:
 10. **[Media API Documentation](media.md)**: This document includes the media-related API methods from the Fides API.
 11. **[Installed Services API](installed-services.md)**: Handle installation and management of services for users.
 12. **[Notifications API](notifications.md)**: Manage user notifications, including retrieval, marking as read, and deletion.
-13. **[Device Types API](device-types.md)**: Manage device types, including creation, editing, and deletion.
-14. **[Subscriptions API](subscriptions.md)**: Manage user subscriptions, including creation, updates, and cancellations.
-15. **[Theme API Documentation](theme.md)**: This document includes theme color API method.
+13. **[Subscriptions API](subscriptions.md)**: Manage user subscriptions, including creation, updates, and cancellations.
+14. **[Theme API Documentation](theme.md)**: This document includes theme color API method.
 
 ---
 
