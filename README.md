@@ -24,7 +24,6 @@
   * [Services API Documentation](apis/services.md)
   * [Installed Services API Documentation](apis/installed-services.md)
   * [Device Management API Documentation](apis/devices_management.md)
-  * [Device Types API Documentation](apis/device-types.md)
   * [Device Logs API Documentation](apis/device-logs.md)
   * [Device List API Documentation](apis/device_list.md)
   * [Buildings API Documentation](apis/buildings.md)
