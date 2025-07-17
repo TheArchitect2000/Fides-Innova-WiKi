@@ -43,16 +43,15 @@ The Fides API is organized into the following sections:
 3. **[Authentication API](authentication.md)**: Manage authentication processes, including Google token verification and login callbacks.
 4. **[Device Logs API](device-logs.md)**: Retrieve logs for devices based on encrypted IDs, user IDs, or shared devices.
 5. **[Devices Management API](devices_management.md)**: Manage devices, including insertion, editing, sharing, and deletion.
-6. **[Device List API Documentation](device_list.md)**: Get device list.
-7. **[Services API](services.md)**: Create and manage user services, including publishing and editing.
-8. **[Smart Contract API](smart-contract.md)**: Handle smart contract operations, such as creation, publishing, and deletion.
-9. **[MQTT Logs API](mqtt-logs.md)**: Retrieve MQTT logs for devices by device ID or user ID.
-10. **[Media API Documentation](media.md)**: This document includes the media-related API methods from the Fides API.
-11. **[Installed Services API](installed-services.md)**: Handle installation and management of services for users.
-12. **[Notifications API](notifications.md)**: Manage user notifications, including retrieval, marking as read, and deletion.
-13. **[Device Types API](device-types.md)**: Manage device types, including creation, editing, and deletion.
-14. **[Subscriptions API](subscriptions.md)**: Manage user subscriptions, including creation, updates, and cancellations.
-15. **[Theme API Documentation](theme.md)**: This document includes theme color API method.
+6. **[Services API](services.md)**: Create and manage user services, including publishing and editing.
+7. **[Smart Contract API](smart-contract.md)**: Handle smart contract operations, such as creation, publishing, and deletion.
+8. **[MQTT Logs API](mqtt-logs.md)**: Retrieve MQTT logs for devices by device ID or user ID.
+9. **[Media API Documentation](media.md)**: This document includes the media-related API methods from the Fides API.
+10. **[Installed Services API](installed-services.md)**: Handle installation and management of services for users.
+11. **[Notifications API](notifications.md)**: Manage user notifications, including retrieval, marking as read, and deletion.
+12. **[Device Types API](device-types.md)**: Manage device types, including creation, editing, and deletion.
+13. **[Subscriptions API](subscriptions.md)**: Manage user subscriptions, including creation, updates, and cancellations.
+14. **[Theme API Documentation](theme.md)**: This document includes theme color API method.
 
 ---
 
