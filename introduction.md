@@ -3,6 +3,7 @@
 
 #### Revolutionizing Decentralized IoT Systems
 Fides Innova is dedicated to transforming the landscape of decentralized and reliable IoT systems. Our platform, underpinned by cutting-edge blockchain technology, focuses on zk-IoT devices to ensure seamless, secure communication, and a network founded on trust and transparency.
+<figure><img src="Fides Innova Blockchain-based IOT.png" alt=""><figcaption></figcaption></figure>
 <figure><img src=".gitbook/assets/Intro.jpg" alt=""><figcaption></figcaption></figure>
 
 #### Key Features
