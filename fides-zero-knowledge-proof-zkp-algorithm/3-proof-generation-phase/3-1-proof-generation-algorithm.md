@@ -210,6 +210,11 @@ The proof of these claims is done in the following steps:\
 $`T(r)=g(T_1(r_1),...,T_k(r_1),T_{k+1}(r_2),...,T_{2k}(r_2),...,T_{\alpha-k+1}(r_c),...,T_{\alpha}(r_c))`$\
 where $`\alpha=kc`$, $n=2^w$ and $`w`$ is the size of register.For operation "and", $`k=1`$, we have,\
 $`T(r)=\sum_{i=1}^{8} 2^{\frac{w}{c}(i-1)} T_i(r_i)`$\
-2- The Prover calculates c polynomials $`dim_1`$, $`dim_2`$, ..., $`dim_c`$ as following:\
+2- The Prover calculates $`c`$ polynomials $`dim_1`$, $`dim_2`$, ..., $`dim_c`$ as following:\
 $`dim_i:\{0,1\}^{\log s}\to \{0,1\}^{\log n^{\frac{1}{c}}}`$\
 $`dim_i(x)`$= The row number of sub-table $`T_i`$ that is equal to $`i^{th}`$ $`\frac{w}{c}`$ bits of $`x^{th}`$ component of $`V`$.\
+3- The Prover calculates $`c`$ polynomials $`E_1`$, $`E_2`$, ..., $`E_c`$ as following:\
+$`E_i:\{0,1\}^{\log s}\to \{0,1\}^{\frac{w}{c}}`$\
+$`E_i(x)`=T_i(dim_i(x))$\
+4- The Prover commites to polynomials $`E_1(x)`$, $`E_2(x)`$, ..., $`E_c(x)`$ by KZG polynomial commitment as following:\
+$`cm_{E_i}=\sum_{j=0}^{deg_{E_i(x)}}{E_i}_{j}ck(j)`$, where $`E_i_{j}`$ is the coefficient of $`x^j`$ of polynomial $`E_i(x)`$.
