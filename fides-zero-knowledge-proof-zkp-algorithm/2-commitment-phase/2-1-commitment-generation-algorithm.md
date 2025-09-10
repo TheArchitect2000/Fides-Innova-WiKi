@@ -188,4 +188,8 @@ A publicly accessible file to be published on a public repository, such as a blo
 * **`softwareVersion`**: Software or firmware version of the device.
 
 ## Param.json File Format
-A privately accessible file created for the manufacturer, placed alongside the code to accelerate the proof-generation process. It includes information about the A, B, and C matrices.
+
+
+# 2- Commitment Phase (for logical operation "and")
+
+
