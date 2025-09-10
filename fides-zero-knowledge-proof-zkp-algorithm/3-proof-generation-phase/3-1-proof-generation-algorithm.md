@@ -217,4 +217,6 @@ $`dim_i(x)`$= The row number of sub-table $`T_i`$ that is equal to $`i^{th}`$ $`
 $`E_i:\{0,1\}^{\log s}\to \{0,1\}^{\frac{w}{c}}`$\
 $`E_i(x)`=T_i(dim_i(x))$\
 4- The Prover commites to polynomials $`E_1(x)`$, $`E_2(x)`$, ..., $`E_c(x)`$ by KZG polynomial commitment as following:\
-$`cm_{E_i}=\sum_{j=0}^{deg_{E_i(x)}}{E_i}_{j}ck(j)`$, where $`{E_i}_{j}`$ is the coefficient of $`x^j`$ of polynomial $`E_i(x)`$.
+$`cm_{E_i}=\sum_{j=0}^{deg_{E_i(x)}}{E_i}_{j}ck(j)`$, where $`{E_i}_{j}`$ is the coefficient of $`x^j`$ of polynomial $`E_i(x)`$, $`i=1,2,...,c`$.\
+5-  The Verifier chooses random numbers $`r \in \{0,1\}^{\log s}`$ and sends it to the Prover. (Note that the Prover can choose $`r=`$ The last $s$ bits of hash(h(1))`$, where $`h(x)`$ is a fully random polynomail selected by the Prover and send to the Verifier.
+
