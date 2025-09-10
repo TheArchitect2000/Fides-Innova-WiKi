@@ -212,4 +212,4 @@ where $`\alpha=kc`$, $n=2^w$ and $`w`$ is the size of register.For operation "an
 $`T(r)=\sum_{i=1}^{8} 2^{\frac{w}{c}(i-1)} T_i(r_i)`$\
 2- The Prover calculates c polynomials $`dim_1`$, $`dim_2`$, ..., $`dim_c`$ as following:\
 $`dim_i:\{0,1\}^{\log s}\to \{0,1\}^{\log n^{\frac{1}{c}}}`$\
-$`dim_i(x)`$= The number of row of sub-table $`T_i`$ that is equal to $`i^{th}`$ th $`\frac{w}{c}`$ bits of $`x`$ th component of $`V`$.\
+$`dim_i(x)`$= The row number of sub-table $`T_i`$ that is equal to $`i^{th}`$ $`\frac{w}{c}`$ bits of $`x^{th}`$ component of $`V`$.\
