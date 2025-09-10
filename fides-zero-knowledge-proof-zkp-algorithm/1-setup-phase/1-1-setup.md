@@ -103,3 +103,10 @@ The output of this code are $$ck$$ and $$vk$$ keys stored in a json file and for
 \[5] **Lattice-based Function-hiding Paper:** Wee, Hoeteck, and David J. Wu. "Lattice-based functional commitments: Fast verification and cryptanalysis." _International Conference on the Theory and Application of Cryptology and Information Security_. Singapore: Springer Nature Singapore, 2023.
 
 \[6] **KZG Polynomial Commitment:** A. Kate, G. M. Zaverucha, and I. Goldberg. Constant-size commitments to polynomials and their applications. In International conference on the theory and application of cryptology and information security, pages 177–194. Springer, 2010.
+
+
+
+# 1- Setup Phase (for logical operation "and")
+
+The setup phase is crucial for generating the necessary cryptographic parameters. During this phase, a trusted party generates public parameters, $$pp$$. In this scheme, a polynomial commitment scheme is required. If polynomial commitment scheme $$KZG$$ is used in our scheme, $$pp=KZG.Setup(1^{\lambda},d)=(ck,vk)=$$ (&lcub; $$g\tau^i$$ &rcub; $_{i=0}^{s-1}$, $$g \tau$$) where $$ck$$ and $$vk$$ are commitment key and verifying key, respectively. Here $$\tau$$ is a secret element and must be discarded after the $$Setup$$. Also, $$g$$ is a generator of field $$\mathbb{F}$$ with large prime order $$p$$ such that $$p > 2^\lambda > d$$. Also, $$s$$ is the number operations in program which is operation "and".
+
