@@ -204,9 +204,9 @@ where $`\hat{w}_i`$ is coefficient of $`x^i`$ in polynomial $`\hat{W}(x)`$, $`\h
 
 ---
 # 3- Proof Generation Phase (for logical operation "and")
-$`Proof (\mathbb{F}, T)`$: This function outputs  $`\pi=`$
+$`Proof (\mathbb{F}, T)`$: This function outputs  $`\pi=`$\
 The proof of these claims is done in the following steps:\
-1- The Prover stores $`\alpha`$ sub-tables $`T_i`$ each of size $`n^{\frac{1}{c}`$ corresponding with lookup table $`T`$ for operation "and", such that for any $`r\in \{0,1\}^{\log n}`$, the following holds:\\
-$`T(r)=g(T_1(r_1),...,T_k(r_1),T_{k+1}(r_2),...,T_{2k}(r_2),...,T_{\alpha-k+1}(r_c),...,T_{\alpha}(r_c))`$\\
-where $`\alpha=kc`$, $n=2^w$ and $`w`$ is the size of register.For operation "and", $`k=1`$, we have,\\
+1- The Prover stores $`\alpha`$ sub-tables $`T_i`$ each of size $`n^{\frac{1}{c}}`$ corresponding with lookup table $`T`$ for operation "and", such that for any $`r\in \{0,1\}^{\log n}`$, the following holds:\
+$`T(r)=g(T_1(r_1),...,T_k(r_1),T_{k+1}(r_2),...,T_{2k}(r_2),...,T_{\alpha-k+1}(r_c),...,T_{\alpha}(r_c))`$\
+where $`\alpha=kc`$, $n=2^w$ and $`w`$ is the size of register.For operation "and", $`k=1`$, we have,\
 $`T(r)=\sum_{i=1}^{8} 2^{\frac{w}{c}(i-1)} T_i(r_i)`$
