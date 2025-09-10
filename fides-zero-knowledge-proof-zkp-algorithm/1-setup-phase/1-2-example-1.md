@@ -39,6 +39,12 @@ $$KZG.Setup(1^{\lambda},6)=(ck,vk)=$$ (&lcub; $$g\tau^i$$ &rcub; $_{i=0}^5$, $$g
  
  that for secret element $$\tau=119$$ and generator  $$g=2$$  outputs $$ck=$$ &lcub; $$g\tau^i$$ &rcub; $_{i=0}^5$ $$=(2,57,86,98,78,51)$$ and $$vk=57$$.&#x20;
 
+
+ # Example 1 ( for logical operation "and")
+
+$$Setup(1^{\lambda},N)$$:  This function outputs $$pp=PC.Setup(1^{\lambda},s)$$.&#x20;
+
+
 $$KZG.Setup(1^{\lambda},30)=(ck,vk)=$$ (&lcub; $$g\tau^i$$ &rcub; $_{i=0}^{29}$, $$g \tau$$)
  
  that for secret element $$\tau=119$$ and generator  $$g=2$$  outputs $$ck=$$ &lcub; $$g\tau^i$$ &rcub; $_{i=0}^{29}$ $$=(2, 57, 86, 98, 78, 51, 96, 21, 146, 179, 124, 95, 83, 103, 130, 85, 160, 35 ,$$ $$2, 57, 86, 98, 78, 51, 96, 21, 146, 179, 124, 95)$$ and $$vk=57$$.
