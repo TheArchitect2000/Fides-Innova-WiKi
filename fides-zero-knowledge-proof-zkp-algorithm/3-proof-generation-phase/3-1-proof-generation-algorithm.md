@@ -236,6 +236,29 @@ according to definition of equality function, above value is equal to $`v`$. \
 7- The Prover calculates $`y_i=E_i(r)`$ for $`i=1,..,c`$ and sends them to the Verifier also, calculates proof for them by KZG polynomial commitment scheme as follows:\
 7-1- The Prover calculates $`Q_i(x)=\frac{E_i(x)-y_i}{x-r}`$.\
 7-2- The Prover calculates the proof for $`y_i=E_i(r)`$ as $`\pi_i=cm_{Q_i(x)}`$
+##  Proof Structure
+Proof set is
+$`\Pi_{Look\hspace{2mm}up}=(Com_{Look\hspace{2mm}up},\pi_{Look\hspace{2mm}up})`$
+where
+$`Com_{Look\hspace{2mm}up}=(Com_{Look\hspace{2mm}up}^{1},Com_{Look\hspace{2mm}up}^2,...,Com_{Look\hspace{2mm}up}^{c})`$
+
+$`Com_{Look\hspace{2mm}up}^1=\sum_{j=0}^{deg_{E_1(x)}}{E_1}_{j}ck(j)`$,\
+$`Com_{Look\hspace{2mm}up}^2=\sum_{j=0}^{deg_{E_2(x)}}{E_2}_{j}ck(j)`$, \
+:\
+$`Com_{Look\hspace{2mm}up}^c=\sum_{j=0}^{deg_{E_c(x)}}{E_c}_{j}ck(j)`$;
+
+and $`\pi_{Look\hspace{2mm}up}=(\pi_{Look\hspace{2mm}up}^{1},\pi_{Look\hspace{2mm}up}^2,...,\pi_{Look\hspace{2mm}up}^{c+1},\pi_{Look\hspace{2mm}up}^{c+2},...,\pi_{Look\hspace{2mm}up}^{2c+1})`$
+
+$`\pi_{Look\hspace{2mm}up}^1=v`$, \
+$`\pi_{Look\hspace{2mm}up}^2=y_1`$,  \
+:\
+$`\pi_{Look\hspace{2mm}up}^{c+1}=y_c`$, \
+$`\pi_{Look\hspace{2mm}up}^{c+2}=\sum_{j=0}^{deg_{Q_1(x)}}{Q_1}_{j}ck(j)`$,  \
+:\
+$`\pi_{Look\hspace{2mm}up}^{2c+1}=\sum_{j=0}^{deg_{Q_c(x)}}{Q_c}_{j}ck(j)`$
+
+where $`{E_i}_{j}`$ is coefficient of $`x^j`$ in polynomial $`{E_1}_{j}(x)`$, $`{Q_i}_{j}`$ is coefficient of $`x^j`$ in polynomial $`Q_i(x)`$.
+
 
 
 
