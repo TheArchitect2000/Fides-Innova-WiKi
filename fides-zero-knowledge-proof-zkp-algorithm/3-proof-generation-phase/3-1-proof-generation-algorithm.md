@@ -221,14 +221,14 @@ $`cm_{E_i}=\sum_{j=0}^{deg_{E_i(x)}}{E_i}_{j}ck(j)`$, where $`{E_i}_{j}`$ is the
 5-  The Verifier chooses random numbers $`r \in \{0,1\}^{\log s}`$ and sends it to the Prover. (Note that the Prover can choose $`r=`$ The last $`\log s`$ bits of $`hash(h(1))`$, where $`h(x)`$ is a fully random polynomail selected by the Prover and send to the Verifier.)\
 6- The Prover calculates value $`v`$ as following and send it to the Verifier.\
 $`v=\sum_{i=1}^{c} 2^{\frac{w}{c}(i-1)} E_i(r)`$\
-Note: value $`v`$ is $`r^{th}`$ component of vector $`V`$. In fact, in this step the Prover wants to perform the multiplication $`M T`$ in a random row of $`M`$. The result of this multiplication, is \ 
+Note: value $`v`$ is $`r^{th}`$ component of vector $`V`$. In fact, in this step the Prover wants to calculate the multiplication $`M T`$ in a random row of $`M`$. The result of this multiplication, is\ 
 $` \sum_{k\in \{0,1\}^{\log s}} M(r,k) T(k)`$ \
 Now, since each row  of matrix $`M`$ has only one non-zero element (namely the 1), above value is rewrited as\
 $`\sum_{k\in \{0,1\}^{\log s}} eq(r,k) T(dim(k))`$ \
 where $`eq(r,k)`$ is equality function, defined as follows\
-$`eq(r,k)=\begin{cases}1\hspace{1cm}r=k\\0\hspace{2.2cm}\text{otherwise}\end{cases}`$ \
+$`eq(r,k)=\begin{cases}1\hspace{2cm}r=k\\0\hspace{2.2cm}\text{otherwise}\end{cases}`$ \
 Now, according to property in step 1, have \
-$`\sum_{k\in \{0,1\}^{\log s}} eq(r,k) T(dim(k))=\sum_{k\in \{0,1\}^{\log s}} eq(r,k) g(T_1(dim_1(k)),...,T_c(dim_c(k)))=`$\
+$`\sum_{k\in \{0,1\}^{\log s}} eq(r,k) T(dim(k))=\sum_{k\in \{0,1\}^{\log s}} eq(r,k) g(T_1(dim_1(k)),...,T_c(dim_c(k)))=`$
 $`\sum_{k\in \{0,1\}^{\log s}} eq(r,k) \sum_{i=1}^{c} 2^{\frac{w}{c}(i-1)} T_i(dim_i(k))`$\
 Since $`dim_i(k)=E_i(k)`$, therefore, the above value is rewrited as\
 $`\sum_{k\in \{0,1\}^{\log s}} eq(r,k) \sum_{i=1}^{c} 2^{\frac{w}{c}(i-1)} E_i(k)`$\
