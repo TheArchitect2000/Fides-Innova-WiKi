@@ -207,8 +207,8 @@ where $`\hat{w}_i`$ is coefficient of $`x^i`$ in polynomial $`\hat{W}(x)`$, $`\h
 $`Proof (\mathbb{F}, T)`$: This function outputs  $`\pi=`$\
 The proof of these claims is done in the following steps:\
 1- The Prover stores $`\alpha`$ sub-tables $`T_i`$ each of size $`n^{\frac{1}{c}}`$ corresponding with lookup table $`T`$ for operation "and", such that for any $`r\in \{0,1\}^{\log n}`$, the following holds:\
-$`T(r)=g(T_1(r_1),...,T_k(r_1),T_{k+1}(r_2),...,T_{2k}(r_2),...,T_{\alpha-k+1}(r_c),...,T_{\alpha}(r_c))`$\
-where $`\alpha=kc`$, $n=2^w$ and $`w`$ is the size of register.For operation "and", $`k=1`$, we have,\
+$`T(r)=g(T_1(r_1),...,T_{c}(r_c))`$\
+where $n=2^w$ and $`w`$ is the size of register. For operation "and", we have,\
 $`T(r)=\sum_{i=1}^{c} 2^{\frac{w}{c}(i-1)} T_i(r_i)`$\
 2- The Prover calculates $`c`$ polynomials $`dim_1`$, $`dim_2`$, ..., $`dim_c`$ as following:\
 $`dim_i:\{0,1\}^{\log s}\to \{0,1\}^{\log n^{\frac{1}{c}}}`$\
@@ -222,9 +222,9 @@ $`cm_{E_i}=\sum_{j=0}^{deg_{E_i(x)}}{E_i}_{j}ck(j)`$, where $`{E_i}_{j}`$ is the
 6- The Prover calculates value $`v`$ as following and send it to the Verifier.\
 $`v=\sum_{i=1}^{c} 2^{\frac{w}{c}(i-1)} E_i(r)`$\
 Note: value $`v`$ is $`r^{th}`$ component of vector $`V`$. In fact, in this step the Prover wants to perform the multiplication $`M T`$ in a random row of $`M`$. The result of this multiplication, is \ 
-$` \sum_{k\in \{0,1\}^{\log s}} M(r,k) T(k)`$\
+$` \sum_{k\in \{0,1\}^{\log s}} M(r,k) T(k)`$ \
 Now, since each row  of matrix $`M`$ has only one non-zero element (namely the 1), above value is rewrited as\
-$`\sum_{k\in \{0,1\}^{\log s}} eq(r,k) T(dim(k))`$\
+$`\sum_{k\in \{0,1\}^{\log s}} eq(r,k) T(dim(k))`$ \
 where $`eq(r,k)`$ is equality function, defined as follows\
 $`eq(r,k)=\begin{cases}1\hspace{1cm}r=k\\0\hspace{2.2cm}\text{otherwise}\end{cases}`$ \
 Now, according to property in step 1, have \
@@ -232,7 +232,8 @@ $`\sum_{k\in \{0,1\}^{\log s}} eq(r,k) T(dim(k))=\sum_{k\in \{0,1\}^{\log s}} eq
 $`\sum_{k\in \{0,1\}^{\log s}} eq(r,k) \sum_{i=1}^{c} 2^{\frac{w}{c}(i-1)} T_i(dim_i(k))`$\
 Since $`dim_i(k)=E_i(k)`$, therefore, the above value is rewrited as\
 $`\sum_{k\in \{0,1\}^{\log s}} eq(r,k) \sum_{i=1}^{c} 2^{\frac{w}{c}(i-1)} E_i(k)`$\
-according to definition of equality function, above value is equal to $`v`$.\
+according to definition of equality function, above value is equal to $`v`$. \
+7- 
 
 
 
