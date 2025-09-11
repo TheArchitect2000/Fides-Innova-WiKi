@@ -221,7 +221,7 @@ $`Com_{Look\hspace{1mm}up}^{i}=\sum_{j=0}^{deg_{E_i(x)}}{E_i}_{j}ck(j)`$, where 
 5-  The Verifier chooses random numbers $`r \in \{0,1\}^{\log s}`$ and sends it to the Prover. (Note that the Prover can choose $`r=`$ The last $`\log s`$ bits of $`hash(h(1))`$, where $`h(x)`$ is a fully random polynomail selected by the Prover and send to the Verifier.)\
 6- The Prover calculates value $`v`$ as following and sends $`\pi_{Look\hspace{1mm}up}^{1}=v`$ to the Verifier.\
 $`v=\sum_{i=1}^{c} 2^{\frac{w}{c}(i-1)} E_i(r)`$\
-Note: value $`v`$ is $`r^{th}`$ component of vector $`V`$. In fact, in this step the Prover wants to calculate the multiplication $`M T`$ in a random row of $`M`$. The result of this multiplication, is\ 
+Note: value $`v`$ is $`r^{th}`$ component of vector $`V`$. In fact, in this step the Prover wants to calculate the multiplication $`M.T`$ in a random row of $`M`$. The result of this multiplication, is\ 
 $`\sum_{k\in \{0,1\}^{\log n}} M(r,k) T(k)`$ \
 Now, since each row  of matrix $`M`$ has only one non-zero element (namely the 1), above value is rewrited as\
 $`\sum_{k\in \{0,1\}^{\log s}} eq(r,k) T(dim(k))`$ \
