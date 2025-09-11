@@ -233,7 +233,7 @@ $`\sum_{k\in \{0,1\}^{\log s}} eq(r,k) \sum_{i=1}^{c} 2^{\frac{w}{c}(i-1)} T_i(d
 Since $`dim_i(k)=E_i(k)`$, therefore, the above value is rewrited as\
 $`\sum_{k\in \{0,1\}^{\log s}} eq(r,k) \sum_{i=1}^{c} 2^{\frac{w}{c}(i-1)} E_i(k)`$\
 according to definition of equality function, above value is equal to $`v`$. \
-7- The Prover calculates $`y_i=E_i(r)`$ for $`i=1,..,c`$ and also, calculates proof for them by KZG polynomial commitment scheme as follows:\
+7- The Prover calculates $`y_i=E_i(r)`$ for $`i=1,..,c`$ and sends them to the Verifier also, calculates proof for them by KZG polynomial commitment scheme as follows:\
 7-1- The Prover calculates $`Q_i(x)=\frac{E_i(x)-y_i}{x-r}`$.\
 7-2- The Prover calculates the proof for $`y_i=E_i(r)`$ as $`\pi_i=cm_{Q_i(x)}`$
 
