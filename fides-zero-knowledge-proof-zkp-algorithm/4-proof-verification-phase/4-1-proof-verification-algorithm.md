@@ -53,9 +53,9 @@ For example, if polynomial commitment scheme $$KZG$$ is used, then the following
 &#x20;
 
 # 4- Proof Verification Phase (for operation "and")
-$$Verify(\mathbb{F}, \Pi_{AHP})$$: This function outputs 1 if\
+$$Verify(\mathbb{F}, \Pi_{Look\hspace{1mm}up})$$: This function outputs 1 if\
 1- The Verifier checks $`c`$ values sent $`\pi_{Look\hspace{1mm}up}^{i+1}=y_i=E_i(r)`$ by KZG polynomial commitment scheme as following:\
-$`e(\pi_{Look\hspace{1mm}up}^{c+1+i},vk-gr)==e(\Com_{Look\hspace{1mm}up}^i-g\pi_{Look\hspace{1mm}up}^{i+1},g)`$\
+$`e(\pi_{Look\hspace{1mm}up}^{c+1+i},vk-gr)=e(Com_{Look\hspace{1mm}up}^i-g\pi_{Look\hspace{1mm}up}^{i+1},g)`$\
 2- The Verifier calculates $`d=\sum_{i=1}^{c}2^{\frac{w}{c}(i-1)}\pi_{Look\hspace{1mm}up}^{i+1}`$ and checks\
 $`d=v`$
 
