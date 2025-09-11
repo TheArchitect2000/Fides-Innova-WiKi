@@ -54,10 +54,11 @@ For example, if polynomial commitment scheme $$KZG$$ is used, then the following
 
 # 4- Proof Verification Phase (for operation "and")
 $$Verify(vk, \mathbb{F}, \Pi_{Look\hspace{1mm}up})$$: This function outputs 1 if\
+&#x20;    \
 1- The Verifier checks $`c`$ values sent $`\pi_{Look\hspace{1mm}up}^{i+1}=y_i=E_i(r)`$ by KZG polynomial commitment scheme as following:\
 &#x20;    \
 $`e(\pi_{Look\hspace{1mm}up}^{c+1+i},vk-gr)=e(Com_{Look\hspace{1mm}up}^i-g\pi_{Look\hspace{1mm}up}^{i+1},g)`$\
 &#x20;    \
-2- The Verifier calculates $`d=\sum_{i=1}^{c}2^{\frac{w}{c}(i-1)}\pi_{Look\hspace{1mm}up}^{i+1}`$ and checks\
+2- The Verifier calculates $`d=\sum_{i=1}^{c}2^{\frac{w}{c}(i-1)}\pi_{Look\hspace{1mm}up}^{i+1}`$ and checks
 $`d=v`$
 
