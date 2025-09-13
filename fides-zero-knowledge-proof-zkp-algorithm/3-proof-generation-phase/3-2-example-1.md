@@ -353,11 +353,19 @@ T_i=\begin{bmatrix}
 \end{bmatrix}
 $$
 
-
 where, The first 4 entries of each row of the sub-table $`T_i`$ correspond to the left input, the second 4 entries correspond to the right input, and the last 4 entries correspond to the output of "and" of the inputs corresponding to that row.\
-2- The Prover calculates $`c`$ polynomials $`dim_1`$, $`dim_2`$, ..., $`dim_c`$ as following:\
-$`dim_i:\{0,1\}^{\log s}\to \{0,1\}^{\log n^{\frac{1}{c}}}`$\
-$`dim_i(x)`$= The row number of sub-table $`T_i`$ that is equal to $`i^{th}`$ $`\frac{w}{c}`$ bits of $`x^{th}`$ component of $`V`$.\
+Assume the initial values of registers are $`R_1^{(1)}=3`$, $`R_2^{(1)}=8`$, $`R_3^{(1)}=15`$, $`R_4^{(1)}=2`$, $`R_5^{(1)}=6`$, $`R_6^{(1)}=...=R_{32}^{(1)}=0`$. Therefore, 
+$$
+V=\begin{bmatrix} 
+0&0&0&0&....&1&0&0&0&0&0&0&0&....&1&1&1&1&0&0&0&0&....&1&0&0&0\\ 
+0&0&0&0&....&1&1&1&1&0&0&0&0&....&0&0&1&0&0&0&0&0&....&0&0&1&0\\
+0&0&0&0&....&1&0&0&0&0&0&0&0&....&0&1&1&0&0&0&0&0&....&0&0&0&0\\ 
+0&0&0&0&....&0&1&1&0&0&0&0&0&....&0&0&1&0&0&0&0&0&....&0&0&1&0\\ 
+\end{bmatrix}
+$$
+2- The Prover calculates $`c=8`$ polynomials $`dim_1`$, $`dim_2`$, ..., $`dim_8`$ as following:\
+$`dim_i:\{0,1\}^{2}\to \{0,1\}^{8}`$\
+$`dim_i(x)`$= The row number of sub-table $`T_i`$ that is equal to $`i^{th}`$ $`8`$ bits of $`x^{th}`$ component of $`V`$.\
 3- The Prover calculates $`c`$ polynomials $`E_1`$, $`E_2`$, ..., $`E_c`$ as following:\
 $`E_i:\{0,1\}^{\log s}\to \{0,1\}^{\frac{w}{c}}`$\
 $`E_i(x)=T_i(dim_i(x))`$\
