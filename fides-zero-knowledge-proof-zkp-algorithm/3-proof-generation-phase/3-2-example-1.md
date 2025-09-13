@@ -341,17 +341,18 @@ Assume registers have size $`w=64`$. Therefore, $`n=2^{64}`$. \
 1- The Prover stores $`c=8`$ sub-tables $`T_i`$ each of size $`n^{\frac{1}{c}}=2^8`$ corresponding with lookup table $`T`$ for operation "and", such that for any $`r\in \{0,1\}^{64}`$ and $`r_i \in \{0,1\}^{8}`$ the following holds:\
 $`T(r)=\sum_{i=1}^{8} 2^{4(i-1)} T_i(r_i)`$
 For this example, we have for $`i=1,2..,8`$
+
 $$
 T_i=\begin{bmatrix} 
 0&0&0&0&0&0&0&0&0&0&0&0\\ 
 0&0&0&0&0&0&0&1&0&0&0&0\\
 0&0&0&0&0&0&1&0&0&0&0&0\\
 0&0&0&0&0&1&0&0&0&0&0&0\\
-:\\
-:\\
+
 1&1&1&1&1&1&1&1&1&1&1&1
 \end{bmatrix}
 $$
+
 where, The first 4 entries of each row of the sub-table $`T_i`$ correspond to the left input, the second 4 entries correspond to the right input, and the last 4 entries correspond to the output of "and" of the inputs corresponding to that row.\
 2- The Prover calculates $`c`$ polynomials $`dim_1`$, $`dim_2`$, ..., $`dim_c`$ as following:\
 $`dim_i:\{0,1\}^{\log s}\to \{0,1\}^{\log n^{\frac{1}{c}}}`$\
