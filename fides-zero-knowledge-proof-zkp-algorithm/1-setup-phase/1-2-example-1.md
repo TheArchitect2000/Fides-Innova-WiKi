@@ -42,9 +42,9 @@ $$KZG.Setup(1^{\lambda},6)=(ck,vk)=$$ (&lcub; $$g\tau^i$$ &rcub; $_{i=0}^5$, $$g
 
  # Example 1 ( for logical operation "and")
 
-$$Setup(1^{\lambda},s)$$:  This function outputs $$pp=PC.Setup(1^{\lambda},s)$$.&#x20;\
+$$Setup(1^{\lambda},s)$$:  This function outputs $$pp=PC.Setup(1^{\lambda},s)$$.&#x20;
 
-If the computation is done in $`\mathbb{F}`$ of order $`p=11`$
+If the computation is done in $`\mathbb{F}`$ of order $`p=11`$ and program has $`s=4`$ gate "and", then 
 
 $$KZG.Setup(1^{\lambda},4)=(ck,vk)=$$ (&lcub; $$g\tau^i$$ &rcub; $_{i=0}^{3}$, $$g \tau$$)
  
