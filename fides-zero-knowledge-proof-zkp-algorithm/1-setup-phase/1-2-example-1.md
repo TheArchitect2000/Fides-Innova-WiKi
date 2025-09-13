@@ -42,10 +42,11 @@ $$KZG.Setup(1^{\lambda},6)=(ck,vk)=$$ (&lcub; $$g\tau^i$$ &rcub; $_{i=0}^5$, $$g
 
  # Example 1 ( for logical operation "and")
 
-$$Setup(1^{\lambda},s)$$:  This function outputs $$pp=PC.Setup(1^{\lambda},s)$$.&#x20;
+$$Setup(1^{\lambda},s)$$:  This function outputs $$pp=PC.Setup(1^{\lambda},s)$$.&#x20;\
 
+If the computation is done in $`\mathbb{F}`$ of order $`p=11`$
 
 $$KZG.Setup(1^{\lambda},4)=(ck,vk)=$$ (&lcub; $$g\tau^i$$ &rcub; $_{i=0}^{3}$, $$g \tau$$)
  
- that for secret element $$\tau=3$$, finite field with order $$p=11$$ and generator  $$g=2$$  outputs $$ck=$$ &lcub; $$g\tau^i$$ &rcub; $_{i=0}^{3}$ $$=(2, 6,7,10 )$$ and $$vk=6$$.
+that for secret element $$\tau=3$$ and generator  $$g=2$$  outputs $$ck=$$ &lcub; $$g\tau^i$$ &rcub; $_{i=0}^{3}$ $$=(2, 6,7,10 )$$ and $$vk=6$$.
 
