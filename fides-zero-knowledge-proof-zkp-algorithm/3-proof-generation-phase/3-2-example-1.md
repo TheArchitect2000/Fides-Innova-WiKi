@@ -335,12 +335,12 @@ $$R_3^{(2)}=R_1^{(2)} and R_5^{(1)}$$\
 $$R_4^{(2)}=R_2^{(2)}  and R_5^{(1)}$$ 
 
 
-To keep the example simple and understandable, we continue with $$n_g=4$$
- The proof of these claim is done in the following steps:\
-1- The Prover stores $`c`$ sub-tables $`T_i`$ each of size $`n^{\frac{1}{c}}`$ corresponding with lookup table $`T`$, such that for any $`r\in \{0,1\}^{\log n}`$, the following holds:\
-$`T(r)=g(T_1(r_1),...,T_{c}(r_c))`$\
-where $n=2^w$, $`w`$ is the size of register and $`r_i \in \{0,1\}^{\log {n^{\frac{1}{c}}}}`$. For operation "and", we have,\
-$`T(r)=\sum_{i=1}^{c} 2^{\frac{w}{c}(i-1)} T_i(r_i)`$\
+To keep the example simple and understandable, we continue with $$n_g=4$$.\
+The proof of these claim is done in the following steps:\
+Assume registers have size $`w=64`$. Therefore, $`n=2^{64}`$. \
+1- The Prover stores $`c=8`$ sub-tables $`T_i`$ each of size $`n^{\frac{1}{c}}=2^8`$ corresponding with lookup table $`T`$ for operation "and", such that for any $`r\in \{0,1\}^{64}`$, $`r_i \in \{0,1\}^{\log {n^{\frac{1}{c}}}}`$ the following holds:\
+$`T(r)=\sum_{i=1}^{8} 2^{4(i-1)} T_i(r_i)`$\
+
 2- The Prover calculates $`c`$ polynomials $`dim_1`$, $`dim_2`$, ..., $`dim_c`$ as following:\
 $`dim_i:\{0,1\}^{\log s}\to \{0,1\}^{\log n^{\frac{1}{c}}}`$\
 $`dim_i(x)`$= The row number of sub-table $`T_i`$ that is equal to $`i^{th}`$ $`\frac{w}{c}`$ bits of $`x^{th}`$ component of $`V`$.\
