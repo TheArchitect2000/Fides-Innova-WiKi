@@ -321,7 +321,7 @@ Assume the following sample code:\
 and  R1, R2, R3                             => Gate 1,   p=11\
 and  R2, R3, R4                             => Gate 2,  p=11\
 and  R3, R1, R5                             => Gate 3,  p=11\
-and  R4, R2, R5                              => Gate 4,  p=11\
+and  R4, R2, R5                              => Gate 4,  p=11
 
 
 
@@ -332,10 +332,10 @@ The constraints are as follows considering $$p=11$$:
 $$R_1^{(2)}=R_2^{(1)} and R_3^{(1)}$$                                 \
 $$R_2^{(2)}=R_3^{(1)} and R_4^{(1)}$$                        \
 $$R_3^{(2)}=R_1^{(2)} and R_5^{(1)}$$\
-$$R_4^{(2)}=R_2{(2)}  and R_5{(1)}$$ 
+$$R_4^{(2)}=R_2^{(2)}  and R_5^{(1)}$$ 
 
 
-To keep the example simple and understandable, we continue with $$n_g=3$$
+To keep the example simple and understandable, we continue with $$n_g=4$$
  The proof of these claim is done in the following steps:\
 1- The Prover stores $`c`$ sub-tables $`T_i`$ each of size $`n^{\frac{1}{c}}`$ corresponding with lookup table $`T`$, such that for any $`r\in \{0,1\}^{\log n}`$, the following holds:\
 $`T(r)=g(T_1(r_1),...,T_{c}(r_c))`$\
