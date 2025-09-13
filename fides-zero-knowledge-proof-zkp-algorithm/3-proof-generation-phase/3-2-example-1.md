@@ -313,4 +313,5 @@ Lines = \[200, 350, 4000-4010]
 }
 ```
 
-##
+### Example 1 (for operation "and")
+
