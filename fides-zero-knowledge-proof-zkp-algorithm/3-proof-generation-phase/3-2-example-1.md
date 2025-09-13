@@ -343,7 +343,7 @@ $`T(r)=\sum_{i=1}^{8} 2^{4(i-1)} T_i(r_i)`$
 For this example, we have for $`i=1,2..,8`$
 
 $$
-T_i=\begin{bmatrix} 
+T=\begin{bmatrix} 
 0&0&0&0&0&0&0&0&0&0&0&0\\ 
 0&0&0&0&0&0&0&1&0&0&0&0\\
 0&0&0&0&0&0&1&0&0&0&0&0\\
@@ -352,6 +352,7 @@ T_i=\begin{bmatrix}
 1&1&1&1&1&1&1&1&1&1&1&1
 \end{bmatrix}
 $$
+
 $$
 A=\begin{bmatrix} 
 0&0&0&0&0\\ 
