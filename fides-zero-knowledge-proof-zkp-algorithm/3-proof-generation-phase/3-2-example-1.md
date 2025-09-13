@@ -352,6 +352,15 @@ T_i=\begin{bmatrix}
 1&1&1&1&1&1&1&1&1&1&1&1
 \end{bmatrix}
 $$
+$$
+A=\begin{bmatrix} 
+0&0&0&0&0\\ 
+0&0&0&0&0\\ 
+0&1&0&0&0\\ 
+1&0&0&0&0\\ 
+0&0&0&1&0
+\end{bmatrix}
+$$
 
 where, The first 4 entries of each row of the sub-table $`T_i`$ correspond to the left input, the second 4 entries correspond to the right input, and the last 4 entries correspond to the output of "and" of the inputs corresponding to that row.\
 2- The Prover calculates $`c`$ polynomials $`dim_1`$, $`dim_2`$, ..., $`dim_c`$ as following:\
