@@ -383,7 +383,7 @@ T_i=\begin{bmatrix}
 \end{bmatrix}
 $$
 
-where, each row of $`T_i`$ is indexed by possible 4-bits inputs and value of that row is equal to output of "and" operation on inputs corresponding to it.It means that for example, $`T[01001\hspace{1mm}1011]=0001`$.\
+where, each row of $`T_i`$ is indexed by possible 4-bits inputs and value of that row is equal to output of "and" operation on inputs corresponding to it.It means that for example, $`T_i[01001\hspace{1mm}1011]=0001`$.\
 Now, see the equality $`T(r)=\sum_{i=1}^{8} 2^{4(i-1)} T_i(r_i)`$ for a value of $`r`$.\
 For example, if $`r=000010000110000000000000000011000\hspace{1mm}00001100011100000101000000001011`$, have $`T[r]=00001000011000000000000000001000`$. \
 Also, have $`r_1=1000\hspace{1mm}1011`$, $`r_2=0001\hspace{1mm}0000`$, $`r_3=0000\hspace{1mm}0000`$, $`r_4=0000\hspace{1mm}0101`$, $`r_5=0000\hspace{1mm}0000`$, $`r_6=0110\hspace{1mm}0111`$, $`r_7=1000\hspace{1mm}1100`$ and $`r_8=0000\hspace{1mm}0000`$. In this case, $`T_1[r_1]=1000`$, $`T_2[r_2]=0000`$, $`T_3[r_3]=0000`$, $`T_4[r_4]=0000`$, $`T_5[r_5]=0000`$, $`T_6[r_6]=0110`$, $`T_7[r_7]=1000`$ and $`T_8[r_8]=0000`$. Therfore, \
