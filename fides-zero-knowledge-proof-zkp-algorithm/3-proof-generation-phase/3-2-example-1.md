@@ -336,7 +336,7 @@ $$R_3^{(2)}=R_1^{(2)} and\hspace{1.3mm} R_5^{(1)}$$\
 $$R_4^{(2)}=R_2^{(2)}  and\hspace{1.3mm} R_5^{(1)}$$ 
 
 
-Assume have 32 32-bits registers. Also,  assume the initial values of registers are $`R_1^{(1)}=3`$, $`R_2^{(1)}=8`$, $`R_3^{(1)}=15`$, $`R_4^{(1)}=2`$, $`R_5^{(1)}=6`$, $`R_6^{(1)}=...=R_{32}^{(1)}=0`$. Therefore, outputs of the sample code lines are $`R_1^{(2)}=8`$, $R_2^{(2)}=2`$, $`R_3^{(2)}=0`$ and $`R_4^{(2)}=2`$. Define vector $`V \in \mathbb{F}^4`$ such that $`i^{th}`$ component of it equal to output of $`i^{th}`$ sample code line, i.e.
+Assume have 32 32-bits registers. Also,  assume the initial values of registers are $`R_1^{(1)}=3`$, $`R_2^{(1)}=8`$, $`R_3^{(1)}=15`$, $`R_4^{(1)}=2`$, $`R_5^{(1)}=6`$, $`R_6^{(1)}=...=R_{32}^{(1)}=0`$. Therefore, outputs of the sample code lines are $`R_1^{(2)}=8`$, $`R_2^{(2)}=2`$, $`R_3^{(2)}=0`$ and $`R_4^{(2)}=2`$. Define vector $`V \in \mathbb{F}^4`$ such that $`i^{th}`$ component of it equal to output of $`i^{th}`$ sample code line, i.e.
 
 $$
 V=\begin{bmatrix} 
