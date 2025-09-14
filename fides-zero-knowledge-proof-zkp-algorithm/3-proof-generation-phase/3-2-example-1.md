@@ -348,7 +348,7 @@ T=\begin{bmatrix}
 \end{bmatrix}
 $$
 
-where, each row of $`T`$ is indexed by possible 32-bits inputs and value of that row is equal to output of "and" operation on inputs corresponding to it.It means that for example, $`T[000010000110000000000000000011000\hspace{1mm}00001100011100000101000000001011]=00001000011000000000000000001000`$.\
+where, each row of $`T`$ is indexed by possible 32-bits inputs and value of that row is equal to output of "and" operation on inputs corresponding to it.It means that for example, $`T[000010000110000000000000000011000\hspace{1mm}00001100011100000101000000001011]=00001000011000000000000000001000`$.
 
 1- The Prover stores $`c=8`$ sub-tables $`T_i`$ each of size $`n^{\frac{1}{c}}=2^8`$ corresponding with lookup table $`T`$, such that for any $`r\in \{0,1\}^{64}`$ and $`r_i \in \{0,1\}^{8}`$ the following holds:\
 $`T(r)=\sum_{i=1}^{8} 2^{4(i-1)} T_i(r_i)`$
@@ -368,7 +368,8 @@ $$
 where, each row of $`T_i`$ is indexed by possible 4-bits inputs and value of that row is equal to output of "and" operation on inputs corresponding to it.It means that for example, $`T[01001\hspace{1mm}1011]=0001`$.\
 Now, see the equality $`T(r)=\sum_{i=1}^{8} 2^{4(i-1)} T_i(r_i)`$ for a value of $`r`$.\
 For example, if $`r=000010000110000000000000000011000\hspace{1mm}00001100011100000101000000001011`$, have $`T[r]=00001000011000000000000000001000`$. Also, have $`r_1=1000\hspace{1mm}1011`$, $`r_2=0001\hspace{1mm}0000`$, $`r_3=0000\hspace{1mm}0000`$, $`r_4=0000\hspace{1mm}0101`$, $`r_5=0000\hspace{1mm}0000`$, $`r_6=0110\hspace{1mm}0111`$, $`r_7=1000\hspace{1mm}1100`$ and $`r_8=0000\hspace{1mm}0000`$. In this case, $`T_1[r_1]=1000`$, $`T_2[r_2]=0000`$, $`T_3[r_3]=0000`$, $`T_4[r_4]=0000`$, $`T_5[r_5]=0000`$, $`T_6[r_6]=0110`$, $`T_7[r_7]=1000`$ and $`T_8[r_8]=0000`$. Therfore, \
-$`\sum_{i=1}^{8} 2^{4(i-1)} T_i(r_i)=T_1(r_1)+2^4T_2(r_2)+2^8T_3(r_3)+...+2^{24}T_7(r_7)+2^{28}T_8(r_8)=8+2^4\times 0+2^8\times 0+2^{12}\times 0+2^{16}\times 0+2^{20}\times 6+2^{24}\times 8+2^{28}\times 0=140509192`$\
+$`\sum_{i=1}^{8} 2^{4(i-1)} T_i(r_i)=T_1(r_1)+2^4T_2(r_2)+2^8T_3(r_3)+...+2^{24}T_7(r_7)+2^{28}T_8(r_8)=`$\
+$`8+2^4\times 0+2^8\times 0+2^{12}\times 0+2^{16}\times 0+2^{20}\times 6+2^{24}\times 8+2^{28}\times 0=140509192`$\
 and\
 $`T(r)=2^3+2^{21}+2^{22}+2^{27}=140509192`$.
 
