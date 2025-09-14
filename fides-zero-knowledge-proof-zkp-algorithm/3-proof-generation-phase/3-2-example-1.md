@@ -348,7 +348,17 @@ T=\begin{bmatrix}
 \end{bmatrix}
 $$
 
-where, each row of $`T`$ is indexed by possible 32-bits inputs and value of that row is equal to output of "and" operation on inputs corresponding to it.It means that for example, $`T[000010000110000000000000000011000\hspace{1mm}00001100011100000101000000001011]=00001000011000000000000000001000`$.
+where, each row of $`T`$ is indexed by possible 32-bits inputs and value of that row is equal to output of "and" operation on inputs corresponding to it.It means that for example, $`T[000010000110000000000000000011000\hspace{1mm}00001100011100000101000000001011]=00001000011000000000000000001000`$.\
+Assume the initial values of registers are $`R_1^{(1)}=3`$, $`R_2^{(1)}=8`$, $`R_3^{(1)}=15`$, $`R_4^{(1)}=2`$, $`R_5^{(1)}=6`$, $`R_6^{(1)}=...=R_{32}^{(1)}=0`$. Therefore, 
+
+$$
+V=\begin{bmatrix} 
+0&0&0&0&.&.&.&.&1&0&0&0\\ 
+0&0&0&0&.&.&.&.&0&0&1&0\\
+0&0&0&0&.&.&.&.&0&0&0&0\\ 
+0&0&0&0&.&.&.&.&0&0&1&0 
+\end{bmatrix}
+$$
 
 1- The Prover stores $`c=8`$ sub-tables $`T_i`$ each of size $`n^{\frac{1}{c}}=2^8`$ corresponding with lookup table $`T`$, such that for any $`r\in \{0,1\}^{64}`$ and $`r_i \in \{0,1\}^{8}`$ the following holds:\
 $`T(r)=\sum_{i=1}^{8} 2^{4(i-1)} T_i(r_i)`$
@@ -374,17 +384,6 @@ $`8+2^4\times 0+2^8\times 0+2^{12}\times 0+2^{16}\times 0+2^{20}\times 6+2^{24}\
 and\
 $`T(r)=2^3+2^{21}+2^{22}+2^{27}=140509192`$.
 
-
-Assume the initial values of registers are $`R_1^{(1)}=3`$, $`R_2^{(1)}=8`$, $`R_3^{(1)}=15`$, $`R_4^{(1)}=2`$, $`R_5^{(1)}=6`$, $`R_6^{(1)}=...=R_{32}^{(1)}=0`$. Therefore, 
-
-$$
-V=\begin{bmatrix} 
-0&0&0&0&.&.&.&.&1&0&0&0&0&0&0&0&.&.&.&.&1&1&1&1&0&0&0&0&.&.&.&.&1&0&0&0\\ 
-0&0&0&0&.&.&.&.&1&1&1&1&0&0&0&0&.&.&.&.&0&0&1&0&0&0&0&0&.&.&.&.&0&0&1&0\\
-0&0&0&0&.&.&.&.&1&0&0&0&0&0&0&0&.&.&.&.&0&1&1&0&0&0&0&0&.&.&.&.&0&0&0&0\\ 
-0&0&0&0&.&.&.&.&0&1&1&0&0&0&0&0&.&.&.&.&0&0&1&0&0&0&0&0&.&.&.&.&0&0&1&0 
-\end{bmatrix}
-$$
 
 2- The Prover calculates $`c=8`$ polynomials $`dim_1`$, $`dim_2`$, ..., $`dim_8`$ as following:\
 $`dim_i:\{0,1\}^{2}\to \{0,1\}^{8}`$\
