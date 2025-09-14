@@ -315,7 +315,7 @@ Lines = \[200, 350, 4000-4010]
 
 ### Example 1 (for operation "and")
 $`Proof (\mathbb{F}, T)`$: This function outputs  $`\Pi_{Look\hspace{1mm}up}=(Com_{Look\hspace{1mm}up},\pi_{Look\hspace{1mm}up})`$\
-Assume the following sample code:\
+Assume the following simple sample code:\
 \
 \
 and  R1, R2, R3                             => Gate 1,   p=11\
@@ -329,43 +329,45 @@ and  R4, R2, R5                              => Gate 4,  p=11
 The constraints are as follows considering $$p=11$$:
 
 &#x20;               \
-$$R_1^{(2)}=R_2^{(1)} and R_3^{(1)}$$                                 \
-$$R_2^{(2)}=R_3^{(1)} and R_4^{(1)}$$                        \
-$$R_3^{(2)}=R_1^{(2)} and R_5^{(1)}$$\
-$$R_4^{(2)}=R_2^{(2)}  and R_5^{(1)}$$ 
+$$R_1^{(2)}=R_2^{(1)} and\hspace{1.3mm} R_3^{(1)}$$                                 \
+$$R_2^{(2)}=R_3^{(1)} and\hspace{1.3mm} R_4^{(1)}$$                        \
+$$R_3^{(2)}=R_1^{(2)} and\hspace{1.3mm} R_5^{(1)}$$\
+$$R_4^{(2)}=R_2^{(2)}  and\hspace{1.3mm} R_5^{(1)}$$ 
 
 
-To keep the example simple and understandable, we continue with $$n_g=4$$.\
-The proof of these claim is done in the following steps:\
-Assume registers have size $`w=64`$. Therefore, $`n=2^{64}`$. \
-1- The Prover stores $`c=8`$ sub-tables $`T_i`$ each of size $`n^{\frac{1}{c}}=2^8`$ corresponding with lookup table $`T`$ for operation "and", such that for any $`r\in \{0,1\}^{64}`$ and $`r_i \in \{0,1\}^{8}`$ the following holds:\
+The proof of claim $ is done in the following steps:\
+Assume registers have size $`w=64`$. \
+The Lookup table $`T`$ corresponding to gate "and" has size $`n=2^w=2^{64}`$ and is as following:
+$$
+T=\begin{bmatrix} 
+0&0&0&0&.&.&.&.&0&0&0&0\\ 
+0&0&0&0&.&.&.&.&0&0&0&0\\
+:&:&:&:&:&:&:&:&:&:&:&:\\
+1&1&1&1&.&.&.&.&1&1&1&1 
+\end{bmatrix}
+$$
+
+where, each row of $`T`$ is indexed by possible 32-bits inputs and value of that row is equal to output of "and" operation on inputs corresponding to it.It means that for example, $`T[000010000110000000000000000011000\hspace{1mm}00001100011100000101000000001011]=00001000011000000000000000001000`$.
+1- The Prover stores $`c=8`$ sub-tables $`T_i`$ each of size $`n^{\frac{1}{c}}=2^8`$ corresponding with lookup table $`T`$, such that for any $`r\in \{0,1\}^{64}`$ and $`r_i \in \{0,1\}^{8}`$ the following holds:\
 $`T(r)=\sum_{i=1}^{8} 2^{4(i-1)} T_i(r_i)`$
 For this example, we have for $`i=1,2..,8`$
 
 $$
 T_i=\begin{bmatrix} 
-0&0&0&0&0&0&0&0&0&0&0&0\\ 
-0&0&0&0&0&0&0&1&0&0&0&0\\
-0&0&0&0&0&0&1&0&0&0&0&0\\
-0&0&0&0&0&1&0&0&0&0&0&0\\
-:&:&:&:&:&:&:&:&:&:&:&:\\
-1&1&1&1&1&1&1&1&1&1&1&1
+0&0&0&0\\ 
+0&0&0&0\\
+0&0&0&0\\
+0&0&0&0\\
+:&:&:&:\\
+1&1&1&1
 \end{bmatrix}
 $$
 
-where, The first 4 entries of each row of the sub-table $`T_i`$ correspond to the left input, the second 4 entries correspond to the right input, and the last 4 entries correspond to the output of "and" of the inputs corresponding to that row.\
-and
+where, each row of $`T_i`$ is indexed by possible 4-bits inputs and value of that row is equal to output of "and" operation on inputs corresponding to it.It means that for example, $`T[01001\hspace{1mm}1011]=0001`$.
+Now, see the equality $`T(r)=\sum_{i=1}^{8} 2^{4(i-1)} T_i(r_i)`$ for a value of $`r`$.\
+For example if $`r=000010000110000000000000000011000\hspace{1mm}00001100011100000101000000001011`$, have $`T[r]=00001000011000000000000000001000`$. Also, have $`r_1=1000\hspace{1mm}1011`$, $`r_2=0001\hspace{1mm}0000`$, $`r_3=0000\hspace{1mm}0000`$, $`r_4=0000\hspace{1mm}0101`$, $`r_5=0000\hspace{1mm}0000`$, $`r_6=0110\hspace{1mm}0111`$, $`r_7=1000\hspace{1mm}1100`$ and $`r_8=0000\hspace{1mm}0000`$. In this case, $`T_1[r_1]=1000`$, $`T_2[r_2]=0000`$, $`T_3[r_3]=0000`$, $`T_4[r_4]=0000`$, $`T_5[r_5]=0000`$, $`T_6[r_6]=0110`$, $`T_7[r_7]=1000`$ and $`T_8[r_8]=0000`$. Therfore, \
+$`\sum_{i=1}^{8} 2^{4(i-1)} T_i(r_i)=T_1(r_1)+2^4T_2(r_2)+2^8T_3(r_3)+...+2^{24}T_7(r_7)+2^{28}T_8(r_8)=`$
 
-$$
-T=\begin{bmatrix} 
-0&0&0&0&.&.&.&.&0&0&0&0&0&0&0&0&.&.&.&.&0&0&0&0&0&0&0&0&.&.&.&.&0&0&0&0\\ 
-0&0&0&0&.&.&.&.&0&0&0&0&0&0&0&0&.&.&.&.&0&0&0&1&0&0&0&0&.&.&.&.&0&0&0&0\\
-:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:&:\\
-1&1&1&1&.&.&.&.&1&1&1&1&1&1&1&1&.&.&.&.&1&1&1&1&1&1&1&1&.&.&.&.&1&1&1&1 
-\end{bmatrix}
-$$
-
-where, The first 32 entries of each row of the sub-table $`T_i`$ correspond to the left input, the second 32 entries correspond to the right input, and the last 32 entries correspond to the output of "and" of the inputs corresponding to that row.\
 
 Assume the initial values of registers are $`R_1^{(1)}=3`$, $`R_2^{(1)}=8`$, $`R_3^{(1)}=15`$, $`R_4^{(1)}=2`$, $`R_5^{(1)}=6`$, $`R_6^{(1)}=...=R_{32}^{(1)}=0`$. Therefore, 
 
