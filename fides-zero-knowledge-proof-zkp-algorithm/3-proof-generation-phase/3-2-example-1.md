@@ -369,6 +369,7 @@ The proof of claim $`V\in T`$ is done in the following steps:
 
 1- The Prover stores $`c=8`$ sub-tables $`T_i`$ each of size $`n^{\frac{1}{c}}=2^8`$ corresponding with lookup table $`T`$, such that for any $`r\in \{0,1\}^{64}`$ and $`r_i \in \{0,1\}^{8}`$ the following holds:\
 $`T(r)=\sum_{i=1}^{8} 2^{4(i-1)} T_i(r_i)`$
+
 In this example, we have for $`i=1,2..,8`$
 
 $$
