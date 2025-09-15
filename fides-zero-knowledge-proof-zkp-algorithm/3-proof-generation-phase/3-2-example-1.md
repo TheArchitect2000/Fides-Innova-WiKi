@@ -392,10 +392,23 @@ $`8+2^4\times 0+2^8\times 0+2^{12}\times 0+2^{16}\times 0+2^{20}\times 6+2^{24}\
 and also\
 $`T(r)=2^3+2^{21}+2^{22}+2^{27}=140509192\equiv 10 (\textrm{mod}\hspace{1mm}11)`$.
 
-
 2- The Prover calculates $`c=8`$ polynomials $`dim_1`$, $`dim_2`$, ..., $`dim_8`$ as following:\
 $`dim_i:\{0,1\}^{2}\to \{0,1\}^{8}`$\
 $`dim_i(x)`$= The row number of sub-table $`T_i`$ that is equal to $`i^{th}`$ $`8`$ bits of $`x^{th}`$ component of $`V`$.\
+Here,
+
+$`dim_1:\{0,1\}^{2}\to \{0,1\}^{8}`$\
+$`dim_1(00)=10001111`$\
+$`dim_1(01)=11110010`$\
+$`dim_1(10)=10000110`$\
+$`dim_1(11)=01100010`$\
+
+For each $`i=2,3,...,8`$,\
+$`dim_i:\{0,1\}^{2}\to \{0,1\}^{8}`$\
+$`dim_i(00)=00000000`$\
+$`dim_i(01)=00000000`$\
+$`dim_i(10)=00000000`$\
+$`dim_i(11)=00000000`$\
 3- The Prover calculates $`c`$ polynomials $`E_1`$, $`E_2`$, ..., $`E_c`$ as following:\
 $`E_i:\{0,1\}^{\log s}\to \{0,1\}^{\frac{w}{c}}`$\
 $`E_i(x)=T_i(dim_i(x))`$\
