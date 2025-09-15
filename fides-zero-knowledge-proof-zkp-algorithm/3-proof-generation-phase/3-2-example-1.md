@@ -436,11 +436,9 @@ Here, the first, the Prover calculates polynomial $`E_1(x)`$ by lagrange interpo
 
 Now, since
 
- $$L_1(x)=\frac{(x-1)(x-2)(x-3)}{(-1)(-2)(-3)}=9x^3+x^2+1 $$,
-
- $$L_2(x)=\frac{x(x-2)(x-3)}{(-1)(-2)}=6x^3+3x^2+3x $$,
+ $$L_1(x)=\frac{(x-1)(x-2)(x-3)}{(-1)(-2)(-3)}=9x^3+x^2+1 $$, $$L_2(x)=\frac{x(x-2)(x-3)}{(-1)(-2)}=6x^3+3x^2+3x $$,
  
- $$L_2(x)=\frac{x(x-2)(x-3)}{(-1)(-2)}=6x^3+3x^2+3x $$,
+
  
  $$L_3(x)=\frac{x(x-1)(x-2)}{(3)(2)}=5x^3+2x^2+4x $$, 
 
