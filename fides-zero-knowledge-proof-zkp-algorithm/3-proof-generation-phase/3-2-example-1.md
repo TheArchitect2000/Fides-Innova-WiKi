@@ -434,7 +434,7 @@ $`Com_{Look\hspace{1mm}up}^{i}=\sum_{j=0}^{deg_{E_i(x)}}{E_i}_{j}ck(j)`$, where 
 
 Here, the first, the Prover calculates polynomial $`E_1(x)`$ by lagrange interpolation such that $`E_1(00)=1000`$, $`E_1(01)=0010`$, $`E_1(10)=0000`$ and $`E_1(11)=0010`$. That means that polynomial $`E_1(x)`$ passes through points $`(0,8)`$, $`(1,2)`$, $`(2,0)`$ and $`(3,2)`$. Therefore, $`E_1(x)=8L_1(x)+2L_2(x)+0L_3(x)+2L_4(x)`$.
 
- $$L_1(x)=\frac{(x-43)(x-39)(x-48)(x-73)(x-62)(x-132)(x-65)(x-80)}{(-42)(-38)(-47)(-72)(-61)(-131)(-64)(-79)}=161x^8+161x^7+161x^6+161x^5+161x^4+161x^3+161x^2+161x+161$$
+ $$L_1(x)=\frac{(x-1)(x-2)(x-3)}{(-1)(-2)(-3)}=$$
  
 Now, since
 
