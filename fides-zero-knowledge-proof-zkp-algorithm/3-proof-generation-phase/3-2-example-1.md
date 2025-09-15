@@ -435,6 +435,7 @@ $`Com_{Look\hspace{1mm}up}^{i}=\sum_{j=0}^{deg_{E_i(x)}}{E_i}_{j}ck(j)`$, where 
 Here, the first, the Prover calculates polynomial $`E_1(x)`$ by lagrange interpolation such that $`E_1(00)=1000`$, $`E_1(01)=0010`$, $`E_1(10)=0000`$ and $`E_1(11)=0010`$. That means that polynomial $`E_1(x)`$ passes through points $`(0,8)`$, $`(1,2)`$, $`(2,0)`$ and $`(3,2)`$. Therefore, $`E_1(x)=8L_1(x)+2L_2(x)+0L_3(x)+2L_4(x)`$.
 
 Now, since
+
  $$L_1(x)=\frac{(x-1)(x-2)(x-3)}{(-1)(-2)(-3)}=9x^3+x^2+1 $$,
  
  $$L_2(x)=\frac{x(x-2)(x-3)}{(-1)(-2)}=6x^3+3x^2+3x $$,
