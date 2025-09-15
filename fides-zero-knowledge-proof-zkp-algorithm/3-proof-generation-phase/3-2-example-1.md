@@ -401,7 +401,7 @@ $`dim_1:\{0,1\}^{2}\to \{0,1\}^{8}`$\
 $`dim_1(00)=10001111`$\
 $`dim_1(01)=11110010`$\
 $`dim_1(10)=10000110`$\
-$`dim_1(11)=01100010`$\
+$`dim_1(11)=01100010`$
 
 For each $`i=2,3,...,8`$,\
 $`dim_i:\{0,1\}^{2}\to \{0,1\}^{8}`$\
@@ -409,9 +409,24 @@ $`dim_i(00)=00000000`$\
 $`dim_i(01)=00000000`$\
 $`dim_i(10)=00000000`$\
 $`dim_i(11)=00000000`$\
-3- The Prover calculates $`c`$ polynomials $`E_1`$, $`E_2`$, ..., $`E_c`$ as following:\
-$`E_i:\{0,1\}^{\log s}\to \{0,1\}^{\frac{w}{c}}`$\
+3- The Prover calculates $`c=8`$ polynomials $`E_1`$, $`E_2`$, ..., $`E_8`$ as following:\
+$`E_i:\{0,1\}^{2}\to \{0,1\}^{4}`$\
 $`E_i(x)=T_i(dim_i(x))`$\
+Here,
+
+$`E_1:\{0,1\}^{2}\to \{0,1\}^{4}`$\
+$`E_1(00)=T_1(dim_1(00))=1000`$\
+$`E_1(01)=T_1(dim_1(01))=0010`$\
+$`E_1(10)=T_1(dim_1(10))=0000`$\
+$`E_1(11)=T_1(dim_1(11))=0010`$
+
+For each $`i=2,3,...,8`$,\ 
+$`E_i:\{0,1\}^{2}\to \{0,1\}^{4}`$\
+$`E_i(00)=T_i(dim_i(00))=0000`$\
+$`E_i(01)=T_i(dim_i(01))=0000`$\
+$`E_i(10)=T_i(dim_i(10))=0000`$\
+$`E_i(11)=T_i(dim_i(11))=0000`$
+
 4- The Prover calculates committments to polynomials $`E_i(x)`$, $`i=1,2,...,c`$ by KZG polynomial commitment scheme as following:\
 $`Com_{Look\hspace{1mm}up}^{i}=\sum_{j=0}^{deg_{E_i(x)}}{E_i}_{j}ck(j)`$, where $`{E_i}_{j}`$ is the coefficient of $`x^j`$ of polynomial $`E_i(x)`$, .\
 5-  The Verifier chooses random numbers $`r \in \{0,1\}^{\log s}`$ and sends it to the Prover. (Note that the Prover can choose $`r=`$ The last $`\log s`$ bits of $`hash(h(1))`$, where $`h(x)`$ is a fully random polynomail selected by the Prover and send to the Verifier.)\
