@@ -453,3 +453,7 @@ $`Com_{Look\hspace{1mm}up}^{1}=\sum_{j=0}^{2}}{E_1}_{j}ck(j)=2ck(3)+3ck(2)+8ck(1
 
 $`Com_{Look\hspace{1mm}up}^{i}=\sum_{j=0}^{0}}{E_i}_{j}ck(j)=0ck(1)=0\equiv 0(\textrm{mod}\hspace{1mm}11`$, $`i=2,3,...,8`$
 
+5-  The Verifier chooses random number $`r \in \{0,1\}^{2}`$ and sends it to the Prover. (Note that the Prover can choose $`r=`$ The last 2 bits of $`hash(h(1))`$, where $`h(x)`$ is a fully random polynomail selected by the Prover and sent to the Verifier). Assume $`r=01`$\
+6- The Prover calculates value $`v`$ as following\
+$`v=\sum_{i=1}^{8} 2^{4(i-1)} E_i(01)=E_1(01)+2^4E_2(01)+2^8E_3(01)+...+2^{24}E_8(01)=2+0+0+...+0=2`$\
+ and sends $`\pi_{Look\hspace{1mm}up}^{1}=v=2`$ to the Verifier.
