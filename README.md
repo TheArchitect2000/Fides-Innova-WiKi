@@ -48,6 +48,9 @@
     * [Algorithm](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/1-1-setup.md)
     * [Example 1](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/1-2-example-1.md)
     * [Example 2](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/1-3-example-2.md)
+    * [Algorithm](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/1-4-setup.md)
+    * [Example 1](fides-zero-knowledge-proof-zkp-algorithm/1-setup-phase/1-5-example-1.md)
+   
   * Commitment Phase
     * [Algorithm](fides-zero-knowledge-proof-zkp-algorithm/2-commitment-phase/2-1-commitment-generation-algorithm.md)
     * [Example 1](fides-zero-knowledge-proof-zkp-algorithm/2-commitment-phase/2-2-example-1.md)
