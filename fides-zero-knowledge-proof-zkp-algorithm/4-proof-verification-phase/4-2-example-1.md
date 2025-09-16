@@ -53,12 +53,12 @@ $`e(\pi_{Look\hspace{1mm}up}^{9+i},vk-gr)=e(Com_{Look\hspace{1mm}up}^i-g\pi_{Loo
 &#x20;    \
 For $`i=1`$, have\
 $`e(\pi_{Look\hspace{1mm}up}^{10},vk-gr)=e(Com_{Look\hspace{1mm}up}^1-g\pi_{Look\hspace{1mm}up}^{2},g)`$\
-where $`e(\pi_{Look\hspace{1mm}up}^{10},vk-gr)=e(0,6-2)=e(0,4)=e(0\times g,2\times g)=0\times e(g,g)=0 and \
-$`e(Com_{Look\hspace{1mm}up}^1-g\pi_{Look\hspace{1mm}up}^{2},g)=e(4-(2\times 2),2)=e(0,2)=e(0\times g, g)=0\times e(g,g)=0 \
+where $`e(\pi_{Look\hspace{1mm}up}^{10},vk-gr)=e(0,6-2)=e(0,4)=e(0\times g,2\times g)=0\times e(g,g)=0`$ and \
+$`e(Com_{Look\hspace{1mm}up}^1-g\pi_{Look\hspace{1mm}up}^{2},g)=e(4-(2\times 2),2)=e(0,2)=e(0\times g, g)=0\times e(g,g)=0`$ \
 
 For $`i=2,...,8`$, have\
- $`e(\pi_{Look\hspace{1mm}up}^{9+i},vk-gr)=e(0,6-2)=e(0,4)=e(0\times g,2\times g)=0\times e(g,g)=0 and \
-$`e(Com_{Look\hspace{1mm}up}^i-g\pi_{Look\hspace{1mm}up}^{i+1},g)=e(0-(2\times 0),2)=e(0,2)=e(0\times g, g)=0\times e(g,g)=0 \
+$`e(\pi_{Look\hspace{1mm}up}^{9+i},vk-gr)=e(0,6-2)=e(0,4)=e(0\times g,2\times g)=0\times e(g,g)=0`$ and \
+$`e(Com_{Look\hspace{1mm}up}^i-g\pi_{Look\hspace{1mm}up}^{i+1},g)=e(0-(2\times 0),2)=e(0,2)=e(0\times g, g)=0\times e(g,g)=0`$ \
 
 2- The Verifier calculates $`d=\sum_{i=1}^{8}2^{4(i-1)}\pi_{Look\hspace{1mm}up}^{i+1}`$ and checks
 $`d=\pi_{Look\hspace{1mm}up}^{1}`$.\
