@@ -313,8 +313,8 @@ Lines = \[200, 350, 4000-4010]
 }
 ```
 
-### Example 1 (for operation "and")
-$`Proof (\mathbb{F}, T)`$: This function outputs  $`\Pi_{Look\hspace{1mm}up}=(Com_{Look\hspace{1mm}up},\pi_{Look\hspace{1mm}up})`$\
+### Example 1 (operation "and")
+$`Proof (\mathbb{F}, T)`$: This function outputs  $`\Pi_{Look\hspace{1mm}up}=(Com_{Look\hspace{1mm}up},\pi_{Look\hspace{1mm}up})`$
 
 Assume the following simple sample code:\
 \
