@@ -45,5 +45,7 @@ where $`e(Com_p-gy',g)=e(114-2\times 119,2)=e(57,2)=e(2\times 119,2)=119e(2,2)=1
 
 # Example 1 (operation "and")
 
-$$Verify(\mathbb{F}, \Pi_{Look\hspace{1mm}up}=(Com_{Look\hspace{1mm}up},\pi_{Look\hspace{1mm}up})$$:&#x20;
+$$Verify(\mathbb{F}, \Pi_{Look\hspace{1mm}up}=(Com_{Look\hspace{1mm}up},\pi_{Look\hspace{1mm}up}))$$:&#x20;
+
+1- The Verifier verifies values $`y_i=E_i(r)`$ sent in 
 
