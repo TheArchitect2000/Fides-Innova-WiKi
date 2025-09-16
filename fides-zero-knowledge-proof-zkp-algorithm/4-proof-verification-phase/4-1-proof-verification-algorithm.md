@@ -60,5 +60,5 @@ $$Verify(vk, \mathbb{F}, \Pi_{Look\hspace{1mm}up})$$: This function outputs 1 if
 $`e(\pi_{Look\hspace{1mm}up}^{c+1+i},vk-gr)=e(Com_{Look\hspace{1mm}up}^i-g\pi_{Look\hspace{1mm}up}^{i+1},g)`$\
 &#x20;    \
 2- The Verifier calculates $`d=\sum_{i=1}^{c}2^{\frac{w}{c}(i-1)}\pi_{Look\hspace{1mm}up}^{i+1}`$ and checks
-$`d=v`$
+$`d=\pi_{Look\hspace{1mm}up}^1`$
 
