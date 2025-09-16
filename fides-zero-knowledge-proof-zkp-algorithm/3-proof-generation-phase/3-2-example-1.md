@@ -456,4 +456,12 @@ $`Com_{Look\hspace{1mm}up}^{i}=\sum_{j=0}^{0}}{E_i}_{j}ck(j)=0ck(1)=0\equiv 0(\t
 5-  The Verifier chooses random number $`r \in \{0,1\}^{2}`$ and sends it to the Prover. (Note that the Prover can choose $`r=`$ The last 2 bits of $`hash(h(1))`$, where $`h(x)`$ is a fully random polynomail selected by the Prover and sent to the Verifier). Assume $`r=01`$\
 6- The Prover calculates value $`v`$ as following\
 $`v=\sum_{i=1}^{8} 2^{4(i-1)} E_i(01)=E_1(01)+2^4E_2(01)+2^8E_3(01)+...+2^{24}E_8(01)=2+0+0+...+0=2`$\
- and sends $`\pi_{Look\hspace{1mm}up}^{1}=v=2`$ to the Verifier.
+ and sends $`\pi_{Look\hspace{1mm}up}^{1}=v=2`$ to the Verifier.\
+ 7- The Prover calculates $`y_i=E_i(01)`$ for $`i=1,..,8`$ and sends\
+ $`\pi_{Look\hspace{1mm}up}^{2}=y_1=E_1(01)=2`$ and $`\pi_{Look\hspace{1mm}up}^{i+1}=y_i=E_i(01)=0`$ for $`i=2,3,...,8`$ to the Verifier. Also, calculates the proofs for them by KZG polynomial commitment scheme as follows:\
+7-1- The Prover calculates
+$`Q_1(x)=\frac{E_1(x)-2}{x-1}=\frac{2x^2+3x+6}{x-1}=2x+5`$.\
+$`Q_i(x)=\frac{E_i(x)-0}{x-1}=\frac{0}{x-1}=0`$, for $`i=2,3,...,8`$. \
+7-2- The Prover calculates\
+the proof for $`y_1=E_1(01)=2`$ as $`\pi_{Look\hspace{1mm}up}^{10}=\sum_{j=0}^{1}{Q_1}_{j}ck(j)=2ck(2)+5ck(1)=(2\times 6)+(5\times 2)=0`$.\
+the proof for $`y_i=E_i(01)=0`$ as $`\pi_{Look\hspace{1mm}up}^{9+i}=\sum_{j=0}^{0}{Q_i}_{j}ck(j)=0\times ck(1)=0`$.
