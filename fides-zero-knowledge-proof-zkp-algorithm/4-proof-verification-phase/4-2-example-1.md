@@ -45,7 +45,7 @@ where $`e(Com_p-gy',g)=e(114-2\times 119,2)=e(57,2)=e(2\times 119,2)=119e(2,2)=1
 
 # Example 1 (operation "and")
 
-$$Verify(\mathbb{F}, vk, \Pi_{Look\hspace{1mm}up}=(Com_{Look\hspace{1mm}up},\pi_{Look\hspace{1mm}up}))$$:&#x20;
+$$Verify(\mathbb{F}, vk=6, \Pi_{Look\hspace{1mm}up}=(Com_{Look\hspace{1mm}up},\pi_{Look\hspace{1mm}up})=((4,0,0,0,0,0,0,0,0),(2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)))$$:&#x20;
 
 1- The Verifier checks $`c=8`$ values sent $`\pi_{Look\hspace{1mm}up}^{i+1}=y_i=E_i(r)`$, for $`i=1,2,..,8`$ by KZG polynomial commitment scheme as following:\
 &#x20;    \
@@ -61,7 +61,7 @@ $`e(Com_{Look\hspace{1mm}up}^1-g\pi_{Look\hspace{1mm}up}^{2},g)=e(4-(2\times 2),
 For $`i=2,...,8`$, have\
 $`e(\pi_{Look\hspace{1mm}up}^{9+i},vk-gr)=e(0,6-2)=e(0,4)=e(0\times g,2\times g)=0\times e(g,g)=0`$ and 
 
-$`e(Com_{Look\hspace{1mm}up}^i-g\pi_{Look\hspace{1mm}up}^{i+1},g)=e(0-(2\times 0),2)=e(0,2)=e(0\times g, g)=0\times e(g,g)=0`$ \
+$`e(Com_{Look\hspace{1mm}up}^i-g\pi_{Look\hspace{1mm}up}^{i+1},g)=e(0-(2\times 0),2)=e(0,2)=e(0\times g, g)=0\times e(g,g)=0`$ 
 
 2- The Verifier calculates $`d=\sum_{i=1}^{8}2^{4(i-1)}\pi_{Look\hspace{1mm}up}^{i+1}`$ and checks
 $`d=\pi_{Look\hspace{1mm}up}^{1}`$.
