@@ -42,3 +42,8 @@ For example, if polynomial commitment scheme $`KZG`$ is used, then the following
 \
 where $`e(Com_p-gy',g)=e(114-2\times 119,2)=e(57,2)=e(2\times 119,2)=119e(2,2)=119\times3=176`$ and $`e(\pi_{AHP}^{17},vk-gx')=e(149,57-2\times 2)=e(2\times 165,2\times 117)=119e(2,2)=119\times 3=176`$\
 &#x20;
+
+# Example 1 (operation "and")
+
+$$Verify(\mathbb{F},  com_{PFR},\pi_{PFR})$$:&#x20;
+
