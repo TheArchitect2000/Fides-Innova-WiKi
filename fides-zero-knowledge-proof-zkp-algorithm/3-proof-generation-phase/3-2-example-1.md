@@ -429,6 +429,7 @@ $`E_i(01)=T_i(dim_i(01))=0000`$\
 $`E_i(10)=T_i(dim_i(10))=0000`$\
 $`E_i(11)=T_i(dim_i(11))=0000`$
 
+ $`L_3(x)=5x^3+2x^2+4x`$
 4- The Prover calculates committments to polynomials $`E_i(x)`$, $`i=1,2,...,8`$ by KZG polynomial commitment scheme as following:\
 $`Com_{Look\hspace{1mm}up}^{i}=\sum_{j=0}^{deg_{E_i(x)}}{E_i}_{j}ck(j)`$, where $`{E_i}_{j}`$ is the coefficient of $`x^j`$ of polynomial $`E_i(x)`$.
 
