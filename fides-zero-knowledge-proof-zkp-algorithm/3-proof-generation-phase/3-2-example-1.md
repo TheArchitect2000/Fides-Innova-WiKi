@@ -429,13 +429,12 @@ $`E_i(01)=T_i(dim_i(01))=0000`$\
 $`E_i(10)=T_i(dim_i(10))=0000`$\
 $`E_i(11)=T_i(dim_i(11))=0000`$
 
- $`L_3(x)=5x^3+2x^2+4x`$
+
 4- The Prover calculates committments to polynomials $`E_i(x)`$, $`i=1,2,...,8`$ by KZG polynomial commitment scheme as following:\
 $`Com_{Look\hspace{1mm}up}^{i}=\sum_{j=0}^{deg_{E_i(x)}}{E_i}_{j}ck(j)`$, where $`{E_i}_{j}`$ is the coefficient of $`x^j`$ of polynomial $`E_i(x)`$.
 
-Here, the first, the Prover calculates polynomial $`E_1(x)`$ by lagrange interpolation such that $`E_1(00)=1000`$, $`E_1(01)=0010`$, $`E_1(10)=0000`$ and $`E_1(11)=0010`$. That means that polynomial $`E_1(x)`$ passes through points $`(0,8)`$, $`(1,2)`$, $`(2,0)`$ and $`(3,2)`$. Therefore, $`E_1(x)=8L_1(x)+2L_2(x)+0L_3(x)+2L_4(x)`$. where
-
- $`L_1(x)=\frac{(x-1)(x-2)(x-3)}{(-1)(-2)(-3)}=9x^3+x^2+1, \hspace{1mm}L_2(x)=6x^3+3x^2+3x `$, $`L_3(x)=5x^3+2x^2+4x`$, $`L_4(x)=2x^3+5x^2+4x`$
+Here, the first, the Prover calculates polynomial $`E_1(x)`$ by lagrange interpolation such that $`E_1(00)=1000`$, $`E_1(01)=0010`$, $`E_1(10)=0000`$ and $`E_1(11)=0010`$. That means that polynomial $`E_1(x)`$ passes through points $`(0,8)`$, $`(1,2)`$, $`(2,0)`$ and $`(3,2)`$. Therefore, $`E_1(x)=8L_1(x)+2L_2(x)+0L_3(x)+2L_4(x)`$. where $`L_1(x)=\frac{(x-1)(x-2)(x-3)}{(-1)(-2)(-3)}=9x^3+x^2+1`$, 
+$`L_2(x)=6x^3+3x^2+3x `$, $`L_3(x)=5x^3+2x^2+4x`$, $`L_4(x)=2x^3+5x^2+4x`$
 
 Therefore $`E_1(x)=2x^2+3x+8`$.
 
