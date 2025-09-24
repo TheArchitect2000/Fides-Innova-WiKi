@@ -58,8 +58,10 @@
   * Proof Generation Phase
     * [Algorithm - Math opcodes](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-1-proof-generation-algorithm-math-opcodes.md)
     * [Algorithm - Logical opcodes](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-1-proof-generation-algorithm-logical-opcodes.md)
-    * [Example 1 - Math opcodes](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-2-example-1-math-opcodes.md)    * [Example 1 - Logical opcodes](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-2-example-1-logical-opcodes.md)
-    * [Example 2 - Math opcodes](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-3-example-2-math-opcodes.md)    * [Example 2 - Logical opcodes](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-3-example-2-logical-opcodes.md)
+    * [Example 1 - Math opcodes](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-2-example-1-math-opcodes.md)  
+    * [Example 1 - Logical opcodes](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-2-example-1-logical-opcodes.md)
+    * [Example 2 - Math opcodes](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-3-example-2-math-opcodes.md)  
+    * [Example 2 - Logical opcodes](fides-zero-knowledge-proof-zkp-algorithm/3-proof-generation-phase/3-3-example-2-logical-opcodes.md)
   * Proof Verification Phase
     * [Algorithm](fides-zero-knowledge-proof-zkp-algorithm/4-proof-verification-phase/4-1-proof-verification-algorithm.md)
     * [Example 1](fides-zero-knowledge-proof-zkp-algorithm/4-proof-verification-phase/4-2-example-1.md)
