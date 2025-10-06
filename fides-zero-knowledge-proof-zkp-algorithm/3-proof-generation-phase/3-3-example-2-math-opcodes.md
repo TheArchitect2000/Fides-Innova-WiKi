@@ -1,4 +1,4 @@
-# Example 2
+# Example 2 (for math opcode)
 
 ### &#x20;AHP Proof
 
