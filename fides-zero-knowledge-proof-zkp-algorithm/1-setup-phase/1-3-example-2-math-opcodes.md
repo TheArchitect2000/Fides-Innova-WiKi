@@ -1,4 +1,4 @@
-# Example 2
+# Example 2 ( for math opcode )
 
 $$Setup(1^{\lambda},N)$$:  This function outputs $$pp=PC.Setup(1^{\lambda},d)$$.&#x20;
 
